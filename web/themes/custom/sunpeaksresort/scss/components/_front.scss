@@ -1,0 +1,678 @@
+
+$btn-top-color: #576498;
+$large-image-height: 650px;
+
+.path-frontpage{
+
+  #home-content{
+    @include clearfix;
+    position:relative;
+    z-index:1;
+    background:#fff;
+    padding-bottom:100px;
+
+  }
+
+  .featured-content{
+    @include clearfix;
+    padding-top:40px;
+
+    .copy{
+      position:relative;
+    }
+    .image{
+      margin-bottom:20px;
+    }
+
+    .price-info a{
+      @include button;
+    }
+
+    .node-type-event{
+      .field--name-field-date{
+        margin-bottom:15px;
+      }
+    }
+
+    .node-type-update,
+    .node-type-blog,
+    .node-type-event{
+      a.btn{
+        @include button-border($blue);
+      }
+    }
+
+    @include media($medium-screen) {
+      padding-top:60px;
+    }
+    @include media($large-screen) {
+       padding-top:70px; margin-bottom:70px;
+
+      .field--name-field-featured-package,
+      .field--name-field-featured-event{
+        float:left; vertical-align:top; width:50%;
+      }
+      .field--name-field-featured-event{
+        float:right;
+      }
+
+    }
+  }
+
+
+  /* FEATURED LEFT
+  ------------------------------------ */
+  .field--name-field-featured-package{
+    @include clearfix;
+    position:relative;
+    margin-top:$base-spacing;
+
+    .node{ @include clearfix; position:relative; height:100%; width:100%; display:table;}
+
+    .price{ margin-bottom:20px;}
+
+    .field--name-body{
+      margin-bottom:20px;
+    }
+
+    .node-type-package,
+    .node-type-promo{
+      @include media($medium-screen){
+        .field--name-body{
+          border-bottom:$base-border; padding-bottom:20px;
+        }
+      }
+    }
+
+    @include media($medium-screen) {
+      .copy{
+        float:left; width:35%; padding-right:40px;
+      }
+      .image {
+        @include objectFitImage;
+        float:right; width:65%; position:absolute; right:0; margin:0; height:100%; }
+
+      .node-type-event{
+        h3,
+        .field--name-body{
+          padding-right:0;
+        }
+      }
+    }
+
+    @include media($large-screen) {
+      padding-right:15px; margin-top:0;
+      .copy{
+        padding-right:60px;
+      }
+    }
+
+  }
+
+
+  /* FEATURED RIGHT
+  ------------------------------------ */
+  .field--name-field-featured-event{
+    @include clearfix;
+    position:relative;
+
+    .field--name-body{
+      margin-bottom:20px;
+      @include media($medium-screen){
+        margin-bottom:0;
+      }
+    }
+    .image a{
+      @include objectFitImage;
+      padding-bottom:50%;
+    }
+
+    @include media($large-screen) {
+      padding-left:15px;
+      .image{ margin-bottom:30px}
+    }
+
+    .node-type-package,
+    .node-type-promo{
+      @include media($medium-screen){
+        h3{
+          padding-right:170px;
+        }
+        .field--name-body{
+          float:left; width: calc(100% - 180px); padding:0;
+        }
+        .price-info{
+          float:right; margin-top:-25px;
+        }
+      }
+    }
+
+    .node-type-update,
+    .node-type-blog,
+    .node-type-event{
+      @include media($medium-screen){
+        h3,
+        .field--name-body{
+          padding-right:160px;
+        }
+        a.btn{
+          position:absolute; top:50%; right:0; transform:translateY(-50%);
+        }
+      }
+    }
+
+    .node-type-event{
+      @include media($medium-screen){
+        a.btn{
+          margin-top:30px;
+        }
+      }
+    }
+
+  }
+
+
+  /* PERSONAS
+  ------------------------------------ */
+  .personas{
+    position:relative;
+    @include media($large-screen){
+      height:$large-image-height;
+    }
+
+    ul.personas-list{
+      @include reset;
+      @include media($narrow-screen){
+        float:right; width:50%;
+      }
+
+      li{
+        @include fonticon('\e905',15px,$blue,50%,auto,10px);
+        &:hover:before{
+          right:0;
+        }
+        &:before{ margin-top:-7px; z-index:1;}
+
+        &:first-child a{ background:$blue-light;
+          &:before{ content:'\e90a'}
+        }
+        &:nth-child(2) a{ background:rgba($blue-light,0.8);
+          &:before{ content:'\e904'}
+        }
+        &:nth-child(3) a{ background:rgba($blue-light,0.6);
+          &:before{ content:'\e912'}
+        }
+        &:nth-child(4) a{ background:rgba($blue-light,0.4);
+          &:before{ content:'\e913'; font-size:30px;}
+        }
+
+        a{ display:block; padding:20px 40px 20px 90px; text-decoration:none; @include fonticon('',40px,$green,50%,20px);
+          &:before{ margin-top:-20px}
+          &:focus,
+          &:hover{ background:shade($blue-light,5%)}
+        }
+
+        @include media($medium-screen){
+          &:before{ right:30px}
+          &:hover:before{
+            right:20px;
+          }
+          a{ padding:35px 60px 35px 100px;
+            &:before{ left:30px}
+          }
+        }
+
+        @include media($large-screen){
+          &:before{ right:105px}
+          &:hover:before{
+            right:95px;
+          }
+          height:25%; position:absolute; right:0; width:50%;
+
+          &:first-child{ top:0}
+          &:nth-child(2){ top:25%}
+          &:nth-child(3){ top:50%}
+          &:nth-child(4){ top:75%;
+            a:before{ font-size:40px}
+          }
+          a{
+            @include verticalAlign; padding:0 160px;
+            &:before{ font-size:50px; line-height:50px; height:50px; margin-top:-25px; left:50px;}
+          }
+        }
+
+      }
+
+    }
+
+    .image{
+      display:none;
+      img:not(:first-child){ display:none}
+      @include media($narrow-screen){
+        @include objectFitImage;
+        display:block; position:absolute; height:100%; left:0; top:0; width:50%;
+      }
+    }
+
+  }
+
+
+  /* SLIDER
+  ------------------------------------ */
+  .field--name-field-activities,
+  .field--name-field-blogs{
+    h3{ @include fontsize(22);}
+    @include media($tablet-portrait) {
+      h3{ @include fontsize(40); }
+    }
+  }
+
+  .field--name-field-activities{
+    text-align:center;
+    h3{ padding:0 20px;}
+    .slick-active .node{
+      .copy{ opacity:1}
+      &:after{
+        height:40%; opacity:0.85; background: linear-gradient(180deg, rgba($blue,0) 0%, $blue 100%);
+      }
+    }
+
+    .node{
+      @include objectFitImage(cover);
+      height:300px; color:#fff;
+
+      &:after{
+        @include pseudo; @include cover; @include transition;
+        top:auto; bottom:0; height:100%; background:rgba($blue,0.25);
+      }
+
+      .copy{ position:absolute; z-index:1; bottom:20px; width:100%; left:0; opacity:0; @include transition}
+      h3{ color:#fff;}
+
+    }
+
+    @include media($medium-screen){
+      .node{ height:450px;}
+      .slick-slide{ padding:0 5px; }
+    }
+
+    @include media($tablet-landscape) {
+      .node{ height:600px;
+        .copy{ bottom:50px;}
+        h3{ position:absolute; left:50px; bottom:0; margin:0; text-align:left; padding:0 230px 0 0}
+        .btn{ position:absolute; right:60px; bottom:0}
+      }
+    }
+
+  }
+
+
+  /* BLOGS
+  ------------------------------------ */
+
+  .field--name-field-blogs{
+    text-align:left; color:#fff;
+
+    .slick-cloned{
+      .copy, .image{ height:auto !important}
+    }
+
+    .copy{ background:$green; color:#fff; padding:40px 20px 60px;
+      h3{ color:#fff;}
+    }
+
+    img{
+      margin:0 !important;
+    }
+
+    @include media($tablet-portrait) {
+      .copy{ padding:40px 40px 60px;}
+    }
+
+    @include media($narrow-screen) {
+      .copy,
+      .image{ width:50%;}
+      .copy{ float:left; }
+      .image{ float:right;}
+      .image{ @include objectFitImage;}
+      .table{ @include verticalAlign;}
+    }
+    @include media($tablet-landscape) {
+      .copy{ padding:40px 80px 100px}
+      .image{ }
+    }
+    @include media($large-screen){
+      .image{ height:$large-image-height !important;}
+    }
+
+  }
+  .blogs{
+    text-align:center;
+    .arrow{
+      top:15px;
+    }
+  }
+
+
+  /* BLOCKS
+  ------------------------------------ */
+  .blocks{
+    @include mainPadding;
+    padding-top:60px;
+  }
+
+  #booking{
+    margin-bottom:60px;
+
+    .inner{ @include maxWidth(330px)}
+
+  }
+
+  #newsletter{
+    .inner{ @include maxWidth(400px)}
+  }
+
+  @include media($narrow-screen){
+    .blocks{ @include displayTable;}
+    #booking,
+    #newsletter{ display:table-cell;}
+    #booking{ width:40%; border-right:$base-border;}
+    #newsletter{ width:60%}
+  }
+
+}
+
+
+/* HERO
+  ------------------------------------ */
+#hero{
+  @include viewport-unit(height, 65vh);
+  position:relative; overflow:hidden; background:#708db7; color:#fff;
+  &:before{
+    @include transition();
+    opacity:1;
+  }
+
+  *{
+    outline-color:#fff;
+  }
+
+  @include media($tablet-portrait){
+    @include viewport-unit(height, 70vh);
+  }
+  @include media($extended-screen){
+    @include viewport-unit(height, 80vh);
+  }
+
+  div{ @include cover; height:auto;}
+
+  &:after{
+    @include pseudo;
+    position:fixed; top:$header-height-mobile; height:190px; z-index:1;
+    /* background image for browsers not supporting css background-image gradient */
+    background-image:url('../images/tile_background_overlay.png');
+    background: linear-gradient(180deg, rgba($header-bottom-color,1) 0%, rgba($header-bottom-color,0) 100%);
+
+    @include media($medium-screen){
+      top:$header-height-tablet;
+    }
+    @include media($large-screen){
+      top:$header-height;
+    }
+
+    .alert-on &{
+      top:$header-height-mobile + $alert-height;
+      @include media($medium-screen){
+        top:$header-height-tablet + $alert-height;
+      }
+      @include media($large-screen){
+        top:$header-height + $alert-height;
+      }
+    }
+
+  }
+  // Once images are loaded
+  &.loaded{
+    // show bottom blend colour
+    &:before{
+      @include pseudo;
+      background:$foreground-bottom-color-winter; top:auto; bottom:0; height:25%; z-index:0; opacity:1;
+    }
+    &.summer:before{
+      background:$background-bottom-color-summer; height:30%;
+    }
+    // Fade content in
+    .foreground,
+    .background,
+    .text,
+    .cta{
+      opacity:1;
+    }
+  }
+
+  .foreground{
+    @include transition(opacity);
+    top:auto; bottom:0; height:50%; z-index:3; position:absolute; opacity:0;
+    img{ bottom:auto !important; top:0 !important;}
+
+    &:before{
+      @include pseudo;
+      background-color:$foreground-bottom-color-winter; height:25%; z-index:0; top:auto; bottom:0; display:none;
+    }
+
+    @include media($tablet-portrait){
+      height:50%;
+    }
+    @include media($tablet-landscape){
+      height:65%;
+    }
+    @include media($large-screen){
+      height:90%;
+    }
+    @include media($extended-screen){
+      height:95%;
+    }
+    @include shortLaptop(){
+      height:90%;
+    }
+  }
+  &.summer .foreground{
+    height:50%;
+    &:before,
+    &:after{
+      display:none; // bottom blend not needed on summer image
+    }
+
+    @include media($small-screen){
+      height:52%;
+    }
+    @include media($medium-screen){
+      height:54%;
+    }
+    @include media($tablet-portrait){
+      height:56%;
+    }
+    @include media($tablet-landscape){
+      height:68%;
+    }
+    @include media($large-screen){
+      height:70%;
+    }
+    @include media($extended-screen){
+      height:75%;
+    }
+  }
+
+  .background{
+    @include transition(opacity);
+    top:0; height:95%; z-index:1; opacity:0;
+  }
+  &.summer .background{
+    height:70%;
+    @include media($extended-screen){
+      height:75%;
+    }
+  }
+
+  .text{
+    @include transition(opacity);
+    z-index:10; text-align:center; top:7%; color:#fff; line-height:1; font-weight:900; text-transform: uppercase; opacity:0;
+
+    @include media($medium-screen){
+      top:10%;
+      br{
+        display:none;
+      }
+    }
+    @include media($tablet-landscape){
+      top:8%;
+    }
+    @include media($large-screen){
+      top:2%;
+    }
+    @include media($mega-screen){
+      top:5%;
+    }
+    @include shortLaptop(){
+      top:3%;
+    }
+
+    > span{ display:block;
+      &:nth-child(1){ @include fontsize(25)}
+      &:nth-child(2){ @include fontsize(21)}
+      &:nth-child(3){ @include fontsize(12); margin-top:5px; position:relative;
+        &:before,
+        &:after{
+          @include pseudo;
+          height:1px; background:rgba(#fff,0.35); top:50%; left:50%; display:none;
+        }
+        &:after{ margin-left:85px;}
+      }
+      @include media($medium-screen){
+        &:nth-child(1){ @include fontsize(50)}
+        &:nth-child(2){ @include fontsize(41.5)}
+        &:nth-child(3){ @include fontsize(15); margin-top:8px;
+          &:before{ width:35px; margin-left:-245px; display:block}
+          &:after{ width:35px; margin-left:210px; display:block}
+        }
+      }
+      @include media($tablet-portrait){
+        &:nth-child(1){ @include fontsize(60)}
+        &:nth-child(2){ @include fontsize(50)}
+        &:nth-child(3){ @include fontsize(17); margin-top:10px;
+          &:before{ width:50px; margin-left:-297px}
+          &:after{ width:50px; margin-left:245px}
+        }
+      }
+      @include media($large-screen){
+        &:nth-child(1){ @include fontsize(55)}
+        &:nth-child(2){ @include fontsize(46)}
+        &:nth-child(3){ @include fontsize(17); margin-top:10px;
+          &:before{ width:30px; margin-left:-273px}
+          &:after{ width:30px; margin-left:242px}
+        }
+      }
+      @include media($extended-screen){
+        &:nth-child(1){ @include fontsize(60)}
+        &:nth-child(2){ @include fontsize(50)}
+        &:nth-child(3){ @include fontsize(17); margin-top:10px;
+          &:before{ width:50px; margin-left:-297px}
+          &:after{ width:50px; margin-left:245px}
+        }
+      }
+      @include shortLaptop{
+        &:nth-child(1){ @include fontsize(55)}
+        &:nth-child(2){ @include fontsize(46)}
+        &:nth-child(3){ @include fontsize(17); margin-top:10px;
+          &:before{ width:30px; margin-left:-273px}
+          &:after{ width:30px; margin-left:242px}
+        }
+      }
+    }
+  }
+
+  &.summer .text{
+    @include media($extended-screen){
+      top:15%;
+    }
+  }
+
+  .cta{
+    text-align:center; position:static; margin-top:30px;
+    @include media($medium-screen){
+      .btn-solid{
+        @include fontsize(12);
+      }
+    }
+    @include shortLaptop{
+      .btn-solid{
+        @include fontsize(12);
+      }
+    }
+
+    .btn-solid{
+      @include button($blue);
+      @include fontsize(11);
+      background:transparent; color:#fff; overflow:hidden; top:0; padding-top:20px; padding-bottom:20px;
+
+      @include media($medium-screen){
+        @include fontsize(12);
+      }
+
+      span{
+        position:relative; z-index:1;
+      }
+
+      &:before,
+      &:after{
+        @include pseudo;
+        @include cover;
+        z-index:-1; opacity:1;
+      }
+      &:before{
+        background: linear-gradient(180deg, #1c366f 0%, #3f6993 100%); height:calc(100% - 10px);
+      }
+      &:after{
+        height:10px; top:auto; bottom:0; background:#3f6993; transform: skew(315deg); transform-origin: left top;
+      }
+      &:hover,
+      &:focus{
+        top:-5px;
+      }
+
+    }
+  }
+
+  &.summer{
+    .cta,
+    .cta-overlay{
+      .btn-solid{
+        &:before{
+          background:#215c98;
+        }
+        &:after{
+          background: linear-gradient(180deg, #215c98 0%, #19376d 100%);
+        }
+      }
+
+      @include media($large-screen){
+        top:52%;
+      }
+      @include media($extended-screen){
+        top:61%;
+      }
+      @include shortLaptop{
+        top:65%;
+      }
+
+    }
+  }
+
+  .cta-overlay{
+    display: block; height: 60px; left: 50%; margin: 0 auto; position: absolute; transform: translateX(-50%); width: 170px; z-index: 5;
+    span{
+      @include visuallyHidden;
+    }
+  }
+
+}

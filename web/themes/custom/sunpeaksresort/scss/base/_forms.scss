@@ -1,0 +1,397 @@
+
+
+.field--name-field-webform,
+form.contact-form{
+  @include maxWidth(700px);
+}
+
+fieldset.form-item:not(.fieldgroup) {
+  border: none; margin:40px 0 20px; padding:0;
+  > legend{
+    @include fontsize(13); margin-bottom:10px; color:$blue;
+    @include media($tablet-portrait){
+      @include fontsize(14);
+    }
+  }
+  &.hide-first-label{
+    > .fieldset-wrapper > .form-wrapper:first-child > fieldset > legend,
+    > .fieldset-wrapper > .form-wrapper:first-child > .form-item > label{
+      position:absolute; left:-999em;
+    }
+  }
+}
+fieldset.error > .fieldset-wrapper{
+  background:$error-background;
+  .fs-checkbox.fs-light .fs-checkbox-label{
+    color:$error;
+  }
+}
+
+input,
+label,
+select,
+h4.label{
+  @include fontsize;
+  display: block;
+  font-family: $base-font-family;
+  outline:none;
+  color:$grey-dark;
+  font-weight:300;
+}
+
+label,
+legend,
+h4.label{
+  @include fontsize(12);
+  font-weight: 400;
+  text-transform:uppercase;
+  margin-bottom: $small-spacing / 2;
+  color:$grey-dark;
+
+  &.form-required:after,
+  span.form-required:after,
+  &.required::after {
+    content: " *"; color:red;
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
+label.error{
+  @include fontsize(11);
+  color:$error;
+}
+
+#{$all-text-inputs},
+select,
+select[multiple=multiple] {
+  @include transition;
+  @include fontsize(15);
+  border:none;
+  outline:none;
+  box-sizing: border-box;
+  -webkit-border-radius:0;
+  border-radius:0;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  padding: $base-spacing / 3;
+  background:$base-input-bg;
+  width: 100%;
+
+  &:hover,
+  &:focus{
+    background:$base-input-hover;
+  }
+
+  &:disabled {
+    background-color: $base-input-hover;
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="search"] {
+  appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+
+  + label {
+    display: inline-block;
+  }
+}
+
+button[type='submit'],
+input[type='submit']{
+  @include button;
+  -webkit-border-radius:0;
+  border-radius:0;
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+select {
+  max-width: 100%;
+}
+
+.form-item,
+.form-wrapper{
+  position:relative;
+  margin:20px 0;
+  &:first-child{
+    margin-top:0;
+  }
+  &:last-child{
+    margin-bottom:0;
+  }
+  &.form-type-checkbox{
+    margin:5px 0;
+    &:first-child{
+      margin-top:0;
+    }
+  }
+  .description{
+    margin:10px 0;
+    &:first-child{
+      margin-top:0;
+    }
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+}
+
+.form-item{
+  &.form-type-radio{
+    margin:0;
+  }
+}
+
+.form-actions{
+  margin-top:40px;
+}
+
+
+
+// RACE CENTER FORM
+// --------------------------------------------------
+
+#contact-message-race-centre-booking-form-form{
+
+  .day{
+    @include clearfix;
+    &:not(:first-child){
+      margin-top:30px;
+    }
+    .field--widget-options-buttons{
+      float:left; width:33.333%; padding-right:15px; margin:0;
+      legend{
+        margin:0;
+      }
+      fieldset .js-form-item:first-child{
+        display:none
+      }
+    }
+  }
+
+}
+
+
+
+// FORMSTONE
+// --------------------------------------------------
+
+/* DROPDOWN */
+.is-mobile,
+.is-tablet{
+  .fs-dropdown.fs-light .fs-dropdown-element{
+    z-index:7;
+  }
+}
+.fs-dropdown.fs-light{
+  position:relative;
+  &.fs-dropdown-focus .fs-dropdown-selected{
+    background:$base-input-hover;
+  }
+  .fs-dropdown-selected{
+    @include fonticon('\e916',17px,#fff,14px,auto,20px);
+    @include transition;
+    border:none; background:$base-input-bg; border-radius:0; height:45px; line-height: 45px; padding-right:70px; z-index:-1;
+    &:before{
+      z-index:2;
+    }
+    &:after{
+      @include pseudo;
+      background: linear-gradient($button-corner-angle, #fff $button-corner-size, $input-highlight-color 0) bottom right;
+      border:none; width:55px; left:auto; right:0; z-index:1;
+    }
+  }
+  .fs-dropdown-item_selected{
+    background:$base-input-hover;
+  }
+  .fs-dropdown-options{
+    background: none; border:none; border-top:1px solid #fff; border-radius:0; width:calc(100% - 55px);
+  }
+  &.fs-dropdown-bottom .fs-dropdown-options{
+    border-top:none; border-bottom:1px solid #fff;
+  }
+  .fs-dropdown-item{
+    @include transition;
+    background:$base-input-bg;
+    &:hover{
+      background:$base-input-hover;
+    }
+  }
+  .fs-dropdown-element.error + .fs-dropdown-selected{
+    background:$error-background; color:$error;
+  }
+
+  /* MULTIPLE */
+  &.fs-dropdown-multiple{
+    border:none; border-radius:0;
+    select{
+      z-index:-1;
+    }
+    .fs-dropdown-options{
+      width:auto; border:none;
+    }
+  }
+}
+
+.no-touchevents .fs-dropdown.fs-light .fs-dropdown-selected:hover {  background:$base-input-bg;}
+.fs-dropdown.fs-light .fs-dropdown-item_selected,
+.fs-dropdown.fs-light .fs-dropdown-item { background:$base-input-bg; }
+.no-touchevents .fs-dropdown.fs-light .fs-dropdown-item_selected,
+.no-touchevents .fs-dropdown.fs-light .fs-dropdown-item_selected:hover,
+.no-touchevents .fs-dropdown.fs-light .fs-dropdown-item:hover { background:$base-input-hover; }
+
+/* CHECKBOX */
+.fs-checkbox.fs-light{
+  display:inline-block; margin-bottom:10px;
+  .form-checkboxes > &{
+    display:block;
+  }
+  .fs-checkbox-marker{
+    background:$base-input-bg; border:none; border-radius:0;
+  }
+  .fs-checkbox-flag:before{
+    border-color:$grey-dark; margin-left:8px;
+  }
+
+  /* RADIO */
+  &.fs-checkbox-radio{
+    .fs-checkbox-marker{
+      border-radius:99em;
+    }
+    .fs-checkbox-flag{
+      background:$grey-dark;
+    }
+  }
+}
+
+.fs-checkbox-label{
+  @include fontsize;
+  color:$grey-dark; text-transform:none; font-weight:300; margin-bottom:0; transform:translateY(-2px);
+}
+
+.fs-light.fs-checkbox-focus,
+.no-touchevents .fs-light:hover{
+  .fs-checkbox-label{
+    color:$grey-dark;
+  }
+  .fs-checkbox-marker{
+    background:$base-input-hover;
+  }
+}
+
+
+
+// DATE PICKER
+// --------------------------------------------------
+
+.wrap-picker{
+  @include fonticon('\e912',23px,#fff,9px,auto,16px);
+  padding-right:55px; cursor:pointer;
+  &:before{
+    z-index:2;
+  }
+  &:after{
+    @include pseudo;
+    background: linear-gradient($button-corner-angle, #fff $button-corner-size, $input-highlight-color 0) bottom right;
+    width:55px; left:auto; right:0; z-index:1;
+  }
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{ font-family:$base-font-family}
+
+
+.ui-datepicker {
+  @include fontsize(11);
+  border:$base-border;
+  padding:0 10px 10px;
+  border-radius:0;
+  width:250px !important;
+  z-index:10 !important;
+
+  &.ui-datepicker-multi-2{
+    @include media($medium-screen){
+      width:500px !important;
+    }
+  }
+
+  .ui-datepicker-title,
+  .ui-datepicker-title select{
+    @include fontsize(11);
+    text-transform:uppercase;
+  }
+  .ui-datepicker-title{
+    @include fontsize(13);
+    text-transform:uppercase; height:25px; line-height:25px;
+    select{
+      @include fontsize(13);
+      padding:5px; height:auto; display:inline; margin:0 3px; line-height:1;
+    }
+  }
+
+  .ui-widget-header{ background:none; border:none; border-radius:0; padding:10px; }
+  .ui-datepicker-group-first{ padding-right:5px}
+  .ui-datepicker-group-last{ padding-left:5px}
+  &.ui-datepicker-multi .ui-datepicker-group table{ width:100%}
+
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{ }
+
+  .ui-state-default,
+  .ui-widget-content .ui-state-default,
+  .ui-widget-header .ui-state-default{ background:none}
+
+  .ui-datepicker-prev span,
+  .ui-datepicker-next span{ margin:0}
+
+  .ui-state-hover{ background:none; border:1px solid $blue}
+  .ui-state-default{ padding:5px; text-align:center}
+  .ui-state-active,
+  .ui-state-active.ui-state-hover{  color:#fff; background:$blue; border-color:$blue}
+  .ui-state-highlight,
+  .ui-state-active.ui-state-hover{ border-color:$grey-dark}
+
+  .ui-icon{ cursor:pointer; width:20px; height:20px}
+  .ui-datepicker-prev,
+  .ui-datepicker-prev-hover{ left:-20px; top:0}
+  .ui-datepicker-next,
+  .ui-datepicker-next-hover{ right:4px; top:0}
+  .ui-datepicker-prev,
+  .ui-datepicker-next{
+    &.ui-state-hover{ border:none;  }
+  }
+  .ui-icon-circle-triangle-w,
+  .ui-icon-circle-triangle-e{ top:13px}
+  .ui-icon.ui-icon-circle-triangle-w,
+  .ui-icon.ui-icon-circle-triangle-e{ background:none; @include fonticon('\e908',17px,$grey-dark,4px,auto,5px) }
+  .ui-icon.ui-icon-circle-triangle-w{ @include fonticon('\e906',17px,$grey-dark,4px,5px)}
+  .ui-icon.ui-icon-circle-triangle-w:before,
+  .ui-icon.ui-icon-circle-triangle-e:before{ position:absolute; text-indent:0; font-size:17px; line-height:1; font-weight:normal;}
+
+  thead th{
+    @include fontsize(11);
+    text-transform:uppercase;
+  }
+
+  th, td{
+    width:14.28%;
+  }
+
+}

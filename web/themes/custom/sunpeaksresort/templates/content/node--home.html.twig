@@ -1,0 +1,90 @@
+
+{%
+  set classes = [
+    'node',
+    'node-view-' ~ view_mode|clean_class,
+    'node-type-' ~ type|clean_class
+]
+%}
+
+
+
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }} >
+
+    {{ title_suffix }}
+
+
+
+    {% if type == 'package' or type == 'promo' %}
+
+        <div class="image">
+            {{ content.field_image }}
+        </div>
+
+        <div class="copy">
+            <h3>{{ label }}</h3>
+            {{ content.body }}
+            {{ content.group_price }}
+        </div>
+
+    {% endif %}
+
+
+
+    {% if type == 'update' %}
+
+        <div class="image">
+            <a href="{{ url }}" class="image-link">
+                {{ content.field_image }}
+            </a>
+        </div>
+
+        <div class="copy">
+            <h3><a href="{{ url }}">{{ label }}</a></h3>
+            {{ content.body }}
+            <a href="{{ url }}" class="btn"><span class="visually-hidden">{{ label }} :</span> Read More</a>
+        </div>
+
+    {% endif %}
+
+
+
+    {% if type == 'event' %}
+
+        <div class="image">
+            <a href="{{ url }}" class="image-link">
+                {{ content.field_images[0] }}
+            </a>
+        </div>
+
+        <div class="copy">
+            <div class="field--name-field-date">
+                {{ displayFromToDates(date_from, date_to, true) }}
+            </div>
+            <h3><a href="{{ url }}">{{ label }}</a></h3>
+            {{ content.body }}
+            <a href="{{ url }}" class="btn"><span class="visually-hidden">{{ label }} :</span> Read More</a>
+        </div>
+
+    {% endif %}
+
+
+
+    {% if type == 'blog' %}
+
+        <div class="image">
+            <a href="{{ url }}" class="image-link">
+                {{ content.field_images[0] }}
+            </a>
+        </div>
+
+        <div class="copy">
+            <h3><a href="{{ url }}">{{ label }}</a></h3>
+            {{ content.body }}
+            <p><a href="{{ url }}" class="btn"><span class="visually-hidden">{{ label }} : </span>Read More</a></p>
+        </div>
+
+    {% endif %}
+
+
+</article>

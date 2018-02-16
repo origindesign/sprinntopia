@@ -1,0 +1,5 @@
+name: 'Member Content Notification'
+type: module
+description: 'Sends an email when a member updates content'
+package: Custom
+core: 8.x

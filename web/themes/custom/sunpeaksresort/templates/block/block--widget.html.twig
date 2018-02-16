@@ -1,0 +1,125 @@
+<div id="current-conditions" class="inner weather">
+
+    <a class="converter" data-unit="metric" href="#">
+        <span class="visually-hidden">Metric to Imperial converter</span>
+        <span class="metric">&deg;C/cm</span>
+        <span class="imperial">&deg;F/in</span>
+    </a>
+
+    <div class="row">
+
+        <div class="half current-condition">
+            <div class="larger_icon"><span class="icon">{# {{ current_conditions.todayConditions }} #}</span></div>
+            <p class="today-description">{# {{ current_conditions.todayDescription }} #}</p>
+        </div>
+
+        <div class="half current-temps">
+            <ul class="list-temps">
+                <li>
+                    <div class="cell">
+                        <h3>Top of the World</h3>
+                        <p>Elevation: <span class="value_switch value_m">2,080</span><span class="unit_switch unit_m">m</span></p>
+                    </div>
+                    <div class="cell">
+                        <div class="weather-value"><span class="value_switch value_deg top-temp">{# {{ current_conditions.TOTWTemp|round }} #}</span></div>
+                        <div class="weather-unit">&deg;<span class="unit_switch unit_deg">C</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cell">
+                        <h3>Mid-mountain</h3>
+                        <p>Elevation: <span class="value_switch value_m">1,855</span><span class="unit_switch unit_m">m</span></p>
+                    </div>
+                    <div class="cell">
+                        <div class="weather-value"><span class="value_switch value_deg mid-mountain-temp">{# {{ current_conditions.midMtnTemp|round }} #}</span></div>
+                        <div class="weather-unit">&deg;<span class="unit_switch unit_deg">C</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="cell">
+                        <h3>Valley</h3>
+                        <p>Elevation: <span class="value_switch value_m">1,255</span><span class="unit_switch unit_m">m</span></p>
+                    </div>
+                    <div class="cell">
+                        <div class="weather-value"><span class="value_switch value_deg valley-temp">{# {{ current_conditions.valleyTemp|round }} #}</span></div>
+                        <div class="weather-unit">&deg;<span class="unit_switch unit_deg">C</span></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+    <div class="row {{ season }}">
+
+    {% if season == 'winter' %}
+
+        <div class="half stats">
+            <ul class="list-snow">
+                <li>
+                    <h4>24 Hr Snow</h4>
+                    <div class="center-floats">
+                        <div class="inner">
+                            <div class="weather-value"><span class="value_switch value_cm snow-24">{# {{ snow_conditions.midMtnStorm24hr|round }} #}</span></div>
+                            <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h4>7 Day Snow</h4>
+                    <div class="center-floats">
+                        <div class="inner">
+                            <div class="weather-value"><span class="value_switch value_cm snow-7">{# {{ snow_conditions.midMtnStorm7Day|round }} #}</span></div>
+                            <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h4>lifts Open</h4>
+                    <div class="center-floats">
+                        <div class="inner">
+                            <div class="weather-value lifts-open">{# {{ lifts_open }} #}</div>
+                            <div class="weather-unit">/{{ lifts_total }}</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h4>Trails Open</h4>
+                    <div class="center-floats">
+                        <div class="inner">
+                            <div class="weather-value trails-open">{# {{ trails_open }} #}</div>
+                            <div class="weather-unit">/{{ trails_total }}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="half buttons">
+            <a href="/ski-ride/weather-conditions-cams/webcams">Webcams</a>
+            <a href="/ski-ride/weather-conditions-cams/weather-snow-report">Weather &amp; Conditions</a>
+            <a href="/ski-ride/the-mountain/lifts-trail-status">Lifts &amp; Trails Status</a>
+        </div>
+
+    {% else %}
+
+        <div class="half buttons">
+            <a href="/bike-hike/weather-webcams/weather">Weather</a>
+            <a href="/bike-hike/weather-webcams/webcams">Webcams</a>
+        </div>
+
+        <div class="half buttons">
+            <a href="/bike-hike/bike/lift-trail-status">Bike Trail Status</a>
+            <a href="/bike-hike/hike/hiking-trail-map-status">Hike Trail Status</a>
+        </div>
+
+    {% endif %}
+
+    </div>
+
+
+</div>
+
+<a class="close" href="#">Close</a>

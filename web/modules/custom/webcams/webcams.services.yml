@@ -1,0 +1,5 @@
+services:
+    # A service that contains a function for setting up FTP connection and pulling files
+    webcams.get_webcams:
+        class: Drupal\webcams\Controller\WebcamsController
+        arguments: ['@database', '@ftp_connect.ftp_connection']

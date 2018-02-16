@@ -1,0 +1,12 @@
+# File system.action.node_update_term_close.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node_update_term_close
+label: 'Change Status to Closed'
+type: node
+plugin: node_update_term_close
+configuration: {  }

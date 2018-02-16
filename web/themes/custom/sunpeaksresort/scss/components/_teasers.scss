@@ -1,0 +1,434 @@
+
+@mixin moreArrow(){
+  @include fonticon('\e905',15px,$blue,50%,auto,10px);
+  padding-right:40px;
+
+  &:before{ transform:translateY(-50%); @include transition;}
+  &:hover:before,
+  &:focus:before{ right:0}
+
+  @include media($large-screen){
+    padding-right:80px;
+    &:before{ right:30px;}
+  }
+
+}
+
+
+// ALL TEASERS
+// --------------------------------------------------
+
+.listing{
+  &.lifts-trails h2:not(:first-child),
+  &:not(:first-child){
+    margin-top:50px;
+  }
+  h2 + .node-teaser{
+    padding-top:0;
+  }
+}
+
+.node-teaser{
+
+  @include clearfix;
+  border-bottom:$base-border;
+  padding:15px 0;
+  &:first-child{
+    border-top:$base-border;
+  }
+  .field__item:not(:first-child) &{
+    border-top:none;
+  }
+  h2.line + .field--name-field-page-listings .field__item:first-child &{
+    border-top:none; padding-top:0;
+  }
+
+  @include media($medium-screen){
+    padding-top:25px; padding-bottom:25px;
+  }
+
+  .image{
+    margin-bottom:20px;
+
+    a,
+    > .field--name-field-image{
+      @include objectFitImage;
+      padding-bottom:65%;
+    }
+
+  }
+
+  a.copy{
+    @include moreArrow;
+    color:$grey-dark; text-decoration:none;
+  }
+
+  .categories{
+    margin-bottom:8px; padding:0;
+  }
+
+  .field--name-field-terms{
+    @include fontsize(12);
+    color:$grey-light; margin-top:20px;
+  }
+
+  .field--name-field-date{
+    margin-bottom:20px;
+  }
+
+
+  // GRID
+  // --------------------------------------------------
+
+  &.node-view-grid{
+    @include fill-parent;
+    float:left;
+
+    &:first-child{
+      border-top:none;
+    }
+
+    @include media($medium-screen){
+      width:47%;
+    }
+
+    @include media($large-screen){
+      a.copy{
+        &:before{ right:10px}
+        &:hover:before{ right:0}
+      }
+    }
+
+    @include media($extended-screen){
+      width:30%;
+    }
+
+    .copy{
+      display:block;
+
+      @include media($large-screen){
+        padding-right:40px;
+      }
+    }
+
+    &.node-type-video h4{
+      margin-bottom:0;
+    }
+
+  }
+
+
+  // TEASER
+  // --------------------------------------------------
+
+  &.node-view-teaser{
+
+    &.no-image{
+      .copy{ padding-left:0; width:auto; display:inline-block}
+    }
+
+    &.image-blank{
+      .image{
+        display:none;
+      }
+      @include media($medium-screen){
+        .image{
+          display:table-cell;
+        }
+      }
+    }
+
+    .copy{
+      display:block;
+      .field--name-body{ max-width:650px}
+    }
+
+    @include media($medium-screen){
+      &:not(.cell){
+        display:table; width:100%;
+      }
+
+      .image{
+        display: table-cell; width:35%; margin-bottom:0;
+      }
+      .copy{
+        display: table-cell; width:65%; vertical-align: top; padding-left:30px;
+      }
+    }
+
+    @include media($large-screen){
+      .copy{ padding-left:60px; vertical-align: middle;}
+    }
+
+    @include media($extended-screen){
+      &.cell-1-2:nth-child(2){
+        border-top:$base-border;
+      }
+    }
+
+  }
+
+
+  // PACKAGE/PROMO
+  // --------------------------------------------------
+
+  &.node-type-package,
+  &.node-type-promo{
+    .field--name-body{ margin-bottom:20px;}
+    .field--name-field-reservations-link a{
+      @include button;
+    }
+  }
+
+
+}
+
+
+
+// ROW - Lifts/Trails
+// --------------------------------------------------
+
+.lift-trail-header{
+  font-weight:bold;
+}
+
+.icon-tick { color: #3a88ea; position:relative;
+  &.groomed-with-fresh:after{
+    @include pseudo();
+    content:'*'; position:absolute; top:-6px; left:0; font-size:17px;
+  }
+}
+.icon-close { color: #ea0d0d; @include fontsize(16) }
+.icon-open{
+  width:15px; height:15px; display:inline-block; border:2px solid green; border-radius:15px;
+}
+
+ul.trails-key{
+  @include reset();
+  text-align:left;
+  li{
+    display:inline-block; text-align:left;
+    &:not(:last-child){
+      margin-right:30px;
+    }
+    span{
+      display:inline-block; margin-left:5px;
+    }
+  }
+  @include media($tablet-portrait){
+    &,
+    li{
+      text-align:center;
+    }
+  }
+}
+
+.node-view-row {
+
+  @include fill-parent;
+  @include clearfix;
+  margin: 0; padding: 10px; border-bottom: $base-border; position:relative;
+
+  @include media($medium-screen){
+    padding:10px 20px;
+  }
+
+  &.lift-trail-header{
+    .row-cell{
+      float:left;
+      &.status{
+        float:right;
+      }
+    }
+  }
+
+  .override-status{
+    display:none;
+  }
+  .override-lifts-trails &{
+    .override-status{
+      display:block;
+    }
+    .feed-status{
+      display:none;
+    }
+  }
+
+  &.node > .row-cell {
+    display: inline-block; float: left;
+
+    .icon-trail_1-beginner { color: green; }
+    .icon-trail_2-intermediate { color: $blue; }
+    .icon-trail_3-advanced { color: black; }
+    .icon-trail_4-expert{ color: black; display:inline-block; transform: translateX(-2px) }
+    .icon-trail_6-glades{ color:green; display:inline-block; transform: translateX(1px)}
+    .icon-trail_0-default.backcountry:before { content: "\e919"; color:darkorange; }
+
+    span[class^='icon-trail']{
+      &.freeride{
+        background:#f47f1e; padding:2px 10px 4px; border-radius:20px; display:inline-block; transform:translateX(-10px);
+      }
+      .bike-trails &{
+        &.icon-trail_4-expert:not(.freeride){
+          background:#e92123; padding:5px 4px 6px; border-radius:0; transform:translateX(-4px); display:inline-block;
+        }
+      }
+    }
+
+    &.level {
+      width:25px; margin-top:1px;
+    }
+    &.name{
+      width:80%;
+      span{
+        display:inline-block;
+      }
+      .notes{
+        font-style:italic;
+      }
+      .bike-trails &{
+        padding-left:5px;
+      }
+      @include media($tablet-portrait){
+        width:90%;
+        span{
+          float:left;
+          &.field--name-title{
+            width:200px;
+          }
+          &.notes{
+            width:calc(100% - 200px);
+          }
+        }
+      }
+    }
+    &.status {
+      position:absolute; top:12px; right:10px;
+      @include media($medium-screen){
+        right:20px;
+      }
+    }
+
+    @include media($tablet-portrait){
+      &.comment { display: inline-block; }
+    }
+  }
+
+}
+
+
+
+
+// LISTINGS
+// --------------------------------------------------
+
+.no-results{
+  text-align:center; margin-top:30px;
+}
+
+.loading{
+  background:url('../images/loading.svg') center 70px no-repeat; min-height:150px;
+}
+.loaded{
+  background:none;
+}
+
+.isoGrid{
+
+  border-top:$base-border;
+
+  .lift-trail-header{
+    transform:translateY(-100%); border:none;
+  }
+
+  .node-teaser:first-child{
+    border-top:none;
+  }
+
+  // Video Grid
+  // Activities grid
+  #node-192 &,
+  #node-22 &{
+    @include gridTopBorder;
+  }
+
+  .no-results{
+    display:none;
+  }
+
+}
+
+.iso-gutter{
+  display:block; width:0;
+  @include media($medium-screen){
+    width:6%;
+  }
+  @include media($extended-screen){
+    width:5%;
+  }
+}
+.filter-isotope,
+.filter-ajax{
+  text-align:center;
+  margin-bottom:40px;
+
+  @include media($medium-screen){
+    .filter-count-1 .form-item{
+      float:none; width:auto; min-width:300px; display:inline-block; margin-left:15px; margin-right:15px;
+    }
+  }
+
+  @include media($extended-screen){
+    .filter-count-4 .form-item{
+      min-width:0; width:23%; margin-right:2%; margin-left:0;
+      @include omega(4n);
+    }
+  }
+
+  .form-item{
+    @include media($medium-screen){
+      float:left; width:47%; margin-top:0; margin-right:6%;
+      @include omega(2n);
+    }
+    @include media($extended-screen){
+      float:none; width:auto; min-width:300px; display:inline-block; margin-left:15px; margin-right:15px;
+      &:nth-child(2n){
+        margin-right:15px;
+      }
+    }
+  }
+}
+
+.clear-filters{
+  text-align:center; clear:left;
+  a{
+    color:$grey-dark;
+    &:hover{ color:$blue; }
+  }
+}
+
+.filter-events{
+  padding:0; position:relative;
+
+  .form-item{
+    float:none; min-width:0; width:185px; display:block; margin:0 auto;
+
+    &:first-child{
+       margin-bottom:10px;
+    }
+    input{
+      text-align:center;
+    }
+  }
+  @include media($medium-screen){
+    .form-item{
+      display:inline-block;
+      &:first-child{
+        margin-right:15px; margin-bottom:0;
+      }
+      &:last-child{
+        margin-left:15px;
+      }
+    }
+  }
+}

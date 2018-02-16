@@ -1,0 +1,12 @@
+# File system.action.node_update_term_scheduled.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node_update_term_groomed
+label: 'Change Status to Groomed'
+type: node
+plugin: node_update_term_groomed
+configuration: {  }

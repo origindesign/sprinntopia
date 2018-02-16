@@ -1,0 +1,12 @@
+{
+  "name": "drupal/meteo",
+  "description": "A module to get Weather data from a specific Weather service.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Origin Design",
+      "email": "web@origindesign.ca",
+      "role": "Maintainer"
+    }
+  ]

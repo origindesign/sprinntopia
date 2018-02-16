@@ -1,0 +1,44 @@
+
+
+<div id="webcams">
+
+    {% for webcam in webcams %}
+
+        <div class="cam">
+
+            <h2>{{ webcam.name }}</h2>
+
+            <div class="image">
+                {% if settings[webcam.machine_name] %}
+                    <div class="offline">Webcam currently offline</div>
+                {% else %}
+                    <img src="/sites/default/files/webcams/{{ webcam.filename }}?timestamp={{ webcam.timestamp }}" />
+                {% endif %}
+            </div>
+
+            {% if not settings[webcam.machine_name] %}
+            <div class="template table simple">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>Last Update:</td>
+                        <td>{{ webcam.timestamp|date('F jS g:ia') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Web Cam Location:</td>
+                        <td>{{ webcam.location }}</td>
+                    </tr>
+                    <tr>
+                        <td>Elevation:</td>
+                        <td>{{ webcam.elevation }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+        </div>
+
+    {% endfor %}
+
+</div>

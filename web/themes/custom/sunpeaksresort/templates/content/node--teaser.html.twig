@@ -1,0 +1,186 @@
+
+{%
+  set classes = [
+    'node',
+    'node-teaser',
+    'node-view-' ~ view_mode|clean_class,
+    'node-type-' ~ type|clean_class,
+    'iso-item',
+    'cat-' ~ content.field_category[0]|escape|machine,
+    'cat-' ~ content.field_categories[0]|escape|machine,
+    'cat-' ~ content.field_categories[1]|escape|machine,
+    'cat-' ~ content.field_categories[2]|escape|machine,
+    'cat-' ~ content.field_categories[3]|escape|machine,
+    'cat-' ~ content.field_categories[4]|escape|machine,
+    'cat-' ~ content.field_business_directory[0]|escape|machine,
+  ]
+%}
+
+{#####
+    Set additional teaser classes
+#####}
+
+{% if type == 'lesson' or type == 'summer_lesson' %}
+
+    {%
+        set additional_classes = [
+            'cat-' ~ content.field_age[0]|escape|machine,
+            'cat-' ~ content.field_age[1]|escape|machine,
+            'cat-' ~ content.field_age[2]|escape|machine,
+            'cat-' ~ content.field_age[3]|escape|machine,
+            'cat-' ~ content.field_age[4]|escape|machine,
+            'cat-' ~ content.field_sports[0]|escape|machine,
+            'cat-' ~ content.field_sports[1]|escape|machine,
+            'cat-' ~ content.field_level[0]|escape|machine,
+            'cat-' ~ content.field_level[1]|escape|machine,
+            'cat-' ~ content.field_level[2]|escape|machine,
+            'cat-' ~ content.field_level[3]|escape|machine,
+            'cat-' ~ content.field_level[4]|escape|machine,
+        ]
+    %}
+    {% set classes = classes|merge(additional_classes) %}
+
+{% endif %}
+
+{% if type == 'job' %}
+
+    {%
+        set additional_classes = [
+            'cell' ~ content.field_age[0]|escape|machine,
+            'cell-1-2' ~ content.field_age[1]|escape|machine,
+        ]
+    %}
+    {% set classes = classes|merge(additional_classes) %}
+
+{% endif %}
+
+
+{#####
+    Set condition for teaser link through
+#####}
+{% if type != 'package' and type != 'promo' and type != 'editorial' %}
+    {% set link = true %}
+{% endif %}
+
+
+{#####
+    Set condition for teaser image
+#####}
+{% if type != 'job' and type != 'new_release' %}
+    {% set image = true %}
+    {% if content.field_images %}
+        {% if not content.field_images|render %}
+            {% set additional_classes = ['image-blank'] %}
+            {% set classes = classes|merge(additional_classes) %}
+        {% endif %}
+    {% endif %}
+    {% if content.field_image %}
+        {% if not content.field_image|render %}
+            {% set additional_classes = ['image-blank'] %}
+            {% set classes = classes|merge(additional_classes) %}
+        {% endif %}
+    {% endif %}
+{% else %}
+    {% set additional_classes = ['no-image'] %}
+    {% set classes = classes|merge(additional_classes) %}
+{% endif %}
+
+
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }} >
+
+    {{ title_suffix }}
+
+    {% if image %}
+    <div class="image">
+        {% if link %}
+        <a href="{{ url }}" class="image-link">
+        {% endif %}
+
+            {% if content.field_image %}
+                {{ content.field_image }}
+            {% endif %}
+            {% if content.field_images %}
+                {{ content.field_images[0] }}
+            {% endif %}
+
+        {% if link %}
+        </a>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if type == "new_release" %}
+        <div class="field--name-field-date">
+            {{ displayFromToDates(created, false, true) }}
+        </div>
+    {% endif %}
+
+    {% if link %}
+        <a href="{{ url }}" class="copy">
+    {% else %}
+        <div class="copy">
+    {% endif %}
+
+            {% if type == "event" and date_from %}
+                <div class="field--name-field-date">
+                    {{ displayFromToDates(date_from, date_to, true) }}
+                </div>
+            {% endif %}
+
+            {% if type == 'editorial' %}
+                <div class="field--name-field-date">
+                    {{ displayFromToDates(created, false, true) }}
+                </div>
+            {% endif %}
+
+            <h4{{ title_attributes }}>{{ label }}</h4>
+
+            {% if type == 'editorial' %}
+                {{ content.field_author }}
+            {% endif %}
+
+            {% if type == "lesson" or type == 'summer_lesson' %}
+                <div class="categories">
+                    {{ content.field_category }}
+                    {{ content.field_sports }}
+                    {{ content.field_age }}
+                    {{ content.field_level }}
+                </div>
+            {% endif %}
+
+            {% if content.body|render %}
+                {{ content.body }}
+            {% endif %}
+
+            {% if type == 'editorial' %}
+                <p><a href="{{ content.field_website[0]['#plain_text'] }}" target="_blank" class="arrow">Read Full Article</a></p>
+            {% endif %}
+
+            {% if type == "event" and date_from %}
+                <div class="field--name-field-time">
+                    {% if 'Yes' in content.field_all_day[0] %}
+                        All Day
+                    {% else %}
+                        {{ displayFromToTime(date_from, date_to) }}
+                    {% endif %}
+                    {% if content.field_additional_info|render %}
+                        {{ content.field_additional_info }}
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {% if type == 'package' or type == 'promo' %}
+                {{ content.field_price_header }}
+                {{ content.field_price }}
+                {{ content.field_reservations_link }}
+                {{ content.field_terms }}
+            {% endif %}
+
+    {% if link %}
+        </a>
+    {% else %}
+        </div>
+    {% endif %}
+
+
+</article>

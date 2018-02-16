@@ -1,0 +1,440 @@
+
+html{
+  &.overlayed{
+    overflow: hidden;
+    body{
+      overflow: hidden;
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#page{
+  margin-top:$header-height-mobile;
+  position:relative;
+
+  @include media($medium-screen){
+    margin-top:$header-height-tablet;
+  }
+  @include media($large-screen){
+    margin-top:$header-height;
+  }
+  body.alert-on &{
+    margin-top:$header-height-mobile + $alert-height;
+    @include media($medium-screen){
+      margin-top:$header-height-tablet + $alert-height;
+    }
+    @include media($large-screen){
+      margin-top:$header-height + $alert-height;
+    }
+  }
+
+  &:after{
+    @include pseudo;
+    height:190px;
+    z-index:4;
+    /* background image for browsers not supporting css background-image gradient */
+    background-image:url('../images/tile_background_overlay.png');
+    background: linear-gradient(180deg, rgba($header-bottom-color,1) 0%, rgba($header-bottom-color,0) 100%);
+  }
+
+  body:not(.path-frontpage) &{
+    @include mainPadding;
+    &:after{
+      position:fixed;
+      top:$header-height-mobile;
+      @include media($medium-screen){
+        top:$header-height-tablet;
+      }
+      @include media($large-screen){
+        top:$header-height;
+      }
+    }
+  }
+  body:not(.path-frontpage).alert-on &:after{
+    top:$header-height-mobile + $alert-height;
+    @include media($medium-screen){
+      top:$header-height-tablet + $alert-height;
+    }
+    @include media($large-screen){
+      top:$header-height + $alert-height;
+    }
+  }
+
+}
+
+#background{ position:fixed; width:100%; height:100%; top:$header-height-mobile; left:0;
+  &:before{
+    @include pseudo;
+    background:$foreground-bottom-color-winter; top:auto; bottom:0; height:35%; z-index:1;
+    @include media($extended-screen){ height:24%;}
+  }
+  @include media($medium-screen){
+    top:$header-height-tablet;
+  }
+  @include media($large-screen){
+    top:$header-height;
+  }
+  &.summer:before{
+    background:$background-bottom-color-summer;
+    @include media($large-screen){
+      display:none;
+    }
+  }
+}
+
+.foreground{
+  @include cover;
+  z-index:2; top:auto; bottom:0; height:50%;
+  img{
+    @include cover; height:auto; top:auto; bottom:0;
+  }
+
+  @include media($small-screen){ height:40%; }
+  @include media($medium-screen){ height:45%; }
+  @include media($tablet-portrait){ height:55%; }
+  @include media($tablet-landscape){ height:75.5%; img{ bottom:auto; top:0} }
+  @include media($large-screen){ height:86.5%; }
+  @include media($extended-screen){ height:88%; }
+}
+.summer .foreground{
+
+  &:after{
+    @include pseudo();
+    @include cover();
+    top:auto; bottom:0; height:50%;
+    background: linear-gradient(to top, $foreground-bottom-color-summer 0%, $foreground-bottom-color-summer 75%,rgba($foreground-bottom-color-summer,0) 100%);
+  }
+
+  @include media($small-screen){
+    height:68.9%;
+    &:after{
+      height:70%;
+    }
+  }
+  @include media($medium-screen){
+    height:70.1%;
+  }
+  @include media($tablet-portrait){
+    &:after{ height:50%; }
+  }
+  @media (max-height:1000px){
+    &:after{ height:0; }
+  }
+  @media (max-height:1280px) and (max-width:800px){
+    &:after{ height:65%; }
+  }
+  @include media($tablet-portrait){ height:69.2%; }
+  @include media($tablet-landscape){ height:77.6%; }
+  @include media($large-screen){ height:79%; }
+  @include media($laptop-15inch){ height:89.5%; }
+  @include media($extended-screen){ height:81.2%; }
+}
+
+.background{
+  @include cover;
+  background:url('../images/hero-background-winter-2018.jpg') center 0 no-repeat;
+  background-size:100% 100%;
+  z-index:0;
+  height:65%;
+  @include media($extended-screen){ height:76%;}
+}
+&.summer > .background{
+  background-image:url('../images/hero-background-summer.jpg');
+  @include media($large-screen){
+    height:56%;
+  }
+}
+
+#main-wrap{
+  @include clearfix;
+  position:relative;
+  z-index:5;
+  background:#fff;
+  body:not(.path-frontpage) &{
+    @include container();
+  }
+}
+
+#main {
+  position:relative;
+  padding: 30px 20px 80px;
+  background:#fff;
+
+  @include media($medium-screen) {
+    @include sidePadding(30px,30px);
+  }
+  @include media($large-screen) {
+    padding:60px 60px 130px;
+  }
+
+}
+
+.main-padding{
+  @include mainPadding;
+}
+
+.usd-rate{
+  display:none;
+}
+
+
+// Default pages
+#content{ max-width:700px; margin:0 auto}
+
+.to-top{
+  @include transition();
+  @include fontsize(10);
+  @include fonticon('\e916',11px,$blue,4px,50%);
+  text-align:center; text-transform:uppercase; font-weight:900; display:block; text-decoration:none; padding:13px 5px 5px; color:$blue; position:fixed; bottom:10px; right:10px; background:$blue-bg-mid; border-radius:3px; opacity:0;
+
+  &.show{
+    opacity:1;
+  }
+
+  &:hover{
+    background:$blue; color:#fff;
+    &:before{
+      color:#fff;
+    }
+  }
+
+  &:before{
+    transform:translateX(-50%) rotate(180deg);
+  }
+  @include media($medium-screen){
+    right:25px;
+  }
+  @include media($tablet-portrait){
+    right:40px;
+  }
+  @include media($large-screen){
+    display:none;
+  }
+
+}
+
+
+// Node pages
+body.path-node{
+
+  background:$foreground-bottom-color-winter;
+
+  &.summer{
+    background:$background-bottom-color-summer;
+  }
+
+  #main {
+    @include fill-parent;
+
+    @include media($tablet-landscape) {
+      float:right;
+      width:75%;
+    }
+
+  }
+
+  #content{ max-width:none;}
+
+  @include media($tablet-landscape) {
+    #main-wrap { position:relative;
+      &:before{
+        @include pseudo;
+        width:25%; z-index:-1; background: $blue-bg-light;
+      }
+    }
+  }
+
+}
+
+
+// Side bar
+
+#sidebar{
+  display:none; padding-bottom:80px;
+
+  .sidebar-fixed &{
+    position:fixed;
+  }
+  .sidebar-scroll &{
+    overflow-y:scroll;
+  }
+  .sidebar-absolute &{
+    position:absolute; bottom:0;
+  }
+
+  @include media($tablet-landscape) {
+    .path-node &{ display:block;}
+    float:left;
+    width:25%;
+  }
+
+}
+
+
+// Front page
+body.path-frontpage{
+  #main{ padding:0;}
+  #main-wrap,
+  #content{ max-width:none;}
+}
+
+
+// Nano Scroller
+.nano{
+  > .nano-pane{
+    background:rgba(#fff,0.2);
+    > .nano-slider{
+      background:rgba(#fff,0.4);
+    }
+  }
+}
+
+
+// Overlay
+.overlay{
+  @include mainPadding();
+  display:none;
+  position:fixed;
+  outline:none;
+  top:$header-height-mobile;
+  left:0;
+  height:$header-height-mobile;
+  height:calc(100% - #{$header-height-mobile});
+  width:100%;
+  padding-top:5px;
+  z-index:9;
+  line-height:1;
+  color:#fff;
+
+  @include media($medium-screen){
+    top:$header-height-tablet; padding-top:30px;
+    height:calc(100% - #{$header-height-tablet});
+  }
+  @include media($large-screen){
+    top:$header-height;
+    height:calc(100% - #{$header-height});
+  }
+
+  .alert-on &{
+    top:$header-height-mobile + $alert-height;
+    height:calc(100% - #{$header-height-mobile} - #{$alert-height});
+    @include media($medium-screen){
+      top:$header-height-tablet + $alert-height;
+      height:calc(100% - #{$header-height-tablet} - #{$alert-height});
+    }
+    @include media($large-screen){
+      top:$header-height + $alert-height;
+      height:calc(100% - #{$header-height} - #{$alert-height});
+    }
+  }
+
+  .close{
+    @include fonticon('\e902',25px,$blue-light,-5px,auto,0);
+    color:$blue-light; position:absolute; top:4px; right:10px;
+    &:hover{ color:#fff;
+      &:before{ color:#fff}
+    }
+  }
+
+  &.utility-overlay{
+    .wrapper{
+      position:relative;
+    }
+  }
+
+  &#search-overlay{
+
+    background: $header-bottom-color;
+    background: linear-gradient(0deg, rgba(#63B99E,0.9) 0%, $header-bottom-color 100%);
+
+    #block-sunpeaksresort-search{
+      position:absolute; top:40px; width:100%;
+      @include media($medium-screen){
+        top:80px;
+      }
+    }
+
+    @include media($large-screen){
+      .container,
+      .wrapper{
+        height:100%;
+      }
+      #block-sunpeaksresort-search{
+        top:50%; transform:translateY(-400%);
+      }
+    }
+
+  }
+
+  &#weather-overlay{
+    background: $header-bottom-color;
+    background: linear-gradient(0deg, rgba(#C3F6F9,1) -40%, $header-bottom-color 100%);
+    @include media($small-screen){
+      background: linear-gradient(0deg, rgba(#C3F6F9,1) 0%, $header-bottom-color 100%);
+    }
+    @include media($medium-screen){
+      background: linear-gradient(0deg, rgba(#C3F6F9,0.9) 0%, $header-bottom-color 100%);
+    }
+    @include shortLaptop{
+      background: linear-gradient(0deg, rgba(#C3F6F9,0.9) -40%, $header-bottom-color 100%);
+    }
+  }
+
+  &#gallery-overlay{
+    background:rgba(#000,0.9); top:0; z-index:20; text-align:center; height:100%;
+
+    .container{
+      height:100%;
+    }
+    .wrapper{
+      @include verticalAlign;
+    }
+    .inner{
+      width:100%;
+    }
+    .placeholder {
+      @include maxWidth(1200px);
+    }
+    .close{
+      color:#fff; right:0;
+      &:before{
+        color:#fff;
+      }
+    }
+    .overlay-arrow{
+      @include fonticon('',30px,#fff,0);
+      width:30px; height:30px; position:absolute; z-index:5; text-indent: -999em; top:50%; transform:translateY(-50%); text-decoration:none;
+      &:before{
+        text-indent:0;
+      }
+      &.next{
+        right:0;
+        &:focus:before,
+        &:hover:before{
+          margin-left:10px;
+        }
+        &:before{
+          content:'\e908';
+        }
+      }
+      &.prev{
+        left:0;
+        &:focus:before,
+        &:hover:before{
+          margin-left:-10px;
+        }
+        &:before{
+          content:'\e906';
+        }
+      }
+
+    }
+
+  }
+
+}

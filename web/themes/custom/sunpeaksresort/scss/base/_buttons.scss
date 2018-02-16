@@ -1,0 +1,177 @@
+
+$button-corner-angle: 315deg;
+$button-corner-size: 8px;
+
+@mixin button($background:$yellow){
+  @include transition;
+  @include fontsize(12);
+  color: $base-font-color;
+  background: $background;
+  background: linear-gradient($button-corner-angle, transparent $button-corner-size, $background 0) bottom right;
+  display:inline-block;
+  padding:16px 28px;
+  line-height:1;
+  text-transform:uppercase;
+  text-decoration:none;
+  cursor: pointer;
+  border:none;
+  font-weight:500;
+  position:relative;
+  z-index:1;
+  &:before{
+    @include pseudo;
+    @include transition;
+    z-index:-1;
+    opacity:0;
+    background:tint($background,50%);
+    background: linear-gradient($button-corner-angle, transparent $button-corner-size, tint($background,50%) 0) bottom right;
+  }
+  &:hover:before,
+  &:focus:before{
+    opacity:1;
+  }
+}
+
+
+@mixin button-border($color: #fff){
+  @include button;
+  background:none;
+  border-left: 1px solid $color;
+  color:$color;
+  overflow: hidden;
+
+  &:after,
+  &:before {
+    position: absolute;
+    content: '';
+    width: calc(100% - 1px);
+    left: 0;
+    z-index: -1;
+  }
+  &:before {
+    height: 10px;
+    top:auto;
+    bottom: 0;
+    border: 1px solid $color;
+    border-width: 0 1px 1px 0px;
+    transform: skew(315deg);
+    transform-origin: left top;
+    background:none;
+    opacity:1;
+  }
+  &:after {
+    height: calc(100% - 10px);
+    top: 0;
+    border: 1px solid $color;
+    border-width: 1px 1px 0 0;
+  }
+  &:hover,
+  &:focus{
+    background:$color;
+    background: linear-gradient($button-corner-angle, transparent $button-corner-size, $color 0) bottom right;
+    color:$blue;
+    @if $color != #fff {
+      color:#fff;
+    }
+  }
+}
+
+@mixin arrow($color: $grey-dark, $size: 10px){
+  @include fonticon('\e905',$size,$color,6px,auto,0);
+  padding-right: 20px;
+  color:$grey-dark;
+  text-decoration:none;
+  display:inline-block;
+  &:hover:before,
+  &:focus:before{
+    right:-10px;
+  }
+}
+
+@mixin back($color: $grey-dark, $size: 10px){
+  @include fonticon('\e905',$size,$color,3px,0);
+  padding-left: 20px;
+  color:$grey-dark;
+  display:block;
+  text-decoration:none;
+  line-height:1;
+  &:before{
+    transform:rotate(180deg);
+  }
+  &:hover:before,
+  &:focus:before{
+    left:-10px;
+  }
+}
+
+@mixin imageHover(){
+  .no-touchevents &{
+    a{
+      position:relative; display:inline-block; margin-right:15px;
+      &:after{
+        @include transition();
+        @include pseudo();
+      }
+      &:hover{
+        &:after{
+          background:rgba(#000,0.5); z-index:1;
+        }
+      }
+      img[src*="inline-images"]{
+        margin:0; display:block;
+      }
+    }
+  }
+}
+
+
+
+.btn{
+  @include button-border;
+}
+
+.btn.blue{
+  @include button-border($blue);
+}
+
+.btn-solid{
+  @include button;
+}
+
+.arrow{
+  @include arrow;
+}
+
+.back{
+  @include back;
+}
+
+.close{
+  @include fonticon('\e902',25px,$blue,-5px,auto,0);
+  @include fontsize(13);
+  cursor:pointer; position:absolute; top:0; right:0; padding-right:40px; color:$blue; font-weight:500; text-decoration:none;
+  &:hover{ color:#fff;
+    &:before{ color:#fff}
+  }
+}
+
+p.image-hover{
+  @include imageHover();
+}
+
+.embedded-entity{
+  .file{
+    margin-left:20px; display:block;
+  }
+  .file--application-pdf{
+    background:none; padding:0;
+    a{
+      @include fonticon('\e91a',20px,$blue,0,0);
+      padding-left:30px; margin-bottom:10px; display:block; text-decoration:none;
+      &:hover,
+      &:focus{
+        margin-left:10px;
+      }
+    }
+  }
+}

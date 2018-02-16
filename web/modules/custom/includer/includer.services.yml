@@ -1,0 +1,5 @@
+services:
+    # A service that dispatch and gather includes for passing elements to template
+    includer.dispatcher:
+        class: Drupal\includer\Dispatcher
+        arguments: ['@efq.query_entities', '@helper.render_helper', '@helper.taxo_helper', '@helper.global_helper', '@helper.node_helper']

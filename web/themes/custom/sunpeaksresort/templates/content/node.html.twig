@@ -1,0 +1,443 @@
+
+{%
+    set classes = [
+        'node',
+        'node-view-' ~ view_mode|clean_class,
+        'node-type-' ~ type|clean_class,
+        'Yes' in content.field_text_listing[0] ? 'page-listing-text'
+    ]
+
+%}
+
+
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }} >
+
+    <!-- Thankyou message for weather alerts signup -->
+    {% if newsletter_message_weather %}
+        <div class=" status-messages">
+            <div class="status">Please complete the form below to sign-up for the Daily Snow Report and other e-subscriptions of your choosing.</div>
+        </div>
+    {% endif %}
+
+    <!-- Thankyou message for newsletter signup -->
+    {% if newsletter_thankyou %}
+    <div class=" status-messages">
+        <div class="status">{{ newsletter_thankyou|raw }}</div>
+    </div>
+    {% endif %}
+
+    {% if status != 1 %}
+        <div class="node-unpublished">This content is unpublished.</div>
+    {% endif %}
+
+    {% if is_front %}
+
+        {% include  directory  ~ '/templates/block/block--home.html.twig' %}
+
+    {% else %}
+
+
+        {% if not page %}
+
+            <h3{{ title_attributes }}>{{ label }}</h3>
+
+            {{ title_suffix }}
+
+        {% endif %}
+
+
+        {% if parent_path %}
+            <p><a href="{{ parent_path }}" class="back">Back to listing</a></p>
+        {%  endif %}
+
+
+        {% if
+            (content.field_hide_header_image[0]['#markup'] != 'yes' and content.field_images|render)
+            or content.field_image|render
+            or content.field_social_sharing[0]['#markup'] == 'Yes'
+            or type == 'activity'
+            or type == 'blog'
+            or type == 'event'
+            or type =='update'
+            or featured_video
+        %}
+            <div class="header-image">
+
+                {% if content.field_hide_header_image[0]['#markup'] != 'yes' %}
+                    {% if content.field_images|render %}
+                        {{ content.field_images }}
+                    {% endif %}
+                {% endif %}
+
+                {% if content.field_image|render %}
+                    {{ content.field_image }}
+                {% endif %}
+
+                {% if
+                    content.field_social_sharing[0]['#markup'] == 'Yes'
+                    or type == 'activity'
+                    or type == 'blog'
+                    or type == 'event'
+                    or type == 'update'
+                %}
+                    <div class="social-share">
+                        <div class="title">Share</div>
+                        <a href="#" class="share-facebook">&nbsp;</a>
+                        <a href="#" class="share-twitter">&nbsp;</a>
+                    </div>
+                {% endif %}
+
+                {% if featured_video %}
+                    <div class="featured-video">
+                        {{ featured_video }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+        {% endif %}
+
+
+
+        <!-- Lodging Widget -->
+        {% if lodging_widget %}
+            {% include  directory  ~ '/templates/block/block--inntopia-lodging-widget.html.twig' %}
+        {% endif %}
+
+
+        {% if type == "lesson" or type == 'summer_lesson' %}
+            <div class="categories">
+                {{ content.field_category }}
+                {{ content.field_sports }}
+                {{ content.field_age }}
+                {{ content.field_level }}
+            </div>
+        {% endif %}
+
+
+        {% if type == "event" and date_from %}
+            <div class="field--name-field-date">
+                {{ displayFromToDates(date_from, date_to, true) }}
+            </div>
+
+            <div class="field--name-field-time">
+                {% if 'Yes' in content.field_all_day[0] %}
+                    All Day
+                {% else %}
+                    {{ displayFromToTime(date_from, date_to) }}
+                {% endif %}
+                {% if content.field_additional_info|render %}
+                    {{ content.field_additional_info }}
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if type == "new_release" %}
+            <div class="field--name-field-date">
+                {{ displayFromToDates(created, false, true) }}
+            </div>
+        {% endif %}
+
+
+        {{ content|without(
+            'comment',
+            'links',
+            'field_images',
+            'field_image',
+            'field_date',
+            'field_category',
+            'field_categories',
+            'field_business_directory',
+            'field_season',
+            'field_ability',
+            'field_sport',
+            'field_age',
+            'field_phone',
+            'field_toll_free',
+            'field_location',
+            'field_location_description',
+            'field_address',
+            'field_reservations_link',
+            'field_website',
+            'field_email',
+            'field_opening_hours',
+            'field_terms',
+            'field_page_listings',
+            'field_page_listings_heading',
+            'field_additional_info',
+            'field_weight',
+            'field_form',
+            'field_webform',
+            'field_sports',
+            'field_level',
+            'field_sidebar_cta',
+            'field_all_day',
+            'field_text_listing',
+            'field_hide_header_image',
+            'field_inntopia_id',
+            'field_copy_below',
+            'field_social_sharing',
+            'field_featured'
+        )}}
+
+
+
+        {#
+            Inntopia Widget
+        #}
+        {% if content.field_inntopia_id|render %}
+
+            {% include  directory  ~ '/templates/block/block--inntopia-activities-widget.html.twig' %}
+
+        {% endif %}
+
+
+
+        {#
+           Login Form
+        #}
+        {% if login %}
+            {{ login }}
+        {% endif %}
+
+
+        {#
+            Page listings
+            For members page listing, authenticated gets set to 'non-member' for unanthenticated users
+        #}
+        {% if authenticated is not defined or authenticated == 'member' %}
+
+            {% if content.field_page_listings_heading|render %}
+                <h2 class="line"><span>{{ content.field_page_listings_heading[0] }}</span></h2>
+            {% endif %}
+            {{ content.field_page_listings }}
+
+        {% endif %}
+
+
+        {% if
+            content.field_address or
+            content.field_location or
+            content.field_location_description or
+            content.field_website or
+            content.field_email or
+            content.field_phone or
+            content.field_toll_free or
+            content.field_opening_hours or
+            content.field_reservations_link
+        %}
+
+            <div class="contact-information">
+
+                <div class="details">
+
+                    {% if content.field_opening_hours|render %}
+                        <h4>Hours of Operation</h4>
+                        {{ content.field_opening_hours }}
+                    {% endif %}
+
+                    {% if
+                        content.field_address|render or
+                        content.field_location_description or
+                        content.field_website or
+                        content.field_email or
+                        content.field_phone or
+                        content.field_toll_free
+                    %}
+                        {% if type == 'event' %}
+                            <h4>Event Details &amp; Contact</h4>
+                        {% else %}
+                            <h4>Contact</h4>
+                        {% endif %}
+                        {% if content.field_address|render %}
+                            {{ label }} <br />
+                            {{ content.field_address }}
+                        {% endif %}
+                        {% if content.field_location_description %}
+                            <p>{{ content.field_location_description }}</p>
+                        {% endif %}
+                        {% if
+                            content.field_website or
+                            content.field_email or
+                            content.field_phone or
+                            content.field_toll_free
+                        %}
+                            <p>
+                                {{ content.field_phone }}
+                                {{ content.field_toll_free }}
+                                {{ content.field_email }}
+                                {% if content.field_website|render %}
+                                    <a href="{{ content.field_website[0]['#plain_text'] }}" target="_blank">Visit website</a>
+                                {% endif %}
+                            </p>
+                        {% endif %}
+
+
+                    {% endif %}
+
+                    {% if content.field_reservations_link|render %}
+                        <p><a class="btn-solid" target="_blank" href="{{ content.field_reservations_link[0]['#plain_text'] }}">Reserve Now</a></p>
+                    {% endif %}
+
+                </div>
+
+                {% if content.field_location %}
+                <div class="map">
+                    {{ content.field_location }}
+                </div>
+                {% endif %}
+
+            </div>
+
+        {% endif %}
+
+
+        {{ content.field_terms }}
+
+
+
+        {% if listing_simple %}
+
+            <div class="listing">
+                <div class="container">
+
+                    {{ listing_simple }}
+
+                </div>
+            </div>
+
+        {% endif %}
+
+
+
+        {% if trails_key %}
+
+            <ul class="trails-key">
+                <li>Open <span class="icon-open"></span></li>
+                <li>Closed <span class="icon-close"></span></li>
+                <li>Groomed <span class="icon-tick groomed"></span></li>
+                <li>Groomed with fresh<span class="icon-tick groomed-with-fresh"></span></li>
+            </ul>
+
+        {% endif %}
+
+
+
+        {% if listing_lifts %}
+
+            <div class="listing lifts-trails {{ override_lifts_trails }}">
+                <div class="container">
+
+                    {{ listing_lifts }}
+
+                </div>
+            </div>
+
+        {% endif %}
+
+
+
+        {% if listing_trails %}
+
+            <div class="listing lifts-trails {% if extra_classes %}{{ extra_classes }}{% endif %} {{ override_lifts_trails }}">
+                <div class="container">
+
+                    {{ listing_trails }}
+
+                </div>
+            </div>
+
+        {% endif %}
+
+
+
+        {% if listing_isotope %}
+
+            <div class="listing {{ override_lifts_trails }}">
+                <div class="container">
+
+                    {% if filter_isotope %}
+                        <div class="filter-isotope">
+                            {{ filter_isotope }}
+                        </div>
+                    {% endif %}
+
+                    <div class="inner-listing isoGrid">
+                        {{ listing_isotope }}
+                        <div class="no-results">There are no results for your selection, please try again.</div>
+                    </div>
+
+                </div>
+            </div>
+
+        {% endif %}
+
+
+
+        {% if listing_ajax %}
+
+            <div class="listing-transparent {% if filter_ajax %}listing-transparent-with-filter{% endif %}">
+                <div class="container">
+
+                    {% if filter_ajax %}
+                        <div class="filter-ajax">
+                            {{ filter_ajax }}
+                        </div>
+                    {% endif %}
+
+                    {{ listing_ajax }}
+
+                </div>
+            </div>
+
+        {% endif %}
+
+
+
+        {% if custom_block %}
+
+            <div class="listing">
+                <div class="container">
+
+                    {{ custom_block }}
+
+                </div>
+            </div>
+
+        {% endif %}
+
+
+
+        {% if custom_block_include %}
+
+            {% include  directory  ~ custom_block_include %}
+
+        {% endif %}
+
+
+
+
+        {{ content.field_form }}
+
+        {{ content.field_webform }}
+
+
+
+        {{ content.field_copy_below }}
+
+
+
+
+    <!-- end if front -->
+    {% endif %}
+
+
+
+    {% if block_no_cache %}
+
+        {{ block_no_cache }}
+
+    {% endif %}
+
+</article>
+

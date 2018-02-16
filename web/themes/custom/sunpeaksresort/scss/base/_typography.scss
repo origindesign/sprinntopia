@@ -1,0 +1,165 @@
+
+html{ font-size:62.5%}
+
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight:300;
+  @include fontsize;
+
+  &.cke_editable{
+    padding:20px;
+  }
+}
+
+a, a:hover{
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+}
+
+*:focus{
+  outline-style:dashed; outline-width:1px; outline-color:inherit;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: $base-font-size;
+  line-height: 1;
+  margin: 0;
+  font-weight:900;
+  text-transform:uppercase;
+  color:$blue;
+  &.line{
+    @include headingLine;
+  }
+  a{
+    text-decoration:none;
+  }
+  +{
+    p, ul, ol{ margin-top:0}
+  }
+}
+
+h1{ @include fontsize(25); color:#fff; position:relative; @include maxWidth(1100px);
+  @include media($tablet-portrait){
+    @include fontsize(30);
+  }
+  @include media($large-screen){
+    @include fontsize(45);
+  }
+  @include media($extended-screen){
+    @include fontsize(65);
+  }
+}
+h2{ @include fontsize(17); margin-bottom:20px;
+  &:not(:first-child){
+    margin-top:30px;
+  }
+  @include media($tablet-portrait){
+    @include fontsize(20);
+  }
+}
+h3{ @include fontsize(13); margin-bottom:10px;
+  @include media($tablet-portrait){
+    @include fontsize(14);
+  }
+}
+h4, h5, h6{ @include fontsize(14); margin-bottom:10px}
+
+p, ul, ol{
+  margin: 20px 0 20px;
+  &:first-child{ margin-top:0}
+  &:last-child{ margin-bottom:0}
+  + h3{
+    margin-top:30px;
+  }
+}
+p:empty{ display:none}
+p.mice-type{
+  @include fontsize(10);
+}
+
+ul,
+ol { margin-left: $small-spacing; padding-left:$small-spacing;
+  li{
+    padding-left:10px;
+    &:not(:last-child){
+      margin-bottom:5px;
+    }
+  }
+}
+
+a {
+  color: $blue;
+  @include transition;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration:none;
+  }
+
+  &.read-more span{ position:absolute; left:-999em}
+
+}
+
+strong, b{ font-weight:500}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $small-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+  height:auto;
+}
+
+figure{
+  margin:0;
+}
+
+
+blockquote{
+  @include fontsize(24);
+  @include rowMargin();
+  color:$green; text-align:center; border-top:$base-border; border-bottom:$base-border; padding:20px 0; line-height:1.2; margin-bottom:30px !important;
+
+  @include media($tablet-portrait){
+    @include fontsize(30);
+    line-height:1.3; padding:40px 0;
+  }
+
+  p{
+    &:before{
+      content:'\201C ';
+    }
+    &:after{
+      content: ' \201D';
+    }
+  }
+}
+
+.currency-convert{
+  border-bottom:1px dotted $grey-dark; position:relative;
+  &:after{
+    @include transition;
+    @include fontsize(12);
+    position:absolute; content:attr(data-rate); width:auto; background:$grey-dark; padding:5px 8px; border-radius:2px; left:100%; opacity:0; color:#fff; white-space:nowrap; font-weight:normal; line-height:1; top:50%; transform:translate(0,-50%); z-index:10;
+  }
+  &.hover:after,
+  &:hover:after{
+    opacity:1; transform:translate(10px,-50%);
+  }
+}

@@ -1,0 +1,35 @@
+sunpeaksresort.mobile:
+  label: mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+sunpeaksresort.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 600px) and (max-width: 767px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+sunpeaksresort.tablet_portrait:
+  label: tablet_portrait
+  mediaQuery: 'all and (min-width: 768px)  and (max-width: 1023px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+sunpeaksresort.tablet_landscape:
+  label: tablet_landscape
+  mediaQuery: 'all and (min-width: 1024px)  and (max-width: 1199px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+sunpeaksresort.large:
+  label: large
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ *  Change layout of page to have no wrappers when on calling meteo service
+ *
+ */
+function meteo_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+	
+	if(strpos(\Drupal::service('path.current')->getPath(), 'meteo') !== false){
+		$suggestions[] = 'page__ajax';
+	}
+	
+}
+
+
+
+/**
+ *  Change layout of html to have no wrappers when on calling meteo service
+ *
+ */
+function meteo_theme_suggestions_html_alter(array &$suggestions, array $variables) {
+        
+	if(strpos(\Drupal::service('path.current')->getPath(), 'meteo') !== false){
+		$suggestions[] = 'html__ajax';
+	}
+        
+}

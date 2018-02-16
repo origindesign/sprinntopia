@@ -1,0 +1,60 @@
+
+<nav id="main-menu">
+
+    <ul class="menu">
+
+        <li><a href="/explore" data-menu="explore">Explore</a></li>
+        <li><a href="/ski-ride" data-menu="ski-ride">Ski &amp; Ride</a></li>
+        <li><a href="/bike-hike" data-menu="bike-hike">Bike &amp; Hike</a></li>
+        <li><a href="/golf" data-menu="golf">Golf</a></li>
+        <li><a href="/events-things-to-do" data-menu="events">Events &amp; Things To Do</a></li>
+        <li><a href="/places-to-stay" data-menu="places-to-stay">Places To Stay</a></li>
+
+    </ul>
+
+</nav>
+
+
+
+<div id="menu-overlay" class="overlay">
+<div class="container">
+{% for key,value in overlay_menus %}
+
+    <div id="{{ key }}" class="sub-menu">
+
+        <div class="inner">
+            <!-- Print Menus -->
+            {{ value }}
+
+            <!-- Print Booking Links -->
+            {% if key == 'menu-ski-ride' %}
+                <div class="buttons">
+                    <a href="#" class="btn-solid">Buy Tickets</a>
+                </div>
+
+            {% elseif key == 'menu-bike-hike' %}
+                <div class="buttons">
+                    <a href="#" class="btn-solid">Buy Bike Park Tickets</a>
+                    <a href="#" class="btn-solid">Buy Hiking &amp; Sightseeing Tickets</a>
+                </div>
+
+            {% elseif key == 'menu-golf' %}
+                <div class="buttons">
+                    <a href="#" class="btn-solid">Book A Tee Time</a>
+                </div>
+
+            {% elseif key == 'menu-places-to-stay' %}
+                <div class="buttons">
+                    <a href="#" class="btn-solid">Buy Lodging</a>
+                </div>
+
+            {% endif %}
+        </div>
+
+        <div class="close">Close</div>
+
+    </div>
+
+{% endfor %}
+</div>
+</div>

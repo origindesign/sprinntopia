@@ -1,0 +1,44 @@
+
+
+<header id="header" >
+
+    <a href="#main" class="skip-to-content" tabindex="0">Skip to main content</a>
+
+    {% include  directory  ~ '/templates/block/block--alert.html.twig' %}
+
+    <div class="inner">
+
+        <div class="container">
+
+            <a href="/" rel="home" class="logo">
+                <img src="/themes/custom/sunpeaksresort/images/logo.svg" alt="Sunpeaks Resort Homepage" />
+            </a>
+
+            <div id="main-nav">
+                {{ main_nav }}
+            </div>
+
+            {% include  directory  ~ '/templates/navigation/navigation.html.twig' %}
+
+            <div class="utility">
+
+                <a href="#" class="toggle search" data-type="search"><span>Search</span></a>
+
+                <a href="#" class="toggle weather {{ season }}" data-type="weather" style="visibility:hidden">
+                    <span class="visually-hidden">Current Conditions:</span>
+                    <span class="icon icon-{#{{ current_conditions.todayConditions }}#}"></span>
+                    <span class="temp">{#{{ current_conditions.midMtnTemp|round }}#}</span>
+                    <span class="degree">&deg;C</span>
+                </a>
+
+                <div id="nav-toggle">
+                    <a href="#" tabindex="-1"><span class="visually-hidden"></span> </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

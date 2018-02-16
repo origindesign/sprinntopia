@@ -1,0 +1,352 @@
+
+
+
+/* NODE DETAIL STYLES */
+
+.node-view-full{
+
+  .node-unpublished{
+    font-style:italic; background:$blue-bg-mid; padding:15px;
+  }
+
+  .header-image{
+    @include rowMargin();
+    position:relative;
+    .field--name-field-images,
+    .field--name-field-image{
+      & + .social-share{
+        bottom:-32px;
+      }
+    }
+    .social-share{
+      position:absolute; bottom:20px; right:0;
+      .title{
+        @include fontsize(12);
+        text-transform:uppercase; font-weight:900; display:inline;
+      }
+      a{
+        @include fonticon('',20px,$base-font-color);
+        display:inline-block; width:20px; margin-left:5px; text-decoration:none;
+        &:focus:before,
+        &:hover:before{
+          color:$grey-dark !important;
+        }
+        &.share-facebook{
+          &:before{
+            content:'\e90e'; color:#3b5998;
+          }
+        }
+        &.share-twitter{
+          &:before{
+            content:'\e90d'; color:#00aced;
+          }
+        }
+      }
+    }
+    .featured-video{
+      h3{
+        display:none;
+      }
+    }
+  }
+
+  > .field--name-field-image,
+  > .field--name-field-images .image{
+    @include objectFitImage;
+    padding-bottom:65%;
+  }
+
+  > .field--name-field-image,
+  > .field--name-field-images,
+  .field--name-field-fragments > .field__item{
+    @include rowMargin;
+  }
+
+  p +{
+    .field--name-field-image,
+    .field--name-field-images{
+      margin-top:0;
+    }
+  }
+
+  > .field--name-body{
+    @include contentPadding;
+    @include rowMargin;
+    &:empty{
+      display:none;
+      + .field--name-field-fragments{
+        margin-top:20px;
+      }
+    }
+  }
+
+  > .field--name-field-copy-below{
+    @include contentPadding;
+    @include rowMargin;
+  }
+
+  .template.table,
+  .field--name-body > .video-embed-field-responsive-video{
+    @include rowMargin;
+    @include media($tablet-portrait) {
+      margin-left:-25px;
+      margin-right:-25px;
+    }
+    @include media($large-screen) {
+      margin-left:-50px;
+      margin-right:-50px;
+    }
+  }
+
+  figure.caption{
+    @include media($tablet-portrait) {
+      @include sideMargin(-25px,-25px);
+    }
+    @include media($large-screen) {
+      @include sideMargin(-50px,-50px);
+    }
+  }
+
+  article.embedded-entity img,
+  article.embedded-entity img[src*='inline-images'],
+  img[data-entity-type]{
+    @include media($tablet-portrait) {
+      @include sideMargin(-25px,-25px);
+      max-width:calc(100% + 50px)
+    }
+    @include media($large-screen) {
+      @include sideMargin(-50px,-50px);
+      max-width:calc(100% + 100px)
+    }
+  }
+
+  [class*="field--type-text"]{
+    img[src*='inline-images']{
+      margin:20px 20px 0 0; max-width:100%;
+    }
+  }
+
+  .node-type-fragment{
+    > h2{
+      @include contentPadding;
+    }
+    > .field{
+      @include rowMargin;
+    }
+    > .field--name-body{
+      @include contentPadding;
+      margin-top:0;
+    }
+    .field--name-field-video-caption{
+      margin-top:-40px;
+      @include media($large-screen) {
+        margin-top:-80px;
+      }
+    }
+    .two-column-copy{
+      @include clearfix;
+      @include contentPadding;
+      .field--name-field-copy-left{
+        margin-bottom:20px;
+      }
+      @include media($large-screen){
+        .field--name-field-copy-left{
+          margin-bottom:0;
+        }
+      }
+      img[src*='inline-images']{
+        margin:0;
+      }
+    }
+    &.narrow-wide{
+      @include media($tablet-portrait){
+        .two-column-copy{
+          .cell-1-2:first-of-type{
+            @include span-columns(3);
+          }
+          .cell-1-2:last-of-type{
+            @include span-columns(9);
+            margin-top:0;
+          }
+        }
+      }
+    }
+  }
+
+  &.page-listing-text .field--name-field-page-listings{
+    .node-teaser.node-view-teaser{
+      .image{
+        display:none;
+      }
+      .copy{
+        padding-left:0; width:auto;
+        @include media($tablet-portrait){
+          padding-left:25px;
+        }
+        @include media($large-screen){
+          padding-left:50px;
+        }
+        .field--name-body{
+          max-width:none;
+        }
+      }
+    }
+  }
+
+  > .field--name-field-price,
+  > .field--name-field-date,
+  > .field--name-field-time{
+    @include contentPadding;
+  }
+
+  > .field--name-field-time{
+    margin-bottom:20px;
+  }
+
+  .contact-information{
+    @include clearfix;
+    @include contentPadding;
+    margin-top:60px;
+    @include media($large-screen){
+      margin-top:100px;
+    }
+
+    .details{
+      margin-bottom:40px;
+    }
+
+    #single-data-map{
+      padding-bottom:100%;
+    }
+    .value_geodata{ display:none; }
+
+    .field--name-field-opening-hours{
+      margin-bottom:40px
+    }
+
+    @include media($tablet-portrait){
+      .details,
+      .map{ float:left; width:50%;}
+      .details{ padding-right:30px; margin-bottom:0;}
+      .map{ padding-left:30px;}
+    }
+
+    @include media($extended-screen){
+      .details{ width:40%}
+      .map{ width:60%;}
+    }
+
+  }
+
+}
+
+
+/* GLOBAL STYLES */
+
+.template,
+.field--name-field-fragments{
+  @include rowMargin;
+}
+
+figure.caption{
+  @include rowMargin;
+  img{
+    display:block;
+  }
+  img[data-entity-type]{
+    margin:0; max-width:100%;
+  }
+}
+
+article.embedded-entity img,
+article.embedded-entity img[src*='inline-images'],
+img[data-entity-type]{
+  margin:0; max-width:100%;
+  @include media($tablet-portrait) {
+    margin-top:20px; margin-bottom:20px;
+  }
+  @include media($large-screen) {
+    margin-top:60px; margin-bottom:60px;
+  }
+}
+article.embedded-entity:first-child{
+  img,
+  img[src*='inline-images']{
+    margin-top:0;
+  }
+}
+article.embedded-entity:last-child{
+  img,
+  img[src*='inline-images']{
+    margin-bottom:0;
+  }
+}
+
+.video-embed-field-responsive-video{
+  position:relative;
+  &:after{
+    content: ""; display: block; padding-bottom: 56.25%;
+  }
+  iframe{
+    @include cover;
+  }
+}
+
+div.caption,
+.field--name-field-video-caption,
+figure.caption > figcaption{
+  background:$grey-background; padding:20px; font-style:italic; display:block;
+  @include media($large-screen) {
+    padding:35px 50px;
+  }
+}
+
+.field--name-field-price-header{
+  color:$yellow; @include fontsize(13);
+}
+.field--name-field-price{
+  color:$yellow; @include fontsize(50); font-weight:500; line-height:1; margin-bottom:20px;
+}
+
+
+.field--name-field-date{
+  color:$yellow; display:table; font-weight:300; line-height:1;
+  span{ display:table-cell; vertical-align:bottom;  }
+  .day{ font-weight:500; @include fontsize(50); line-height:.9; display:block}
+  .to{ padding:0 11px 0 10px}
+  .year{ margin-top:3px; display:block;}
+}
+.field--name-field-time{
+  font-weight:500; margin-top:10px;
+}
+.field--name-field-date,
+.field--name-field-time{
+  + .field--name-body,
+  + .field--name-field-fragments{
+    margin-top:20px;
+  }
+}
+
+.field--name-field-author{
+  font-weight: bold;
+}
+
+.categories{
+  @include contentPadding;
+
+  .field{
+    .field__label{
+      font-weight:500; display:table-cell; width:80px;
+    }
+    > .field__item,
+    .field__items{
+      display:table-cell;
+      .field__item{
+        display:inline;
+      }
+    }
+    .field__items .field__item:not(:last-child):after{
+      content:', ';
+    }
+  }
+}

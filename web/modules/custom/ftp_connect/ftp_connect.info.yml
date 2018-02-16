@@ -1,0 +1,5 @@
+name: 'FTP Connect'
+type: module
+description: 'Functions to setup an FTP connection and store files in local file system'
+package: Custom
+core: 8.x

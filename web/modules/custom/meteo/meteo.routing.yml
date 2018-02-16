@@ -1,0 +1,7 @@
+meteo.simple:
+    path: '/meteo/weather'
+    defaults:
+        _controller: '\Drupal\meteo\Controller\MeteoController::getMeteoData'
+        _title: 'Meteo Weather Providers'
+    requirements:
+        _access: 'TRUE'

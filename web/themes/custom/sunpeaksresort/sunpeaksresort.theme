@@ -1,0 +1,737 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the sunpeaksresort theme.
+ */
+
+use Drupal\Core\Url;
+
+
+
+
+/**
+ * Implements template_preprocess_html().
+ * @param array $variables
+ */
+function sunpeaksresort_preprocess_html(&$variables) {
+
+	// Get URL alias and pass it to template
+	$current_path = \Drupal::service('path.current')->getPath();
+	$current_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+	$arr_alias = explode('/',$current_alias);
+	array_splice($arr_alias, 0, 1);
+	$variables['path_alias'] = $arr_alias;
+
+    // Define Node Helper
+    $nodeHelper = \Drupal::service('helper.node_helper');
+
+    // Actions to be done before html, page or node preprocess (useful to set global variables)
+    // Get Fields from Node Resort Settings to get global settings of site (node ID = 100)
+    $fieldSettings = $nodeHelper->getNodeFields(471, 'resort_settings');
+
+    // Store Settings in Global Variable using Global Helper
+    $globalHelper = \Drupal::service('helper.global_helper');
+    $globalHelper->setGlobalSettings($fieldSettings);
+    $globalSettings = $globalHelper->getGlobalSettings();
+    $variables["settings"] = $globalSettings;
+
+    $variables["season"] = 'winter';
+
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if($node){
+        // NID
+        $variables['nid'] = $node->id();
+    }
+
+}
+
+/**
+ * Implements template_preprocess_page.
+ * @param array $variables
+ */
+function sunpeaksresort_preprocess_page(&$variables) {
+
+
+	$site_name = \Drupal::configFactory()->get('system.site')->get('name');
+	$variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
+
+
+	// Logo
+	$logo = file_get_contents(drupal_get_path('theme', 'sunpeaksresort') . '/images/logo.svg');
+
+	// Environment
+    if($_SERVER['HTTP_HOST'] == 'sunpeaks.docker.localhost:8000'){
+        $variables['ENV'] = 'local';
+    }
+
+
+	// Check if we're on a node
+	$node = \Drupal::routeMatch()->getParameter('node');
+
+	if($node){
+
+	  // Side bar CTA
+	  if($node->hasField('field_sidebar_cta')){
+		$cta = ($node->get('field_sidebar_cta')->value ? $node->get('field_sidebar_cta')->value : 'booking');
+	  }else{
+		$cta = 'booking';
+	  }
+
+	  if($node->getType() != 'activity'){
+        $variables['sidebar_cta'] = '/templates/block/block--cta-'.$cta.'.html.twig';
+      }
+
+      // NID
+      $variables['nid'] = $node->id();
+
+	}
+
+	// Main Navigation
+	$block_main_nav = \Drupal\block\Entity\Block::load('sunpeaksresort_main_menu');
+	$variables['main_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_main_nav);
+
+	// Secondary Navigation
+	$block_secondary_nav = \Drupal\block\Entity\Block::load('secondarynavigation');
+	$variables['second_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_secondary_nav);
+
+	// Footer Navigation
+	$block_footer_nav = \Drupal\block\Entity\Block::load('sunpeaksresort_footer');
+	$variables['footer_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_footer_nav);
+
+	// Footer Navigation - Sidebar
+	$block_footer_sidebar_nav = \Drupal\block\Entity\Block::load('footer_menu_sidebar');
+	$variables['footer_nav_sidebar'] = \Drupal::entityTypeManager()
+	  ->getViewBuilder('block')
+	  ->view($block_footer_sidebar_nav);
+
+	// Corporate Navigation
+	$block_corporate_nav = \Drupal\block\Entity\Block::load('corporatemenu');
+	$variables['corporate_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_corporate_nav);
+
+	// Corporate Navigation - Sidebar
+	$block_corporate_sidebar_nav = \Drupal\block\Entity\Block::load('corporate_menu_sidebar');
+	$variables['corporate_nav_sidebar'] = \Drupal::entityTypeManager()
+	  ->getViewBuilder('block')
+	  ->view($block_corporate_sidebar_nav);
+
+	// Privacy Navigation
+	$block_privacy_nav = \Drupal\block\Entity\Block::load('privacymenu');
+	$variables['privacy_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_privacy_nav);
+
+	// Sub Menus
+	$block_explore_nav = \Drupal\block\Entity\Block::load('explore_menu');
+	$variables['explore_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_explore_nav);
+	$block_ski_ride_nav = \Drupal\block\Entity\Block::load('ski_ride_menu');
+	$variables['ski_ride_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_ski_ride_nav);
+	$block_bike_hike_nav = \Drupal\block\Entity\Block::load('bike_hike_menu');
+	$variables['bike_hike_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_bike_hike_nav);
+	$block_golf_nav = \Drupal\block\Entity\Block::load('golf_menu');
+	$variables['golf_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_golf_nav);
+	$block_events_nav = \Drupal\block\Entity\Block::load('events_menu');
+	$variables['events_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_events_nav);
+	$block_places_to_stay_nav = \Drupal\block\Entity\Block::load('places_to_stay_menu');
+	$variables['places_to_stay_nav'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_places_to_stay_nav);
+
+	$variables['overlay_menus'] = [
+		"menu-explore" => $variables['explore_nav'],
+		"menu-ski-ride" => $variables['ski_ride_nav'],
+		"menu-bike-hike" => $variables['bike_hike_nav'],
+		"menu-golf" => $variables['golf_nav'],
+		"menu-events-things-to-do" => $variables['events_nav'],
+		"menu-places-to-stay" => $variables['places_to_stay_nav'],
+	];
+
+	// Search
+	$block_search = \Drupal\block\Entity\Block::load('sunpeaksresort_search');
+	$variables['search'] = \Drupal::entityTypeManager()
+		->getViewBuilder('block')
+		->view($block_search);
+
+    // Define Node Helper
+    $nodeHelper = \Drupal::service('helper.node_helper');
+
+    // Actions to be done before html, page or node preprocess (useful to set global variables)
+    // Get Fields from Node Resort Settings to get global settings of site (node ID = 100)
+    $fieldSettings = $nodeHelper->getNodeFields(471, 'resort_settings');
+
+    // Store Settings in Global Variable using Global Helper
+    $globalHelper = \Drupal::service('helper.global_helper');
+    $globalHelper->setGlobalSettings($fieldSettings);
+    $globalSettings = $globalHelper->getGlobalSettings();
+    $variables["settings"] = $globalSettings;
+
+	// Gather Meteo Data for Weather Widget
+	$meteoHelper = \Drupal::service('meteo.meteo_helper');
+	if ( $meteoHelper->setCurrentRaw() ){
+		$variables["current_conditions"] = $meteoHelper->getCurrentConditions( $globalSettings );
+		//$variables["snow_conditions"] = $meteoHelper->getSnowConditions( $globalSettings );
+	}
+
+    // If alert Bar, add Cache Clearer
+    if($variables["settings"]["field_show_alert"] == '1'){
+      $doNotCache = true;
+    }
+    // Clear cache of page
+    if( isset($doNotCache)){
+      if ($doNotCache){
+        $renderHelper = \Drupal::service('helper.render_helper');
+        $variables['block_no_cache'] = $renderHelper->renderUncacheBlock();
+      }
+    }
+
+	// Trails/lifts open
+    $variables["season"] = 'winter';
+    $lifts_trails = \Drupal::service('lifts_trails.get_lifts_trails');
+  	$variables["lifts_total"] = $lifts_trails->getLiftsTrailsFromCMS('lift', 0, $variables["season"]);
+    $variables["trails_total"] = $lifts_trails->getLiftsTrailsFromCMS('trail', 0, $variables["season"]);
+
+    // Exchange rate
+    $variables['cad'] = number_format( 1 / (float)$variables['settings']['field_usd_exchange_rate'] ,2 );
+
+}
+
+
+
+
+/**
+ * Implements template_preprocess_node.
+ * @param array $variables
+ */
+function sunpeaksresort_preprocess_node(&$variables) {
+
+
+	// Define useful variables
+	$nid = $variables['node']->id();
+	$view_mode = $variables['view_mode'];
+	$variables['status'] = $variables['node']->isPublished();
+    $variables["season"] = 'winter';
+    $variables["type"] = $variables['node']->getType();
+    $variables["sticky"] = $variables['node']->isSticky();
+    $variables["created"] = $variables['node']->getCreatedTime();
+    $variables["page_url"] = $_SERVER['REQUEST_URI'];
+
+
+	// Set is_front variable
+	try {
+		$variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+	}
+	catch (Exception $e) {
+		// If the database is not yet available, set the default value.
+		$variables['is_front'] = FALSE;
+	}
+
+
+    if ($view_mode == "full"){
+
+      // Define Node Helper
+      $nodeHelper = \Drupal::service('helper.node_helper');
+
+      // Actions to be done before html, page or node preprocess (useful to set global variables)
+      // Get Fields from Node Resort Settings to get global settings of site (node ID = 100)
+      $fieldSettings = $nodeHelper->getNodeFields(471, 'resort_settings');
+
+      // Store Settings in Global Variable using Global Helper
+      $globalHelper = \Drupal::service('helper.global_helper');
+      $globalHelper->setGlobalSettings($fieldSettings);
+      $globalSettings = $globalHelper->getGlobalSettings();
+      $variables["settings"] = $globalSettings;
+
+      // If alert Bar, add Cache Clearer
+      if($variables["settings"]["field_show_alert"] == '1'){
+        $doNotCache = true;
+      }
+
+      if($variables["type"] == 'page'){
+
+          // Add lodging widget to accom section
+          $current_path = \Drupal::service('path.current')->getPath();
+          $url = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+          $url = explode('/',$url);
+          if($url[1] == 'places-to-stay' && strpos($url[2],'rv') === false){
+              $variables['#attached']['library'][] = 'sunpeaksresort/inntopia-widget';
+              $variables['lodging_widget'] = true;
+          }
+
+      }
+
+
+        // Set includes based on nid
+        switch ($nid){
+
+            // Event Calendar
+            case 69: $controllerName = "EventController";
+                $variables['#attached']['library'][] = 'sunpeaksresort/event-calendar';
+                $doNotCache = true;
+                break;
+
+            // Activities
+            case 22:
+                if(isset($_GET['season']) && $_GET['season'] != ''){
+                    switch($_GET['season']){
+                        case 'winter': $tid = 8; break;
+                        case 'summer': $tid = 7; break;
+                        default: $tid = false; break;
+                    }
+                }else{
+                    $tid = false;
+                }
+                $controllerName = "ActivityController"; $arguments = array('tid' => $tid);
+                $doNotCache = true;
+                break;
+
+            // Weather & Conditions
+            case 118:
+                $variables['#attached']['library'][] = 'sunpeaksresort/newsletter';
+                $nodeHelper = \Drupal::service('helper.node_helper');
+                $controllerName = "WeatherController";
+                $doNotCache = true;
+
+                // Get Forecast
+                $fieldsForecast = $nodeHelper->getNodeFields(676, 'forecast');
+                $variables["forecast"] = $fieldsForecast;
+
+                // Load block for weather and forecast
+                $variables['custom_block_include'] = '/templates/block/block--weather.html.twig';
+
+                break;
+
+            // Webcams
+            case 119: $blockInclude = "webcams";
+
+                // Get webcam data from service
+                $webcams = \Drupal::service('webcams.get_webcams');
+                $variables['webcams'] = $webcams->getWebcams();
+
+                // Get disabled webcams from Resort Settings
+                if($variables["settings"]['field_valley'] == 1){ $variables['settings']['valley'] = 1; }
+                if($variables["settings"]['field_village_day_lodge'] == 1){ $variables['settings']['village_day_lodge'] = 1; }
+                if($variables["settings"]['field_sunburst_lift_base'] == 1){ $variables['settings']['sunburst_lift_base'] = 1; }
+                if($variables["settings"]['field_elevation_chair'] == 1){ $variables['settings']['elevation_chair'] = 1; }
+                if($variables["settings"]['field_sundance_lift_base'] == 1){ $variables['settings']['sundance_lift_base'] = 1; }
+                if($variables["settings"]['field_sundance'] == 1){ $variables['settings']['sundance'] = 1; }
+                if($variables["settings"]['field_mt_tod'] == 1){ $variables['settings']['mt_tod'] = 1; }
+                if($variables["settings"]['field_village_clock_tower'] == 1){ $variables['settings']['village_clock_tower'] = 1; }
+                if($variables["settings"]['field_golf_course'] == 1){ $variables['settings']['golf_course'] = 1; }
+
+                $doNotCache = true;
+
+                break;
+
+            // Flickr Photo Gallery
+            case 111: $blockInclude = "flickr-gallery";
+
+                $variables['#attached']['library'][] = 'sunpeaksresort/flickr-gallery';
+                $doNotCache = true;
+
+                if(isset($_GET['photoset']) && $_GET['photoset'] != ''){
+                    $variables['photoset'] = $_GET['photoset'];
+                }
+                break;
+
+            // Video Gallery
+            case 192: $controllerName = "VideoController";
+                $variables['#attached']['library'][] = 'sunpeaksresort/video-gallery';
+                break;
+
+            // Interactive Map
+            case 193: $blockInclude = "map";
+                $variables['#attached']['library'][] = 'sunpeaksresort/interactive-map';
+                break;
+
+            // Newsletter Sign Up
+            case 198: $blockInclude = "newsletter-form";
+                $variables['#attached']['library'][] = 'sunpeaksresort/newsletter';
+                break;
+
+            // Media Sign Up
+            case 1395: $blockInclude = "media-form";
+                $variables['#attached']['library'][] = 'sunpeaksresort/newsletter';
+                break;
+
+            // Resort Settings
+            case 471: $doNotCache = true; break;
+
+            // Member Login Page
+            case 808:
+                if (\Drupal::currentUser()->isAnonymous()) {
+                    $login = \Drupal\block\Entity\Block::load('userlogin');
+                    $variables['login'] = \Drupal::entityTypeManager()
+                        ->getViewBuilder('block')
+                        ->view($login);
+                    $variables['authenticated'] = 'non-member';
+                }else{
+                    $variables['authenticated'] = 'member';
+                }
+                $doNotCache = true;
+                break;
+
+            case 28: $controllerName = "BlogController"; $doNotCache = true; break; // Blog
+            case 30: $controllerName = "UpdateController"; $doNotCache = true; break; // News & Updates
+            case 16: $controllerName = "JobController"; $doNotCache = true; break; // Jobs
+
+            case 177: $controllerName = "UpdateController"; $arguments = array('tid' => 11); $doNotCache = true; break; // Golf Updates
+            case 140: $controllerName = "UpdateController"; $arguments = array('tid' => 5); $doNotCache = true; break; // Golf Updates
+            case 36: $controllerName = "UpdateController"; $arguments = array('tid' => 6); $doNotCache = true; break; // Bike Updates
+
+            case 49: $controllerName = "AccommodationController"; $arguments = array('tid' => 34); break; // Hotels & Lodging
+            case 50: $controllerName = "AccommodationController"; $arguments = array('tid' => 35); break; // Condos & Townhomes
+            case 51: $controllerName = "AccommodationController"; $arguments = array('tid' => 36); break; // Chalets
+            case 52: $controllerName = "AccommodationController"; $arguments = array('tid' => 37); break; // Hostels & Specialty
+            case 53: $controllerName = "AccommodationController"; $arguments = array('tid' => 38); break; // Camping & RVing
+
+            case 46: $controllerName = "DiningApresController"; $doNotCache = true; break; // Dining & Apres
+            case 47: $controllerName = "BusinessController"; $arguments = array('type' => 'shopping'); $doNotCache = true; break; // Shopping
+            case 48: $controllerName = "BusinessController"; $arguments = array('type' => 'spa'); $doNotCache = true; break; // Spa
+            case 54: $controllerName = "BusinessController"; $doNotCache = true; break; // Business Directory
+
+            case 67: $controllerName = "PackageController"; $arguments = array('tid' => 8); $doNotCache = true; break; // Winter Packages
+            case 68: $controllerName = "PackageController"; $arguments = array('tid' => 7); $doNotCache = true; break; // Summer Packages
+
+            case 38: $controllerName = "LessonController"; $arguments = array('sport' => 'winter'); $doNotCache = true; break; // Ski/Ride Lesson
+            case 42: $controllerName = "LessonController"; $arguments = array('sport' => 'summer'); $doNotCache = true; break; // Bike Lesson
+
+            case 74: $controllerName = "LiftTrailController"; $arguments = array('season' => 8, 'sport' => 15); $doNotCache = true; break; // Ski Lifts
+            case 158: $controllerName = "LiftTrailController"; $arguments = array('sport' => [31,81]); $doNotCache = true; break; // Nordic Trails
+            case 99: $controllerName = "LiftTrailController"; $arguments = array('season' => 7, 'sport' => 17); $doNotCache = true; break; // Bike Park Trails
+            case 138: $controllerName = "LiftTrailController"; $arguments = array('sport' => 107); $doNotCache = true; break; // Hiking Trails
+
+            case 185: $controllerName = "NewsReleaseController"; $doNotCache = true; break; // News Releases
+            case 188: $controllerName = "EditorialController";  $doNotCache = true; break; // Editorial COverage
+
+        }
+
+    }
+
+
+	// Set includes based on type
+    switch($variables['type']){
+
+	    case 'lift':
+            $controllerName = "LiftTrailNodeController";
+            $arguments = array('type' => 'lift','label' =>  $variables['node']->label());
+            $doNotCache = true;
+            break;
+
+        case 'trail':
+            $sport = $variables['node']->get('field_sport')->getValue();
+            if($sport[0]['target_id'] == 15 || $sport[0]['target_id'] == 31 || $sport[0]['target_id'] == 81){
+                $controllerName = "LiftTrailNodeController";
+                $arguments = array('type' => 'trail','label' =>  $variables['node']->label());
+                $doNotCache = true;
+            }
+            break;
+
+
+    }
+
+
+	// Set Proper Controller if name is available
+	if( isset($controllerName) ){
+
+		// Instantiate Includer Service
+		$arguments = ( isset ($arguments) ) ? $arguments : array();
+
+		$includer = \Drupal::service('includer.dispatcher');
+		$allIncludes = $includer->dispatch($controllerName, $arguments);
+		// Loop through all includes and pass them into the variables array so they can be used in twig templates
+		foreach($allIncludes as $key => $value){
+			// Only pass it if the value is not false
+			if( $value ){
+				$variables[$key] = $value;
+			}
+		}
+
+	}
+
+	// Set proper block if name is available
+	if( isset($blockName) && $view_mode === 'full' ){
+		// Custom Block
+		$custom_block = \Drupal\block\Entity\Block::load($blockName);
+		$variables['custom_block'] = \Drupal::entityTypeManager()
+			->getViewBuilder('block')
+			->view($custom_block);
+	}
+
+
+	// Set proper block if name is available
+	if( isset($blockInclude) && $view_mode === 'full' ){
+		// Custom Block Include
+		$variables['custom_block_include'] = '/templates/block/block--'.$blockInclude.'.html.twig';
+	}
+
+
+	// Clear cache of page
+    if( isset($doNotCache)){
+      if ($doNotCache){
+        $renderHelper = \Drupal::service('helper.render_helper');
+        $variables['block_no_cache'] = $renderHelper->renderUncacheBlock();
+      }
+    }
+
+
+	// Return date of field formatted for From To date
+	$dateFieldHelper = \Drupal::service('helper.date_field_helper');
+	$rawDate = $dateFieldHelper->getRawDates($variables['node'], 'field_date');
+	if( $rawDate ){
+		$variables["date_from"] = $rawDate["from"];
+		$variables["date_to"] = $rawDate["to"];
+	}
+
+
+	// Get the node of the parent from path
+	// check if current node is in field_page_listings
+	// add back button
+	if($variables["type"] == 'page'){
+	  $pathHelper = \Drupal::service('helper.path_helper');
+	  $nodeStorage = \Drupal::service('entity_type.manager')->getStorage('node');
+	  $parentPath = $pathHelper->getPathParent();
+	  $parentNid = $pathHelper->getNidByPath($parentPath);
+
+	  if($parentNid){
+		$parentNode = $nodeStorage->load($parentNid);
+        if($parentNode){
+          $listingField = $parentNode->get('field_page_listings');
+          $listings = $listingField->getValue();
+          if(!empty($listings)){
+            foreach($listings as $lid){
+              if($lid['target_id'] == $nid){
+                $variables['parent_path'] = $parentPath;
+              }
+            }
+          }
+        }
+	  }
+
+	}
+
+
+
+	// Newsletter action
+	if($nid == 198){
+
+      // If referrer is set from weather page
+      if(isset($_GET['referrer'])){
+
+        if($_GET['referrer'] == 'weather'){
+
+			// Set email/thank you twig variable
+			$variables['newsletter_message_weather'] = true;
+
+        }
+
+
+      }
+      // Normal post from newsletter page
+      else{
+
+        // If form has been posted
+        if(isset($_POST['email']) && isset($_POST['name'])){
+
+          // Set thank you twig variable
+          $variables['newsletter_thankyou'] = "Thank you! You've been added to our subscriber list.";
+
+          // Call module service
+          $createSend = \Drupal::service('createsend.campaign_monitor');
+
+          // Setup fields
+          $fields = array(
+            'Name'=> $_POST['name'],
+            'Email'=> $_POST['email'],
+            'Address'=> $_POST['address'],
+            'City'=> $_POST['city'],
+            'Province/State'=> $_POST['province'],
+            'Country'=> $_POST['country'],
+            'Postal/ZIP Code'=> $_POST['postcode'],
+            'Birthday'=> $_POST['birthday']
+          );
+
+            // If 311
+            if(in_array('the311-enews',$_POST['subscription'])
+                || in_array('the311-snowdaily',$_POST['subscription'])
+                || in_array('the311-snowdump',$_POST['subscription'])){
+
+                // Setup subscription field
+                $fields['SubscriberType'] = array();
+                if(in_array('the311-enews',$_POST['subscription'])){ $fields['SubscriberType'][] = 'Newsletter'; }
+                if(in_array('the311-snowdaily',$_POST['subscription'])){ $fields['SubscriberType'][] = 'SnowReport'; }
+                if(in_array('the311-snowdump',$_POST['subscription'])){ $fields['SubscriberType'][] = 'DumpAlert'; }
+
+                // Setup connection
+                $api_key = '39653d167daa276d20e6e88e7f240d2f';
+                $client_id = 'e59e76135dbe8b1bad7f28e861aba60d';
+                $campaign_id = null;
+                $list_id = '3d9643245b71dc1645706e85b95cd39f';
+                $connection = $createSend->connection($api_key, $client_id, $campaign_id, $list_id);
+                $statChangeResult = $createSend->subscriberAddAndResubscribeWithCustomFields($_POST['email'], $_POST['name'], $fields);
+            }
+
+          // If TSP
+          if(in_array('tsp',$_POST['subscription'])){
+            // Setup connection
+            $api_key = 'aa232b099dcfd19e9a1074cbfe3edaa5';
+            $client_id = '2d118aa142637034a3113cabdcef2b12';
+            $campaign_id = null;
+            $list_id = '00790a3fd409ac40724ee972b1c925fa';
+            $connection = $createSend->connection($api_key, $client_id, $campaign_id, $list_id);
+            $statChangeResult = $createSend->subscriberAddAndResubscribeWithCustomFields($_POST['email'], $_POST['name'], $fields);
+          }
+
+          if ($statChangeResult['Code'] == 0) {
+            // Success
+          } else {
+            echo 'HTTP Post Results = Error : ' . $statChangeResult['Message'];
+          }
+
+        }
+
+      }
+
+	}
+
+
+    // Media signup action
+    if($nid == 1395){
+
+        // If form has been posted
+        if(isset($_POST['email']) && isset($_POST['name'])){
+
+            // Set thank you twig variable
+            $variables['newsletter_thankyou'] = 'Success! You are now signed up for media updates from Sun Peaks Resort. For immediate media inquiries, please contact Rachel Roberts at <a href="mailto:media@sunpeakstourism.com">media@sunpeakstourism.com</a>. Thank you.';
+
+            // Call module service
+            $createSend = \Drupal::service('createsend.campaign_monitor');
+
+            // Setup fields
+            $fields = array(
+                'Name'=> $_POST['name'],
+                'Email'=> $_POST['email'],
+                'Outlet'=> $_POST['outlet'],
+                'Region'=> $_POST['region'],
+                'OtherRegion'=> $_POST['other_region'],
+                'AreasofInterest'=> $_POST['areas_of_interest'],
+                'OtherAreasofInterest'=> $_POST['other_areas_of_interest']
+            );
+
+            // Setup connection
+            $api_key = 'aa232b099dcfd19e9a1074cbfe3edaa5';
+            $client_id = '2d118aa142637034a3113cabdcef2b12';
+            $campaign_id = null;
+            $list_id = '3795b760ec5cfc12d17875c5b670c018';
+            $connection = $createSend->connection($api_key, $client_id, $campaign_id, $list_id);
+            $statChangeResult = $createSend->subscriberAddAndResubscribeWithCustomFields($_POST['email'], $_POST['name'], $fields);
+
+            if ($statChangeResult['Code'] == 0) {
+                // Success
+            } else {
+                echo 'HTTP Post Results = Error : ' . $statChangeResult['Message'];
+            }
+
+        }
+
+    }
+
+
+
+}
+
+
+
+
+
+/**
+ * Implements hook_page_attachments_HOOK_alter().
+ * @param array $page
+ */
+function sunpeaksresort_page_attachments_alter(array &$page) {
+
+	$viewport = array(
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => array(
+			'name' => 'viewport',
+			'content' => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+		),
+	);
+	$page['#attached']['html_head'][] = [$viewport, 'viewport'];
+
+}
+
+
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ * @param array $suggestions
+ * @param array $variables
+ */
+function sunpeaksresort_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+
+
+	if ($node = \Drupal::request()->attributes->get('node')) {
+
+		$nid = intval($node->id()) ;
+
+		// Template suggestion for Pattern Library
+		if($nid === 7){
+			$suggestions[] = 'node__' . 'pattern';
+		}
+
+	}
+
+}
+
+
+
+/**
+ *  Change layout of html to have no wrappers when on ajax call
+ *
+ */
+function sunpeaksresort_theme_suggestions_html_alter(array &$suggestions, array $variables) {
+
+  if (isset($_GET['response_type'])) {
+    if ( $_GET['response_type'] === 'ajax' ){
+      $suggestions[] = 'html__ajax';
+    }
+  }
+
+}
+
+
+
+/**
+ *  Change layout of page to have no wrappers when on ajax call
+ *
+ */
+function sunpeaksresort_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if (isset($_GET['response_type'])) {
+    if ( $_GET['response_type'] === 'ajax' ){
+      $suggestions[] = 'page__ajax';
+    }
+  }
+
+}
+

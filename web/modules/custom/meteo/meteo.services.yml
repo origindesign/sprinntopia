@@ -1,0 +1,10 @@
+services:
+  meteo.query_meteo:
+    class: Drupal\meteo\MeteoQueries
+    arguments: ['@database']
+  plugin.manager.meteo:
+    class: Drupal\meteo\ProviderManager
+    parent: default_plugin_manager
+  meteo.meteo_helper:
+    class: Drupal\meteo\MeteoHelper
+    arguments: ['@renderer', '@meteo.query_meteo']

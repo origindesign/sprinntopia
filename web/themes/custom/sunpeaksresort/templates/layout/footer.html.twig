@@ -1,0 +1,51 @@
+
+<footer id="footer" role="contentinfo">
+
+    <section class="shin">
+        <div class="container">
+            {% if corporate_nav %}
+                {{ corporate_nav }}
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="footer">
+
+        <div class="container">
+
+            <div class="foot clearfix">
+
+                <div class="phone">
+                    <a href="/" rel="home" class="logo">
+                        <img src="/themes/custom/sunpeaksresort/images/logo.svg" alt="Sunpeaks Resort Homepage" />
+                    </a>
+                    <p>
+                        Guest Services:<br />
+                        <span>250.578.5474</span>
+                    </p>
+                </div>
+
+                {% if footer_nav %}
+                    {{ footer_nav }}
+                {% endif %}
+
+            </div>
+
+            <div class="sole">
+
+                <div class="left address">
+                    <a href="https://www.google.ca/maps/dir//1280+Alpine+Road,+Sun+Peaks,+BC+V0E+5N0/@50.8844311,-119.8881218,17z/data=!4m16!1m7!3m6!1s0x537fb29b1a8c7d09:0xac75c62b1650890f!2s1280+Alpine+Road,+Sun+Peaks,+BC+V0E+5N0!3b1!8m2!3d50.8844311!4d-119.8859331!4m7!1m0!1m5!1m1!1s0x537fb29b1a8c7d09:0xac75c62b1650890f!2m2!1d-119.8859331!2d50.8844311" target="_blank">1280 Alpine Road, Sun Peaks, BC, Canada V0E 5N0</a>
+                </div>
+
+                {% if privacy_nav %}
+                    {{ privacy_nav }}
+                {% endif %}
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</footer>

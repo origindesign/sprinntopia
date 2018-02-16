@@ -1,0 +1,57 @@
+<?php
+
+
+/**
+ * Implements hook_mail().
+ */
+function member_content_notification_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+
+  switch ($key) {
+    case 'member_update':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = t('A member has updated their page: @title', array('@title' => $params['node_title']), $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+
+/**
+ * Implements hook_entity_update().
+ */
+function member_content_notification_entity_update(Drupal\Core\Entity\EntityInterface $entity){
+
+  $user = \Drupal::currentUser();
+  $roles = $user->getRoles();
+
+  if (
+      $entity->getEntityTypeId() !== 'node' ||
+      ($entity->getEntityTypeId() === 'node' && $entity->bundle() !== 'accomodation' && $entity->bundle() !== 'business' && $entity->bundle() !== 'dining_apres') ||
+      !in_array('member', $roles)
+    ){
+      return;
+  }
+
+  $id = $user->id();
+  $account = \Drupal\user\Entity\User::load($id);
+  $name = $account->getUsername();
+  $url = $entity->toUrl();
+  $path = $url->getInternalPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath('/'.$path);
+
+  $mailManager = \Drupal::service('plugin.manager.mail');
+
+  $module = 'member_content_notification';
+  $key = 'member_update';
+  $to = 'website@sunpeaksresort.com';
+  $params['message'] = 'A member "'.$name.'" has updated their listing "'.$entity->label().'"" at http://www.sunpeaksresort.com'.$path_alias;
+  $params['node_title'] = $entity->label();
+  $langcode = \Drupal::currentUser()->getPreferredLangcode();
+  $send = true;
+
+  $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+
+}

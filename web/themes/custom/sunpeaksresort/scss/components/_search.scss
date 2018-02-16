@@ -1,0 +1,72 @@
+
+#search-block-form{
+  @include maxWidth(400px);
+  position:relative; padding-right:20px; border-bottom:1px solid rgba(#fff,0.25);
+
+  .form-actions{
+    @include fonticon('\e914',20px,#fff,15px,auto,0);
+    position:absolute; right:0; top:0; margin:0;
+  }
+
+  input[type="search"]{
+    @include fontsize(20);
+    border:none; background:none; margin:0; color:#fff; font-weight:400; padding-left:0;
+  }
+
+  input[type="submit"]{
+    @include fontsize(1);
+    background:none; width:40px; height:40px; padding:0; color:rgba(#fff,0);
+  }
+}
+
+
+#search-form{
+  position:relative; padding-right:110px; margin-bottom:60px;
+
+  .form-item,
+  .form-wrapper{
+    position:static;
+  }
+
+  label{
+    visibility:hidden; position:absolute;
+  }
+  #edit-help-link{
+    display:none;
+  }
+  #edit-submit{
+    width:110px; position:absolute; top:0; right:0; margin:0;
+  }
+}
+
+
+ol.search-results{
+  @include reset;
+
+  li{
+    &:not(:last-child){
+      margin-bottom:30px;
+    }
+  }
+
+}
+
+
+.pager{
+  border-top:$base-border; margin-top:40px; padding-top:20px;
+
+  ul{
+    @include reset;
+    text-align:center;
+
+    li{
+      display:inline;
+    }
+
+    a{
+      text-decoration:none; display:inline-block; padding:0 5px;
+    }
+
+  }
+
+}

@@ -1,0 +1,11 @@
+# File system.action.node_update_field_ignore_from_directory.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_update_field_ignore_from_directory
+label: 'Ignore from Business Directory'
+type: node
+plugin: node_update_field_ignore_from_directory
+configuration: {  }

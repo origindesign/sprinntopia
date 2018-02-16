@@ -1,0 +1,58 @@
+<?php
+
+function webcams_schema() {
+
+    $schema['webcams_data'] = array(
+
+        'fields' => array(
+            'wid'=>array(
+                'type'=>'serial',
+                'not null' => TRUE,
+            ),
+            'name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+			'machine_name'=>array(
+				'type' => 'varchar',
+				'length' => 40,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'location'=>array(
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'elevation'=>array(
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'filename'=>array(
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+            'timestamp'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => '',
+            )
+        ),
+        'unique keys' => array(
+            'machine_name' => array('machine_name'),
+        ),
+        'primary key' => array('wid')
+
+    );
+
+    return $schema;
+
+}

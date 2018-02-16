@@ -1,0 +1,12 @@
+# File system.action.node_update_term_open.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node_update_term_open
+label: 'Change Status to Open'
+type: node
+plugin: node_update_term_open
+configuration: {  }

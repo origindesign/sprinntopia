@@ -1,0 +1,515 @@
+{%
+  set classes = [
+    'node',
+    'node-type-' ~ view_mode|clean_class,
+    'pattern'
+  ]
+%}
+
+
+
+
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }} >
+
+
+    <div class="pattern-header">
+        <h3>Brand Colors</h3>
+    </div>
+    <div class="pattern-wrapper">
+        <div class="wrapper">
+            <hr />
+            <div class="color">
+                <div class="swatch" style="background-color: #FFB234"><div class="label">#FFB234<br />rgb: 255,178,52<br/>$yellow</div></div>
+                <div class="swatch" style="background-color: #C3F6F9"><div class="label">#C3F6F9<br />rgb: 195,246,249<br/>$blue-light</div></div>
+                <div class="swatch" style="background-color: #3E5780"><div class="label">#3E5780<br />rgb: 62,87,128<br/>$blue-mid</div></div>
+                <div class="swatch" style="background-color: #3A4F72"><div class="label">#3A4F72<br />rgb: 58,79,114<br/>$blue-dark</div></div>
+                <div class="swatch" style="background-color: #71DEAD"><div class="label">#71DEAD<br />rgb: 113,222,173<br/>$green</div></div>
+                <div class="swatch" style="background-color: #505865"><div class="label">#505865<br />rgb: 80,88,101<br/>$grey-dark</div></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="pattern-header">
+        <h3>Type Treatment</h3>
+    </div>
+    <div class="pattern-wrapper">
+        <div class="wrapper">
+            <span class="info">Heading 1</span>
+            <hr />
+            <h1 style="color:#1A366C">I am the best<br />title ever made</h1>
+
+            <span class="info">Heading 2</span>
+            <hr />
+            <h2>I am the best title ever made</h2>
+
+
+            <span class="info">Heading 3</span>
+            <hr />
+            <h3>I am the best title ever made</h3>
+
+            <span class="info">Paragraph</span>
+            <hr />
+            <p>I am a really tiny paragraph. Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula.</p>
+
+
+            <span class="info">Ordered List</span>
+            <hr />
+            <ol>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+            </ol>
+
+            <span class="info">Unordered List</span>
+            <hr />
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+            </ul>
+            <!--
+            <span class="info">Definition List</span>
+            <hr />
+            <dl>
+                <dt>Definition Term Title 1</dt>
+                <dd>Definition term description</dd>
+                <dt>Definition Term Title 2</dt>
+                <dd>Definition term description</dd>
+                <dt>Definition Term Title 3</dt>
+                <dd>Definition term description</dd>
+            </dl>
+
+
+            <span class="info">Quotes</span>
+            <hr />
+            <blockquote>
+                <p>This is a marvelous quote lorem ipsum sit dolor amet ipsaque, nihil est cjeste de la noche.</p>
+                <footer><sub>Daniel Susuki</sub>Marketing Analyst at Procter & Gamble</footer>
+            </blockquote> -->
+        </div>
+    </div>
+
+
+
+    <div class="pattern-header">
+        <h3>Type System</h3>
+    </div>
+    <div class="pattern-wrapper">
+            <div class="wrapper">
+
+                <h2>I am the best title ever made</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a>
+                    adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec
+                    faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero
+                    nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
+                    mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
+                    volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus
+                    eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem,
+                    consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue
+                    quis tellus.
+                </p>
+
+                <article class="embedded-entity"><span class="file file--mime-application-pdf file--application-pdf"> <a href="http://sunpeaksresort.origindev1.com/sites/default/files/inline-files/pdf.pdf" type="application/pdf; length=83107" title="pdf.pdf">Link to a pdf document</a></span>
+                </article><article class="embedded-entity"><span class="file file--mime-application-pdf file--application-pdf"> <a href="http://sunpeaksresort.origindev1.com/sites/default/files/inline-files/pdf.pdf" type="application/pdf; length=83107" title="pdf.pdf">A link to a pdf</a></span>
+                </article><p>&nbsp;Table top skid mute backside, pinner epic twister rail shred grind. Gnar pillow popping&nbsp;poaching back country flow trail swag&nbsp;<span>gaper couloir whip sketching. Brain bucket huckfest laps brain bucket. Washboard euro bunny slope rock-ectomy.</span></p>
+                <h3>I am the best title ever made</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing
+                    elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.
+                    Nunc iaculis <strong>strong</strong> dui. Nam sit amet sem. Aliquam libero nisi,
+                    imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis,
+                    massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim
+                    diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien
+                    fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at,
+                    commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+                </p>
+                <ul>
+                    <li>Pellentesque quis sem sed mauris ultricies pulvinar non elementum nulla. Sed sagittis et nunc et ullamcorper. Cras luctus lobortis sodales. </li>
+                    <li>Aenean at interdum arcu. Vivamus quis elit dolor. Nunc iaculis, nibh at accumsan gravida, tellus ligula vulputate nisl, sit amet porttitor arcu leo vel risus.</li>
+                    <li>Aenean efficitur erat lectus, nec dictum neque maximus scelerisque. Sed tellus felis, viverra ut nibh sit amet, elementum imperdiet arcu. </li>
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing
+                    elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.
+                    Nunc iaculis <strong>strong</strong> dui. Nam sit amet sem. Aliquam libero nisi,
+                    imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis,
+                    massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim
+                    diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien
+                    fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at,
+                    commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+                </p>
+                <ol>
+                    <li>List Item 1</li>
+                    <li>List Item 2</li>
+                    <li>List Item 3</li>
+                </ol>
+                <p>Maecenas aliquet tortor nec elit dapibus fringilla. Praesent bibendum porttitor blandit. Aenean nisl lacus, cursus tincidunt congue vel, lacinia vel nunc. Praesent vitae nibh nisi. In volutpat hendrerit magna, vel rutrum velit iaculis at. Donec fermentum neque augue, vitae aliquet libero sagittis quis. Maecenas erat turpis, elementum sed risus id, blandit finibus libero.</p>
+
+            </div>
+
+    </div>
+
+
+    <div class="pattern-header">
+        <h3>Buttons &amp; Call To Actions</h3>
+    </div>
+    <div class="pattern-wrapper">
+        <div class="wrapper">
+            <span class="info">Primary Main CTA</span>
+            <hr />
+            <p><a href="#" class="btn-solid">Action To Do</a></p>
+            <p><a href="#" class="btn blue">Action To Do</a></p>
+        </div>
+    </div>
+
+
+    <div class="pattern-header">
+        <h3>Forms &amp; Fields</h3>
+    </div>
+    <div class="pattern-wrapper">
+
+        <div class="wrapper">
+            <form>
+
+                <span class="info">Input</span>
+                <hr />
+                <div class="row" style="max-width:400px">
+                    <div class="form-item">
+                        <label for="text-field">Text Field</label>
+                        <input id="text-field" type="text"  placeholder="Your text">
+                    </div>
+                    <div class="form-item">
+                        <label for="text-field">Email</label>
+                        <input id="text-field" type="email" placeholder="Your email">
+                    </div>
+                    <div class="form-item">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="Your password">
+                    </div>
+
+                </div>
+
+
+                <!--
+                <span class="info">Select &amp; Upload</span>
+                <hr />
+                <div class="row">
+                    <div class="cell cell-1-3">
+                        <select id="select" name="dropdown" class="dropdown">
+                            <option value="0">Select an Option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="cell cell-1-3">
+                        <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                        <label for="file"><span>Upload a file</span></label>
+                    </div>
+
+                </div> -->
+
+
+                <span class="info">Text Area</span>
+                <hr />
+                <textarea id="text-area"></textarea>
+
+
+                <span class="info">Select</span>
+                <hr />
+
+                <div class="form-item">
+                    <label>Single Select</label>
+                <select id="select" class="form-select">
+                    <option value="">Select</option>
+                    <option value="" selected="selected">Select 1</option>
+                    <option value="">Select 2</option>
+                </select>
+                </div>
+
+                <div class="form-item">
+                <label>Multi Select</label>
+                <select multiple="multiple" name="field_multi_select[]" id="edit-field-multi-select" class="form-select" tabindex="-1">
+                    <option value="_none" selected="selected">- None -</option>
+                    <option value="one">Select 1</option>
+                    <option value="two">Select 2</option>
+                    <option value="three">Select 3</option>
+                    <option value="four">Select 4</option>
+                </select>
+                </div>
+
+
+                <span class="info">Radio and Checkbox</span>
+                <hr />
+                <div class="row">
+                    <div class="cell cell-1-2">
+                        <label>
+                            <input type="radio" name="radio-buttons" value="radio-1" checked="checked"> Radio 1
+                        </label>
+                        <label>
+                            <input type="radio" name="radio-buttons" value="radio-2"> Radio 2
+                        </label>
+                        <label>
+                            <input type="radio" name="radio-buttons" value="radio-3"> Radio 3
+                        </label>
+                    </div>
+                    <div class="cell cell-1-2">
+                        <label>
+                            <input type="checkbox" name="checkboxes" value="check-1" checked="checked"> Checkbox 1
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxes" value="check-2"> Checkbox 2
+                        </label>
+                        <label>
+                            <input type="checkbox" name="checkboxes" value="check-3"> Checkbox 3
+                        </label>
+                    </div>
+                </div>
+
+
+                <span class="info">Submit</span>
+                <hr />
+                <button type="submit" value="Submit">Submit</button>
+
+            </form>
+
+
+            <span class="info">Single Input Form</span>
+            <hr />
+            <div class="row">
+                <div class="cell cell-1-3">
+                    <div id="newsletter">
+                        <div class="inner">
+
+                            <form>
+                                <div class="form-item">
+                                    <label for="email">Email</label>
+                                    <input type="text" id="email" />
+                                </div>
+                                <button type="submit">Sign Me Up</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="pattern-header">
+        <h3>Tables</h3>
+    </div>
+    <div class="pattern-wrapper">
+
+        <div class="wrapper">
+            <div class="template table ">
+                <table>
+                    <caption>Table Heading</caption>
+                    <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Column Heading</th>
+                        <th>Column Heading</th>
+                        <th>Column Heading</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Praesent mattis, massa quis luctus fermentum</td>
+                        <td>Nullam dignissim convallis est</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                    </tr>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Praesent mattis, massa quis luctus fermentum</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                    </tr>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Nullam dignissim convallis est</td>
+                        <td>Praesent mattis, massa quis luctus fermentum</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                    </tr>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Nullam dignissim convallis est</td>
+                        <td>Praesent mattis, massa quis luctus fermentum</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p class="footer">Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. </p>
+            </div>
+
+
+
+            <div class="template table simple">
+                <table>
+                    <caption>Simple Table</caption>
+                    <thead>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Lorem ipsum dolor sit amet, test link adipiscing elit</td>
+                    </tr>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Suspendisse quam sem, consequat at, commodo vitae</td>
+                    </tr>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Nunc iaculis suscipit dui</td>
+                    </tr>
+                    <tr>
+                        <th>Row Heading</th>
+                        <td>Donec sed tellus eget sapien</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="pattern-header">
+        <h3>Inline Images and Videos</h3>
+    </div>
+    <div class="pattern-wrapper">
+
+
+            <div class="wrapper">
+
+                <p>
+                    Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a>
+                    adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec
+                    faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero
+                    nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
+                    mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
+                    volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus
+                    eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem,
+                    consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue
+                    quis tellus.
+                </p>
+
+                <figure role="group" class="caption caption-img"><img alt="image" data-entity-type="file" data-entity-uuid="112505e3-eb35-477a-a1a1-aea131706fa8" src="/sites/default/files/inline-images/event.jpg"><figcaption>Bro ipsum dolor sit amet cornice bomb couloir core shot daffy hammerhead 180 liftie hero. Clean twister white room, gnar dope gear jammer frozen chicken heads schwag greasy glades back country.&nbsp;</figcaption></figure>
+
+                <p>
+                    Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a>
+                    adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec
+                    faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero
+                    nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
+                    mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
+                    volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus
+                    eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem,
+                    consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue
+                    quis tellus.
+                </p>
+
+                <div class="field field--name-field-video field--type-video-embed-field field--label-hidden field__item">
+                    <div class="video-embed-field-responsive-video">
+                        <iframe width="1136" height="639" src="https://www.youtube.com/embed/pIdt098KuDA" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="clearfix text-formatted field field--name-field-video-caption field--type-text-long field--label-hidden field__item">
+                    <p>Bro ipsum dolor sit amet cornice bomb couloir core shot daffy hammerhead 180 liftie hero..</p>
+                </div>
+
+                <p>
+                    Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a>
+                    adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec
+                    faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero
+                    nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
+                    mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
+                    volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus
+                    eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem,
+                    consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue
+                    quis tellus.
+                </p>
+
+
+            </div>
+
+    </div>
+
+
+
+
+    <div class="pattern-header">
+        <h3>Page Fragments</h3>
+    </div>
+    <div class="pattern-wrapper">
+
+        <div class="wrapper">
+
+            <span class="info">Two Column Text</span>
+            <hr />
+
+            <div class="field__item">
+                <article id="node-172" data-history-node-id="172" role="article" about="/node/172" class="node node-type-fragment">
+                    <div class="two-column-copy">
+                        <div class="clearfix text-formatted field field--name-field-copy-left field--type-text-long field--label-hidden cell cell-1-2 field__item">
+                            <p>Twister air free ride dust on crust, liftie giblets euro hardtail yard sale reverse camber backside park rat. Table top skid mute backside, pinner epic twister rail shred grind. Gnar pillow popping poaching back country flow trail swag gaper couloir whip sketching. Brain bucket huckfest laps brain bucket. Washboard euro bunny slope rock-ectomy.</p>
+                        </div>
+                        <div class="clearfix text-formatted field field--name-field-copy-right field--type-text-long field--label-hidden cell cell-1-2 field__item">
+                            <p>Twister air free ride dust on crust, liftie giblets euro hardtail yard sale reverse camber backside park rat. Table top skid mute backside, pinner epic twister rail shred grind. Gnar pillow</p>
+                            <ul>
+                                <li>popping poaching back country flow trail swag</li>
+                                <li>gaper couloir whip sketching. Brain bucket huckfest</li>
+                                <li>laps brain bucket. Washboard euro bunny slope rock-ectomy.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <span class="info">Slideshow</span>
+            <hr />
+
+            <div class="field field--name-field-images field--type-image field--label-hidden field__items">
+                <div class="slick slideshow">
+                    <div class="field__item">  <img src="/sites/default/files/entity-browser/Sun%20Peaks%20-%20Apr%208th%2C%202012_1161.jpg" width="5237" height="3491" alt="Fragment - Slideshow/Video" typeof="foaf:Image" />
+
+                    </div>
+                    <div class="field__item">  <img src="/sites/default/files/entity-browser/stein-2010-164.jpg" width="4288" height="2848" alt="Fragment - Slideshow/Video" typeof="foaf:Image" />
+
+                    </div>
+                </div>
+                <div class="arrows"></div>
+                <div class="dots"></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+</article>

@@ -1,0 +1,14 @@
+name: sunpeaksresort
+type: theme
+description: Custom sub-theme based on the the Neato base theme.
+base theme: neato
+core: 8.x
+libraries-override:
+  classy/base: false
+libraries:
+  - sunpeaksresort/global-styling
+  - sunpeaksresort/global-scripts
+regions:
+  content: Content
+ckeditor_stylesheets:
+  - css/sunpeaksresort.css

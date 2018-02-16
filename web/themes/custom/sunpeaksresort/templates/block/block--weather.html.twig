@@ -1,0 +1,406 @@
+<div id="current-conditions" class="weather">
+
+    <div class="wrapper">
+
+        <a class="converter" data-unit="metric" href="#">
+            <span class="metric">&deg;C/cm/kph</span>
+            <span class="imperial">&deg;F/in/mph</span>
+        </a>
+
+        <h2 class="line"><span>Today's Weather</span></h2>
+
+        <div class="row">
+            <div class="half current-condition">
+
+                {# If Resort Settings Today Conditions and Today Description have values use them
+                   otherwise fall back to Day 0 forecast conditions #}
+
+                {%
+                    set todayConditions = current_conditions.todayConditions ? current_conditions.todayConditions : forecast.field_day_0_conditions
+                %}
+                {%
+                    set todayDescription = current_conditions.todayDescription ? current_conditions.todayDescription : forecast.field_day_0_description
+                %}
+
+                <div class="larger_icon"><span class="icon icon-{{ todayConditions }}"></span></div>
+                <p class="today-description">{{ todayDescription }}</p>
+            </div>
+            <div class="half current-temps">
+                <ul class="list-temps">
+                    <li>
+                        <div class="cell">
+                            <h3>Top of the World</h3>
+                            <p>Elevation: <span class="value_switch value_m">2,080</span><span class="unit_switch unit_m">m</span></p>
+                        </div>
+                        <div class="cell">
+                            <div class="weather-value top-temp"><span class="value_switch value_deg">{{ current_conditions.TOTWTemp|round }}</span></div>
+                            <div class="weather-unit">&deg;<span class="unit_switch unit_deg">C</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell">
+                            <h3>Mid-mountain</h3>
+                            <p>Elevation: <span class="value_switch value_m">1,855</span><span class="unit_switch unit_m">m</span></p>
+                        </div>
+                        <div class="cell">
+                            <div class="weather-value mid-mountain-temp"><span class="value_switch value_deg">{{ current_conditions.midMtnTemp|round }}</span></div>
+                            <div class="weather-unit">&deg;<span class="unit_switch unit_deg">C</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell">
+                            <h3>Top of Morrisey</h3>
+                            <p>Elevation: <span class="value_switch value_m">1,675</span><span class="unit_switch unit_m">m</span></p>
+                        </div>
+                        <div class="cell">
+                            <div class="weather-value"><span class="value_switch value_deg">{{ current_conditions.moExTemp|round }}</span></div>
+                            <div class="weather-unit">&deg;<span class="unit_switch unit_deg">C</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell">
+                            <h3>Valley</h3>
+                            <p>Elevation: <span class="value_switch value_m">1,255</span><span class="unit_switch unit_m">m</span></p>
+                        </div>
+                        <div class="cell">
+                            <div class="weather-value valley-temp"><span class="value_switch value_deg">{{ current_conditions.valleyTemp|round }}</span></div>
+                            <div class="weather-unit">&deg;<span class="unit_switch unit_deg">C</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+{% if season == 'winter' %}
+<!-- Snow Conditions -->
+<div id="snow-conditions" class="weather">
+
+    <div class="wrapper">
+
+        <h2 class="line"><span>Snow Conditions</span></h2>
+
+        <p class="mice-type">Measured at mid mountain. Updated {{ current_conditions.weatherdate|date("F jS \\a\\t g:ia") }}</p>
+
+        {% if snow_conditions.snow_description %}
+            <p>{{ snow_conditions.snow_description }}</p>
+        {% endif %}
+
+        <ul class="list-snow">
+            <!--
+            <li>
+                <h4>1 Hr</h4>
+                <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.midMtnStorm1hr|round }}</span></div>
+                <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+            </li>
+            <li>
+                <h4>12 Hr</h4>
+                <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.midMtnStorm12hr|round }}</span></div>
+                <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+            </li>
+            -->
+            <li>
+                <h4>New Snow *</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_cm snow-new">{{ snow_conditions.mid_1600_1600|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>24 Hr</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_cm snow-24">{{ snow_conditions.midMtnStorm24hr|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>48 Hr</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.midMtnStorm48hr|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>7 Days</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_cm snow-7">{{ snow_conditions.midMtnStorm7Day|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <h3>Snow Base</h3>
+        <ul class="list-snow snow-base">
+            <!--
+            <li>
+                <h4>1 Hr</h4>
+                <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.alpineStorm1hr|round }}</span></div>
+                <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+            </li>
+            <li>
+                <h4>12 Hr</h4>
+                <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.alpineStorm12hr|round }}</span></div>
+                <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+            </li>
+            <li>
+                <h4>24 Hr</h4>
+                <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.alpineStorm24hr|round }}</span></div>
+                <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+            </li>
+            <li>
+                <h4>48 Hr</h4>
+                <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.alpineStorm48hr|round }}</span></div>
+                <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+            </li>
+            <li>
+                <h4>7 Days</h4>
+                <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.alpineStorm7Day|round }}</span></div>
+                <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+            </li>
+            -->
+            <li></li>
+            <li>
+                <h4>Mid Mountain</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.midMtnDepth|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h4>Alpine</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_cm">{{ snow_conditions.alpineSnowDepth|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_cm">cm</span></div>
+                    </div>
+                </div>
+            </li>
+            <li></li>
+        </ul>
+
+
+    </div>
+
+</div>
+{% endif %}
+
+
+
+<!-- Sign up -->
+<div id="newsletter-signup" class="weather">
+
+    <div class="wrapper">
+
+        <h3>Newsletter Sign Up</h3>
+        <p>Get the latest resort weather and conditions, right to your inbox.</p>
+        <div id="newsletter">
+            <div class="inner">
+
+                <a href="/newsletter?referrer=weather" class="btn-solid">Sign Me Up</a>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- Wind Speeds -->
+<div id="wind-speeds" class="weather">
+
+    <div class="wrapper">
+
+        <h2 class="line"><span>Wind Speeds</span></h2>
+
+        <div class="wind">
+            <div class="third">
+                <h3>Crystal Chair, Tower 10</h3>
+                <p>Elevation: <span class="value_switch value_m">1,992</span><span class="unit_switch unit_m">m</span></p>
+            </div>
+            <div class="third">
+                <h4>Direction</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value">{{ windDirection(wind_conditions.crystalAVGWindDir|round) }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="third">
+                <h4>Average</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_kph">{{ wind_conditions.crystalWindSpeed|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_kph">kph</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wind">
+            <div class="third">
+                <h3>Sunburst Express, Tower 18</h3>
+                <p>Elevation: <span class="value_switch value_m">1,715</span><span class="unit_switch unit_m">m</span></p>
+            </div>
+            <div class="third">
+                <h4>Direction</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value">{{ windDirection(wind_conditions.sunburstAVGWindDir|round) }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="third">
+                <h4>Average</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_kph">{{ wind_conditions.sunburstWindSpeed|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_kph">kph</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wind">
+            <div class="third">
+                <h3>Sundance Express, Tower 20</h3>
+                <p>Elevation: <span class="value_switch value_m">1,693</span><span class="unit_switch unit_m">m</span></p>
+            </div>
+            <div class="third">
+                <h4>Direction</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value">{{ windDirection(wind_conditions.sundanceAVGWindDir|round) }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="third">
+                <h4>Average</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_kph">{{ wind_conditions.sundanceWindSpeed|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_kph">kph</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wind">
+            <div class="third">
+                <h3>Morrisey Express, Tower 10</h3>
+                <p>Elevation: <span class="value_switch value_m">1,494</span><span class="unit_switch unit_m">m</span></p>
+            </div>
+            <div class="third">
+                <h4>Direction</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value">{{ windDirection(wind_conditions.moExAVGWindDir|round) }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="third">
+                <h4>Average</h4>
+                <div class="center-floats">
+                    <div class="inner">
+                        <div class="weather-value"><span class="value_switch value_kph">{{ wind_conditions.moExWindSpeed|round }}</span></div>
+                        <div class="weather-unit"><span class="unit_switch unit_kph">kph</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- LINK OUT BUTTONS -->
+<div id="weather-buttons" class="weather">
+
+    {% if season == 'winter' %}
+
+        <a href="/ski-ride/weather-conditions-cams/webcams" class="btn blue">View Our Webcams</a>
+        <a href="/ski-ride/weather-conditions-cams/lifts-trail-status" class="btn blue">Lifts &amp; Trail Status</a>
+        {% if avalanche_report %}
+            <a href="{{ avalanche_report }}" class="btn blue">Avalanche Report</a>
+        {% endif %}
+
+    {% else %}
+
+        <a href="/bike-hike/weather-webcams/webcams" class="btn blue">View Our Webcams</a>
+        <a href="/bike-hike/bike/lift-trail-status" class="btn blue">Bike Lifts &amp; Trail Status</a>
+        <a href="/bike-hike/hike/hiking-trail-map-status" class="btn blue">Hike Lifts &amp; Trail Status</a>
+
+    {% endif %}
+
+</div>
+
+
+
+<!-- 5 Day Forecast -->
+<div id="forecast" class="weather">
+
+    <div class="wrapper">
+
+        <h2 class="line"><span>5-Day Forecast</span></h2>
+
+        {{ forecast.field_detailed_forecast }}
+
+        <div class="row">
+        {% for i in 0..5 %}
+
+            {% if attribute(forecast, 'field_day_'~i~'_conditions') is defined  %}
+
+                <div class="third">
+                    <h4>{{ attribute(forecast, 'field_day_'~i~'_name')|replace('_',' ') }}</h4>
+                    <div class="day_conditions"><span class="icon-{{ attribute(forecast, 'field_day_'~i~'_conditions') }}"></span></div>
+                    <div class="day_description">{{ attribute(forecast, 'field_day_'~i~'_description') }}</div>
+                    <span class="day_low">Low <span class="value_switch value_deg">{{ attribute(forecast, 'field_day_'~i~'_low') }}</span>&deg;<span class="unit_switch unit_deg">C</span></span>
+                    <span class="day_high">High <span class="value_switch value_deg">{{ attribute(forecast, 'field_day_'~i~'_high') }}</span>&deg;<span class="unit_switch unit_deg">C</span></span>
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+        </div>
+
+        <h3>Synopsis</h3>
+        {{ forecast.field_synopsis }}
+
+        <h3>Extended Outlook</h3>
+        {{ forecast.field_extended_outlook }}
+
+    </div>
+
+</div>
+
+<span class="lifts-open" style="display:none">
+    {% if lifts_open %}
+        {{ lifts_open }}
+    {% else %}
+        0
+    {% endif %}
+</span>
+<span class="trails-open" style="display:none">
+    {% if trails_open %}
+        {{ trails_open }}
+    {% else %}
+        0
+    {% endif %}
+</span>

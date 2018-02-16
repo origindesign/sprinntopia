@@ -1,0 +1,80 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      https://s3.amazonaws.com/icomoon.io/42560/SunPeaksResort/style.css?mqd9lu: { type: external, minified: true }
+      https://cdn.jsdelivr.net/combine/npm/nanoscroller@0.8.7/bin/css/nanoscroller.min.css,npm/formstone@1.4.2/dist/css/themes/light.css,npm/formstone@1.4.0/dist/css/checkbox.min.css,npm/formstone@1.4.0/dist/css/dropdown.min.css,npm/slick-carousel@1.7.1/slick/slick-theme.min.css,npm/slick-carousel@1.7.1/slick/slick.min.css: { type: external, minified: true }
+      css/sunpeaksresort.css: {}
+global-scripts:
+  version: VERSION
+  js:
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyCfDOYzsIyzwU5VUHi_vMr93iqdecqe2u0 : { type: external, minified: true }
+    https://cdn.jsdelivr.net/combine/npm/formstone@1.4.0/src/js/core.min.js,npm/formstone@1.4.0/src/js/checkbox.min.js,npm/formstone@1.4.0/src/js/dropdown.min.js,npm/formstone@1.4.0/src/js/cookie.min.js,npm/object-fit-images@3.2.3/dist/ofi.min.js,npm/slick-carousel@1.7.1,npm/gsap@1.20.3/TweenMax.min.js,npm/scrollmagic@2.0.5/scrollmagic/uncompressed/ScrollMagic.min.js,npm/scrollmagic@2.0.5/scrollmagic/minified/plugins/animation.gsap.min.js,npm/nanoscroller@0.8.7: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.1/isotope.pkgd.min.js : { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.0/imagesloaded.pkgd.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js : { type: external, minified: true }
+    js/calc.min.js : { minified: true }
+    js/jquery.goomap.js: {}
+    js/resizer.js: {}
+    js/ajaxload.js: {}
+    js/jquery.accessibleNavigation.js: {}
+    js/navigation.js: {}
+    js/scripts.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/modernizr
+    - core/jquery.ui.datepicker
+newsletter:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js: { type: external, minified: true }
+event-calendar:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js: { type: external, minified: true }
+    js/events.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery.once
+    - core/jquery
+interactive-map:
+  version: 1.x
+  js:
+    js/map.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery.once
+    - core/jquery
+flickr-gallery:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.2/URI.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.2/jquery.URI.min.js: { type: external, minified: true }
+    js/gallery.js: {}
+    js/jquery.flickr.js: {}
+    js/flickrGallery.js: {}
+  dependencies:
+      - core/drupal
+      - core/jquery.once
+      - core/jquery
+video-gallery:
+  version: 1.x
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.2/URI.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.2/jquery.URI.min.js: { type: external, minified: true }
+    js/gallery.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery.once
+    - core/jquery
+inntopia-widget:
+  version: 1.x
+  js:
+    js/inntopia-widget.js: {}
+  dependencies:
+      - core/drupal
+      - core/jquery.once
+      - core/jquery
+      - core/jquery.ui.datepicker

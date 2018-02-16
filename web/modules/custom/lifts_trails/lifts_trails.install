@@ -1,0 +1,58 @@
+<?php
+
+function lifts_trails_schema() {
+
+    $schema['lifts_trails'] = array(
+
+        'fields' => array(
+            'id'=>array(
+                'type'=>'serial',
+                'not null' => TRUE,
+            ),
+            'machine_name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+			'status'=>array(
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'difficulty'=>array(
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+			'lift'=>array(
+				'type' => 'varchar',
+				'length' => 255,
+				'not null' => TRUE,
+				'default' => '',
+			),
+            'type'=>array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            )
+        ),
+        'unique keys' => array(
+            'machine_name' => array('machine_name'),
+        ),
+        'primary key' => array('id')
+
+    );
+
+    return $schema;
+
+}

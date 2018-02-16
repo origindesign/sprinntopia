@@ -1,0 +1,57 @@
+
+
+<div id="menu-overlay" class="overlay" role="dialog" aria-hidden="true" aria-labelledby="">
+<div class="container">
+{% for key,value in overlay_menus %}
+    <div id="{{ key }}" class="sub-menu nano" aria-hidden="true">
+    <div class="nano-content">
+
+        <div class="inner">
+
+            {% if key == 'menu-events-things-to-do' %}
+                <nav id="block-events-extra-menu">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="/events-things-to-do/activities?season=winter">Winter Activities</a></li>
+                        <li class="menu-item"><a href="/events-things-to-do/activities?season=summer">Summer Activities</a></li>
+                    </ul>
+                </nav>
+            {% endif %}
+
+            <!-- Print Menus -->
+            {{ value }}
+
+            <!-- Print Booking Links -->
+            {% if key == 'menu-ski-ride' %}
+                <div class="buttons">
+                    <a href="http://sunpeaksresort.ltibooking.com/" target="_blank" class="btn-solid">Buy Lift Tickets</a>
+                </div>
+
+            {% elseif key == 'menu-bike-hike' %}
+                <div class="buttons">
+                    <a href="/bike-hike/tickets-passes" class="btn-solid">Buy Bike Park Tickets</a>
+                    <a href="/bike-hike/tickets-passes" class="btn-solid">Buy Hiking &amp; Sightseeing Tickets</a>
+                </div>
+
+            {% elseif key == 'menu-golf' %}
+                <div class="buttons">
+                    <a href="/golf/rates-membership" class="btn-solid">Book A Tee Time</a>
+                </div>
+
+            {% elseif key == 'menu-places-to-stay' %}
+                <div class="buttons">
+                    <a href="https://www.inntopia.travel/ecomm/Shop/Lodging/593730" target="_blank" class="btn-solid">Book Lodging</a>
+                </div>
+
+            {% endif %}
+
+
+        </div>
+
+        <a class="close" href="#">Close</a>
+
+    </div>
+    </div>
+
+{% endfor %}
+</div>
+</div>

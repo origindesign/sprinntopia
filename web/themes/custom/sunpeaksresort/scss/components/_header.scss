@@ -1,0 +1,247 @@
+
+#alertbar{
+  @include transition;
+  @include mainPadding();
+  @include fontsize(11);
+  background:#fff; color:$blue; z-index:9; font-weight:bold; text-transform:uppercase; height:30px; line-height:1; text-align:left; opacity:0; display:none;
+  body.alert-on &,
+  &.visible{
+    opacity:1; display:block;
+  }
+  @include media($tablet-portrait){
+    @include fontsize(13);
+    text-align:center;
+  }
+  .container{
+    position:relative; padding-right:35px;
+    @include media($tablet-portrait){
+      padding-right:0;
+    }
+  }
+  .table{
+    @include verticalAlign;
+    height:30px;
+  }
+  a.link{
+    @include fonticon('\e905',10px,$blue,50%,auto,0);
+    display:inline-block; text-decoration:none; padding-right:18px;
+    &:before{
+      transform:translateY(-6px);
+    }
+    &:hover:before{
+      right:-10px;
+    }
+    @include media($tablet-portrait){
+      &:before{
+        transform:translateY(-5px);
+      }
+    }
+  }
+  .close{
+    @include fonticon('\e902',15px,rgba($blue,0.5),1px,auto,0);
+    color:$grey-light; position:absolute; right:5px; top:6px;
+    &:hover:before{
+      color:$blue;
+    }
+  }
+}
+
+
+.logo{ width:147px;}
+
+a.skip-to-content{
+  @include transition(opacity);
+  @include fontsize(13);
+  position:absolute; top:15px; left:-999em; transform:translateX(-50%); color:$blue; background:#fff; padding:0 10px; opacity:0;
+  &:focus{
+    left:50%; opacity:1;
+  }
+}
+
+#header{
+  position:fixed;
+  width:100%;
+  left:0;
+  top:0;
+  background:$header-bottom-color;
+  background: $header-bottom-color linear-gradient(180deg, $header-top-color 0%, $header-bottom-color 100%);
+  z-index:10;
+  color:#fff;
+  *{
+    outline-color:#fff;
+  }
+
+  .toolbar-fixed.toolbar-horizontal &{ top:39px}
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open &{ top:80px;}
+
+  > .inner{
+    @include mainPadding();
+    height:$header-height-mobile; padding-top:20px;
+    @include media($medium-screen){
+      height:$header-height-tablet; padding-top:30px;
+    }
+    @include media($large-screen){
+      height:$header-height;
+    }
+  }
+
+  .container{
+    position:relative;
+  }
+
+  .logo{
+    position:absolute; top:0; z-index:2; left:0; width:110px;
+    @include media($medium-screen){
+      width:147px;
+    }
+    @include media($large-screen){
+      top:4px;
+    }
+  }
+
+  .utility{
+    position:absolute; top:4px; right:0; color:#fff;
+
+    @include media($medium-screen){
+      top:18px;
+    }
+
+    .toggle{
+      cursor:pointer; text-decoration:none; float:left;
+    }
+
+    #nav-toggle{
+      float:left; padding-left:10px; position:relative;
+
+      &:after{
+        @include pseudo;
+        background:rgba(#fff,0.3); width:1px; height:25px; top:2px; right:0;
+      }
+
+      a{
+        @include fonticon('\e917',35px,#fff,-4px);
+        width:35px; height:35px; display:block; text-decoration:none; padding:0;
+        &.close:before{
+          content:'\e918';
+        }
+      }
+
+      @include media($medium-screen){
+        display:none
+      }
+
+    }
+
+    .search{
+      @include fonticon('\e914',20px,#fff,5px);
+      display:block; width:32px; height:20px;
+
+      &:hover:before,
+      &:focus:before{
+        color:$green
+      }
+
+      &:after{
+        @include pseudo;
+        background:rgba(#fff,0.3); width:1px; height:25px; top:2px; left:auto; right:0;
+      }
+
+      @include media($medium-screen){
+        width:42px;
+      }
+
+      span{
+        @include visuallyHidden;
+      }
+
+    }
+
+    .webcams{
+      @include fonticon('\e91d',20px,#fff,5px);
+      display:none; width:42px; height:20px; cursor:pointer; text-decoration:none; float:left;
+
+      &:hover:before,
+      &:focus:before{
+        color:$green
+      }
+
+      &:after{
+        @include pseudo;
+        background:rgba(#fff,0.3); width:1px; height:25px; top:2px; left:auto; right:0;
+      }
+
+      @include media($medium-screen){
+        display:block;
+      }
+
+      span{
+        text-indent:-999em; display:block;
+      }
+    }
+
+    #block-weathericonblock{
+      float:left;
+    }
+    .weather{
+      line-height:1; padding:0 15px 0 0; margin:0 12px; color:#fff; position:relative;
+
+      &:hover,
+      &:focus{
+        color:$green;
+        .temp:before,
+        .degree:before{
+          color:$green;
+        }
+      }
+
+      span{
+        display:block; float:left;
+      }
+
+      .icon {
+        @include fontsize(23);
+      }
+      .temp{
+        @include fontsize(25);
+        padding-left:10px;
+      }
+      .degree{
+        @include fontsize(10);
+        @include fonticon('\e905',8px,#fff,auto,auto,0,-9px);
+        font-weight:500; line-height:1; position:absolute; right:0; top:4px;
+      }
+
+      @include media($medium-screen){
+        margin:0 0 0 20px;
+        .icon {
+          @include fontsize(27); height:27px; line-height:27px;
+        }
+        .temp{
+          @include fontsize(30);
+        }
+        .degree{
+          @include fontsize(12);
+          &:before{ bottom:-12px}
+          right:0; top:2px;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
+#page-title{
+  padding:0 20px 20px;
+  text-align:center;
+  position:relative;
+  z-index:5;
+  @include media($tablet-portrait){
+    padding-top:20px; padding-bottom:40px;
+  }
+  @include media($large-screen){
+    padding-top:40px; padding-bottom:85px;
+  }
+}

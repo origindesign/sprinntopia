@@ -1,0 +1,106 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display the basic html structure of a single
+ * Drupal page.
+ *
+ * Variables:
+ * - css: An array of CSS files for the current page.
+ * - language: (object) The language the site is being displayed in.
+ *   language.language contains its textual representation.
+ *   language.dir contains the language direction. It will either be 'ltr' or 'rtl'.
+ * - grddl_profile: A GRDDL profile allowing agents to extract the RDF data.
+ * - head_title: A modified version of the page title, for use in the TITLE
+ *   tag.
+ * - head_title_array: (array) An associative array containing the string parts
+ *   that were used to generate the head_title variable, already prepared to be
+ *   output as TITLE tag. The key/value pairs may contain one or more of the
+ *   following, depending on conditions:
+ *   - title: The title of the current page, if any.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site, if any, and if there is no title.
+ * - head: Markup for the HEAD section (including meta tags, keyword tags, and
+ *   so on).
+ * - styles: Style tags necessary to import all CSS files for the page.
+ * - scripts: Script tags necessary to load the JavaScript files and settings
+ *   for the page.
+ * - page_top: Initial markup from any modules that have altered the
+ *   page. This variable should always be output first, before all other dynamic
+ *   content.
+ * - page: The rendered page content.
+ * - page_bottom: Final closing markup from any modules that have altered the
+ *   page. This variable should always be output last, after all other dynamic
+ *   content.
+ * - classes String of classes that can be used to style contextually through
+ *   CSS.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_html()
+ * @see template_process()
+ */
+#}
+{%
+set body_classes = [
+  logged_in ? 'user-logged-in',
+  not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+  node_type ? 'page-node-type-' ~ node_type|clean_class,
+  season == 'summer' ? 'summer' : 'winter',
+  db_offline ? 'db-offline',
+  'section-' ~ path_alias[0],
+  settings.field_show_alert == "1" and settings.field_alert_text|render ? 'alert-on'
+]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+<head>
+  <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-N89LP4');</script>
+    <!-- End Google Tag Manager -->
+
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+
+
+      <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/sunpeaksresort/images/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/sunpeaksresort/images/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/sunpeaksresort/images/favicon/favicon-16x16.png">
+      <link rel="manifest" href="/themes/custom/sunpeaksresort/images/favicon/site.webmanifest">
+      <link rel="mask-icon" href="/themes/custom/sunpeaksresort/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+      <link rel="shortcut icon" href="/themes/custom/sunpeaksresort/images/favicon/favicon.ico">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="msapplication-config" content="/themes/custom/sunpeaksresort/images/favicon/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+
+      <meta property="fb:app_id" content="133035827351496" />
+</head>
+<body{{ attributes.addClass(body_classes) }}>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N89LP4"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  {% if page_top %}
+    {{ page_top }}
+  {% endif %}
+
+  {% if page %}
+    {{ page }}
+  {% endif %}
+
+  {% if page_bottom %}
+    {{ page_bottom }}
+  {% endif %}
+
+
+  <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+</body>
+</html>

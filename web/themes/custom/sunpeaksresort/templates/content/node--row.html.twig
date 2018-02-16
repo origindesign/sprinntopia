@@ -1,0 +1,75 @@
+
+{%
+  set classes = [
+    'node',
+    'node-view-' ~ view_mode|clean_class,
+    'iso-item',
+    'cat-' ~ content.field_category[0]|escape|machine,
+]
+%}
+
+
+
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }} >
+
+    {% if type == 'trail' %}
+    <div class="row-cell level">
+        <span class="icon-trail_{{ content.field_ability[0]|e|machine }} {{ content.field_sport[0]|e|machine }}
+        {% if content.field_freeride[0]['#markup'] == 'On' %} freeride{% endif %}">
+
+        </span>
+    </div>
+    {% endif %}
+
+    <div class="row-cell name">
+        {{ label }}
+        {% if content.field_notes|render %}
+            <span class="notes"> {{ content.field_notes[0] }} </span>
+        {% endif %}
+    </div>
+
+    <div class="row-cell status">
+
+        {% if feed_status %}
+
+            {% if feed_status == 'status_0' %}
+                <span class="icon-open"></span>
+            {% endif %}
+            {% if feed_status == 'status_1' %}
+                <span class="icon-close"></span>
+            {% endif %}
+            {% if feed_status == 'status_2' %}
+                <span class="icon-tick groomed"></span>
+            {% endif %}
+            {% if feed_status == 'status_3' %}
+                <span class="icon-tick groomed-with-fresh"></span>
+            {% endif %}
+
+        {% else %}
+
+            {% if content.field_status[0]['#plain_text'] == '126' %}
+                <span class="icon-open"></span>
+            {% endif %}
+            {% if content.field_status[0]['#plain_text'] == '127' %}
+                <span class="icon-close"></span>
+            {% endif %}
+            {% if content.field_status[0]['#plain_text'] == '128' %}
+                <span class="icon-tick groomed"></span>
+            {% endif %}
+            {% if content.field_status[0]['#plain_text'] == '129' %}
+                <span class="icon-tick groomed-with-fresh"></span>
+            {% endif %}
+
+        {% endif %}
+
+    </div>
+
+
+    {{ title_suffix }}
+
+
+    {% if block_no_cache %}
+        {{ block_no_cache }}
+    {% endif %}
+
+</article>

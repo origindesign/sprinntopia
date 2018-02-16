@@ -1,0 +1,5 @@
+name: 'Create Send - Campaign Monitor API'
+type: module
+description: 'Implements Campaign Monitors php library'
+package: Custom
+core: 8.x

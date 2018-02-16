@@ -1,0 +1,11 @@
+# File system.action.node_update_field_add_to_directory.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_update_field_add_to_directory
+label: 'Add to Business Directory'
+type: node
+plugin: node_update_field_add_to_directory
+configuration: {  }

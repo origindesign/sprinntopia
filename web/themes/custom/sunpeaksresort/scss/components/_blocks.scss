@@ -1,0 +1,299 @@
+
+/* CTAS */
+
+.cta,
+#newsletter{
+
+  h3{ color:$grey-dark; margin-bottom:25px; @include fontsize(20)}
+  p{ @include fontsize(14)}
+
+}
+
+.cta{
+  text-align:center;
+
+  p.mice-type{
+    @include fontsize(10);
+  }
+
+  .highlight{ @include fontsize(20); font-weight:900; line-height:1; color:$yellow;}
+
+  footer{
+    p{ margin:0}
+    p:not(:first-child){ margin-top:10px;}
+  }
+
+}
+
+#sidebar .cta{
+
+  margin-top:60px; @include maxWidth(210px); text-align:center;
+
+  @include media($extended-screen){
+    max-width:310px;
+  }
+
+}
+
+
+/* NEWSLETTER */
+#newsletter{
+  text-align:center;
+
+  h3{ @include maxWidth(370px)}
+
+  form{
+    position:relative;
+    padding-right:130px;
+
+    label:not(.error){ position:absolute; top:12px; left:13px; cursor:text; font-weight:300 }
+    input[type="email"]{
+      background:rgba($grey-dark,0.0965); border:none; border-top:1px solid transparent;
+    }
+    button{
+      width:130px; position:absolute; top:0; right:0;
+    }
+
+  }
+
+  .social-icons{
+    text-align:center;
+
+    a{
+      @include fonticon('',25px,rgba($grey-dark,0.5));
+      display:inline-block; margin:0 12px; width:25px; height:25px; text-decoration:none;
+      span{
+        @include visuallyHidden;
+      }
+
+      &:first-child{ margin-left:0}
+      &:last-child{ margin-right:0}
+
+      &:focus:before,
+      &:hover:before{ color:$grey-dark}
+
+      &.facebook:before{ content:'\e90e'}
+      &.vimeo:before{ content:'\e921'}
+      &.google:before{ content:'\e90f'}
+      &.twitter:before{ content:'\e90d'}
+      &.instagram:before{ content:'\e90c'}
+      &.youtube:before{ content:'\e90b'}
+      &.tripadvisor:before{ content:'\e910'}
+    }
+  }
+
+}
+
+.custom-form{
+  @include maxWidth(700px);
+
+  .form-checkboxes{
+    .error{
+      display:none !important;
+    }
+  }
+
+  .lists{
+    padding-left:30px;
+  }
+
+}
+
+
+/* WEBCAMS */
+.node-view-full #webcams{
+
+  .cam{
+    @include rowMargin;
+  }
+
+  .image{
+    margin-bottom:20px;
+    img{ display:block}
+  }
+
+  .offline{
+    padding:20px; background:$blue-bg-mid;
+  }
+
+  .template.table.simple{
+    margin:0;
+    tbody td{
+      width:50%;
+      @include media($extended-screen){
+        &:first-child{
+          width:30%;
+        }
+        &:last-child{
+          width:70%;
+        }
+      }
+    }
+  }
+
+}
+
+
+/* INTERACTIVE MAP */
+#map-container{
+  position:relative;
+
+  a.toggle-categories{
+    @include fontsize(12);
+    background:#fff; color:$grey_dark; position:absolute; right:10px; bottom:10px; text-transform:uppercase; padding:5px 10px; font-weight:500; text-decoration:none;
+    @include media($medium-screen){
+      display:none;
+    }
+  }
+
+}
+#interactive-map{
+  height:400px;
+  @include media($medium-screen){
+    height:600px;
+  }
+  @include media($extended-screen){
+    height:800px;
+  }
+}
+.gm-style{
+  img{
+    max-width:100%;
+  }
+}
+#categories{
+  position:absolute; background:#fff; right:10px; bottom:10px; padding:30px; width:calc(100% - 20px); height:calc(100% - 20px); display:none;
+
+  @include media($medium-screen){
+    width:auto; height:auto; display:block; padding:10px;
+  }
+
+  .wrapper{
+    @include maxWidth(175px);
+    text-align:center;
+  }
+
+  a.btn{
+    @include button-border($grey_dark);
+    @include media($medium-screen){
+      display:none;
+    }
+  }
+
+  form{
+    margin-bottom:30px; text-align:left;
+    @include media($medium-screen){
+      margin:0;
+    }
+    .mapFilter:last-child label{
+      margin-bottom:0;
+    }
+  }
+
+  input[type="checkbox"]{
+    line-height:1; height:auto; margin-right:5px;
+  }
+  label{
+    line-height:1; padding-right:25px; position:relative;
+    &:after{
+      @include pseudo;
+      background:right top no-repeat; background-size:cover; width:17px; height:21px; left:auto; right:0; top:-3px;
+    }
+    &.accommodation:after{ background-image:url('../images/markers/marker_accommodation.svg') }
+    &.diningapres:after{ background-image:url('../images/markers/marker_diningapres.svg') }
+    &.business:after{ background-image:url('../images/markers/marker_business.svg') }
+  }
+}
+.link{
+  font-weight:bold;
+}
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display:none;
+}
+
+
+/* MEMBER LOGIN */
+
+#block-userlogin{
+  @include maxWidth(300px);
+  .item-list{
+    ul{
+      @include reset;
+      @include fontsize(12);
+      margin-top:20px;
+      a{
+        color:$grey-dark; text-decoration:none;
+        &:hover{
+          text-decoration:underline;
+        }
+      }
+    }
+  }
+}
+
+
+/* INNTOPIA WIDGET */
+.inntopia-widget{
+
+  form{
+    max-width:305px;
+  }
+
+}
+
+
+/* BOOKING WIDGET */
+
+#lodging-widget{
+
+  h3{
+    margin-bottom:20px;
+  }
+  .form{
+    @include clearfix();
+  }
+
+  .form-item{
+
+    &.adults{
+      float:left; width:50%; margin-top:0; padding-right:10px;
+    }
+    &.children{
+      float:left; width:50%; margin-top:0; padding-left:10px;
+    }
+  };
+  .form-actions{
+    clear:both;
+  }
+
+  @include media($medium-screen){
+    .form-item{
+      &.from{
+        float:left; width:50%; margin-top:0; padding-right:10px;
+      }
+      &.to{
+        float:left; width:50%; margin-top:0; padding-left:10px;
+      }
+    }
+  }
+
+  @include media($extended-screen){
+    .form-item{
+      width:25% !important; clear:none !important;
+      &:first-child{
+        padding:0 14px 0 0 !important;
+      }
+      &:nth-child(2),
+      &:nth-child(3){
+        padding:0 7px !important;
+      }
+      &:last-child{
+        padding:0 0 0 14px !important;
+      }
+      &:nth-child(odd){
+        clear:none !important;
+      }
+    }
+  }
+
+}

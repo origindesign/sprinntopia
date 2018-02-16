@@ -1,0 +1,5 @@
+name: 'Helper'
+type: module
+description: 'A set of handy functions for Drupal development and theming'
+package: Custom
+core: 8.x

@@ -1,0 +1,24 @@
+<div id="flickr-gallery" class="photo-gallery">
+
+    {% if photoset %}
+
+    <div id="gallery-container" class="loading">
+
+        <div id="photoset" class="flickr-gallery" data-photoset="{{ photoset }}">
+
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <div id="gallery-container" class="loading">
+
+        <div id="collections" class="inner-listing">
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>

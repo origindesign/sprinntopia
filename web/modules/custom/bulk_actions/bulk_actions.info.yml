@@ -1,0 +1,5 @@
+name: 'Bulk Actions'
+type: module
+description: 'Adding Custom Actions that could be Used by Drupal and VBO module'
+package: Custom
+core: 8.x

@@ -1,0 +1,98 @@
+@import "../../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
+// Neat Overrides
+$column: modular-scale(3, 1em, $golden);
+$gutter: modular-scale(1, 1em, $golden);
+$doublegutter: modular-scale(2, 1em, $golden);
+$mobilegutter: 10px;
+$grid-columns: 12;
+
+// Neat Breakpoints
+$small-screen-size: 360px;
+$medium-screen-size: 750px;
+$tablet-portrait-size: 768px;
+$narrow-screen-size: 850px;
+$tablet-landscape-size: 1024px;
+$large-screen-size: 1200px;
+$laptop-15inch-size: 1440px;
+$extended-screen-size: 1600px;
+$mega-screen-size: 1900px;
+
+$small-screen: new-breakpoint(min-width $small-screen-size);
+$medium-screen: new-breakpoint(min-width $medium-screen-size);
+$tablet-portrait: new-breakpoint(min-width $tablet-portrait-size);
+$narrow-screen: new-breakpoint(min-width $narrow-screen-size);
+$tablet-landscape: new-breakpoint(min-width $tablet-landscape-size);
+$large-screen: new-breakpoint(min-width $large-screen-size);
+$laptop-15inch: new-breakpoint(min-width $laptop-15inch-size);
+$extended-screen: new-breakpoint(min-width $extended-screen-size);
+$mega-screen: new-breakpoint(min-width $mega-screen-size);
+
+@mixin shortLaptop {
+  @media (max-height:750px) and (min-width:1024px) {
+    @content;
+  }
+}
+
+.row{
+  @include row;
+  &:not(:last-child){
+    margin-bottom:40px;
+    @include media($tablet-portrait){
+      margin-bottom:60px;
+    }
+  }
+}
+
+.container {
+  @include container();
+}
+
+.cell{
+  @include fill-parent;
+}
+
+.cell-1-4 {
+  @include media($medium-screen){
+    @include span-columns(6);
+    @include omega(2n);
+  }
+  @include media($tablet-portrait){
+    @include span-columns(3);
+    @include omega(4n);
+  }
+}
+
+.cell-1-3 {
+  @include media($medium-screen){
+    width:47%; margin-right:6%; float:left;
+    @include omega(2n);
+  }
+  @include media($extended-screen){
+    width:30%; margin-right:5%;
+    &:nth-child(2n+1){
+      clear:none;
+      margin-right:5%;
+    }
+    @include omega(3n);
+  }
+}
+
+.cell-1-2 {
+  &:not(.node-view-teaser){
+    &:not(:first-child){
+      margin-top:20px;
+    }
+    @include media($large-screen){
+      @include span-columns(6);
+      @include omega(2n);
+      &:not(:first-child){
+        margin-top:0;
+      }
+    }
+  }
+  @include media($extended-screen){
+    @include span-columns(6);
+    @include omega(2n);
+  }
+}
+

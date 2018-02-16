@@ -1,0 +1,28 @@
+<div id="lodging-widget">
+    <h3>Book Lodging</h3>
+    <div class="form">
+        <div class="form-item from">
+            <label for="arrivalDate">Arrival Date</label>
+            <div class="wrap-picker">
+                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small"/>
+            </div>
+        </div>
+        <div class="form-item to">
+            <label for="departureDate">Departure Date</label>
+            <div class="wrap-picker">
+                <input type="text" id="departureDate" name="departureDate" class="input-small"/>
+            </div>
+        </div><div class="form-item adults">
+            <label for="adultCount">Adults</label>
+            <input type="text" id="adultCount" name="adultCount" class="input-mini" value="2"/>
+        </div>
+        <div class="form-item children">
+            <label for="childCount">Children</label>
+            <input type="text" id="childCount" name="childCount" class="input-mini" value="0"/>
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="Check Availability" id="checkAvailability">
+        </div>
+    </div>
+    <span id="formError"></span>
+</div>

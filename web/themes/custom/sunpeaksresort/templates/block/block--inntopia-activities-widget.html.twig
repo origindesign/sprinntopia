@@ -1,0 +1,22 @@
+
+<div class="field--name-body inntopia-widget">
+
+
+    <h2>Book {{ label }}</h2>
+
+    <form action="https://www.inntopia.travel/ecomm/shop/activities/593730/" method="get" target="_blank">
+        <input type="hidden" id="productsupercategoryId" name="productsupercategoryId" value="2">
+        <input type="hidden" id="productcategoryId" name="productcategoryId" value="{{ content.field_inntopia_id[0]['#context']['value'] }}">
+        <div class="form-item">
+            <label for="start-date">Activity Date</label>
+            <div class="wrap-picker">
+                <input type="text" class="form-control" id="start-date" name="startdate">
+            </div>
+        </div>
+        <div class="form-action">
+            <button type="submit" >Search</button>
+        </div>
+    </form>
+
+
+</div>

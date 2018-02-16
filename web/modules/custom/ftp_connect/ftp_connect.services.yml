@@ -1,0 +1,4 @@
+services:
+    # A service that contains a function for setting up FTP connection and pulling files
+    ftp_connect.ftp_connection:
+        class: Drupal\ftp_connect\FtpConnection

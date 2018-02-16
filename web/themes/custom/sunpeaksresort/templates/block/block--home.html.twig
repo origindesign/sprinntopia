@@ -1,0 +1,121 @@
+
+{% set sizes = [320,480,640,768,1024,1200,1600,2048] %}
+
+<div id="hero" class="parallax {{ season }}">
+
+
+    <div class="text">
+        <span>Our Happy Place</span>
+        <span>Has Plenty of Room</span>
+        <span>Sun Peaks. Canada's Second <br /> Largest Ski Area.</span>
+        <div class="cta">
+            <a href="/explore/sun-peaks-in-{{ season }}" class="btn-solid home-explore"><span>Explore {{ season }}</span></a>
+        </div>
+    </div>
+
+    <div class="background"></div>
+    <div class="foreground">
+        <img src="/{{ directory }}/images/hero-foreground-{{ season }}-1200.png" alt=""
+             srcset="
+                {% for size in sizes %}
+                    /{{ directory }}/images/hero-foreground-{{ season }}-{{ size }}.png {{ size }}w{% if loop.index != sizes|length %}, {% endif %}
+                {% endfor %}
+            " sizes="100vw"
+        />
+    </div>
+</div>
+
+
+<div id="home-content">
+
+
+    <div class="featured-content main-padding row">
+        <div class="container">
+            {{ content.field_featured_event }}
+            {{ content.field_featured_package }}
+        </div>
+    </div>
+
+
+
+    <div class="blogs main-padding row">
+        <div class="container">
+            <h2 class="line"><span>Stories &amp; Inspiration</span></h2>
+            {{ content.field_blogs }}
+            <a href="/explore/stories-inspiration" class="arrow">Read more Stories &amp; Inspiration</a>
+        </div>
+    </div>
+
+
+
+    <div class="personas row">
+
+        <div class="image">
+            {{ content.field_persona_images[0] }}
+            {{ content.field_persona_images[1] }}
+            {{ content.field_persona_images[2] }}
+            {{ content.field_persona_images[3] }}
+            {{ content.field_persona_images[4] }}
+        </div>
+
+        <div class="copy">
+            <ul class="personas-list">
+                <li class="family">
+                    <a href="/explore/sun-peaks-for-families" class="home-families">
+                        <div class="inner">
+                        <h3>For the Family</h3>
+                        <p>Check out our family friendly events and activities.</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="mountain">
+                    <a href="/ski-ride/the-mountain/trail-maps-terrain" class="home-terrain">
+                        <div class="inner">
+                        <h3>Our Winter Terrain</h3>
+                        <p>Explore three peaks at Canada’s second largest ski area.</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="event">
+                    <a href="/events-things-to-do/events" class="home-events">
+                        <div class="inner">
+                        <h3>See What’s On</h3>
+                        <p>A complete guide to festivals, live music, events and special activities.</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="dining">
+                    <a href="/events-things-do/dining-apres" class="home-dining">
+                        <div class="inner">
+                        <h3>Guide to Dining</h3>
+                        <p>Satisfy your cravings with a multitude of unique cafes, pubs and eateries. </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="main-padding">
+        <div class="container">
+            <h2 class="line"><span>{{ node.field_activities_heading.value }}</span></h2>
+        </div>
+    </div>
+    <div class="row">
+        {{ content.field_activities }}
+    </div>
+
+
+
+    <div class="blocks container row">
+
+        {% include  directory  ~ '/templates/block/block--cta-booking.html.twig' %}
+
+        {% include  directory  ~ '/templates/block/block--newsletter.html.twig' %}
+
+    </div>
+
+
+</div>

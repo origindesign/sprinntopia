@@ -1,0 +1,175 @@
+
+#footer{
+  position:relative; z-index:5; color:#fff;
+  *{
+    outline-color:#fff;
+  }
+
+  .container{ @include container(1160px)}
+
+  .shin{ text-align:center; padding:40px 0; background:$blue-shin;
+    ul.menu{ text-align:center; @include reset;
+      li{ display:block;
+        a{ color:#fff; padding:0 25px; display:inline-block; @include fontsize(15); font-weight:500;
+          &:focus,
+          &:hover{ color:rgba(#fff,.55);}
+        }
+      }
+    }
+    @include media($tablet-portrait){
+      ul.menu{
+        li{ display:inline-block}
+      }
+    }
+  }
+
+  .footer{ background:$blue-footer; color:#fff;}
+
+  .foot{
+    @include mainPadding;
+    padding-top:30px; padding-bottom:30px; text-align:center;
+
+    @include media($tablet-portrait){
+      @include displayTable;
+      text-align:left; padding-top:50px; padding-bottom:50px;
+    }
+    @include media($large-screen){
+      @include sidePadding(65px,65px)
+    }
+
+  }
+
+  .phone{
+    margin-bottom:30px;
+
+    @include media($tablet-portrait){
+      display:table-cell; vertical-align:middle; width:50%; border-right: 1px solid rgba(255,255,255,0.1); margin-bottom:0; padding-top:20px; padding-bottom:20px;
+    }
+
+    .logo{
+      @include media($tablet-portrait){
+        margin:0 20px 0 0; display:inline-block;
+      }
+      @include media($tablet-landscape){
+        margin-right:50px;
+      }
+    }
+
+    p{
+      @include fontsize(12);
+      margin:20px 0 0;
+      @include media($tablet-portrait){
+        display:inline-block;
+      }
+      span{ @include fontsize(22); font-weight:500}
+    }
+  }
+
+  #block-sunpeaksresort-footer{
+
+    @include media($tablet-portrait){
+      display:table-cell; vertical-align:middle; width:50%; padding-left:40px; padding-top:20px; padding-bottom:20px;
+    }
+    @include media($tablet-landscape){
+      padding-left:70px;
+    }
+    @include media($large-screen){
+      padding-left:100px;
+    }
+
+    ul.menu{
+      @include reset;
+      text-align:center;
+
+      @include media($tablet-portrait){
+        text-align:left;
+      }
+
+      li{ float:left; width:50%; margin-bottom:10px;
+        &:last-child{ margin-bottom:0;}
+        a{ @include fontsize(13); color:#fff;
+          &:focus,
+          &:hover{ color:rgba(#fff,.55);}
+        }
+      }
+    }
+
+  }
+
+  .sole{
+    @include clearfix;
+    @include mainPadding;
+    @include fontsize(13);
+    text-align:center; color:rgba(#fff,.55); border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; padding-bottom:60px;
+
+    @include media($medium-screen){
+      @include fontsize(14);
+    }
+    @include media($large-screen){
+      @include sidePadding(65px,65px);
+      padding-bottom:20px;
+    }
+
+    .address{
+      margin-bottom:20px;
+
+      @include media($tablet-portrait) {
+        float:left;
+      }
+
+      a{
+        @include fonticon('\e911',20px,rgba(#fff,.55),0,50%);
+        &:before{
+          transform:translateX(-50%);
+        }
+        display:block; padding-top:25px; text-decoration:none;
+      }
+      @include media($tablet-portrait){
+        margin-bottom:0;
+        a{
+          padding:0 0 0 28px;
+          &:before{
+            left:0; transform:none;
+          }
+        }
+      }
+    }
+
+    #block-privacymenu{
+
+      @include media($tablet-portrait) {
+        float:right;
+      }
+
+      ul.menu{
+        @include reset;
+        text-align:center;
+        li{
+          display:inline-block; margin:0 3px;
+        }
+        @include media($tablet-portrait) {
+          text-align:left;
+          li{
+            float:left; display:block; margin:0;
+            &:not(:first-child){
+              margin-left:10px;
+            }
+          }
+        }
+        @include media($tablet-landscape){
+          li:not(:first-child){
+            margin-left:30px;
+          }
+        }
+      }
+    }
+    a{ color:rgba(#fff,.55);
+      &:hover,
+      &:hover:before,
+      &:focus,
+      &:focus:before{ color:#fff}
+    }
+
+  }
+
+}

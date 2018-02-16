@@ -1,0 +1,5 @@
+name: 'Meteo'
+type: module
+description: 'A module to get Weather data from a specific Weather service.'
+package: Custom
+core: 8.x

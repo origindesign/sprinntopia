@@ -1,0 +1,334 @@
+
+// Typography
+// --------------------------------------------------
+
+@include font-face("Gotham", "/themes/custom/sunpeaksresort/css/fonts/gotham-black-webfont", 900); // Black
+@include font-face("Gotham", "/themes/custom/sunpeaksresort/css/fonts/gotham-bold-webfont", 500); // Bold
+@include font-face("Gotham", "/themes/custom/sunpeaksresort/css/fonts/gotham-medium-webfont", 400); // Medium
+@include font-face("Gotham", "/themes/custom/sunpeaksresort/css/fonts/gotham-book-webfont", 300); // Book
+
+$gotham: "Gotham",verdana;
+$base-font-family: $gotham;
+$base-font-size: 14;
+$base-line-height: 1.5;
+
+@mixin fontsize($fontSize: $base-font-size){
+  font-size: #{$fontSize}px;
+  font-size: #{$fontSize / 10}rem;
+}
+
+
+// COLOURS
+// --------------------------------------------------
+$grey-dark: #505865;
+$grey-light: #74828C;
+$grey-background: rgba($grey-dark,0.096);
+$yellow: #FFB234;
+$green: #63B99E;
+$blue: #1A366C;
+$blue-light: #C3F6F9;
+$input-highlight-color:#a7acb2;
+
+$header-top-color:#1b366d;
+$header-bottom-color:#435789;
+
+$blue-bg-light: #f1fdfd;
+$blue-bg-mid: #e2fafc;
+$blue-shin: #3E5780;
+$blue-footer: #3A4F72;
+$grey-bg: #edeef0;
+
+$base-font-color: $grey-dark;
+$action-color: $yellow;
+$base-input-bg: $grey-bg;
+$base-input-hover: shade($grey-bg,10%);
+$base-border-color: rgba($grey-dark,0.25);
+$base-border: 1px solid $base-border-color;
+
+$error:#97161b;
+$error-background: #fbe3e4;
+
+$base-background-color: #fff;
+
+$foreground-bottom-color-winter:#ccc;
+$background-bottom-color-winter:#ccc;
+$foreground-bottom-color-summer:#516815;
+$background-bottom-color-summer:#fee3c6;
+
+
+  // Animation
+// --------------------------------------------------
+$base-duration: 400ms;
+$base-timing: cubic-bezier(.24,.52,.33,.99);
+
+@mixin transition ($property: all, $duration:$base-duration, $ease: $base-timing) {
+  transition: $property $duration $ease;
+}
+
+
+// Layout
+// --------------------------------------------------
+$max-width: 1800px;
+$header-height-mobile:70px;
+$header-height: 110px;
+$header-height-tablet: 145px;
+$alert-height: 30px;
+
+$base-spacing: 40px;
+$small-spacing: $base-spacing / 2;
+$base-padding: 60px;
+$double-padding: $base-padding * 2;
+
+$small-screen-padding: 10px;
+$medium-screen-padding: 25px;
+$tablet-screen-padding:40px;
+$extended-screen-padding:60px;
+$mega-screen-padding:6%;
+
+@mixin maxWidth($width: $max-width){
+  margin-left:auto;
+  margin-right:auto;
+  max-width: $width;
+}
+
+@mixin sidePadding($left,$right){
+  padding-left:$left;
+  padding-right:$right;
+}
+
+@mixin sideMargin($left,$right){
+  margin-left:$left;
+  margin-right:$right;
+}
+
+
+@mixin mainPadding(){
+  @include sidePadding($small-screen-padding,$small-screen-padding);
+  @include media($medium-screen) { @include sidePadding($medium-screen-padding,$medium-screen-padding) }
+  @include media($tablet-portrait) { @include sidePadding($tablet-screen-padding,$tablet-screen-padding); }
+  @include media($extended-screen) { @include sidePadding($extended-screen-padding,$extended-screen-padding); }
+  @include media($mega-screen) { @include sidePadding($mega-screen-padding,$mega-screen-padding) }
+}
+
+
+@mixin contentPadding(){
+  @include media($tablet-portrait) {
+    padding: 0 25px;
+  }
+  @include media($large-screen) {
+    padding: 0 50px;
+  }
+}
+
+@mixin rowMargin(){
+  margin:40px 0;
+  @include media($large-screen) {
+    margin:80px 0;
+  }
+  &:first-child{
+    margin-top:0;
+  }
+  &:last-child{
+    margin-bottom:0;
+  }
+}
+
+@mixin container($width: $max-width, $padding: false){
+  @include clearfix;
+  @include maxWidth($width);
+  @if $padding {
+    @include mainPadding;
+  }
+}
+
+@mixin displayTable(){
+  display:table; height:100%; width:100%;
+}
+
+@mixin verticalAlign(){
+  @include displayTable;
+  .inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@mixin centerFloats(){
+  float: left; position: relative; left: 50%;
+  > .inner {
+    float: left; position: relative; left: -50%;
+  }
+}
+.center-floats{
+  @include centerFloats;
+}
+
+@mixin cover(){ width:100%; height:100%; position:absolute; top:0; left:0;}
+
+@mixin pseudo(){ @include cover; display:block; content:'' }
+
+@mixin reset(){
+  margin:0; padding:0; list-style: none;
+  li{
+    margin:0; padding:0; list-style: none;
+  }
+}
+
+@mixin visuallyHidden(){
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  overflow-wrap: normal;
+  position: absolute !important;
+  width: 1px;
+}
+.visually-hidden{ @include visuallyHidden; }
+
+.clearfix {
+  @include clearfix;
+}
+
+@mixin clearfix(){
+  &:after {
+    content: ""; display: table; clear: both;
+  }
+}
+
+@mixin object-fit($fit: fill, $position: null){
+  -o-object-fit: $fit;
+  object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+    object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+@mixin objectFitImage($fit: cover, $position: null){
+  position:relative;
+  display:block;
+  img{
+    @include cover;
+    @include object-fit($fit, $position);
+  }
+}
+
+@mixin headingLine(){
+  @include fontsize(17);
+  font-weight:900; text-align:center; color:$grey-dark; position:relative; margin:0 0 25px; line-height:1; text-transform:uppercase;
+  span{
+    background:#fff; display:inline-block; padding:0 25px; position:relative; z-index:2;
+  }
+  &:after{
+    @include pseudo;
+    height:1px; background:$base-border-color; left:0; top:50%; z-index:1;
+  }
+}
+
+@mixin gridTopBorder(){
+  position:relative;
+  &:before,
+  &:after{
+    @include pseudo; height:1px; top:-1px; background:#fff; display:none;
+    @include media($medium-screen){
+      width:6%;
+    }
+    @include media($extended-screen){
+      width:5%;
+    }
+  }
+  @include media($medium-screen){
+    &:before{
+      display:block; left:47%;
+    }
+  }
+  @include media($extended-screen){
+    &:before{
+      left:30%;
+    }
+    &:after{
+      display:block; left:65%;
+    }
+  }
+}
+
+
+// Icons
+// --------------------------------------------------
+@mixin fonticon ($content, $size:20px, $color: $base-font-color, $top: "", $left: "", $right: "", $bottom: "") {
+  position:relative;
+  &:before {
+    @include transition;
+    position: absolute;
+    content: $content;
+    color: $color;
+    font-size:$size;
+    font-family:'icomoon';
+    font-style:normal;
+    font-weight:normal;
+    speak:none;
+    display:block;
+    text-decoration:none;
+    width:$size;
+    height:$size;
+    text-align:center;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    line-height: $size;
+    float: left;
+    @if $top != '' { top: $top; }
+    @if $left != '' { left: $left; }
+    @if $right != '' { right: $right; }
+    @if $bottom != '' { bottom: $bottom; }
+  }
+}
+
+
+// Viewport units IOS
+// --------------------------------------------------
+
+@mixin viewport-unit($property, $value) {
+  #{$property}: $value;
+
+  $unit: unit($value);
+
+  @if (index((vw, vh, vmin, vmax), $unit) != null) {
+    $devices: (
+                    (768px, 1024px), // iPad (all versions)
+                    (320px, 480px),  // iPhone 4
+                    (320px, 568px)   // iPhone 5, 5C, 5S
+    );
+
+    @each $device in $devices {
+      $device-width: nth($device, 1);
+      $device-height: nth($device, 2);
+
+      $device-query: "only screen and (-webkit-min-device-pixel-ratio: 1)";
+      $device-query: "#{$device-query} and (device-width: #{$device-width})";
+      $device-query: "#{$device-query} and (device-height: #{$device-height})";
+
+      $percent: $value / ($value * 0 + 1); // see https://github.com/sass/sass/issues/533
+
+      $percent-width: $device-width * $percent / 100;
+      $percent-height: $device-height * $percent / 100;
+
+      @if ($unit == vmin or $unit == vmax) {
+        @media #{$device-query} {
+          #{$property}: if($unit == vmin, $percent-width, $percent-height);
+        }
+      }
+      @else {
+        @media #{$device-query} and (orientation: portrait) {
+          #{$property}: if($unit == vw, $percent-width, $percent-height);
+        }
+
+        @media #{$device-query} and (orientation: landscape) {
+          #{$property}: if($unit == vw, $percent-height, $percent-width);
+        }
+      }
+    }
+  }
+}

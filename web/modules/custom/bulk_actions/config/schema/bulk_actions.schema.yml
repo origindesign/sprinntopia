@@ -1,0 +1,24 @@
+# Schema for the configuration files of the Bulk Actions module.
+action.configuration.node_update_term_open:
+  type: action_configuration_default
+  label: 'Change Status to Open'
+
+action.configuration.node_update_term_close:
+  type: action_configuration_default
+  label: 'Change Status to Closed'
+
+action.configuration.node_update_term_groomed:
+  type: action_configuration_default
+  label: 'Change Status to Groomed'
+
+action.configuration.node_update_term_groomed_with_fresh:
+  type: action_configuration_default
+  label: 'Change Status to Groomed with fresh'
+
+action.configuration.node_update_field_ignore_from_directory:
+  type: action_configuration_default
+  label: 'Ignore from Business Directory'
+
+action.configuration.node_update_field_add_to_directory:
+  type: action_configuration_default
+  label: 'Add to Business Directory'

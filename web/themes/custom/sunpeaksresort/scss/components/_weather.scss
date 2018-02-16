@@ -1,0 +1,342 @@
+
+$overlay-converter: rgba(#fff,0.3);
+
+.converter{
+  @include clearfix;
+  @include fontsize(10);
+  border:1px solid $blue; display:inline-block; text-decoration:none; color:$blue; text-transform:uppercase;
+  span{
+    float:left; padding:3px 7px;
+  }
+  &[data-unit='metric'] .metric,
+  &[data-unit='imperial'] .imperial{
+    background:$blue;
+    color:#fff;
+  }
+
+  .overlay & {
+    border-color:$overlay-converter; color:$overlay-converter;
+    .metric{
+      border-color:$overlay-converter;
+    }
+    &[data-unit='metric'] .metric,
+    &[data-unit='imperial'] .imperial{
+      background:$overlay-converter; color:#fff;
+    }
+  }
+
+}
+
+.weather{
+  @include rowMargin();
+  @include clearfix;
+
+  text-align:center;
+
+  .half{
+    @include media($medium-screen){
+      float:left; width:50%;
+    }
+  }
+
+  h4{
+    @include fontsize(12);
+    color:$grey-dark; margin-bottom:0; font-weight:300;
+  }
+
+  ul{
+    @include reset;
+    li{
+      @include clearfix;
+      margin-bottom:20px;
+      &:last-child{
+        margin-bottom:0;
+      }
+    }
+  }
+
+  ul.list-temps{
+    text-align:left;
+  }
+
+  ul.list-snow{
+    @include clearfix;
+    text-align:center;
+    li{
+      float:left; width:50%; margin:10px 0 0 0;
+      @include media($medium-screen){
+         width:25%;
+       }
+    }
+    &.snow-base li{
+      &:first-child,
+      &:last-child{
+        display:none;
+        @include media($medium-screen){
+          display:block;
+        }
+      }
+    }
+  }
+
+  .weather-value,
+  .weather-unit{
+    float:left; line-height:1;
+  }
+  .weather-value{
+    @include fontsize(50);
+  }
+  .weather-unit{
+    @include fontsize(15);
+    position:relative; left:5px; transform:translateY(7px);
+  }
+
+}
+
+#current-conditions{
+
+  .current-condition{
+    @include rowMargin();
+    text-align:center; margin-top:0 !important;
+  }
+  .larger_icon span{
+    font-size:150px;
+  }
+  .current-temps{
+    @include maxWidth(320px);
+  }
+  .cell{
+    float:left; width:auto;
+    &:last-child{
+      float:right;
+    }
+  }
+  .list-temps{
+    .weather-value{
+      position:relative; top:-5px;
+    }
+  }
+
+}
+
+#newsletter-signup.weather{
+  text-align:center;
+  #newsletter{
+    @include maxWidth(320px);
+  }
+}
+
+#wind-speeds{
+  .wind{
+    @include clearfix;
+    &:not(:last-child){
+      margin-bottom:30px;
+    }
+  }
+  .third{
+    width:50%; float:left;
+    &:first-child{
+      float:none; width:auto; margin-bottom:20px;
+    }
+    &:not(:first-child){
+      text-align:center;
+    }
+    @include media($medium-screen){
+      width:33.333%;
+      &:first-child{
+        float:left; width:33.333%;
+      }
+      &:not(:last-child){
+        padding-right:20px;
+      }
+    }
+  }
+}
+
+#weather-buttons{
+  text-align:center;
+  a{
+    width:100%;
+
+    &:not(:last-child){
+      margin-bottom:15px;
+    }
+
+    @include media($medium-screen){
+      float:left; width:31%; margin-right:3.5%;
+      @include omega(3n);
+    }
+
+  }
+
+}
+
+#forecast{
+  .third{
+    margin-top:35px; text-align:center;
+    @include media($medium-screen){
+      float:left; width:50%; padding:0 10px;
+      &:nth-child(2n+1){
+        clear:left;
+      }
+    }
+    @include media($extended-screen){
+      width:33.333%;
+      &:nth-child(2n+1){
+        clear:none;
+      }
+      &:nth-child(3n+1){
+        clear:left;
+      }
+    }
+  }
+  [class*='icon']{
+    font-size:80px; margin:15px 0; display:block;
+  }
+  .day_low,
+  .day_high{
+    padding:0 5px; font-weight:500;
+  }
+  .field--name-field-synopsis{
+    margin-bottom:20px;
+  }
+}
+
+
+
+/* WEATHER OVERLAY */
+
+#weather-overlay{
+  color:#fff;
+
+  .container{
+    height:100%;
+  }
+
+  h2, h3, h4{
+    color:#fff;
+  }
+
+  .weather{
+    text-align:left;
+  }
+
+  .converter{
+    position:absolute; left:15px; top:0;
+    @include media($medium-screen){
+      position:static; margin-left:20px; transform:translateY(-65px);
+    }
+    @include shortLaptop{
+      transform:translateY(-25px);
+    }
+  }
+
+  .row{
+    margin:0;
+    @include media($medium-screen){
+      margin-bottom:20px;
+    }
+  }
+
+  #current-conditions{
+    @include maxWidth(700px);
+    margin-bottom:0; padding:30px 25px 0 15px;
+
+    @include media($medium-screen){
+      padding:70px 0 0;
+      .half{
+        padding:0 20px;
+      }
+    }
+    @include shortLaptop{
+      padding-top:30px;
+    }
+
+    .current-condition{
+      margin-bottom:20px; text-align:left;
+      @include media($medium-screen){
+        text-align:center;
+      }
+
+      .larger_icon{
+        text-align:center;
+        @include media($medium-screen){
+          margin-top:-20px;
+        }
+      }
+
+      p{
+        text-align:center; margin-top:10px;
+        @include media($medium-screen){
+          margin-top:20px;
+        }
+      }
+      a{ color:#fff; }
+    }
+
+    .current-temps{
+      max-width:none;
+    }
+
+    ul.list-temps{
+      li{
+        margin-bottom:13px;
+        h3{
+          margin-bottom:5px;
+        }
+        @include media($small-screen){
+          margin-bottom:17px;
+          h3{
+            margin-bottom:8px;
+          }
+        }
+        @include media($medium-screen){
+          margin-bottom:20px;
+          h3{
+            margin-bottom:10px;
+          }
+        }
+      }
+      .weather-value{
+        @include fontsize(37);
+        top:-3px;
+        @include media($medium-screen){
+          @include fontsize(50);
+          top:-5px;
+        }
+      }
+    }
+
+    ul.list-snow{
+      li{
+        @include media($medium-screen){
+          width:50%; margin-top:23px;
+        }
+      }
+    }
+
+    .buttons{
+      @include clearfix;
+      margin:15px 0; text-align:center;
+
+      a{
+        @include button(#fff);
+        width:100%; margin-bottom:15px; text-align:center; float:none; display:block; color:$blue;
+        &:last-child{
+          text-align:center; margin-bottom:0;
+        }
+        &:hover{
+          opacity:0.7;
+        }
+      }
+    }
+
+    .half.stats{
+      @include media($medium-screen){
+        float:right;
+      }
+    }
+
+  }
+
+}

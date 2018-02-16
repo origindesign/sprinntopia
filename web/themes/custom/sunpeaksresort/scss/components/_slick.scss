@@ -1,0 +1,128 @@
+
+.slideshow-split.slick-dotted{
+  margin-bottom:0;
+}
+
+.slick-dots{
+
+  bottom:-20px;
+
+  @include media($medium-screen){
+    bottom:-30px;
+  }
+
+  li{
+    margin:0 15px 0 0;
+    width:auto;
+    height:auto;
+    &:not(:last-child){ margin-bottom:0}
+    &:last-child{ margin-right:0;}
+
+    button{
+      @include transition;
+      width:10px;
+      height:10px;
+      background:rgba($grey-dark,0.25);
+      border-radius:100%;
+      padding:0;
+      &:before{
+        display:none
+      }
+      &:focus{
+        outline-style:dashed; outline-width:1px; outline-color:inherit;
+      }
+    }
+    &.slick-active{
+      button{ background:$green}
+    }
+
+  }
+
+  .slideshow-split &{
+    bottom:15px;
+    width:auto;
+    left:20px;
+    @include media($tablet-portrait) {
+      left:40px;
+    }
+    @include media($tablet-landscape) {
+      left:80px; bottom:50px;
+    }
+
+    li{
+      button{
+        background:rgba(#fff,0.25);
+      }
+      &.slick-active{
+        button{ background:#fff}
+      }
+
+    }
+  }
+
+}
+
+.slick-arrow{
+  @include fonticon('',30px,#fff,0);
+  width:30px;
+  height:30px;
+  position:absolute;
+  z-index:5;
+  &:focus{
+    outline-style:dashed; outline-width:1px; outline-color:inherit;
+  }
+
+  &.slick-prev{
+    left:0;
+    &:hover:before{
+      margin-left:-10px;
+    }
+    &:before{
+      content:'\e906'; opacity:1;
+    }
+    @include media($tablet-portrait) {
+      left:30px;
+    }
+  }
+  &.slick-next{
+    right:0;
+    &:hover:before{
+      margin-left:10px;
+    }
+    &:before{
+      content:'\e908'; opacity:1;
+    }
+    @include media($tablet-portrait) {
+      right:30px;
+    }
+  }
+
+  .slideshow-center &{
+    height:100%;
+    &:before{
+      top:auto; margin-top:-15px;
+    }
+
+    @include media($extended-screen) {
+      padding:0 125px;
+    }
+    &.slick-prev{
+      @include media($medium-screen) {
+        left:5px;
+      }
+      @include media($extended-screen) {
+        left:-20px;
+      }
+    }
+    &.slick-next{
+      @include media($medium-screen) {
+        right:5px;
+      }
+      @include media($extended-screen) {
+        right:0;
+      }
+    }
+  }
+
+}
+

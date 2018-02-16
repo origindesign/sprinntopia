@@ -1,0 +1,212 @@
+<?php
+
+function meteo_schema() {
+
+    $schema['meteo_location'] = array(
+
+        'fields' => array(
+            'mlid'=>array(
+                'type'=>'serial',
+                'not null' => TRUE,
+            ),
+            'name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'description'=>array(
+                'type' => 'text'
+            ),
+            'data_provider'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            )
+        ),
+        'primary key' => array('mlid')
+
+    );
+
+    $schema['meteo_weather_data'] = array(
+
+        'fields' => array(
+            'mwid'=>array(
+                'type'=>'serial',
+                'not null' => TRUE,
+            ),
+            'machine_name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'day_time'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '0',
+            ),
+            'day_name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'updated_time'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '0',
+            ),
+            'message'=>array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'icon_ref'=>array(
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'high_temp'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'low_temp'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'wind_speed'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'wind_dir'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'location_mlid'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+
+        ),
+        'primary key' => array('mwid'),
+
+    );
+
+
+    $schema['meteo_snow_data'] = array(
+
+        'fields' => array(
+            'msid'=>array(
+                'type'=>'serial',
+                'not null' => TRUE,
+            ),
+            'machine_name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'snow_conditions'=>array(
+                'type' => 'text'
+            ),
+            'snow_overnight'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'snow_24h'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'snow_48h'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'snow_7day'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'snow_base'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'snow_season'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '-9999',
+            ),
+            'freezing_level'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'updated_time'=>array(
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => '0',
+            ),
+            'location_mlid'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+
+        ),
+        'primary key' => array('msid'),
+
+    );
+
+
+    $schema['meteo_raw_feed'] = array(
+
+        'fields' => array(
+            'mrid'=>array(
+                'type'=>'serial',
+                'not null' => TRUE,
+            ),
+            'raw_name'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'raw_data'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            ),
+            'location_mlid'=>array(
+                'type' => 'varchar',
+                'length' => 40,
+                'not null' => TRUE,
+                'default' => 'unknown',
+            )
+        ),
+        'unique keys' => array(
+            'raw_name' => array('raw_name'),
+        ),
+        'primary key' => array('mrid')
+
+    );
+
+    return $schema;
+
+}

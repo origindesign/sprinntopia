@@ -1,0 +1,7 @@
+lifts_trails.simple:
+    path: '/lifts_trails/generate'
+    defaults:
+        _controller: '\Drupal\lifts_trails\Controller\LiftsTrailsController::getJson'
+        _title: 'Generate Lifts/Trails Data'
+    requirements:
+        _access: 'TRUE'

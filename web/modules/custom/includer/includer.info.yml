@@ -1,0 +1,8 @@
+name: 'Includer'
+type: module
+description: 'Service to handle content includes in templates.'
+package: Custom
+core: 8.x
+dependencies:
+  - efq:efq
+  - helper:helper

@@ -1,0 +1,5 @@
+name: 'Lifts/Trails'
+type: module
+description: 'Functions to get lift and trail data from json feed'
+package: Custom
+core: 8.x

@@ -1,0 +1,571 @@
+
+$tablet-small-width: 300px;
+$tablet-large-width: 350px;
+$large-width: 400px;
+
+$level-two-margin: 40px;
+
+.block-menu{ @include clearfix;}
+
+ul.menu{
+  @include reset;
+  li{
+    a{
+      display:block; text-decoration:none;
+    }
+  }
+}
+
+
+
+/* -------------------------- */
+/* Main Menu
+/* -------------------------- */
+
+#main-nav{
+
+  // Mobile menu
+  position:fixed; width:100%; display:none; z-index:6; line-height:1; top:$header-height-mobile; left:0;
+
+  &:before{
+    @include pseudo;
+    position:fixed; top:$header-height-mobile;
+    background: $header-bottom-color;
+    background: linear-gradient(0deg, rgba(#63B99E,0.9) 0%, $header-bottom-color 100%);
+  }
+  .alert-on &{
+    top:$header-height-mobile + $alert-height;
+    &:before{
+      top:$header-height-mobile + $alert-height;
+    }
+  }
+
+  nav{
+    @include transition;
+    transform:translateX(0);
+  }
+
+  // Second level open mobile
+  .mobile-second-open &{
+    nav{
+      transform:translateX(-100%);
+    }
+  }
+
+  ul.menu{
+    li{
+      a{
+        @include transition;
+        @include fonticon('\e908',16px,#fff,13px,auto,20px);
+        display:block; color:#fff; @include fontsize(15); font-weight:400; padding:13px 40px; cursor:pointer;
+      }
+      a:hover,
+      a:focus{ background:rgba($blue-light,0.1);}
+    }
+  }
+
+
+  @include media($medium-screen) {
+    display:block; top:49px; background:none; height:auto; float:left; position:relative; overflow:hidden; left:auto;
+    .alert-on &{
+      top:49px;
+    }
+    &:before{
+      display:none;
+    }
+
+    // Larger screen menu
+    ul.menu{
+      @include reset;
+      position:relative; float:left; left:50%;
+
+      li{
+        position:relative; float:left; right:50%;
+
+        &:first-child a{
+          margin-left:0;
+        }
+        &:last-child a{
+          margin-right:0;
+        }
+
+        a{
+          padding:25px 1px 3px; margin:0 5px; color:#fff; @include fontsize(13); font-weight:500; position:relative;
+          &:before{
+            display:none;
+          }
+          @include media($tablet-portrait){
+            @include fontsize(15);
+            margin:0 10px;
+          }
+          @include media($tablet-landscape){
+            margin:0 37px;
+          }
+          @include media($large-screen){
+            margin:0 17px;
+          }
+
+          &:after{
+            @include transition();
+            content:''; width:0; height:2px; background:#fff; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+          }
+          &:hover,
+          &:focus,
+          &.is-active{
+            outline:none; background:none;
+          }
+          &.is-active{
+            &:after{ width:100%;}
+          }
+          // styling :hover :focus on ipad cause double tap
+          @include media(min-width 1025px){
+            &:hover,
+            &:focus{
+              &:after{ width:100%;}
+            }
+          }
+        }
+        &.menu-item--active-trail a{
+          color:$green;
+          &:after{ width:100%; background:$green;}
+        }
+
+      }
+    }
+
+  }
+
+  @include media($large-screen){
+    top:0; position:static;
+    .alert-on &{
+      top:0;
+    }
+  }
+
+}
+
+
+/* -------------------------- */
+/* Overlay Menu
+/* -------------------------- */
+
+#menu-overlay{
+
+  .toolbar-fixed.toolbar-horizontal &{ top:149px}
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open &{ top:190px;}
+
+  @include transition(left);
+  left:100%; display:block; padding:0;
+
+  // Second level open
+  .mobile-second-open &{
+    left:0;
+  }
+
+  // Larger screen overlay
+  @include media($medium-screen){
+    display:none; left:0; padding:30px $medium-screen-padding 0;
+    background: $header-bottom-color;
+    background: linear-gradient(0deg, rgba(#63B99E,0.9) 0%, $header-bottom-color 100%);
+  }
+  @include media($tablet-portrait){ @include sidePadding($tablet-screen-padding,$tablet-screen-padding); }
+  @include media($extended-screen) { @include sidePadding($extended-screen-padding,$extended-screen-padding); }
+  @include media($mega-screen) { @include sidePadding($mega-screen-padding,$mega-screen-padding) }
+
+  // Close button
+  .close{
+    @include fonticon('\e906',16px,#fff,12px,11px);
+    left:0; right:auto; text-indent:-999em; height:100%; top:0; z-index:10; position:absolute;
+    &:before{
+      text-indent:0;
+    }
+    &:hover,
+    &:focus{
+      color:#fff
+    }
+    @include media($medium-screen){
+      @include fonticon('\e902',25px,$blue-light,-5px,auto,0);
+      top:4px; right:10px; left:auto; text-indent:0; height:auto; position:absolute;
+      &:hover:before,
+      &:focus:before{
+        color:#fff;
+      }
+    }
+  }
+
+  .container{ position:relative; height:100%}
+
+  .sub-menu {
+    display:none; outline:none;
+
+    .inner{
+      @include transition;
+      position:static; top:0; left:0; width:auto;
+
+      // Third level open
+      &.third-open{
+        > nav > ul,
+        .buttons{
+          transform:translateX(-100%);
+        }
+      }
+
+      @include media($medium-screen){
+        width:$tablet-small-width; position:absolute; top:30px; left:50%; transform:translateX(-50%);
+
+        // Third level open larger screen
+        &.third-open{ transform:translateX(-100%);
+          > nav > ul{
+            transform:none;
+
+            > li:not(.is-active){
+              .title,
+              > a{ opacity:0.5;
+                &:hover,
+                &:focus{ opacity:1}
+              }
+            }
+          }
+          ul ul{ right:-75%}
+          .buttons{
+            transform:none;
+          }
+        }
+
+      }
+      @include media($tablet-portrait){
+        width:$tablet-large-width;
+      }
+      @include media($large-screen){
+        width:$large-width; top:0;
+      }
+      @include shortLaptop{
+        top:0;
+      }
+
+    }
+
+    // Buy buttons
+    .buttons{
+      @include transition;
+      padding:15px 15px 0 55px;
+      @include media($medium-screen){
+        padding:35px 0 0 15px;
+      }
+
+      .btn-solid{ margin-bottom:20px}
+    }
+
+    // Second level menu
+    .nano-content > .inner > nav > ul.menu{
+      @include transition; z-index:2; overflow:visible;
+
+      @include media($medium-screen){
+        width:$tablet-small-width;
+      }
+      @include media($tablet-portrait){
+        width:$tablet-large-width;
+      }
+      @include media($large-screen){
+        width:$large-width;
+      }
+
+      li{
+
+        margin:0 15px 0 $level-two-margin;
+        @include media($medium-screen){
+          margin:0;
+        }
+
+        &.menu-item-activities{ display:none}
+
+        &.menu-item--expanded{
+          .title{
+            @include fonticon('\e908',16px,#fff,13px,auto,10px);
+            padding-right:40px;
+            @include media($tablet-portrait){
+              &:before{ top:18px}
+            }
+            @include shortLaptop {
+              &:before{
+                top:14px;
+              }
+            }
+          }
+        }
+
+        // Second level links
+        a, .title{
+          @include transition;
+          display:block; color:#fff; @include fontsize(15); font-weight:400; padding:12px 15px 12px 15px; cursor:pointer; outline:none; position:relative;
+          @include media($small-screen){
+            padding-top:14px; padding-bottom:14px;
+          }
+          @include media($medium-screen){
+            padding-top:16px; padding-bottom:16px;
+          }
+          @include media($tablet-portrait){
+            @include fontsize(20);
+          }
+          @include shortLaptop {
+            padding-top:12px; padding-bottom:12px;
+          }
+        }
+        &.is-active > a,
+        a:hover,
+        a:focus,
+        .title:hover ,
+        .title:focus{ background:rgba($blue-light,0.1);}
+
+        // Third level menu open
+        &.is-active{
+          ul.menu{ opacity:1; right:-100%; z-index:10; }
+        }
+
+
+        // Third level menu
+        ul.menu{
+          @include transition;
+          opacity:0; position:absolute; right:-100%; top:0; z-index:-1; width:100%;
+          @include media($medium-screen){
+            width:$tablet-small-width; padding-left:8px; right:-50%;
+          }
+          @include media($tablet-portrait){
+            width:$tablet-large-width;
+          }
+          @include media($large-screen){
+            width:$large-width;
+          }
+        }
+
+      }
+
+    }
+
+    // Outline button links
+    .nano-content > .inner > nav#block-events-extra-menu,
+    .nano-content > .inner > nav#block-explore-menu,
+    .nano-content > .inner > nav#block-places-to-stay-menu{
+      > ul.menu{
+        > li{
+          &:first-child,
+          &:nth-child(2){
+            margin-bottom:10px;
+            a{
+              @include button-border($blue-light);
+              @include fontsize(15);
+              display:block;
+              padding:18px 15px 20px 25px;
+              text-transform:none;
+              font-weight:400;
+              &:hover,
+              &:focus{
+                color:$blue;
+              }
+            }
+            @include media($medium-screen){
+              margin:0 0 15px -10px;
+              &:first-child{ margin-top:15px;}
+              &:nth-child(2){ margin-bottom:40px}
+              a{
+                @include fontsize(20);
+                padding:18px 25px 20px;
+              }
+            }
+            @include shortLaptop {
+              &:first-child{ margin-top:0;}
+              &:nth-child(2){ margin-bottom:10px;}
+              a{
+                padding-top:10px; padding-bottom:12px;
+              }
+            }
+            .alert-on &{
+              a{
+                padding-top:12px; padding-bottom:14px;
+                @include media($small-screen){
+                  padding-top:18px; padding-bottom:20px;
+                }
+                @include shortLaptop {
+                  padding-top:12px; padding-bottom:14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  // Special top position for explore third level
+  @include media($medium-screen){
+    #block-explore-menu ul.menu li ul{ top:185px;}
+  }
+  @include shortLaptop{
+    #block-explore-menu ul.menu li ul{ top:109px;}
+  }
+
+}
+
+
+
+/* -------------------------- */
+/* Secondary Menu
+/* -------------------------- */
+
+#block-corporate-menu-sidebar,
+#block-footer-menu-sidebar,
+#block-secondarynavigation{
+
+  > ul.menu{
+
+    > li{
+      margin-bottom:2px;
+
+      &.menu-item--active-trail > a:not(.title),
+      a.is-active{
+        background:$blue; color:#fff;
+        &:hover:after,
+        &:focus:after{
+          display:none;
+        }
+      }
+
+      > a,
+      .title{
+        @include fontsize(14);
+        display:block; color:$blue; font-weight:900; background:$blue-bg-mid; padding:15px 30px; text-transform:uppercase;
+
+        @include media($extended-screen){
+          padding:20px 40px;
+        }
+
+      }
+
+      a[href]{
+        position:relative; outline:none;
+
+        &:hover,
+        &:focus{
+          &:before,
+          &:after {
+            width:10px;
+          }
+          &:after{
+            right:-10px;
+          }
+        }
+
+        &:before, &:after{
+          @include pseudo;
+          @include transition;
+          width:0;
+        }
+        &:before{
+          left:0; background:$blue;
+        }
+        &:after{
+          left:auto; right:0; background:$blue-bg-mid;
+        }
+
+      }
+
+      > ul{
+        padding:2px 0 25px;
+
+        li{
+          &.menu-item--active-trail > a,
+          a.is-active{
+            background:$blue; color:#fff;
+            &:hover:after,
+            &:focus:after{
+              display:none;
+            }
+          }
+
+          a{ @include fontsize(13); color:$grey-dark; padding:7px 30px; font-weight:500; line-height:1;
+            &:hover:after,
+            &:focus:after{
+              background: $blue-bg-light;
+            }
+            @include media($extended-screen){
+              padding:10px 40px;
+            }
+          }
+        }
+
+        @include media($large-screen){
+          li a{ @include fontsize(14);}
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+/* -------------------------- */
+/* SITEMAP
+/* -------------------------- */
+
+.sitemap{
+  .sitemap-box{
+
+    &:not(:last-child){
+      margin-bottom:40px;
+    }
+
+    ul{
+      @include reset;
+      li{
+        &.expanded{
+          margin-top:20px;
+          > a{
+            @include fontsize(20);
+            font-weight:bold; text-transform:uppercase; text-decoration:none; display:block; margin-bottom:15px;
+          }
+        }
+        ul{
+          margin-bottom:15px; padding-left:20px;
+          li{
+            &.expanded > a {
+              @include fontsize(14);
+              margin-bottom:5px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+
+
+/* -------------------------- */
+/* Drupal Tabs
+/* -------------------------- */
+
+#block-sunpeaksresort-local-tasks{ @include clearfix; position:absolute; top:0; right:0; z-index:8;
+  .tabs{ float:left;
+    ul{
+      @include reset;
+      li{ margin:0 0 0 1px; float:left;
+        a{ background:rgba($blue,0.5); color:#fff; text-transform:uppercase; @include fontsize(11); font-weight:500; display:block; padding:8px 13px; text-decoration:none;
+          &:hover,
+          &.is-active{ background:$blue}
+        }
+      }
+    }
+  }
+}
+
+.toolbar{
+  ul{ @include reset;}
+  li:not(:last-child){ margin:0}
+}

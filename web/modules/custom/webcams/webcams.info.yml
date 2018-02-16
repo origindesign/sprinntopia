@@ -1,0 +1,5 @@
+name: 'Webcams'
+type: module
+description: 'Functions to pull webcam images from a server'
+package: Custom
+core: 8.x

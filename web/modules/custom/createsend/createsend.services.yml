@@ -1,0 +1,4 @@
+services:
+    # A service to make a connection to Campaign Monitor
+    createsend.campaign_monitor:
+        class: Drupal\createsend\CampaignMonitor

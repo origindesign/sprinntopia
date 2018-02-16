@@ -1,0 +1,90 @@
+
+#flickr-gallery{
+
+  @include clearfix;
+
+  a{
+    text-decoration:none;
+  }
+
+  .flickr-gallery{
+    .iso-gutter {
+      display:block; width:0;
+      @include media($medium-screen){
+        width:1%;
+      }
+      @include media($extended-screen){
+        width:1.5%;
+      }
+    }
+    .iso-item{
+      margin-bottom:5px; overflow:hidden;
+      @include media($medium-screen){
+        width:49.5%;
+      }
+      @include media($extended-screen){
+        width:32.333%;
+        margin-bottom:12px;
+      }
+      @include media($mega-screen){
+        margin-bottom:15px;
+      }
+      .caption{
+        @include transition;
+        position:absolute; width:100%; padding:5px 10px; background:rgba(#000,0.7); bottom:-20px; opacity:0; color:#fff;
+      }
+      a:focus .caption,
+      &:hover .caption{
+        bottom:0; opacity:1;
+      }
+    }
+    img{
+      display:block; width:100%; max-width:none;
+    }
+  }
+
+  #collections{
+      @include reset;
+      @include clearfix;
+      @include gridTopBorder;
+
+      h4{
+          margin:0;
+      }
+      .image{
+          padding-bottom:75%; background-size:cover;
+      }
+
+    article{
+
+      @include media($medium-screen){
+        float:left; width:47%; margin-right:6%;
+        &:nth-child(2n+1){
+          clear:left;
+        }
+        &:nth-child(2n){
+          margin-right:0;
+        }
+      }
+
+      @include media($large-screen){
+        width:30%; margin-right:5%;
+        &:nth-child(2n){
+          margin-right:5%;
+        }
+        &:nth-child(2n+1){
+          clear:none;
+        }
+        &:nth-child(3n+1){
+          clear:left;
+        }
+        &:nth-child(3n){
+          margin-right:0;
+        }
+      }
+
+    }
+
+  }
+
+}

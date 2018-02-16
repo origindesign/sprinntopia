@@ -1,0 +1,14 @@
+efq.simple:
+    path: '/efq/{content_type}'
+    defaults:
+        _controller: '\Drupal\efq\Controller\EfqController::getNodes'
+    requirements:
+        _access: 'TRUE'
+
+efq.events:
+    path: '/efq/{content_type}/{date}'
+    defaults:
+        _controller: '\Drupal\efq\Controller\EfqController::getNodes'
+    requirements:
+        _access: 'TRUE'
+        

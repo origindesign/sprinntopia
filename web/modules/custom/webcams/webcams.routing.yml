@@ -1,0 +1,7 @@
+webcams.simple:
+    path: '/webcams/generate'
+    defaults:
+        _controller: '\Drupal\webcams\Controller\WebcamsController::getWebcamImages'
+        _title: 'Generate Webcam Images'
+    requirements:
+        _access: 'TRUE'

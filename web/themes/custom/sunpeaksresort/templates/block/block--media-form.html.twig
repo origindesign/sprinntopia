@@ -1,0 +1,90 @@
+
+<div id="media-signup" class="custom-form">
+
+
+
+    <form method="post" action="{{ page_url }}" novalidate>
+
+        <div class="form-item">
+            <label for="name" class="required">Name</label>
+            <input name="name" id="name" type="text" required />
+        </div>
+
+        <div class="form-item">
+            <label for="email" class="required">Email</label>
+            <input name="email" id="email" type="email" required data-rule-email="true" />
+        </div>
+
+        <div class="form-item">
+            <label for="outlet">Outlet</label>
+            <input name="outlet" id="outlet" />
+        </div>
+
+        <div class="form-item">
+            <label for="region" class="required">Region</label>
+            <select id="region" name="region" required>
+                <option selected="selected" value="">Please Select</option>
+                <option value="Kamloops">Kamloops</option>
+                <option value="BC Regional">BC Regional</option>
+                <option value="Alberta">Alberta</option>
+                <option value="Ontario/National">Ontario/National</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Australia/New Zealand">Australia/New Zealand</option>
+                <option value="Europe">Europe</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-item">
+            <label for="other_region">Other Region</label>
+            <input name="other_region" id="other_region" />
+        </div>
+
+        <div class="form-item form-type-checkbox">
+            <label for="areas_of_interest" class="required">Areas of Interest</label>
+            <div class="form-checkboxes">
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" required value="Ski/Board"  /> Ski/Board
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Nordic"  /> Nordic
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Mountain Bike"  /> Mountain Bike
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Golf"  /> Golf
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Culinary/Wine"  /> Culinary/Wine
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Travel Writer/Leisure"  /> Travel Writer&#x2F;Leisure
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Story Starters"  /> Story Starters
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Tourism Industry"  /> Tourism Industry
+                </label>
+                <label>
+                    <input type="checkbox" name="areas_of_interest[]" value="Other"  /> Other
+                </label>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="other_areas_of_interest">Other Areas of Interest</label>
+            <input name="other_areas_of_interest" id="other_areas_of_interest" />
+        </div>
+
+        <div class="form-item form-actions">
+            <button type="submit">Confirm Sign-up</button>
+        </div>
+
+    </form>
+
+
+
+</div>
