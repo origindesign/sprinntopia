@@ -61,7 +61,7 @@ jobs:
             - run:
                 name: checking version
                 command: composer --version
-				
+
             - run:
                 name: build assets
                 command: composer -n build-assets
