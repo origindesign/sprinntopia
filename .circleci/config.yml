@@ -57,7 +57,7 @@ jobs:
             - run:
                 name: install dev dependencies, build assets, etc.
                 command: ./.circleci/scripts/pantheon/01-prepare
-				
+
             - run:
                 name: checking version
                 command: composer --version
