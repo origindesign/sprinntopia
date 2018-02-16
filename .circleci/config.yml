@@ -70,10 +70,6 @@ jobs:
                     - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
 
             - run:
-                name: lint php code for syntax errors
-                command: composer -n lint
-
-            - run:
                 name: check coding standards
                 command: composer -n code-sniff
 
