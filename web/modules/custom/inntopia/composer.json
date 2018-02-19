@@ -1,0 +1,17 @@
+{
+  "name": "drupal/inntopia",
+  "description": "Integration of Inntopia booking funnel.",
+  "type": "drupal-module",
+  "license": "proprietary",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Origin Design",
+      "email": "web@origindesign.ca",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "origindesign/inntopia": "dev-master"
+  }
+}

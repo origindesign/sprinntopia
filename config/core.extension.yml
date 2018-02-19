@@ -57,6 +57,7 @@ module:
   image: 0
   image_url_formatter: 0
   includer: 0
+  inntopia: 0
   kint: 0
   libraries: 0
   lifts_trails: 0
