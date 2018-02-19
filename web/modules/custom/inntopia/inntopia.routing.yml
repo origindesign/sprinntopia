@@ -1,0 +1,7 @@
+inntopia.simple:
+    path: '/book'
+    defaults:
+        _controller: '\Drupal\inntopia\Controller\InntopiaController::display'
+        _title: 'Book your Vacation'
+    requirements:
+        _access: 'TRUE'
