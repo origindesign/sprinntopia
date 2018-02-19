@@ -1,0 +1,22 @@
+uuid: cbdc7698-e8aa-4e14-899d-7c5526519bb9
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - sunpeaksresort
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: sunpeaksresort_powered
+theme: sunpeaksresort
+region: content
+weight: -1
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

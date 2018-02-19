@@ -1,0 +1,23 @@
+uuid: 4b69a0c0-32ec-4f45-b8a7-8c5c8bcd5f22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.business
+  module:
+    - link
+id: node.business.field_website
+field_name: field_website
+entity_type: node
+bundle: business
+label: Website
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

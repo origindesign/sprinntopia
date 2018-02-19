@@ -1,0 +1,30 @@
+uuid: 1550f3e1-12a2-48b9-a892-1e5bdcb08bd5
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_lesson_start_time
+field_name: field_lesson_start_time
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Prior to 10:00am'
+      label: 'Prior to 10:00am'
+    -
+      value: '10:00am'
+      label: '10:00am'
+    -
+      value: '1:30pm'
+      label: '1:30pm'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

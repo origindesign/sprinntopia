@@ -1,0 +1,33 @@
+uuid: 2aa1f435-1ef0-4fb3-bc2f-254033a7524f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extended_outlook
+    - node.type.forecast
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.forecast.field_extended_outlook
+field_name: field_extended_outlook
+entity_type: node
+bundle: forecast
+label: 'Extended Outlook'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

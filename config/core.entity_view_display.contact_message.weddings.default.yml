@@ -1,0 +1,61 @@
+uuid: 35301032-8ce1-4874-86a9-23a450b28608
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.weddings
+    - field.field.contact_message.weddings.field_number_of_guests
+    - field.field.contact_message.weddings.field_preferred_season
+id: contact_message.weddings.default
+targetEntityType: contact_message
+bundle: weddings
+mode: default
+content:
+  field_number_of_guests:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_preferred_season:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  mail:
+    weight: -2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  message:
+    type: string
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  name:
+    weight: -3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  subject:
+    weight: -1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

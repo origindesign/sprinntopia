@@ -1,0 +1,14 @@
+uuid: 6eb804bf-bc23-45be-bfed-7f80b356f630
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.lifts_and_trails
+  module:
+    - user
+id: user_add_role_action.lifts_and_trails
+label: 'Add the Lifts and Trails role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: lifts_and_trails

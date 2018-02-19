@@ -1,0 +1,567 @@
+uuid: 9090da67-2bfc-47bf-b9b1-abe42fd8d5e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_guests
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_instru
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_overal
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_rental
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_safety
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_ski_bo
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_slope
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_class_size_was_appropriate
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_constructive_feedback
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_created_an_atmosphere_of_m
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_did_you_find_the_increased
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_ease_of_contact
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_efficiency_of_rental_shop_
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_encouragement_of_class_par
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_enjoyable_environment
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_equipment_was_preset_upon_
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_friendliness_of_rental_sho
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_helpfulness_of_the_present
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_if_other_please_specify
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_interest_and_enthusiasm_to
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_length_of_presentation_was
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_lesson_length
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_lesson_length_suitable_for
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_lesson_start_time
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_made_the_students_feel_wel
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_overall_efficiency
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_patience
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_payment_process_guest
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_preparedness_instructor
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_quality_and_availability_o
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_quality_of_service_overall
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_response_time_to_inquiries
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_safety_questions_informati
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_staff_friendliness_guest
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_staff_friendliness_overall
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_students_had_enough_ski_ti
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_sun_peaks_representative
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_ticket_issuance_guest
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_total_experience_overall
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_value
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_which_one_of_the_following
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_why_or_why_not_book_slope
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_why_or_why_not_increased_l
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_why_or_why_not_slopeside_r
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_will_you_be_rebooking_this
+    - field.field.contact_message.2015_16_slopeside_programs_feedb.field_would_you_recommend_the_sl
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_1_booking_procedures:
+      children:
+        - field_ease_of_contact
+        - field_response_time_to_inquiries
+        - field_overall_efficiency
+        - field_additional_comments
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        label: 'Booking Procedures'
+        description: ''
+        id: ''
+        classes: ''
+        required_fields: false
+      label: 'Booking Procedures'
+    group_8_which_one_of_the_followi:
+      children:
+        - field_which_one_of_the_following
+        - field_if_other_please_specify
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        label: 'Which one of the following most influenced your decision to choose the Slopeside School Program at Sun Peaks Resort?'
+        description: ''
+        id: ''
+        classes: hide-first-label
+        required_fields: false
+      label: 'Which one of the following most influenced your decision to choose the Slopeside School Program at Sun Peaks Resort?'
+    group_guest_services_representat:
+      children:
+        - field_staff_friendliness_guest
+        - field_payment_process_guest
+        - field_ticket_issuance_guest
+        - field_additional_comments_guests
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Guest Services Representatives'
+    group_ski_board_school:
+      children:
+        - field_lesson_length_suitable_for
+        - field_students_had_enough_ski_ti
+        - field_class_size_was_appropriate
+        - field_additional_comments_ski_bo
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Ski & Board School'
+    group_instructors:
+      children:
+        - field_made_the_students_feel_wel
+        - field_preparedness_instructor
+        - field_encouragement_of_class_par
+        - field_interest_and_enthusiasm_to
+        - field_patience
+        - field_created_an_atmosphere_of_m
+        - field_constructive_feedback
+        - field_additional_comments_instru
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Instructors
+    group_rental_shop:
+      children:
+        - field_equipment_was_preset_upon_
+        - field_friendliness_of_rental_sho
+        - field_efficiency_of_rental_shop_
+        - field_quality_and_availability_o
+        - field_additional_comments_rental
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Rental Shop'
+    group_overall_experience:
+      children:
+        - field_total_experience_overall
+        - field_staff_friendliness_overall
+        - field_value
+        - field_quality_of_service_overall
+        - field_enjoyable_environment
+        - field_additional_comments_overal
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Overall Experience'
+    group_pre_program_safety_present:
+      children:
+        - field_length_of_presentation_was
+        - field_sun_peaks_representative
+        - field_safety_questions_informati
+        - field_helpfulness_of_the_present
+        - field_additional_comments_safety
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Pre-Program Safety Presentation (if applicable)'
+    group_did_you_find_the_increased:
+      children:
+        - field_did_you_find_the_increased
+        - field_why_or_why_not_increased_l
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: hide-first-label
+        description: ''
+        required_fields: false
+      label: 'Did you find the increased lesson time beneficial to your school group?'
+    group_for_future_visits_what_wou:
+      children:
+        - field_lesson_length
+        - field_lesson_start_time
+      parent_name: ''
+      weight: 9
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'For future visits, what would be your preferred lesson length and start time?'
+    group_11_would_you_recommend_the:
+      children:
+        - field_would_you_recommend_the_sl
+        - field_why_or_why_not_slopeside_r
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: hide-first-label
+        description: ''
+        required_fields: false
+      label: 'Would you recommend the Slopeside School Program to others?'
+    group_will_you_be_rebooking_this:
+      children:
+        - field_will_you_be_rebooking_this
+        - field_why_or_why_not_book_slope
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: hide-first-label
+        description: ''
+        required_fields: false
+      label: 'Will you be rebooking this program next season?'
+    group_additional_comments:
+      children:
+        - field_additional_comments_slope
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: hide-first-label
+        description: ''
+        required_fields: false
+      label: 'Additional Comments'
+id: contact_message.2015_16_slopeside_programs_feedb.default
+targetEntityType: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+mode: default
+content:
+  field_additional_comments:
+    type: string_textarea
+    weight: 10
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_additional_comments_guests:
+    weight: 24
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_instru:
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_overal:
+    weight: 48
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_rental:
+    weight: 37
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_safety:
+    weight: 52
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_ski_bo:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_slope:
+    weight: 63
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_class_size_was_appropriate:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_constructive_feedback:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_created_an_atmosphere_of_m:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_did_you_find_the_increased:
+    weight: 55
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ease_of_contact:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_efficiency_of_rental_shop_:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_encouragement_of_class_par:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_enjoyable_environment:
+    weight: 47
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_equipment_was_preset_upon_:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_friendliness_of_rental_sho:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_helpfulness_of_the_present:
+    weight: 51
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_if_other_please_specify:
+    weight: 54
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_interest_and_enthusiasm_to:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_length_of_presentation_was:
+    weight: 48
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lesson_length:
+    weight: 57
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_lesson_length_suitable_for:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_lesson_start_time:
+    weight: 58
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_made_the_students_feel_wel:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_overall_efficiency:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_patience:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_payment_process_guest:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_preparedness_instructor:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_quality_and_availability_o:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_quality_of_service_overall:
+    weight: 45
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_response_time_to_inquiries:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_safety_questions_informati:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_staff_friendliness_guest:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_staff_friendliness_overall:
+    weight: 43
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_students_had_enough_ski_ti:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sun_peaks_representative:
+    weight: 49
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ticket_issuance_guest:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_total_experience_overall:
+    weight: 42
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_value:
+    weight: 44
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_which_one_of_the_following:
+    weight: 53
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_why_or_why_not_book_slope:
+    weight: 62
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_why_or_why_not_increased_l:
+    weight: 56
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_why_or_why_not_slopeside_r:
+    weight: 60
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_will_you_be_rebooking_this:
+    weight: 61
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_would_you_recommend_the_sl:
+    weight: 59
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  preview: true
+  subject: true

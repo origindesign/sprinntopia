@@ -1,0 +1,10 @@
+uuid: 8a9294c6-5cf7-4ee0-b8ff-c215f4c329b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.fragment
+label: Fragment
+targetEntityType: node
+cache: true

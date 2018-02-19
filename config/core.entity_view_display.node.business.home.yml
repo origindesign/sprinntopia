@@ -1,0 +1,129 @@
+uuid: afe3e6be-eee0-426e-bade-226b3bfc08d5
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.home
+    - field.field.node.business.body
+    - field.field.node.business.field_address
+    - field.field.node.business.field_business_directory
+    - field.field.node.business.field_email
+    - field.field.node.business.field_fragments
+    - field.field.node.business.field_images
+    - field.field.node.business.field_location
+    - field.field.node.business.field_location_description
+    - field.field.node.business.field_opening_hours
+    - field.field.node.business.field_phone
+    - field.field.node.business.field_toll_free
+    - field.field.node.business.field_website
+    - node.type.business
+    - responsive_image.styles.content_full_width
+  module:
+    - address
+    - geofield
+    - link
+    - responsive_image
+    - text
+    - user
+id: node.business.home
+targetEntityType: node
+bundle: business
+mode: home
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_address:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_email:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_fragments:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: fragment
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_images:
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: content_full_width
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+  field_location:
+    weight: 3
+    label: hidden
+    settings:
+      output_format: kml
+    third_party_settings: {  }
+    type: geofield_default
+    region: content
+  field_location_description:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_opening_hours:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_phone:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_toll_free:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_website:
+    weight: 9
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_business_directory: true

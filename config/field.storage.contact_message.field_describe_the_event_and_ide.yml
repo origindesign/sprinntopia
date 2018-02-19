@@ -1,0 +1,19 @@
+uuid: 5846a036-3c20-4964-844e-0d067a998420
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_describe_the_event_and_ide
+field_name: field_describe_the_event_and_ide
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

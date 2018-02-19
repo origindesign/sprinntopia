@@ -1,0 +1,32 @@
+uuid: 18dec127-00ee-465a-8e9f-c5903b8ac49b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_day_1_high
+    - node.type.forecast
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.forecast.field_day_1_high
+field_name: field_day_1_high
+entity_type: node
+bundle: forecast
+label: 'Day 1 High'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

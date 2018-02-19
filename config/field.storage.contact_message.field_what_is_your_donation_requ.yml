@@ -1,0 +1,19 @@
+uuid: 8e970baa-05db-4b79-87e8-9bc88d181559
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_what_is_your_donation_requ
+field_name: field_what_is_your_donation_requ
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: cfc70682-b69a-4be3-9edd-7ab5c08530f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_15_pm
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_15_pm
+field_name: field_day_15_pm
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 15 PM Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

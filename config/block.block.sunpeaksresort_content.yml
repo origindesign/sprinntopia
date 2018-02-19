@@ -1,0 +1,22 @@
+uuid: 4489fb5b-abc0-41e7-8d42-45fb8463ba8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sunpeaksresort
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: sunpeaksresort_content
+theme: sunpeaksresort
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

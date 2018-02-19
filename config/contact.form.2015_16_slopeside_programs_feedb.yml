@@ -1,0 +1,20 @@
+uuid: 5b485d99-a08e-4cd3-8aa6-983c5da93b3c
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: Submit
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+id: 2015_16_slopeside_programs_feedb
+label: 'Slopeside Program Feedback'
+recipients:
+  - sales@sunpeaksresort.com
+reply: ''
+weight: 0
+message: ''
+redirect: /ski-ride/the-mountain/slopeside-program-feedback/thank-you

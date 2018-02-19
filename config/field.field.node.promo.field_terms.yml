@@ -1,0 +1,32 @@
+uuid: da2e1b1f-3db3-4c70-8855-9f4e1a68d464
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_terms
+    - node.type.promo
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.promo.field_terms
+field_name: field_terms
+entity_type: node
+bundle: promo
+label: Terms
+description: 'Keep this text short and include full terms on product page'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

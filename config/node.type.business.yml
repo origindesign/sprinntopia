@@ -1,0 +1,20 @@
+uuid: de244772-ffdc-429c-aa46-44e81991c89f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Business
+type: business
+description: 'Use for a listing in the Business Directory'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

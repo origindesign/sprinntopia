@@ -1,0 +1,23 @@
+uuid: 64376ece-f7eb-45a7-a78b-c06e6e0a2c9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_usd_exchange_rate
+    - node.type.resort_settings
+id: node.resort_settings.field_usd_exchange_rate
+field_name: field_usd_exchange_rate
+entity_type: node
+bundle: resort_settings
+label: 'USD Exchange Rate'
+description: 'Enter exchange rate as value of CA = US ie. 0.75. Entering a value of 1 will disable currency conversion.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

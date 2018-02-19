@@ -1,0 +1,22 @@
+uuid: dec29fdf-6c8b-4f72-a90e-750d3579a989
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: activity
+label: Activity
+type: 'canonical_entities:node'
+pattern: 'events-things-to-do/[node:field_season]-activities/[node:title]'
+selection_criteria:
+  a10fad92-8269-4fb0-b1bc-c6abeb8ec35d:
+    id: node_type
+    bundles:
+      activity: activity
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a10fad92-8269-4fb0-b1bc-c6abeb8ec35d
+selection_logic: and
+weight: -5
+relationships: {  }

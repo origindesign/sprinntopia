@@ -1,0 +1,23 @@
+uuid: df1a64d8-0d39-45a6-8312-58ddb6c74335
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.job
+  module:
+    - metatag
+id: node.job.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: job
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

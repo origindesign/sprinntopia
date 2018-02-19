@@ -1,0 +1,21 @@
+uuid: c371d5af-92e4-4d0c-9c3e-b6333b06fa1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_staff_friendliness
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_staff_friendliness
+field_name: field_staff_friendliness
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Staff friendliness'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

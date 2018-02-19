@@ -1,0 +1,21 @@
+uuid: 6bc8986c-dab4-45ee-84f3-79ae22502dc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_efficiency_grooming
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_efficiency_grooming
+field_name: field_efficiency_grooming
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Grooming Efficiency'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

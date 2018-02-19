@@ -1,0 +1,19 @@
+uuid: 3f8a36ea-3624-4963-beef-44576da85530
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_copy_below
+field_name: field_copy_below
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

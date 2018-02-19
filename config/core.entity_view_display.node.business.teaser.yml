@@ -1,0 +1,73 @@
+uuid: 3170f778-775a-4529-8b05-79ce3e99b1d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.business.body
+    - field.field.node.business.field_address
+    - field.field.node.business.field_business_directory
+    - field.field.node.business.field_email
+    - field.field.node.business.field_fragments
+    - field.field.node.business.field_images
+    - field.field.node.business.field_location
+    - field.field.node.business.field_location_description
+    - field.field.node.business.field_opening_hours
+    - field.field.node.business.field_phone
+    - field.field.node.business.field_toll_free
+    - field.field.node.business.field_website
+    - node.type.business
+    - responsive_image.styles.listing_image
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.business.teaser
+targetEntityType: node
+bundle: business
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_business_directory:
+    type: entity_reference_label
+    weight: 2
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_email: true
+  field_fragments: true
+  field_location: true
+  field_location_description: true
+  field_opening_hours: true
+  field_phone: true
+  field_toll_free: true
+  field_website: true
+  links: true

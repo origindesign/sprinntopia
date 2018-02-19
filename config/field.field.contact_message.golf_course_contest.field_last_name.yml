@@ -1,0 +1,32 @@
+uuid: 7ee1dfb7-ed6f-44f2-aeba-8d0016a7d1da
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.golf_course_contest
+    - field.storage.contact_message.field_last_name
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.golf_course_contest.field_last_name
+field_name: field_last_name
+entity_type: contact_message
+bundle: golf_course_contest
+label: 'Last Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

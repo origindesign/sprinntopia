@@ -1,0 +1,22 @@
+uuid: 69f5e903-1d1b-46d2-8573-c32df0d9ffb8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: accommodation
+label: Accommodation
+type: 'canonical_entities:node'
+pattern: 'places-to-stay/[node:field_category]/[node:title]'
+selection_criteria:
+  b8cecf5a-e83a-4550-81ff-18aabc69a63a:
+    id: node_type
+    bundles:
+      accomodation: accomodation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b8cecf5a-e83a-4550-81ff-18aabc69a63a
+selection_logic: and
+weight: -5
+relationships: {  }

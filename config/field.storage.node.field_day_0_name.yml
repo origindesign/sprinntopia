@@ -1,0 +1,63 @@
+uuid: 001b5125-e92d-448a-aaa8-b61d5c16ba41
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_day_0_name
+field_name: field_day_0_name
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: monday
+      label: Monday
+    -
+      value: monday_night
+      label: 'Monday (Night)'
+    -
+      value: tuesday
+      label: Tuesday
+    -
+      value: tuesday_night
+      label: 'Tuesday (Night)'
+    -
+      value: wednesday
+      label: Wednesday
+    -
+      value: wednesday_night
+      label: 'Wednesday (Night)'
+    -
+      value: thursday
+      label: Thursday
+    -
+      value: thursday_night
+      label: 'Thursday (Night)'
+    -
+      value: friday
+      label: Friday
+    -
+      value: friday_night
+      label: 'Friday (Night)'
+    -
+      value: saturday
+      label: Saturday
+    -
+      value: saturday_night
+      label: 'Saturday (Night)'
+    -
+      value: sunday
+      label: Sunday
+    -
+      value: sunday_night
+      label: 'Sunday (Night)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

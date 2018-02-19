@@ -1,0 +1,100 @@
+uuid: 83650b58-d252-4581-b311-5940d858edb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.package.body
+    - field.field.node.package.field_image
+    - field.field.node.package.field_price
+    - field.field.node.package.field_price_header
+    - field.field.node.package.field_reservations_link
+    - field.field.node.package.field_season
+    - field.field.node.package.field_terms
+    - field.field.node.package.field_weight
+    - node.type.package
+    - responsive_image.styles.content_full_width
+  module:
+    - link
+    - responsive_image
+    - text
+    - user
+id: node.package.default
+targetEntityType: node
+bundle: package
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: content_full_width
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+  field_price:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_price_header:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_reservations_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_season:
+    weight: 6
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_terms:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_weight:
+    weight: 8
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

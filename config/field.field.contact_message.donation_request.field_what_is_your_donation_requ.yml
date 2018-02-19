@@ -1,0 +1,19 @@
+uuid: 6c154245-7e38-4059-a007-61feb393cbc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_what_is_your_donation_requ
+id: contact_message.donation_request.field_what_is_your_donation_requ
+field_name: field_what_is_your_donation_requ
+entity_type: contact_message
+bundle: donation_request
+label: 'What is your donation request?'
+description: 'Please specify details. <em>Example: 2 hiking lift tickets for the 2018 summer season</em>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

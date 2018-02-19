@@ -1,0 +1,28 @@
+uuid: 595cb85f-9175-4980-951b-6df347b9321f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sports
+    - node.type.summer_lesson
+    - taxonomy.vocabulary.lesson_sport
+id: node.summer_lesson.field_sports
+field_name: field_sports
+entity_type: node
+bundle: summer_lesson
+label: Sports
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lesson_sport: lesson_sport
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

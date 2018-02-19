@@ -1,0 +1,23 @@
+uuid: 7c7d14de-1692-4a07-a6a0-e93e8f7a1de7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alert_link
+    - node.type.resort_settings
+  module:
+    - link
+id: node.resort_settings.field_alert_link
+field_name: field_alert_link
+entity_type: node
+bundle: resort_settings
+label: 'Alert Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

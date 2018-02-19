@@ -1,0 +1,21 @@
+uuid: 88351b45-92de-4b1e-8fbd-140f62d51575
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_number_of_athletes
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_number_of_athletes
+field_name: field_number_of_athletes
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Number of Athletes'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,15 @@
+uuid: 633bf0c4-d5ac-4dc4-9d33-11fefe014f2c
+langcode: en
+status: true
+dependencies: {  }
+name: '1024'
+label: '1024'
+effects:
+  8755df6c-b805-4893-b953-ee8521e6b36a:
+    uuid: 8755df6c-b805-4893-b953-ee8521e6b36a
+    id: image_scale
+    weight: 1
+    data:
+      width: 1024
+      height: null
+      upscale: false

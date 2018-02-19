@@ -1,0 +1,32 @@
+uuid: 8b6e3f08-115a-4632-95d8-e97198d39883
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_contact_name
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.race_centre_booking_form.field_contact_name
+field_name: field_contact_name
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Contact Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

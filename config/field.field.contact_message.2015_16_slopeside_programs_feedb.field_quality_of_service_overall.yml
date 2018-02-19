@@ -1,0 +1,21 @@
+uuid: 5902d999-4620-4284-b3cd-1870df45ccb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_quality_of_service_overall
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_quality_of_service_overall
+field_name: field_quality_of_service_overall
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Quality of service'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

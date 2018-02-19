@@ -1,0 +1,12 @@
+uuid: 73772eb2-fed7-4a78-8849-c30360c75da1
+langcode: en
+status: true
+dependencies: {  }
+id: table
+label: Table
+description: 'A table of content'
+body:
+  value: "<div class=\"template table \">\r\n<table>\r\n\t<caption>Table Heading</caption>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>&nbsp;</th>\r\n\t\t\t<th>Column Heading</th>\r\n\t\t\t<th>Column Heading</th>\r\n\t\t\t<th>Column Heading</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n</div>\r\n"
+  format: basic_html
+weight: null
+node_types: {  }

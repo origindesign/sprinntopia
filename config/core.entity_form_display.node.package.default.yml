@@ -1,0 +1,205 @@
+uuid: 79c9afe3-b80d-4a56-80b5-56aead5626fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files_modal
+    - field.field.node.package.body
+    - field.field.node.package.field_image
+    - field.field.node.package.field_price
+    - field.field.node.package.field_price_header
+    - field.field.node.package.field_reservations_link
+    - field.field.node.package.field_season
+    - field.field.node.package.field_terms
+    - field.field.node.package.field_weight
+    - node.type.package
+  module:
+    - entity_browser
+    - field_group
+    - link
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_available_fields:
+      children:
+        - group_price
+        - group_copy_image
+        - group_categories
+      parent_name: ''
+      weight: 2
+      label: 'Available Fields'
+      format_type: tabs
+      format_settings:
+        label: 'Available Fields'
+        id: ''
+        classes: ''
+        direction: vertical
+    group_copy_image:
+      children:
+        - field_image
+        - body
+        - field_terms
+      parent_name: group_available_fields
+      weight: 9
+      label: Copy/Image
+      format_type: tab
+      format_settings:
+        label: Copy/Image
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_categories:
+      children:
+        - field_season
+      parent_name: group_available_fields
+      weight: 10
+      label: Categories
+      format_type: tab
+      format_settings:
+        label: Categories
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_price:
+      children:
+        - field_price_header
+        - field_price
+        - field_reservations_link
+      parent_name: group_available_fields
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Price
+id: node.package.default
+targetEntityType: node
+bundle: package
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 9
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 7
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: default
+      open: false
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: content
+  field_price:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_price_header:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_reservations_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_season:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_terms:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_weight:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  path:
+    type: path
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

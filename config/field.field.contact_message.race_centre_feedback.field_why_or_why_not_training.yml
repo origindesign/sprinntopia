@@ -1,0 +1,19 @@
+uuid: 5926a079-e046-44a4-9c60-dbf51554854c
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_why_or_why_not_training
+id: contact_message.race_centre_feedback.field_why_or_why_not_training
+field_name: field_why_or_why_not_training
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Why or why not?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,28 @@
+uuid: e3f68f06-c48a-4a73-9e57-a36e86769b85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fragments
+    - node.type.business
+    - node.type.fragment
+id: node.business.field_fragments
+field_name: field_fragments
+entity_type: node
+bundle: business
+label: Fragments
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      fragment: fragment
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

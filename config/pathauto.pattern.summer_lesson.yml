@@ -1,0 +1,22 @@
+uuid: 66bf9012-2314-4c6c-a756-1ad9aedbe8c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: summer_lesson
+label: 'Summer Lesson'
+type: 'canonical_entities:node'
+pattern: '/bike-hike/bike/camps-lessons-tours/[node:title]'
+selection_criteria:
+  22809121-5ecd-47cf-b0e7-415e679d637f:
+    id: node_type
+    bundles:
+      summer_lesson: summer_lesson
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 22809121-5ecd-47cf-b0e7-415e679d637f
+selection_logic: and
+weight: -5
+relationships: {  }

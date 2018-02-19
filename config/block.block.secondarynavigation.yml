@@ -1,0 +1,27 @@
+uuid: c17bc7b2-51c6-499f-b4b7-2f9bf6f55801
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - sunpeaksresort
+id: secondarynavigation
+theme: sunpeaksresort
+region: content
+weight: 2
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Secondary Navigation'
+  provider: menu_block
+  label_display: '0'
+  level: 2
+  depth: 2
+  expand: 0
+  parent: 'main:'
+  suggestion: main
+visibility: {  }

@@ -1,0 +1,1310 @@
+uuid: e7e10dae-6fc2-45d1-b911-11ca3ffbc27e
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.field.contact_message.race_centre_booking_form.field_age_of_athletes
+    - field.field.contact_message.race_centre_booking_form.field_city
+    - field.field.contact_message.race_centre_booking_form.field_coach_name
+    - field.field.contact_message.race_centre_booking_form.field_contact_name
+    - field.field.contact_message.race_centre_booking_form.field_country
+    - field.field.contact_message.race_centre_booking_form.field_day_1
+    - field.field.contact_message.race_centre_booking_form.field_day_10
+    - field.field.contact_message.race_centre_booking_form.field_day_10_am
+    - field.field.contact_message.race_centre_booking_form.field_day_10_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_10_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_11
+    - field.field.contact_message.race_centre_booking_form.field_day_11_am
+    - field.field.contact_message.race_centre_booking_form.field_day_11_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_11_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_12
+    - field.field.contact_message.race_centre_booking_form.field_day_12_am
+    - field.field.contact_message.race_centre_booking_form.field_day_12_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_12_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_13
+    - field.field.contact_message.race_centre_booking_form.field_day_13_am
+    - field.field.contact_message.race_centre_booking_form.field_day_13_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_13_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_14
+    - field.field.contact_message.race_centre_booking_form.field_day_14_am
+    - field.field.contact_message.race_centre_booking_form.field_day_14_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_14_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_15
+    - field.field.contact_message.race_centre_booking_form.field_day_15_am
+    - field.field.contact_message.race_centre_booking_form.field_day_15_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_15_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_16
+    - field.field.contact_message.race_centre_booking_form.field_day_16_am
+    - field.field.contact_message.race_centre_booking_form.field_day_16_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_16_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_17
+    - field.field.contact_message.race_centre_booking_form.field_day_17_am
+    - field.field.contact_message.race_centre_booking_form.field_day_17_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_17_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_18
+    - field.field.contact_message.race_centre_booking_form.field_day_18_am
+    - field.field.contact_message.race_centre_booking_form.field_day_18_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_18_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_19
+    - field.field.contact_message.race_centre_booking_form.field_day_19_am
+    - field.field.contact_message.race_centre_booking_form.field_day_19_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_19_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_1_am
+    - field.field.contact_message.race_centre_booking_form.field_day_1_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_1_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_2
+    - field.field.contact_message.race_centre_booking_form.field_day_20
+    - field.field.contact_message.race_centre_booking_form.field_day_20_am
+    - field.field.contact_message.race_centre_booking_form.field_day_20_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_20_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_2_am
+    - field.field.contact_message.race_centre_booking_form.field_day_2_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_2_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_3
+    - field.field.contact_message.race_centre_booking_form.field_day_3_am
+    - field.field.contact_message.race_centre_booking_form.field_day_3_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_3_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_4
+    - field.field.contact_message.race_centre_booking_form.field_day_4_am
+    - field.field.contact_message.race_centre_booking_form.field_day_4_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_4_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_5
+    - field.field.contact_message.race_centre_booking_form.field_day_5_am
+    - field.field.contact_message.race_centre_booking_form.field_day_5_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_5_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_6
+    - field.field.contact_message.race_centre_booking_form.field_day_6_am
+    - field.field.contact_message.race_centre_booking_form.field_day_6_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_6_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_7
+    - field.field.contact_message.race_centre_booking_form.field_day_7_am
+    - field.field.contact_message.race_centre_booking_form.field_day_7_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_7_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_8
+    - field.field.contact_message.race_centre_booking_form.field_day_8_am
+    - field.field.contact_message.race_centre_booking_form.field_day_8_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_8_pm
+    - field.field.contact_message.race_centre_booking_form.field_day_9
+    - field.field.contact_message.race_centre_booking_form.field_day_9_am
+    - field.field.contact_message.race_centre_booking_form.field_day_9_midday
+    - field.field.contact_message.race_centre_booking_form.field_day_9_pm
+    - field.field.contact_message.race_centre_booking_form.field_do_you_require_injected_la
+    - field.field.contact_message.race_centre_booking_form.field_drill_rental
+    - field.field.contact_message.race_centre_booking_form.field_email
+    - field.field.contact_message.race_centre_booking_form.field_first_training_day_on_moun
+    - field.field.contact_message.race_centre_booking_form.field_gate_rental
+    - field.field.contact_message.race_centre_booking_form.field_last_training_day_on_mount
+    - field.field.contact_message.race_centre_booking_form.field_mailing_address
+    - field.field.contact_message.race_centre_booking_form.field_number_of_athletes
+    - field.field.contact_message.race_centre_booking_form.field_number_of_coaches
+    - field.field.contact_message.race_centre_booking_form.field_number_of_days_drill
+    - field.field.contact_message.race_centre_booking_form.field_number_of_days_gate
+    - field.field.contact_message.race_centre_booking_form.field_number_of_planned_days_off
+    - field.field.contact_message.race_centre_booking_form.field_phone_number
+    - field.field.contact_message.race_centre_booking_form.field_postal_zip_code
+    - field.field.contact_message.race_centre_booking_form.field_province_state
+    - field.field.contact_message.race_centre_booking_form.field_team_name
+    - field.field.contact_message.race_centre_booking_form.field_terms_conditions
+    - field.field.contact_message.race_centre_booking_form.field_total_training_days
+  module:
+    - datetime
+    - field_group
+third_party_settings:
+  field_group:
+    group_general_information:
+      children:
+        - field_contact_name
+        - field_team_name
+        - field_coach_name
+        - field_mailing_address
+        - field_city
+        - field_province_state
+        - field_country
+        - field_postal_zip_code
+        - field_email
+        - field_phone_number
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        label: 'General Information'
+        description: ''
+        id: ''
+        classes: ''
+        required_fields: false
+      label: 'General Information'
+    group_group_information:
+      children:
+        - field_number_of_athletes
+        - field_age_of_athletes
+        - field_number_of_coaches
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        label: 'Group Information'
+        description: ''
+        id: ''
+        classes: ''
+        required_fields: false
+      label: 'Group Information'
+    group_requested_dates:
+      children:
+        - field_first_training_day_on_moun
+        - field_last_training_day_on_mount
+        - field_number_of_planned_days_off
+        - field_total_training_days
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Requested Dates'
+    group_injected_lanes:
+      children:
+        - field_do_you_require_injected_la
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        label: 'Injected Lanes'
+        description: ''
+        id: ''
+        classes: ''
+        required_fields: false
+      label: 'Injected Lanes'
+    group_training_schedule:
+      children:
+        - group_day_1
+        - group_day_2
+        - group_day_3
+        - group_day_4
+        - group_day_5
+        - group_day_6
+        - group_day_7
+        - group_day_8
+        - group_day_9
+        - group_day_10
+        - group_day_11
+        - group_day_12
+        - group_day_13
+        - group_day_14
+        - group_day_15
+        - group_day_16
+        - group_day_17
+        - group_day_18
+        - group_day_19
+        - group_day_20
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        label: 'Training Schedule'
+        description: ''
+        id: ''
+        classes: description
+        required_fields: false
+      label: 'Training Schedule'
+    group_day_1:
+      children:
+        - field_day_1
+        - field_day_1_am
+        - field_day_1_midday
+        - field_day_1_pm
+      parent_name: group_training_schedule
+      weight: 21
+      format_type: html_element
+      format_settings:
+        label: 'Day 1'
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: day
+      label: 'Day 1'
+    group_day_2:
+      children:
+        - field_day_2
+        - field_day_2_am
+        - field_day_2_midday
+        - field_day_2_pm
+      parent_name: group_training_schedule
+      weight: 22
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 2'
+    group_day_3:
+      children:
+        - field_day_3
+        - field_day_3_am
+        - field_day_3_midday
+        - field_day_3_pm
+      parent_name: group_training_schedule
+      weight: 23
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 3'
+    group_day_4:
+      children:
+        - field_day_4
+        - field_day_4_am
+        - field_day_4_midday
+        - field_day_4_pm
+      parent_name: group_training_schedule
+      weight: 24
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 4'
+    group_day_5:
+      children:
+        - field_day_5
+        - field_day_5_am
+        - field_day_5_midday
+        - field_day_5_pm
+      parent_name: group_training_schedule
+      weight: 25
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 5'
+    group_day_6:
+      children:
+        - field_day_6
+        - field_day_6_am
+        - field_day_6_midday
+        - field_day_6_pm
+      parent_name: group_training_schedule
+      weight: 26
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 6'
+    group_day_7:
+      children:
+        - field_day_7
+        - field_day_7_am
+        - field_day_7_midday
+        - field_day_7_pm
+      parent_name: group_training_schedule
+      weight: 27
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 7'
+    group_day_8:
+      children:
+        - field_day_8
+        - field_day_8_am
+        - field_day_8_midday
+        - field_day_8_pm
+      parent_name: group_training_schedule
+      weight: 28
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 8'
+    group_day_9:
+      children:
+        - field_day_9
+        - field_day_9_am
+        - field_day_9_midday
+        - field_day_9_pm
+      parent_name: group_training_schedule
+      weight: 29
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 9'
+    group_day_10:
+      children:
+        - field_day_10
+        - field_day_10_am
+        - field_day_10_midday
+        - field_day_10_pm
+      parent_name: group_training_schedule
+      weight: 30
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 10'
+    group_day_11:
+      children:
+        - field_day_11
+        - field_day_11_am
+        - field_day_11_midday
+        - field_day_11_pm
+      parent_name: group_training_schedule
+      weight: 31
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 11'
+    group_day_12:
+      children:
+        - field_day_12
+        - field_day_12_am
+        - field_day_12_midday
+        - field_day_12_pm
+      parent_name: group_training_schedule
+      weight: 32
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 12'
+    group_day_13:
+      children:
+        - field_day_13
+        - field_day_13_am
+        - field_day_13_midday
+        - field_day_13_pm
+      parent_name: group_training_schedule
+      weight: 33
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 13'
+    group_day_14:
+      children:
+        - field_day_14
+        - field_day_14_am
+        - field_day_14_midday
+        - field_day_14_pm
+      parent_name: group_training_schedule
+      weight: 34
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 14'
+    group_day_15:
+      children:
+        - field_day_15
+        - field_day_15_pm
+        - field_day_15_midday
+        - field_day_15_am
+      parent_name: group_training_schedule
+      weight: 35
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 15'
+    group_day_16:
+      children:
+        - field_day_16
+        - field_day_16_am
+        - field_day_16_midday
+        - field_day_16_pm
+      parent_name: group_training_schedule
+      weight: 36
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 16'
+    group_day_17:
+      children:
+        - field_day_17
+        - field_day_17_am
+        - field_day_17_midday
+        - field_day_17_pm
+      parent_name: group_training_schedule
+      weight: 37
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 17'
+    group_day_18:
+      children:
+        - field_day_18
+        - field_day_18_am
+        - field_day_18_midday
+        - field_day_18_pm
+      parent_name: group_training_schedule
+      weight: 38
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 18'
+    group_day_19:
+      children:
+        - field_day_19
+        - field_day_19_am
+        - field_day_19_midday
+        - field_day_19_pm
+      parent_name: group_training_schedule
+      weight: 39
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 19'
+    group_day_20:
+      children:
+        - field_day_20
+        - field_day_20_am
+        - field_day_20_midday
+        - field_day_20_pm
+      parent_name: group_training_schedule
+      weight: 40
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: day
+        element: div
+        show_label: false
+        label_element: h3
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Day 20'
+    group_rentals:
+      children:
+        - field_gate_rental
+        - field_number_of_days_gate
+        - field_drill_rental
+        - field_number_of_days_drill
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Rentals
+    group_payment_information:
+      children: {  }
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        label: 'Payment Information'
+        description: ''
+        id: ''
+        classes: description
+        required_fields: false
+      label: 'Payment Information'
+    group_terms_conditions:
+      children:
+        - field_terms_conditions
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Terms & Conditions'
+id: contact_message.race_centre_booking_form.default
+targetEntityType: contact_message
+bundle: race_centre_booking_form
+mode: default
+content:
+  field_age_of_athletes:
+    weight: 55
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_city:
+    weight: 25
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_coach_name:
+    weight: 23
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_contact_name:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_country:
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_1:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_10:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_10_am:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_10_midday:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_10_pm:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_11:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_11_am:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_11_midday:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_11_pm:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_12:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_12_am:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_12_midday:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_12_pm:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_13:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_13_am:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_13_midday:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_13_pm:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_14:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_14_am:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_14_midday:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_14_pm:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_15:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_15_am:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_15_midday:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_15_pm:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_16:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_16_am:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_16_midday:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_16_pm:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_17:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_17_am:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_17_midday:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_17_pm:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_18:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_18_am:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_18_midday:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_18_pm:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_19:
+    weight: 46
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_19_am:
+    weight: 47
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_19_midday:
+    weight: 48
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_19_pm:
+    weight: 49
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_1_am:
+    weight: 37
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_1_midday:
+    weight: 38
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_1_pm:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_2:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_20:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_20_am:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_20_midday:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_20_pm:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_2_am:
+    weight: 41
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_2_midday:
+    weight: 42
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_2_pm:
+    weight: 43
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_3:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_3_am:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_3_midday:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_3_pm:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_4:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_4_am:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_4_midday:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_4_pm:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_5:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_5_am:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_5_midday:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_5_pm:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_6:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_6_am:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_6_midday:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_6_pm:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_7:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_7_am:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_7_midday:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_7_pm:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_8:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_8_am:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_8_midday:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_8_pm:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_9:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_day_9_am:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_9_midday:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_day_9_pm:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_do_you_require_injected_la:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_drill_rental:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_email:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_first_training_day_on_moun:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_gate_rental:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_last_training_day_on_mount:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_mailing_address:
+    weight: 24
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number_of_athletes:
+    weight: 54
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_number_of_coaches:
+    weight: 56
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_number_of_days_drill:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number_of_days_gate:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number_of_planned_days_off:
+    weight: 33
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone_number:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_postal_zip_code:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_province_state:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_team_name:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_terms_conditions:
+    weight: 44
+    settings:
+      display_label: false
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_total_training_days:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  preview: true
+  subject: true

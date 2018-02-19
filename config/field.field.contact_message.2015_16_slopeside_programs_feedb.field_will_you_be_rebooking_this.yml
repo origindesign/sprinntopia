@@ -1,0 +1,21 @@
+uuid: c3f53556-d405-43ef-9eca-60eb141ab469
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_will_you_be_rebooking_this
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_will_you_be_rebooking_this
+field_name: field_will_you_be_rebooking_this
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Will you be rebooking this program next season?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

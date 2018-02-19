@@ -1,0 +1,21 @@
+uuid: d605224f-26a8-4da7-91e0-c9f9eac6b3c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_18_midday
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_18_midday
+field_name: field_day_18_midday
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 18 Midday Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

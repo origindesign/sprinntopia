@@ -1,0 +1,32 @@
+uuid: 2a0afc7d-c166-443c-b72a-deed20e736a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.weddings
+    - field.storage.contact_message.field_preferred_season
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.weddings.field_preferred_season
+field_name: field_preferred_season
+entity_type: contact_message
+bundle: weddings
+label: 'Preferred Season'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

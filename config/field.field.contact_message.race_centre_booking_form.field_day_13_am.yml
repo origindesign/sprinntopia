@@ -1,0 +1,21 @@
+uuid: b22283ab-4ddf-4b29-b7e6-46bfff197d66
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_13_am
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_13_am
+field_name: field_day_13_am
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 13 AM Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

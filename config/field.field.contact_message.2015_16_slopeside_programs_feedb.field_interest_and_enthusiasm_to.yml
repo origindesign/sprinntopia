@@ -1,0 +1,21 @@
+uuid: 27038526-ea60-4812-bf35-125f422ad536
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_interest_and_enthusiasm_to
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_interest_and_enthusiasm_to
+field_name: field_interest_and_enthusiasm_to
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Interest and enthusiasm towards students'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

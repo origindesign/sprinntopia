@@ -1,0 +1,21 @@
+uuid: b2a31d6b-c8de-4f0c-90b7-aa998e52cfe9
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_10
+  module:
+    - datetime
+id: contact_message.race_centre_booking_form.field_day_10
+field_name: field_day_10
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 10'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

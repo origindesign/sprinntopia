@@ -1,0 +1,32 @@
+uuid: 7895661e-caf3-4f5f-ae17-5b7c95a64d5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.weddings
+    - field.storage.contact_message.field_number_of_guests
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.weddings.field_number_of_guests
+field_name: field_number_of_guests
+entity_type: contact_message
+bundle: weddings
+label: 'Number of guests'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

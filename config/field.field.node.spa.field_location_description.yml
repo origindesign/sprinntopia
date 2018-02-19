@@ -1,0 +1,32 @@
+uuid: b35b79e2-f2ea-434c-b22e-007c8242c0b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_description
+    - node.type.spa
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.spa.field_location_description
+field_name: field_location_description
+entity_type: node
+bundle: spa
+label: 'Location Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

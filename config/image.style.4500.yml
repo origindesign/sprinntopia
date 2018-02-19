@@ -1,0 +1,15 @@
+uuid: e2f50c48-a024-49ef-80fc-0e99b50b5065
+langcode: en
+status: true
+dependencies: {  }
+name: '4500'
+label: '4500'
+effects:
+  96381227-bfc7-49ec-998a-9bbab4d2c264:
+    uuid: 96381227-bfc7-49ec-998a-9bbab4d2c264
+    id: image_scale
+    weight: 1
+    data:
+      width: 4500
+      height: null
+      upscale: false

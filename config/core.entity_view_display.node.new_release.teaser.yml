@@ -1,0 +1,40 @@
+uuid: 85eb9d7c-ad50-474a-8fc5-d68ec71ce734
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.new_release.body
+    - field.field.node.new_release.field_fragments
+    - node.type.new_release
+  module:
+    - smart_trim
+    - user
+id: node.new_release.teaser
+targetEntityType: node
+bundle: new_release
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 101
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_fragments: true

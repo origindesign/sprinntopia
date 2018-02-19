@@ -1,0 +1,22 @@
+uuid: a34647e1-2c71-41fd-a620-ec7e63f1ec73
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.summer_lesson
+id: node.summer_lesson.promote
+field_name: promote
+entity_type: node
+bundle: summer_lesson
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

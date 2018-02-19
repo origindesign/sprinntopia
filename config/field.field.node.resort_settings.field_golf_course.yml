@@ -1,0 +1,23 @@
+uuid: 3a5a6dea-1efa-4566-af08-b57f7fcdbd70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_golf_course
+    - node.type.resort_settings
+id: node.resort_settings.field_golf_course
+field_name: field_golf_course
+entity_type: node
+bundle: resort_settings
+label: 'Golf Course'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

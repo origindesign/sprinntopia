@@ -1,0 +1,32 @@
+uuid: b3a04da1-f18d-471e-b66f-360d7a0d0301
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_business_directory
+    - node.type.shopping
+    - taxonomy.vocabulary.business_type
+  content:
+    - 'taxonomy_term:business_type:16504011-af87-48d8-a17e-60746f3fb59d'
+id: node.shopping.field_business_directory
+field_name: field_business_directory
+entity_type: node
+bundle: shopping
+label: 'Business Directory Category'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: 16504011-af87-48d8-a17e-60746f3fb59d
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      business_type: business_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

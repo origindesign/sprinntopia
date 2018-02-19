@@ -1,0 +1,79 @@
+uuid: 04827632-1070-4418-b44a-270121cfe4d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.summer_lesson.body
+    - field.field.node.summer_lesson.field_category
+    - field.field.node.summer_lesson.field_fragments
+    - field.field.node.summer_lesson.field_images
+    - field.field.node.summer_lesson.field_level
+    - field.field.node.summer_lesson.field_sports
+    - node.type.summer_lesson
+    - responsive_image.styles.listing_image
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.summer_lesson.teaser
+targetEntityType: node
+bundle: summer_lesson
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 2
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_category:
+    type: entity_reference_label
+    weight: 3
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 1
+    label: inline
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_level:
+    type: entity_reference_label
+    weight: 6
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_sports:
+    type: entity_reference_label
+    weight: 4
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_fragments: true

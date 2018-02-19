@@ -1,0 +1,32 @@
+uuid: e2adab7f-8776-40b7-a79d-030654979ab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activities_heading
+    - node.type.home_page
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.home_page.field_activities_heading
+field_name: field_activities_heading
+entity_type: node
+bundle: home_page
+label: 'Slider Heading'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

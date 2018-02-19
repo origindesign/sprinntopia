@@ -1,0 +1,47 @@
+uuid: 38bf531d-a709-476d-8753-6869aa47e05f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_listings
+    - node.type.accomodation
+    - node.type.activity
+    - node.type.blog
+    - node.type.business
+    - node.type.dining_apres
+    - node.type.event
+    - node.type.member_page
+    - node.type.package
+    - node.type.page
+    - node.type.promo
+    - node.type.update
+id: node.member_page.field_page_listings
+field_name: field_page_listings
+entity_type: node
+bundle: member_page
+label: 'Page Listings'
+description: 'Pages to show as a teaser listing'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      accomodation: accomodation
+      activity: activity
+      blog: blog
+      business: business
+      dining_apres: dining_apres
+      event: event
+      member_page: member_page
+      package: package
+      page: page
+      promo: promo
+      update: update
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: accomodation
+field_type: entity_reference

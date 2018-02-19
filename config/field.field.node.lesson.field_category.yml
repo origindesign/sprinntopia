@@ -1,0 +1,28 @@
+uuid: fb7c8bb6-e6fc-4443-8cec-dd96c8bb959b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.lesson
+    - taxonomy.vocabulary.lesson_type
+id: node.lesson.field_category
+field_name: field_category
+entity_type: node
+bundle: lesson
+label: Category
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lesson_type: lesson_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

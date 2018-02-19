@@ -1,0 +1,46 @@
+uuid: 66ace1e8-cc96-4a4b-8a2e-686b659f90d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activities
+    - node.type.accomodation
+    - node.type.activity
+    - node.type.business
+    - node.type.dining_apres
+    - node.type.event
+    - node.type.home_page
+    - node.type.lesson
+    - node.type.page
+    - node.type.shopping
+    - node.type.spa
+    - node.type.summer_lesson
+id: node.home_page.field_activities
+field_name: field_activities
+entity_type: node
+bundle: home_page
+label: 'Slider Content'
+description: 'Featured content of type event, activity, accommodation, dining and apres, business or page'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      accomodation: accomodation
+      activity: activity
+      business: business
+      dining_apres: dining_apres
+      event: event
+      page: page
+      shopping: shopping
+      spa: spa
+      summer_lesson: summer_lesson
+      lesson: lesson
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: accomodation
+field_type: entity_reference

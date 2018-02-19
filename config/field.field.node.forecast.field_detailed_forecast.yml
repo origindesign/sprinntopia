@@ -1,0 +1,33 @@
+uuid: bb25f31c-2895-4d0e-a07a-64dbff07ab53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_detailed_forecast
+    - node.type.forecast
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.forecast.field_detailed_forecast
+field_name: field_detailed_forecast
+entity_type: node
+bundle: forecast
+label: 'Detailed Forecast'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

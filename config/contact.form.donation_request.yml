@@ -1,0 +1,21 @@
+uuid: 87cdfab8-44a6-4bbb-9681-7620a5dc349a
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: Submit
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+id: donation_request
+label: 'Donation Request'
+recipients:
+  - sales@sunpeaksresort.com
+reply: ''
+weight: 0
+message: 'Thank you for submitting your donation request. Please note requests made within 30 days of an event will not be considered. Only approved applicants will be contacted. Due to high volume of requests, please allow up to 14 business days for follow-up.'
+redirect: /donation-requests

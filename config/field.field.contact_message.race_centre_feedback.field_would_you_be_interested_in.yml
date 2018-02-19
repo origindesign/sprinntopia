@@ -1,0 +1,21 @@
+uuid: 5060eea7-98df-4edd-85df-e7e690d45669
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_would_you_be_interested_in
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_would_you_be_interested_in
+field_name: field_would_you_be_interested_in
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Would you be interested in an indoor training space?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

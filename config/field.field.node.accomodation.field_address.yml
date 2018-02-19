@@ -1,0 +1,36 @@
+uuid: 0262e6c8-2997-4b74-a8b3-70e02822d99a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.accomodation
+  module:
+    - address
+id: node.accomodation.field_address
+field_name: field_address
+entity_type: node
+bundle: accomodation
+label: Address
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    CA: CA
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    postalCode: postalCode
+    addressLine1: addressLine1
+    dependentLocality: '0'
+    sortingCode: '0'
+    addressLine2: '0'
+    organization: '0'
+    givenName: ''
+    additionalName: ''
+    familyName: ''
+  langcode_override: ''
+field_type: address

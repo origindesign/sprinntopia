@@ -1,0 +1,21 @@
+uuid: 99d94215-732c-4584-a96d-e0e9a87ccae6
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_helpfulness_of_the_present
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_helpfulness_of_the_present
+field_name: field_helpfulness_of_the_present
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Helpfulness of the presentation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

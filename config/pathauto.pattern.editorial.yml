@@ -1,0 +1,22 @@
+uuid: 0d1dc9f7-2c26-432a-a365-1da55ce60b17
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: editorial
+label: Editorial
+type: 'canonical_entities:node'
+pattern: 'media/editorial-coverage/[node:title]'
+selection_criteria:
+  b6fe6337-a614-4071-8d17-cc1ef9157a52:
+    id: node_type
+    bundles:
+      editorial: editorial
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b6fe6337-a614-4071-8d17-cc1ef9157a52
+selection_logic: and
+weight: -5
+relationships: {  }

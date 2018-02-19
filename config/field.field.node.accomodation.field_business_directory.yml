@@ -1,0 +1,32 @@
+uuid: 002a3869-3258-4c6d-a023-4ba35409300c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_business_directory
+    - node.type.accomodation
+    - taxonomy.vocabulary.business_type
+  content:
+    - 'taxonomy_term:business_type:1da4cd93-b950-4808-ba3e-e0f6ebb9543d'
+id: node.accomodation.field_business_directory
+field_name: field_business_directory
+entity_type: node
+bundle: accomodation
+label: 'Business Directory Category'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 1da4cd93-b950-4808-ba3e-e0f6ebb9543d
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      business_type: business_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

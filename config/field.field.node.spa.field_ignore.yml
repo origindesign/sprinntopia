@@ -1,0 +1,23 @@
+uuid: 110b95d8-ae44-4b86-80f8-fab4a84fdce5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ignore
+    - node.type.spa
+id: node.spa.field_ignore
+field_name: field_ignore
+entity_type: node
+bundle: spa
+label: 'Ignore From Business Directory'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

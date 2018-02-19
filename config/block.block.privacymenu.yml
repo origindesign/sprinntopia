@@ -1,0 +1,24 @@
+uuid: c9a48516-37cc-48cc-9b49-27871a17681c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.privacy-menu
+  module:
+    - system
+  theme:
+    - sunpeaksresort
+id: privacymenu
+theme: sunpeaksresort
+region: content
+weight: 0
+provider: null
+plugin: 'system_menu_block:privacy-menu'
+settings:
+  id: 'system_menu_block:privacy-menu'
+  label: 'Privacy Menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 6820dccd-2b1b-47a4-a3eb-200713590eaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_efficiency
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_efficiency
+field_name: field_efficiency
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Lift Efficiency'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

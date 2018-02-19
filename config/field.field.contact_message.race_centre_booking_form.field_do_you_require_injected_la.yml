@@ -1,0 +1,21 @@
+uuid: b84a9029-ca19-471d-b76f-e3f46d6774e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_do_you_require_injected_la
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_do_you_require_injected_la
+field_name: field_do_you_require_injected_la
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Do you require injected lanes?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: a770d69f-aada-4a2a-aac7-fb5db751fca2
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_staff_friendliness_overall
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_staff_friendliness_overall
+field_name: field_staff_friendliness_overall
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Staff friendliness'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

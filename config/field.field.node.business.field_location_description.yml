@@ -1,0 +1,32 @@
+uuid: 0187c8a0-f809-4c04-b324-96ce154e030e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_description
+    - node.type.business
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.business.field_location_description
+field_name: field_location_description
+entity_type: node
+bundle: business
+label: 'Location Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

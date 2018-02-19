@@ -1,0 +1,13 @@
+uuid: 94af6931-ad7e-421e-b626-344ca940d1a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_actions
+_core:
+  default_config_hash: ti379jrB25BRGlFfr27_ooe8IbAAv97cnqT644hWsqY
+id: node_update_term_groomed
+label: 'Change Status to Groomed'
+type: node
+plugin: node_update_term_groomed
+configuration: {  }

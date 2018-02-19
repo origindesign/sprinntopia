@@ -1,0 +1,21 @@
+uuid: 13f704f0-a0eb-46e3-b308-f2dbf6aff646
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_overall_training_environme
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_overall_training_environme
+field_name: field_overall_training_environme
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Overall training environment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

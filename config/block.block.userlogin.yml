@@ -1,0 +1,20 @@
+uuid: fe8ffcd5-f380-4d41-b2da-88ccf04e5cd0
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - sunpeaksresort
+id: userlogin
+theme: sunpeaksresort
+region: content
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: '0'
+visibility: {  }

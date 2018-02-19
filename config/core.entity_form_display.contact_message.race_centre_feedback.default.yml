@@ -1,0 +1,567 @@
+uuid: 37ccde92-df53-43ad-8d8c-4e860c714eca
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_bookin
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_food
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_groomi
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_guest_
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_lift_o
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_on_sno
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_race_c
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_racece
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_tuning
+    - field.field.contact_message.race_centre_feedback.field_coach_name
+    - field.field.contact_message.race_centre_feedback.field_comments
+    - field.field.contact_message.race_centre_feedback.field_communication
+    - field.field.contact_message.race_centre_feedback.field_decision
+    - field.field.contact_message.race_centre_feedback.field_decision_other
+    - field.field.contact_message.race_centre_feedback.field_ease_of_contact
+    - field.field.contact_message.race_centre_feedback.field_efficiency
+    - field.field.contact_message.race_centre_feedback.field_efficiency_grooming
+    - field.field.contact_message.race_centre_feedback.field_email
+    - field.field.contact_message.race_centre_feedback.field_flexibility
+    - field.field.contact_message.race_centre_feedback.field_in_hotel_tuning_facilities
+    - field.field.contact_message.race_centre_feedback.field_on_mountain_facilities
+    - field.field.contact_message.race_centre_feedback.field_overall_efficiency
+    - field.field.contact_message.race_centre_feedback.field_overall_training_environme
+    - field.field.contact_message.race_centre_feedback.field_payment_process
+    - field.field.contact_message.race_centre_feedback.field_phone_number
+    - field.field.contact_message.race_centre_feedback.field_preparedness
+    - field.field.contact_message.race_centre_feedback.field_quality
+    - field.field.contact_message.race_centre_feedback.field_quality_food
+    - field.field.contact_message.race_centre_feedback.field_quality_of_service
+    - field.field.contact_message.race_centre_feedback.field_resort_tuning_facilities
+    - field.field.contact_message.race_centre_feedback.field_response_time_to_inquiries
+    - field.field.contact_message.race_centre_feedback.field_service
+    - field.field.contact_message.race_centre_feedback.field_snow_quality
+    - field.field.contact_message.race_centre_feedback.field_staff_friendliness
+    - field.field.contact_message.race_centre_feedback.field_staff_friendliness_lift_op
+    - field.field.contact_message.race_centre_feedback.field_team_name
+    - field.field.contact_message.race_centre_feedback.field_terrain
+    - field.field.contact_message.race_centre_feedback.field_ticket_issuance
+    - field.field.contact_message.race_centre_feedback.field_total_experience
+    - field.field.contact_message.race_centre_feedback.field_village_facilities
+    - field.field.contact_message.race_centre_feedback.field_why_or_why_not_recommend
+    - field.field.contact_message.race_centre_feedback.field_why_or_why_not_training
+    - field.field.contact_message.race_centre_feedback.field_will_you_be_training_in_ou
+    - field.field.contact_message.race_centre_feedback.field_would_you_be_interested_fi
+    - field.field.contact_message.race_centre_feedback.field_would_you_be_interested_in
+    - field.field.contact_message.race_centre_feedback.field_would_you_recommend_the_na
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_booking_procedures:
+      children:
+        - field_ease_of_contact
+        - field_response_time_to_inquiries
+        - field_overall_efficiency
+        - field_additional_comments_bookin
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Booking Procedures'
+    group_guest_services_and_race_ce:
+      children:
+        - field_staff_friendliness
+        - field_payment_process
+        - field_ticket_issuance
+        - field_additional_comments_guest_
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Guest Services and Race Centre Representatives'
+    group_on_snow_training_facility:
+      children:
+        - field_snow_quality
+        - field_terrain
+        - field_overall_training_environme
+        - field_additional_comments_on_sno
+      parent_name: ''
+      weight: 7
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'On-Snow Training Facility'
+    group_race_centre_day_to_day_coo:
+      children:
+        - field_flexibility
+        - field_preparedness
+        - field_communication
+        - field_additional_comments_race_c
+      parent_name: ''
+      weight: 8
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Race Centre Day-to-Day Coordination'
+    group_lift_operations:
+      children:
+        - field_total_experience
+        - field_staff_friendliness_lift_op
+        - field_quality_of_service
+        - field_efficiency
+        - field_additional_comments_lift_o
+      parent_name: ''
+      weight: 9
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Lift Operations'
+    group_grooming:
+      children:
+        - field_quality
+        - field_efficiency_grooming
+        - field_additional_comments_groomi
+      parent_name: ''
+      weight: 10
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Grooming
+    group_food:
+      children:
+        - field_service
+        - field_quality_food
+        - field_on_mountain_facilities
+        - field_village_facilities
+        - field_additional_comments_food
+      parent_name: ''
+      weight: 11
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: Food
+    group_tuning_facilities:
+      children:
+        - field_resort_tuning_facilities
+        - field_in_hotel_tuning_facilities
+        - field_additional_comments_tuning
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Tuning Facilities'
+    group_how_can_we_improve_our_dry:
+      children:
+        - field_comments
+        - field_would_you_be_interested_in
+        - field_would_you_be_interested_fi
+      parent_name: ''
+      weight: 13
+      format_type: fieldset
+      format_settings:
+        label: 'How can we improve our dryland facilities (indoor and outdoor)?'
+        description: ''
+        id: ''
+        classes: hide-first-label
+        required_fields: false
+      label: 'How can we improve our dryland facilities (indoor and outdoor)?'
+    group_which_one_of_the_following:
+      children:
+        - field_decision
+        - field_decision_other
+      parent_name: ''
+      weight: 14
+      format_type: fieldset
+      format_settings:
+        label: 'Which one of the following factors most influenced your decision to choose the Nancy Greene International Race Centre?'
+        description: ''
+        id: ''
+        classes: hide-first-label
+        required_fields: false
+      label: 'Which one of the following factors most influenced your decision to choose the Nancy Greene International Race Centre?'
+    group_would_you_recommend_the_na:
+      children:
+        - field_would_you_recommend_the_na
+        - field_why_or_why_not_recommend
+      parent_name: ''
+      weight: 15
+      format_type: fieldset
+      format_settings:
+        label: 'Would you recommend the Nancy Greene International Race Centre to others?'
+        description: ''
+        id: ''
+        classes: hide-first-label
+        required_fields: false
+      label: 'Would you recommend the Nancy Greene International Race Centre to others?'
+    group_will_you_be_training_in_ou:
+      children:
+        - field_will_you_be_training_in_ou
+        - field_why_or_why_not_training
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      format_settings:
+        label: 'Will you be training in our facilities next season?'
+        description: ''
+        id: ''
+        classes: hide-first-label
+        required_fields: false
+      label: 'Will you be training in our facilities next season?'
+    group_additional_comments:
+      children:
+        - field_additional_comments_racece
+      parent_name: ''
+      weight: 17
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: hide-first-label
+        description: ''
+        required_fields: false
+      label: 'Additional comments'
+id: contact_message.race_centre_feedback.default
+targetEntityType: contact_message
+bundle: race_centre_feedback
+mode: default
+content:
+  field_additional_comments_bookin:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_food:
+    weight: 37
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_groomi:
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_guest_:
+    weight: 16
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_lift_o:
+    weight: 29
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_on_sno:
+    weight: 20
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_race_c:
+    weight: 24
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_racece:
+    weight: 18
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_additional_comments_tuning:
+    weight: 40
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_coach_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_comments:
+    weight: 14
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_communication:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_decision:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_decision_other:
+    weight: 19
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_ease_of_contact:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_efficiency:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_efficiency_grooming:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_email:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_flexibility:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_in_hotel_tuning_facilities:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_on_mountain_facilities:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_overall_efficiency:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_overall_training_environme:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_payment_process:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_phone_number:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_preparedness:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_quality:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_quality_food:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_quality_of_service:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_resort_tuning_facilities:
+    weight: 38
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_response_time_to_inquiries:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_service:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_snow_quality:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_staff_friendliness:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_staff_friendliness_lift_op:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_team_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_terrain:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ticket_issuance:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_total_experience:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_village_facilities:
+    weight: 36
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_why_or_why_not_recommend:
+    weight: 42
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_why_or_why_not_training:
+    weight: 44
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_will_you_be_training_in_ou:
+    weight: 43
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_would_you_be_interested_fi:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_would_you_be_interested_in:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_would_you_recommend_the_na:
+    weight: 41
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  preview: true
+  subject: true

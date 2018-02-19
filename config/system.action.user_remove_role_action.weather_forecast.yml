@@ -1,0 +1,14 @@
+uuid: 3e7beea7-e503-4e3f-8f6b-a7816a7363c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.weather_forecast
+  module:
+    - user
+id: user_remove_role_action.weather_forecast
+label: 'Remove the Weather Forecast role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: weather_forecast

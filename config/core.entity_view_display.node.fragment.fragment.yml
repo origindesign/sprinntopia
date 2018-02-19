@@ -1,0 +1,118 @@
+uuid: c2d63576-35bd-4146-b26c-3262f917aaf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.fragment
+    - field.field.node.fragment.body
+    - field.field.node.fragment.field_column_style
+    - field.field.node.fragment.field_copy_left
+    - field.field.node.fragment.field_copy_right
+    - field.field.node.fragment.field_hide_title
+    - field.field.node.fragment.field_images
+    - field.field.node.fragment.field_video
+    - field.field.node.fragment.field_video_caption
+    - node.type.fragment
+    - responsive_image.styles.content_full_width
+  module:
+    - field_group
+    - options
+    - responsive_image
+    - text
+    - user
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_two_column_copy:
+      children:
+        - field_copy_left
+        - field_copy_right
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: two-column-copy
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Two Column Copy'
+id: node.fragment.fragment
+targetEntityType: node
+bundle: fragment
+mode: fragment
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_column_style:
+    type: list_key
+    weight: 7
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_copy_left:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_copy_right:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hide_title:
+    type: boolean
+    weight: 6
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  field_images:
+    weight: 3
+    label: hidden
+    settings:
+      responsive_image_style: content_full_width
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+  field_video:
+    weight: 4
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_video
+    region: content
+  field_video_caption:
+    type: text_default
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

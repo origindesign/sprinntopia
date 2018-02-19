@@ -1,0 +1,20 @@
+uuid: c72802cb-65c3-41d3-b41a-c5e350e2ce3d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Shopping
+type: shopping
+description: 'Use for a shopping business listing on the Shopping page'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

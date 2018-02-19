@@ -1,0 +1,27 @@
+uuid: 4dc8f7f4-c829-4665-b8a0-5e940c1ee3b1
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - sunpeaksresort
+id: explore_menu
+theme: sunpeaksresort
+region: content
+weight: -6
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Explore Menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand: 1
+  parent: 'main:menu_link_content:6e0758f4-b049-40fc-a438-1084bca9fbce'
+  suggestion: main
+visibility: {  }

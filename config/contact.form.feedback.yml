@@ -1,0 +1,22 @@
+uuid: b42c5979-adc3-4a69-888b-2b25005d71eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: 'Send message'
+    show_preview: true
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+_core:
+  default_config_hash: c4zaT5cyPxuTXI6JOWt3qRtMvICT9tHB6d9a5VG-CmQ
+id: feedback
+label: 'Website feedback'
+recipients:
+  - webmaster@sunpeaksresort.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

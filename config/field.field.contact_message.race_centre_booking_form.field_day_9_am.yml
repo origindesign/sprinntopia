@@ -1,0 +1,21 @@
+uuid: 54933381-41f8-42b9-8faa-b927d46cc77d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_9_am
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_9_am
+field_name: field_day_9_am
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 09 AM Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

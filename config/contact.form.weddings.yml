@@ -1,0 +1,21 @@
+uuid: 2a281bd5-0028-482e-8839-533737dc4ea9
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: 'Send message'
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+id: weddings
+label: Weddings
+recipients:
+  - events@sunpeaksgrand.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''

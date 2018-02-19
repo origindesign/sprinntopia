@@ -1,0 +1,27 @@
+uuid: 798071e7-5bdd-453f-a065-bea69859e70d
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_would_you_be_interested_fi
+field_name: field_would_you_be_interested_fi
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Yes'
+      label: 'Yes'
+    -
+      value: 'No'
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,22 @@
+uuid: c13d1ad4-4d89-4fe7-9655-61165a2733ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: job
+label: Job
+type: 'canonical_entities:node'
+pattern: 'employment/[node:title]'
+selection_criteria:
+  cac6078f-ecc7-49f0-80eb-b2e4ec399b70:
+    id: node_type
+    bundles:
+      job: job
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cac6078f-ecc7-49f0-80eb-b2e4ec399b70
+selection_logic: and
+weight: -5
+relationships: {  }

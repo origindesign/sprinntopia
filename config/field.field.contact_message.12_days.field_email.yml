@@ -1,0 +1,19 @@
+uuid: 0892c8aa-59b8-43f2-8892-e418628b146e
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.12_days
+    - field.storage.contact_message.field_email
+id: contact_message.12_days.field_email
+field_name: field_email
+entity_type: contact_message
+bundle: 12_days
+label: Email
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

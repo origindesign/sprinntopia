@@ -1,0 +1,36 @@
+uuid: b2abdc61-4832-4f05-a96d-551c59ed5484
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_overall_efficiency
+field_name: field_overall_efficiency
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Very Satisfied'
+      label: 'Very Satisfied'
+    -
+      value: 'Somewhat Satisfied'
+      label: 'Somewhat Satisfied'
+    -
+      value: Satisfied
+      label: Satisfied
+    -
+      value: 'Somewhat Unsatisfied'
+      label: 'Somewhat Unsatisfied'
+    -
+      value: 'Very Unsatisfied'
+      label: 'Very Unsatisfied'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

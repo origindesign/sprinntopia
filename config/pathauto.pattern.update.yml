@@ -1,0 +1,22 @@
+uuid: f00aae08-e14a-4eee-8ada-6f96c8c4bccc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: update
+label: Update
+type: 'canonical_entities:node'
+pattern: 'explore/news-updates/[node:title]'
+selection_criteria:
+  28c1c61a-b495-430c-9d6c-ebc9ab029743:
+    id: node_type
+    bundles:
+      update: update
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 28c1c61a-b495-430c-9d6c-ebc9ab029743
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,27 @@
+uuid: e528efbf-cf83-48c4-bedc-be32514575a1
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.corporate-menu
+  module:
+    - menu_block
+  theme:
+    - sunpeaksresort
+id: corporate_menu_sidebar
+theme: sunpeaksresort
+region: content
+weight: 0
+provider: null
+plugin: 'menu_block:corporate-menu'
+settings:
+  id: 'menu_block:corporate-menu'
+  label: 'Corporate Menu Sidebar'
+  provider: menu_block
+  label_display: '0'
+  level: 2
+  depth: 2
+  expand: 0
+  parent: 'corporate-menu:'
+  suggestion: corporate_menu
+visibility: {  }

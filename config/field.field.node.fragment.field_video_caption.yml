@@ -1,0 +1,33 @@
+uuid: 78323d9e-8dab-446c-b282-fdc8d8162329
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_caption
+    - node.type.fragment
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.fragment.field_video_caption
+field_name: field_video_caption
+entity_type: node
+bundle: fragment
+label: 'Video Caption'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

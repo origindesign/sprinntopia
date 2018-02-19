@@ -1,0 +1,22 @@
+uuid: 39052de0-3047-4fdc-82d5-4ef6b25d3f67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.shopping
+  module:
+    - text
+id: node.shopping.body
+field_name: body
+entity_type: node
+bundle: shopping
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,416 @@
+uuid: 4d8eab03-fcf9-40cf-8808-74806861312f
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_bookin
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_food
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_groomi
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_guest_
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_lift_o
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_on_sno
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_race_c
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_racece
+    - field.field.contact_message.race_centre_feedback.field_additional_comments_tuning
+    - field.field.contact_message.race_centre_feedback.field_coach_name
+    - field.field.contact_message.race_centre_feedback.field_comments
+    - field.field.contact_message.race_centre_feedback.field_communication
+    - field.field.contact_message.race_centre_feedback.field_decision
+    - field.field.contact_message.race_centre_feedback.field_decision_other
+    - field.field.contact_message.race_centre_feedback.field_ease_of_contact
+    - field.field.contact_message.race_centre_feedback.field_efficiency
+    - field.field.contact_message.race_centre_feedback.field_efficiency_grooming
+    - field.field.contact_message.race_centre_feedback.field_email
+    - field.field.contact_message.race_centre_feedback.field_flexibility
+    - field.field.contact_message.race_centre_feedback.field_in_hotel_tuning_facilities
+    - field.field.contact_message.race_centre_feedback.field_on_mountain_facilities
+    - field.field.contact_message.race_centre_feedback.field_overall_efficiency
+    - field.field.contact_message.race_centre_feedback.field_overall_training_environme
+    - field.field.contact_message.race_centre_feedback.field_payment_process
+    - field.field.contact_message.race_centre_feedback.field_phone_number
+    - field.field.contact_message.race_centre_feedback.field_preparedness
+    - field.field.contact_message.race_centre_feedback.field_quality
+    - field.field.contact_message.race_centre_feedback.field_quality_food
+    - field.field.contact_message.race_centre_feedback.field_quality_of_service
+    - field.field.contact_message.race_centre_feedback.field_resort_tuning_facilities
+    - field.field.contact_message.race_centre_feedback.field_response_time_to_inquiries
+    - field.field.contact_message.race_centre_feedback.field_service
+    - field.field.contact_message.race_centre_feedback.field_snow_quality
+    - field.field.contact_message.race_centre_feedback.field_staff_friendliness
+    - field.field.contact_message.race_centre_feedback.field_staff_friendliness_lift_op
+    - field.field.contact_message.race_centre_feedback.field_team_name
+    - field.field.contact_message.race_centre_feedback.field_terrain
+    - field.field.contact_message.race_centre_feedback.field_ticket_issuance
+    - field.field.contact_message.race_centre_feedback.field_total_experience
+    - field.field.contact_message.race_centre_feedback.field_village_facilities
+    - field.field.contact_message.race_centre_feedback.field_why_or_why_not_recommend
+    - field.field.contact_message.race_centre_feedback.field_why_or_why_not_training
+    - field.field.contact_message.race_centre_feedback.field_will_you_be_training_in_ou
+    - field.field.contact_message.race_centre_feedback.field_would_you_be_interested_fi
+    - field.field.contact_message.race_centre_feedback.field_would_you_be_interested_in
+    - field.field.contact_message.race_centre_feedback.field_would_you_recommend_the_na
+  module:
+    - options
+id: contact_message.race_centre_feedback.default
+targetEntityType: contact_message
+bundle: race_centre_feedback
+mode: default
+content:
+  field_additional_comments_bookin:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_food:
+    weight: 33
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_groomi:
+    weight: 29
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_guest_:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_lift_o:
+    weight: 26
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_on_sno:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_race_c:
+    weight: 21
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_racece:
+    weight: 47
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_additional_comments_tuning:
+    weight: 37
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_coach_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_comments:
+    weight: 38
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_communication:
+    weight: 20
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_decision:
+    weight: 41
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_decision_other:
+    weight: 42
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ease_of_contact:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_efficiency:
+    weight: 25
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_efficiency_grooming:
+    weight: 28
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_email:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_flexibility:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_in_hotel_tuning_facilities:
+    weight: 36
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_on_mountain_facilities:
+    weight: 31
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_overall_efficiency:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_overall_training_environme:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_payment_process:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_phone_number:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_preparedness:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_quality:
+    weight: 27
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_quality_food:
+    weight: 34
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_quality_of_service:
+    weight: 24
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_resort_tuning_facilities:
+    weight: 35
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_response_time_to_inquiries:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_service:
+    weight: 30
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_snow_quality:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_staff_friendliness:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_staff_friendliness_lift_op:
+    weight: 23
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_team_name:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_terrain:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ticket_issuance:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_total_experience:
+    weight: 22
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_village_facilities:
+    weight: 32
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_why_or_why_not_recommend:
+    weight: 44
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_why_or_why_not_training:
+    weight: 46
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_will_you_be_training_in_ou:
+    weight: 45
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_would_you_be_interested_fi:
+    weight: 40
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_would_you_be_interested_in:
+    weight: 39
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_would_you_recommend_the_na:
+    weight: 43
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  mail:
+    weight: -2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  message:
+    type: string
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  name:
+    weight: -3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  subject:
+    weight: -1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

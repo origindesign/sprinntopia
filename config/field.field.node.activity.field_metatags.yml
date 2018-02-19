@@ -1,0 +1,23 @@
+uuid: f64ae8cc-4ad1-4d60-beec-9c1f40e162c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.activity
+  module:
+    - metatag
+id: node.activity.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: activity
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

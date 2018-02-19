@@ -1,0 +1,15 @@
+uuid: 08824d24-a0f9-43a5-a820-cc5372efad50
+langcode: en
+status: true
+dependencies: {  }
+name: '768'
+label: '768'
+effects:
+  526c3520-0c5b-48fd-9e2c-2a1585223f55:
+    uuid: 526c3520-0c5b-48fd-9e2c-2a1585223f55
+    id: image_scale
+    weight: 1
+    data:
+      width: 768
+      height: null
+      upscale: false

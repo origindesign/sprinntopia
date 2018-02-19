@@ -1,0 +1,19 @@
+uuid: 772f43ee-f8f6-4a7e-8316-e44020cb17d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.spa
+id: node.spa.field_email
+field_name: field_email
+entity_type: node
+bundle: spa
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

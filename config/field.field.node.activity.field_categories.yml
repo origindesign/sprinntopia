@@ -1,0 +1,28 @@
+uuid: aaa8e65b-d9c5-4fd5-94d8-2f8194b4f2bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categories
+    - node.type.activity
+    - taxonomy.vocabulary.activity_type
+id: node.activity.field_categories
+field_name: field_categories
+entity_type: node
+bundle: activity
+label: Categories
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      activity_type: activity_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

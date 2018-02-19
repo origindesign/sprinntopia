@@ -1,0 +1,19 @@
+uuid: bc3bb354-f93b-440f-abee-ed03f8b21e39
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.golf_course_contest
+    - field.storage.contact_message.field_email
+id: contact_message.golf_course_contest.field_email
+field_name: field_email
+entity_type: contact_message
+bundle: golf_course_contest
+label: Email
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

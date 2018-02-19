@@ -1,0 +1,21 @@
+uuid: 989e58f3-466d-433c-b541-105ca4bb88d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_ease_of_contact
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_ease_of_contact
+field_name: field_ease_of_contact
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Ease of contact'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

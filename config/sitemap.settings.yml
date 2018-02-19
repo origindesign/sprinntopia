@@ -1,0 +1,70 @@
+page_title: Sitemap
+message:
+  value: ''
+  format: restricted_html
+show_front: false
+show_titles: false
+show_books: {  }
+books_expanded: true
+show_menus:
+  corporate-menu: corporate-menu
+  footer: footer
+  main: main
+  privacy-menu: privacy-menu
+  account: '0'
+  admin: '0'
+  devel: '0'
+  tools: '0'
+show_menus_hidden: false
+show_vocabularies:
+  ability: '0'
+  accommodation_type: '0'
+  activity_type: '0'
+  age: '0'
+  business_type: '0'
+  dining_apres_type: '0'
+  lesson_level: '0'
+  lesson_sport: '0'
+  lesson_type: '0'
+  mountain_zones: '0'
+  season: '0'
+  sport: '0'
+  tags: '0'
+  update_type: '0'
+  video_gallery: '0'
+show_description: true
+show_count: true
+vocabulary_depth: -1
+term_threshold: 0
+forum_threshold: -1
+rss_front: rss.xml
+show_rss_links: 1
+rss_taxonomy: -1
+css: false
+order:
+  front: -50
+  menus_account: -49
+  menus_admin: -48
+  menus_corporate-menu: -46
+  menus_devel: -45
+  menus_footer: -44
+  menus_main: -47
+  menus_privacy-menu: -43
+  menus_tools: -42
+  vocabularies_ability: -41
+  vocabularies_accommodation_type: -40
+  vocabularies_activity_type: -39
+  vocabularies_age: -38
+  vocabularies_business_type: -37
+  vocabularies_dining_apres_type: -36
+  vocabularies_lesson_level: -35
+  vocabularies_lesson_sport: -34
+  vocabularies_lesson_type: -33
+  vocabularies_mountain_zones: -32
+  vocabularies_season: -31
+  vocabularies_sport: -30
+  vocabularies_tags: -29
+  vocabularies_update_type: -28
+  vocabularies_video_gallery: -27
+_core:
+  default_config_hash: qZeaiLq06xBUfw-JNZtgetxUUMz-J8YCzw_LuhPrk2E

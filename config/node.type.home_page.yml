@@ -1,0 +1,20 @@
+uuid: 97b13d04-81a0-4862-ab60-796df0712f67
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: 'Home Page'
+type: home_page
+description: 'Used to manage content on the home page'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

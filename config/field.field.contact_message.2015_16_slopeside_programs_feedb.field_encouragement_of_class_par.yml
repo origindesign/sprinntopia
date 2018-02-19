@@ -1,0 +1,21 @@
+uuid: 2258c812-9b10-4ac8-94dd-975671bd8201
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_encouragement_of_class_par
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_encouragement_of_class_par
+field_name: field_encouragement_of_class_par
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Encouragement of class participation'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: 7ca50a08-e3a5-4b7f-92ee-a2e8657c8a7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_email
+id: contact_message.donation_request.field_email
+field_name: field_email
+entity_type: contact_message
+bundle: donation_request
+label: Email
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,65 @@
+uuid: 17ed6693-9936-4a87-aa83-5b1c314203c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.1024
+    - image.style.1200
+    - image.style.1536
+    - image.style.1600
+    - image.style.2048
+    - image.style.320
+    - image.style.3200
+    - image.style.4500
+    - image.style.480
+    - image.style.600
+    - image.style.640
+    - image.style.768
+    - image.style.960
+  theme:
+    - sunpeaksresort
+id: half_width
+label: 'Half Width'
+image_style_mappings:
+  -
+    breakpoint_id: sunpeaksresort.mobile
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:850px) 50vw, 100vw'
+      sizes_image_styles:
+        - '1024'
+        - '1200'
+        - '1536'
+        - '1600'
+        - '2048'
+        - '320'
+        - '3200'
+        - '4500'
+        - '480'
+        - '600'
+        - '640'
+        - '768'
+        - '960'
+  -
+    breakpoint_id: sunpeaksresort.mobile
+    multiplier: 2x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:850px) 50vw, 100vw'
+      sizes_image_styles:
+        - '1024'
+        - '1200'
+        - '1536'
+        - '1600'
+        - '2048'
+        - '320'
+        - '3200'
+        - '4500'
+        - '480'
+        - '600'
+        - '640'
+        - '768'
+        - '960'
+breakpoint_group: sunpeaksresort
+fallback_image_style: '1200'

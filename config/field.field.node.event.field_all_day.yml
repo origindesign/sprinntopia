@@ -1,0 +1,23 @@
+uuid: 550c4b9e-7a68-4a48-a16a-5f9255dff1db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_all_day
+    - node.type.event
+id: node.event.field_all_day
+field_name: field_all_day
+entity_type: node
+bundle: event
+label: 'All Day'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'All Day (hide time)'
+  off_label: 'Off'
+field_type: boolean

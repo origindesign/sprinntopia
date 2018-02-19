@@ -1,0 +1,32 @@
+uuid: 72434681-904b-4665-b4b2-76a41d22c434
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_charitable_registration_nu
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.donation_request.field_charitable_registration_nu
+field_name: field_charitable_registration_nu
+entity_type: contact_message
+bundle: donation_request
+label: 'Charitable Registration Number (if applicable)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+uuid: 4a916abb-4a71-4255-9c36-631f8af1caa8
+langcode: en
+status: true
+dependencies: {  }
+id: member
+label: Member
+weight: 6
+is_admin: null
+permissions:
+  - 'access browse_files_modal entity browser pages'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'dropzone upload files'
+  - 'edit own accomodation content'
+  - 'edit own business content'
+  - 'edit own dining_apres content'
+  - 'view the administration theme'

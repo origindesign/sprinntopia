@@ -1,0 +1,21 @@
+uuid: 83188c4c-45ce-4259-8a31-69c9ca190b46
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_day_4_conditions
+    - node.type.forecast
+  module:
+    - options
+id: node.forecast.field_day_4_conditions
+field_name: field_day_4_conditions
+entity_type: node
+bundle: forecast
+label: 'Day 4 Conditions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

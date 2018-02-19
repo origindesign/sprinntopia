@@ -1,0 +1,21 @@
+uuid: 244137d7-2986-4867-a950-a7fc8d04fdfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_number_of_coaches
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_number_of_coaches
+field_name: field_number_of_coaches
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Number of Coaches'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

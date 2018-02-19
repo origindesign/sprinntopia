@@ -1,0 +1,32 @@
+uuid: b3a882c9-2476-46ab-905b-339e8d2ebc28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_midmtnstorm7day
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_midmtnstorm7day
+field_name: field_midmtnstorm7day
+entity_type: node
+bundle: resort_settings
+label: midMtnStorm7Day
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

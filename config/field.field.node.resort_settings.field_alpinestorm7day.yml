@@ -1,0 +1,32 @@
+uuid: 798bc014-072c-4380-bcba-5fa8c2a4ba79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alpinestorm7day
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_alpinestorm7day
+field_name: field_alpinestorm7day
+entity_type: node
+bundle: resort_settings
+label: alpineStorm7Day
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

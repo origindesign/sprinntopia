@@ -1,0 +1,23 @@
+uuid: e3869b84-e63f-4b9b-a2e9-37b5720ec8f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ignore
+    - node.type.accomodation
+id: node.accomodation.field_ignore
+field_name: field_ignore
+entity_type: node
+bundle: accomodation
+label: 'Ignore From Business Directory'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

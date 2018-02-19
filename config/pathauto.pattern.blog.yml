@@ -1,0 +1,22 @@
+uuid: aca7707c-ba8f-4d6b-9140-c2efd783cf27
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: blog
+label: Blog
+type: 'canonical_entities:node'
+pattern: 'explore/stories-inspiration/[node:title]'
+selection_criteria:
+  6d6b73db-f630-4497-b6a8-37c85afa7a55:
+    id: node_type
+    bundles:
+      blog: blog
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6d6b73db-f630-4497-b6a8-37c85afa7a55
+selection_logic: and
+weight: -5
+relationships: {  }

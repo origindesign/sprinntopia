@@ -1,0 +1,21 @@
+uuid: 61c6faa0-ff6c-46e7-902a-33d3908bf725
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_preferred_season
+field_name: field_preferred_season
+entity_type: contact_message
+type: string
+settings:
+  max_length: 60
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: c89c653b-8345-4613-93a7-7cea3ed0d6cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_toll_free
+    - node.type.accomodation
+id: node.accomodation.field_toll_free
+field_name: field_toll_free
+entity_type: node
+bundle: accomodation
+label: 'Toll Free'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

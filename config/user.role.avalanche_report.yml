@@ -1,0 +1,15 @@
+uuid: 8c319822-d38a-4689-8c2c-1cc5c67587e4
+langcode: en
+status: true
+dependencies: {  }
+id: avalanche_report
+label: 'Avalanche Report'
+weight: 4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'edit any avalanche_report content'
+  - 'edit own avalanche_report content'
+  - 'view the administration theme'

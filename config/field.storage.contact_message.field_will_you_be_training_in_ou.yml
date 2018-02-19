@@ -1,0 +1,27 @@
+uuid: 98125a68-0bfd-42ab-a859-f4ab8e6c6113
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_will_you_be_training_in_ou
+field_name: field_will_you_be_training_in_ou
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Yes'
+      label: 'Yes'
+    -
+      value: 'No'
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

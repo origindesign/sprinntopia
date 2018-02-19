@@ -1,0 +1,21 @@
+uuid: 8e94cfff-fbf7-41a9-9ceb-b20df74ac261
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_preparedness
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_preparedness
+field_name: field_preparedness
+entity_type: contact_message
+bundle: race_centre_feedback
+label: Preparedness
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

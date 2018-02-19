@@ -1,0 +1,32 @@
+uuid: 3cbe2a19-12b9-42b3-8370-377ccab51992
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.bluebird_banked_slalom
+    - field.storage.contact_message.field_phone_number
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.bluebird_banked_slalom.field_phone_number
+field_name: field_phone_number
+entity_type: contact_message
+bundle: bluebird_banked_slalom
+label: 'Phone Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: a0440e18-9919-454a-8629-3d09776e4f2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: member_page
+label: 'Member Page'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  374865f7-8733-40b5-8437-9b4930f967f6:
+    id: node_type
+    bundles:
+      member_page: member_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 374865f7-8733-40b5-8437-9b4930f967f6
+selection_logic: and
+weight: -5
+relationships: {  }

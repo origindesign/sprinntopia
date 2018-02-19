@@ -1,0 +1,19 @@
+uuid: 9aa27b70-f670-4875-879d-5d354d219bab
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_decision_other
+id: contact_message.race_centre_feedback.field_decision_other
+field_name: field_decision_other
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'If ''Other'' please specify'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

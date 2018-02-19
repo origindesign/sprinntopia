@@ -1,0 +1,19 @@
+uuid: 9e60e308-160b-4f89-8cc6-23de3329735a
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_describe_the_charity_and_i
+id: contact_message.donation_request.field_describe_the_charity_and_i
+field_name: field_describe_the_charity_and_i
+entity_type: contact_message
+bundle: donation_request
+label: 'Describe the charity and identify the impact the donation will make'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

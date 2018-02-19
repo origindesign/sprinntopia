@@ -1,0 +1,42 @@
+uuid: 646f369e-c5da-498e-a251-f087efb1e376
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_number_of_athletes
+field_name: field_number_of_athletes
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0 to 5'
+      label: 0-5
+    -
+      value: '5 to 10'
+      label: 5-10
+    -
+      value: '10 to 20'
+      label: 10-20
+    -
+      value: '20 to 40'
+      label: 20-40
+    -
+      value: '40 to 50'
+      label: 40-50
+    -
+      value: '60 to 70'
+      label: 60-70
+    -
+      value: 70+
+      label: 70+
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

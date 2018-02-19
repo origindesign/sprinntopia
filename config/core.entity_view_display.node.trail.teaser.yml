@@ -1,0 +1,30 @@
+uuid: 5295cf79-95b4-435b-a035-963560f613d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.trail.field_ability
+    - field.field.node.trail.field_category
+    - field.field.node.trail.field_freeride
+    - field.field.node.trail.field_notes
+    - field.field.node.trail.field_sport
+    - field.field.node.trail.field_weight
+    - node.type.trail
+  module:
+    - user
+id: node.trail.teaser
+targetEntityType: node
+bundle: trail
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_ability: true
+  field_category: true
+  field_freeride: true
+  field_notes: true
+  field_sport: true
+  field_weight: true

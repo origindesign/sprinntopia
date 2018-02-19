@@ -1,0 +1,20 @@
+uuid: 46d5671f-9118-4038-b061-edeb275f2654
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Promo
+type: promo
+description: 'Use for a promotion to feature on the home page'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

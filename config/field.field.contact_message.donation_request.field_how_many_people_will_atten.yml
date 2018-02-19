@@ -1,0 +1,32 @@
+uuid: b6f16fb3-1259-44a7-9d78-2fc945a95bec
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_how_many_people_will_atten
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.donation_request.field_how_many_people_will_atten
+field_name: field_how_many_people_will_atten
+entity_type: contact_message
+bundle: donation_request
+label: 'How many people will attend the event?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,12 @@
+uuid: e5f12b44-fdf3-461c-9c31-73c8a0f043ee
+langcode: en
+status: true
+dependencies: {  }
+id: table_simple
+label: 'Table - Simple'
+description: 'A simple table with ONLY 2 columns'
+body:
+  value: "<div class=\"template table simple\">\r\n<table>\r\n\t<caption>Table Heading</caption>\r\n\t<thead>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n</div>\r\n"
+  format: basic_html
+weight: null
+node_types: {  }

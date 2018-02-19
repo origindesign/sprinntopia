@@ -1,0 +1,9 @@
+uuid: 68df564f-925e-47e2-be7f-ef002131cb8c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Dining & Apres Type'
+vid: dining_apres_type
+description: ''
+hierarchy: 0
+weight: 0

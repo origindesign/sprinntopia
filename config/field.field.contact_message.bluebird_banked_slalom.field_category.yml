@@ -1,0 +1,21 @@
+uuid: 3cf8b827-58a7-4c93-978b-4c3f0d422b1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.bluebird_banked_slalom
+    - field.storage.contact_message.field_category
+  module:
+    - options
+id: contact_message.bluebird_banked_slalom.field_category
+field_name: field_category
+entity_type: contact_message
+bundle: bluebird_banked_slalom
+label: Category
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

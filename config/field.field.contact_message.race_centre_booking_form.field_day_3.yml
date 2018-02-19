@@ -1,0 +1,21 @@
+uuid: 227a9864-9275-427f-a449-24c5d3b79560
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_3
+  module:
+    - datetime
+id: contact_message.race_centre_booking_form.field_day_3
+field_name: field_day_3
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 03'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

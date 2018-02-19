@@ -1,0 +1,32 @@
+uuid: a60eeb06-5791-4513-8cb1-87222f6982a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.home_page.field_activities
+    - field.field.node.home_page.field_activities_heading
+    - field.field.node.home_page.field_blogs
+    - field.field.node.home_page.field_featured_event
+    - field.field.node.home_page.field_featured_package
+    - field.field.node.home_page.field_metatags
+    - field.field.node.home_page.field_persona_images
+    - node.type.home_page
+  module:
+    - user
+id: node.home_page.teaser
+targetEntityType: node
+bundle: home_page
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_activities: true
+  field_activities_heading: true
+  field_blogs: true
+  field_featured_event: true
+  field_featured_package: true
+  field_metatags: true
+  field_persona_images: true

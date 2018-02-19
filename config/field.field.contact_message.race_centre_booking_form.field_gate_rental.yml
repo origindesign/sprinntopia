@@ -1,0 +1,21 @@
+uuid: 63586bf8-6f96-4dda-b3ba-b4f90bd09f69
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_gate_rental
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_gate_rental
+field_name: field_gate_rental
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Gate Rental'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,42 @@
+uuid: a1f2555d-e4a8-4e4b-8d9c-b07102337d87
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.fragment.body
+    - field.field.node.fragment.field_column_style
+    - field.field.node.fragment.field_copy_left
+    - field.field.node.fragment.field_copy_right
+    - field.field.node.fragment.field_hide_title
+    - field.field.node.fragment.field_images
+    - field.field.node.fragment.field_video
+    - field.field.node.fragment.field_video_caption
+    - node.type.fragment
+  module:
+    - text
+    - user
+id: node.fragment.teaser
+targetEntityType: node
+bundle: fragment
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_column_style: true
+  field_copy_left: true
+  field_copy_right: true
+  field_hide_title: true
+  field_images: true
+  field_video: true
+  field_video_caption: true

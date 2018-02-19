@@ -1,0 +1,21 @@
+uuid: 7592fc81-fac4-4446-bec9-21411b141a75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_current_season
+    - node.type.resort_settings
+  module:
+    - options
+id: node.resort_settings.field_current_season
+field_name: field_current_season
+entity_type: node
+bundle: resort_settings
+label: 'Current Season'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

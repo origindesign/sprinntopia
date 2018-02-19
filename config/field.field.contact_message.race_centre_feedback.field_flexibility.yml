@@ -1,0 +1,21 @@
+uuid: d19aa1ad-f9fe-47c7-8a87-d85a1bd8f4d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_flexibility
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_flexibility
+field_name: field_flexibility
+entity_type: contact_message
+bundle: race_centre_feedback
+label: Flexibility
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

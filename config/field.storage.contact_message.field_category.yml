@@ -1,0 +1,45 @@
+uuid: 52e524f2-e784-4842-a8ae-f4b0a108a465
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_category
+field_name: field_category
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Men''s Ski masters (35+)'
+      label: 'Men''s Ski masters (35+)'
+    -
+      value: 'Men''s Ski open (19+)'
+      label: 'Men''s Ski open (19+)'
+    -
+      value: 'Men''s Board Masters (35+)'
+      label: 'Men''s Board Masters (35+)'
+    -
+      value: 'Men''s Board Open (19+)'
+      label: 'Men''s Board Open (19+)'
+    -
+      value: 'Women''s Ski Masters (35+)'
+      label: 'Women''s Ski Masters (35+)'
+    -
+      value: 'Women''s Ski Open (19+)'
+      label: 'Women''s Ski Open (19+)'
+    -
+      value: 'Women''s Board Masters (35+)'
+      label: 'Women''s Board Masters (35+)'
+    -
+      value: 'Women''s Board Open (19+)'
+      label: 'Women''s Board Open (19+)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

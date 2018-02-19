@@ -1,0 +1,27 @@
+uuid: 06d5cde6-d69b-4971-af1d-301c146111b3
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - sunpeaksresort
+id: events_menu
+theme: sunpeaksresort
+region: content
+weight: -7
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Events Menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand: 1
+  parent: 'main:menu_link_content:993ceade-bc55-468f-8bf4-432719b6a3fa'
+  suggestion: main
+visibility: {  }

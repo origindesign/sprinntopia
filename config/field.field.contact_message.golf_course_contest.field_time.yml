@@ -1,0 +1,32 @@
+uuid: 473ecba0-73fb-492d-b853-4df3c0896b5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.golf_course_contest
+    - field.storage.contact_message.field_time
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.golf_course_contest.field_time
+field_name: field_time
+entity_type: contact_message
+bundle: golf_course_contest
+label: 'Tee Time'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,33 @@
+uuid: cadde679-c221-4776-a506-f0962979305a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_copy_right
+    - node.type.fragment
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.fragment.field_copy_right
+field_name: field_copy_right
+entity_type: node
+bundle: fragment
+label: 'Copy Right'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

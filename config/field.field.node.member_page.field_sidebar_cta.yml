@@ -1,0 +1,23 @@
+uuid: 3b9ebcce-93ed-4e89-83fe-767c7a416a21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar_cta
+    - node.type.member_page
+  module:
+    - options
+id: node.member_page.field_sidebar_cta
+field_name: field_sidebar_cta
+entity_type: node
+bundle: member_page
+label: 'Sidebar CTA'
+description: 'The call to action block to display in the side bar'
+required: true
+translatable: true
+default_value:
+  -
+    value: booking
+default_value_callback: ''
+settings: {  }
+field_type: list_string

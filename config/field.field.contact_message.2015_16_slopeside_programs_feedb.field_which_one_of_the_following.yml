@@ -1,0 +1,21 @@
+uuid: b174c0e8-4643-4773-9d0d-336eac8afe33
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_which_one_of_the_following
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_which_one_of_the_following
+field_name: field_which_one_of_the_following
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Which one of the following most influenced your decision to choose the Slopeside School Program at Sun Peaks Resort?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

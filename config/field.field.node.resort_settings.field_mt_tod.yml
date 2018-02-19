@@ -1,0 +1,23 @@
+uuid: 7d85b98a-d4ff-4dc5-84c3-72e2a17cebd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mt_tod
+    - node.type.resort_settings
+id: node.resort_settings.field_mt_tod
+field_name: field_mt_tod
+entity_type: node
+bundle: resort_settings
+label: 'Mt. Tod, View from Mt. Morrisey'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

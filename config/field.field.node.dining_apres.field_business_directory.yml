@@ -1,0 +1,32 @@
+uuid: 8084e475-e10d-4584-93cc-c065a61267b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_business_directory
+    - node.type.dining_apres
+    - taxonomy.vocabulary.business_type
+  content:
+    - 'taxonomy_term:business_type:48a4e35c-9911-4550-a790-51fa6c1ec81e'
+id: node.dining_apres.field_business_directory
+field_name: field_business_directory
+entity_type: node
+bundle: dining_apres
+label: 'Business Directory Category'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 48a4e35c-9911-4550-a790-51fa6c1ec81e
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      business_type: business_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

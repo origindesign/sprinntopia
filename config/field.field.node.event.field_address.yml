@@ -1,0 +1,36 @@
+uuid: 101c5953-af96-4d8b-b4ea-d852191d59d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.event
+  module:
+    - address
+id: node.event.field_address
+field_name: field_address
+entity_type: node
+bundle: event
+label: Address
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    CA: CA
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    postalCode: postalCode
+    addressLine1: addressLine1
+    dependentLocality: '0'
+    sortingCode: '0'
+    addressLine2: '0'
+    organization: '0'
+    givenName: ''
+    additionalName: ''
+    familyName: ''
+  langcode_override: ''
+field_type: address

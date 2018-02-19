@@ -1,0 +1,70 @@
+uuid: d20b03f0-6aec-43b2-b3bc-66bb9942ded0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.grid
+    - field.field.node.activity.body
+    - field.field.node.activity.field_categories
+    - field.field.node.activity.field_fragments
+    - field.field.node.activity.field_images
+    - field.field.node.activity.field_inntopia_id
+    - field.field.node.activity.field_metatags
+    - field.field.node.activity.field_season
+    - node.type.activity
+    - responsive_image.styles.grid
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.activity.grid
+targetEntityType: node
+bundle: activity
+mode: grid
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '100'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: trim
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_categories:
+    type: entity_reference_label
+    weight: 4
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: grid
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_season:
+    weight: 2
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_fragments: true
+  field_inntopia_id: true
+  field_metatags: true
+  links: true

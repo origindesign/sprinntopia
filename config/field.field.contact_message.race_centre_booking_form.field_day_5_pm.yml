@@ -1,0 +1,21 @@
+uuid: cb0d9e2a-66e0-4e01-9ed9-7e2abb54d88a
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_5_pm
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_5_pm
+field_name: field_day_5_pm
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 05 PM Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

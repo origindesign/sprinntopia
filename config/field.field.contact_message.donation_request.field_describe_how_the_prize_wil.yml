@@ -1,0 +1,19 @@
+uuid: 48af9b86-2a3a-4acc-97e8-a9ee75035128
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_describe_how_the_prize_wil
+id: contact_message.donation_request.field_describe_how_the_prize_wil
+field_name: field_describe_how_the_prize_wil
+entity_type: contact_message
+bundle: donation_request
+label: 'Describe how the prize will be used'
+description: '<em>Examples: door prize, silent auction, or live auction.</em>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

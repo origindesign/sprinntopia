@@ -1,0 +1,20 @@
+uuid: 0ec4a23d-d00c-4bbe-89f9-de93ec803b56
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Accommodation
+type: accomodation
+description: 'Use for an accommodation listing in the Places to Stay section'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

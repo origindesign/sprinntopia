@@ -1,0 +1,27 @@
+uuid: d969aac2-45ba-4843-9165-1c5f5bb8906e
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_did_you_find_the_increased
+field_name: field_did_you_find_the_increased
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Yes'
+      label: 'Yes'
+    -
+      value: 'No'
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

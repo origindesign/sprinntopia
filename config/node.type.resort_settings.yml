@@ -1,0 +1,17 @@
+uuid: 11f0ecf3-9a56-4f5f-ba57-b7aa92003932
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Resort Settings'
+type: resort_settings
+description: 'A content type to update global Resort settings such as weather, alert bar...'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

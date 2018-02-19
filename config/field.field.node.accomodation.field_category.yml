@@ -1,0 +1,28 @@
+uuid: 089e1c34-c24f-45bc-bb66-b2c8e7fe809e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.accomodation
+    - taxonomy.vocabulary.accommodation_type
+id: node.accomodation.field_category
+field_name: field_category
+entity_type: node
+bundle: accomodation
+label: Category
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      accommodation_type: accommodation_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

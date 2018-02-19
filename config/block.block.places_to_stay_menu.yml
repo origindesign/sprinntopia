@@ -1,0 +1,27 @@
+uuid: a681fe26-ce48-453b-8fe2-68cf6357816f
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - sunpeaksresort
+id: places_to_stay_menu
+theme: sunpeaksresort
+region: content
+weight: -2
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Places To Stay Menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand: 1
+  parent: 'main:menu_link_content:cf83492a-3049-4b43-bc7a-c25bf6fb772a'
+  suggestion: main
+visibility: {  }

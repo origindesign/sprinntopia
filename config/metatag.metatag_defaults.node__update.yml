@@ -1,0 +1,8 @@
+uuid: 04e5bba5-aaf3-45c6-a7d7-b42e58a7d672
+langcode: en
+status: true
+dependencies: {  }
+id: node__update
+label: 'Content: Update'
+tags:
+  og_image: '[node:field_image:0:2048]'

@@ -1,0 +1,19 @@
+uuid: 24488ce6-17ef-409e-8866-9d40304ddfbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_describe_the_marketing_opp
+id: contact_message.donation_request.field_describe_the_marketing_opp
+field_name: field_describe_the_marketing_opp
+entity_type: contact_message
+bundle: donation_request
+label: 'Describe the marketing opportunities for Sun Peaks Resort. Where, how and when are donor companies promoted?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

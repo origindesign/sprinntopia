@@ -1,0 +1,23 @@
+uuid: ba6fcb22-4548-4829-809f-acd03be45bb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_freeride
+    - node.type.trail
+id: node.trail.field_freeride
+field_name: field_freeride
+entity_type: node
+bundle: trail
+label: Freeride
+description: 'Used to mark a bike trail as a freeride trail'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 4475dd26-0dee-49ba-a729-acf0a2c5e8d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form
+    - node.type.member_page
+id: node.member_page.field_form
+field_name: field_form
+entity_type: node
+bundle: member_page
+label: Form
+description: "A form to be added underneath the page content\r\n"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:contact_form'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

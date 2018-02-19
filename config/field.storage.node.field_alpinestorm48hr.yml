@@ -1,0 +1,21 @@
+uuid: 77d17676-df03-45c2-870d-50a7a04eed84
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_alpinestorm48hr
+field_name: field_alpinestorm48hr
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

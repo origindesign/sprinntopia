@@ -1,0 +1,21 @@
+uuid: 107c8a95-add5-4322-bfc3-996943c46049
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_lesson_length
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_lesson_length
+field_name: field_lesson_length
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Lesson Length'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

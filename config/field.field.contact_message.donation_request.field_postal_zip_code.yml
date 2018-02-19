@@ -1,0 +1,32 @@
+uuid: 59d08f28-a284-4d6f-8127-4600e4417c4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_postal_zip_code
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.donation_request.field_postal_zip_code
+field_name: field_postal_zip_code
+entity_type: contact_message
+bundle: donation_request
+label: 'Postal/Zip Code'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

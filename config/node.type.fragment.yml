@@ -1,0 +1,20 @@
+uuid: 01edab52-901e-495f-a183-125189b87d7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Fragment
+type: fragment
+description: 'Use to create content sections to reference and build Pages'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

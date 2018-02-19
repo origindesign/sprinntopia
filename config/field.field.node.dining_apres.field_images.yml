@@ -1,0 +1,38 @@
+uuid: c47ce16d-102c-4db3-b696-ee363dfd7dcd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_images
+    - node.type.dining_apres
+  module:
+    - image
+id: node.dining_apres.field_images
+field_name: field_images
+entity_type: node
+bundle: dining_apres
+label: Images
+description: 'A single hero image or a collection of images for a slideshow. Displayed as the first thing on the page. Ratio 3:2 - ideal size 4500x3000px - min size 1800x1200px'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: dining-apres
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

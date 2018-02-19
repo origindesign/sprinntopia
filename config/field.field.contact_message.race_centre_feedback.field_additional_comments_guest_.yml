@@ -1,0 +1,19 @@
+uuid: b5e757b8-09e7-4127-bfcc-88b6474cb1cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_additional_comments_guest_
+id: contact_message.race_centre_feedback.field_additional_comments_guest_
+field_name: field_additional_comments_guest_
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Additional Comments - Guest Services'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

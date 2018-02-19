@@ -1,0 +1,21 @@
+uuid: d0c991bf-ab5f-468b-b6e1-1d21bc73ae03
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.golf_course_contest
+    - field.storage.contact_message.field_date
+  module:
+    - datetime
+id: contact_message.golf_course_contest.field_date
+field_name: field_date
+entity_type: contact_message
+bundle: golf_course_contest
+label: 'Date of Play'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

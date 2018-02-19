@@ -1,0 +1,40 @@
+uuid: cc6a40cc-bfda-45e0-8bf1-8207aef5d7ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.job.body
+    - field.field.node.job.field_metatags
+    - node.type.job
+  module:
+    - smart_trim
+    - user
+id: node.job.teaser
+targetEntityType: node
+bundle: job
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 101
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_metatags: true

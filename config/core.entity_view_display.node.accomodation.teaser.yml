@@ -1,0 +1,84 @@
+uuid: d823d162-ce5a-4ec7-b70f-d0d776044786
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.accomodation.body
+    - field.field.node.accomodation.field_address
+    - field.field.node.accomodation.field_business_directory
+    - field.field.node.accomodation.field_category
+    - field.field.node.accomodation.field_email
+    - field.field.node.accomodation.field_fragments
+    - field.field.node.accomodation.field_images
+    - field.field.node.accomodation.field_location
+    - field.field.node.accomodation.field_location_description
+    - field.field.node.accomodation.field_metatags
+    - field.field.node.accomodation.field_phone
+    - field.field.node.accomodation.field_reservations_link
+    - field.field.node.accomodation.field_toll_free
+    - field.field.node.accomodation.field_website
+    - node.type.accomodation
+    - responsive_image.styles.listing_image
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.accomodation.teaser
+targetEntityType: node
+bundle: accomodation
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_business_directory:
+    type: entity_reference_label
+    weight: 2
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_category:
+    type: entity_reference_label
+    weight: 3
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_email: true
+  field_fragments: true
+  field_location: true
+  field_location_description: true
+  field_metatags: true
+  field_phone: true
+  field_reservations_link: true
+  field_toll_free: true
+  field_website: true
+  links: true

@@ -1,0 +1,97 @@
+uuid: f8a6fd9c-9f8b-42d7-a4e0-988a0b09397f
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.12_days
+    - field.field.contact_message.12_days.field_city
+    - field.field.contact_message.12_days.field_country
+    - field.field.contact_message.12_days.field_email
+    - field.field.contact_message.12_days.field_first_name
+    - field.field.contact_message.12_days.field_last_name
+    - field.field.contact_message.12_days.field_newsletter_sign_up
+    - field.field.contact_message.12_days.field_phone_number
+    - field.field.contact_message.12_days.field_postal_zip_code
+    - field.field.contact_message.12_days.field_province_state
+id: contact_message.12_days.default
+targetEntityType: contact_message
+bundle: 12_days
+mode: default
+content:
+  field_city:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_country:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_email:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_newsletter_sign_up:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_phone_number:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_postal_zip_code:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_province_state:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  preview: true
+  subject: true

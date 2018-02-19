@@ -1,0 +1,21 @@
+uuid: f6365636-22d4-4637-a26b-8e17fff062d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_did_you_find_the_increased
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_did_you_find_the_increased
+field_name: field_did_you_find_the_increased
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Did you find the increased lesson time beneficial to your school group?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

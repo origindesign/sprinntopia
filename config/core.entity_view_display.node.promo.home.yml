@@ -1,0 +1,96 @@
+uuid: 279eebe2-6929-40aa-873e-40a8f188ae16
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.home
+    - field.field.node.promo.body
+    - field.field.node.promo.field_image
+    - field.field.node.promo.field_price
+    - field.field.node.promo.field_price_header
+    - field.field.node.promo.field_reservations_link
+    - field.field.node.promo.field_terms
+    - node.type.promo
+    - responsive_image.styles.home_featured
+  module:
+    - field_group
+    - link
+    - responsive_image
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_price:
+      children:
+        - field_price_header
+        - field_price
+        - field_reservations_link
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: price-info
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Price
+id: node.promo.home
+targetEntityType: node
+bundle: promo
+mode: home
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: home_featured
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+  field_price:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_price_header:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_reservations_link:
+    weight: 8
+    label: hidden
+    settings:
+      trim_length: null
+      url_plain: true
+      url_only: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_terms: true

@@ -1,0 +1,33 @@
+uuid: ae417c0c-c2c9-4e59-b301-15ebffefbda1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.summer_lesson
+  module:
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.summer_lesson.body
+field_name: body
+entity_type: node
+bundle: summer_lesson
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,19 @@
+uuid: c678f4f7-29d6-4751-8895-500d1f08a13c
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_additional_comments_ski_bo
+id: contact_message.2015_16_slopeside_programs_feedb.field_additional_comments_ski_bo
+field_name: field_additional_comments_ski_bo
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Additional Comments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

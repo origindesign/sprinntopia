@@ -1,0 +1,22 @@
+uuid: 83ac8614-c820-478d-9dca-b1d9c5053a47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.spa
+  module:
+    - text
+id: node.spa.body
+field_name: body
+entity_type: node
+bundle: spa
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

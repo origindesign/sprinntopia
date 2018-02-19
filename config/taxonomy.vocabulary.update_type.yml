@@ -1,0 +1,9 @@
+uuid: 4a8e7c56-6723-4931-aa3b-8159764290b2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Update Type'
+vid: update_type
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,8 @@
+uuid: 52ed5f36-34d6-49e1-9576-210001051ae4
+langcode: en
+status: true
+dependencies: {  }
+id: corporate-menu
+label: 'Corporate Menu'
+description: 'Corporate links above the footer'
+locked: false

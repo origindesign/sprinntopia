@@ -1,0 +1,38 @@
+uuid: f0c2556f-35ed-4191-a815-50b2e0894cd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.new_release.body
+    - field.field.node.new_release.field_fragments
+    - node.type.new_release
+  module:
+    - text
+    - user
+id: node.new_release.default
+targetEntityType: node
+bundle: new_release
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fragments:
+    weight: 102
+    label: hidden
+    settings:
+      view_mode: fragment
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

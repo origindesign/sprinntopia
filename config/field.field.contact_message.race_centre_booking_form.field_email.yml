@@ -1,0 +1,19 @@
+uuid: a273d2e8-0623-462d-a4a7-35b4aa16818a
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_email
+id: contact_message.race_centre_booking_form.field_email
+field_name: field_email
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: Email
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

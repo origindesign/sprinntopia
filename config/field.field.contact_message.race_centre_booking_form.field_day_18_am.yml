@@ -1,0 +1,21 @@
+uuid: 5ee837cd-d8fc-45be-be3a-89f246b4083a
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_18_am
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_18_am
+field_name: field_day_18_am
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 18 AM Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

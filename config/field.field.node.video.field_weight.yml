@@ -1,0 +1,25 @@
+uuid: 0cc9ef94-901a-439c-bfbf-930161d2db96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.video
+id: node.video.field_weight
+field_name: field_weight
+entity_type: node
+bundle: video
+label: Weight
+description: 'A higher number orders the entry higher in the list (Tip: Use numbers like 100, 200 so new entries can easily be inserted anywhere)'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

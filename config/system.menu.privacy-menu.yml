@@ -1,0 +1,8 @@
+uuid: 6c51cc96-6a7d-4545-be56-f775b1f7133b
+langcode: en
+status: true
+dependencies: {  }
+id: privacy-menu
+label: 'Privacy Menu'
+description: 'Privacy etc links within the footer'
+locked: false

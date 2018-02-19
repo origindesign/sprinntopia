@@ -1,0 +1,20 @@
+uuid: a0c24ad2-38d2-4cdb-a325-76844e6f1c04
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Event
+type: event
+description: 'Use for an event listing on the Event calendar'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

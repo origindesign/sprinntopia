@@ -1,0 +1,9 @@
+uuid: 1f470bea-dcc6-41fb-b1cf-0c03b59c6705
+langcode: en
+status: true
+dependencies: {  }
+name: 'Lesson Level'
+vid: lesson_level
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,21 @@
+uuid: d56827df-282b-48b5-bc9a-6c32809e1f94
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_17_pm
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_17_pm
+field_name: field_day_17_pm
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 17 PM Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

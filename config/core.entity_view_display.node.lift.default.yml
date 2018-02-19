@@ -1,0 +1,45 @@
+uuid: 3e6045b8-d416-4727-a71a-b09eb06fd53b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lift.field_category
+    - field.field.node.lift.field_notes
+    - field.field.node.lift.field_status
+    - node.type.lift
+  module:
+    - user
+id: node.lift.default
+targetEntityType: node
+bundle: lift
+mode: default
+content:
+  field_category:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_notes:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_status:
+    weight: 104
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

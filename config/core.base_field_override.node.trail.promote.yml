@@ -1,0 +1,22 @@
+uuid: 09ef7a74-c449-4bb0-ad48-fd23f0d2a2e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.trail
+id: node.trail.promote
+field_name: promote
+entity_type: node
+bundle: trail
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

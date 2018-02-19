@@ -1,0 +1,21 @@
+uuid: 59c98519-6d9d-4cf9-b7ff-54602412ad5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_decision
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_decision
+field_name: field_decision
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Why choose the Nancy Greene International?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

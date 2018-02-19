@@ -1,0 +1,32 @@
+uuid: 81885048-15ba-4a66-b5e8-5e679e31cdc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_number_of_days_drill
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.race_centre_booking_form.field_number_of_days_drill
+field_name: field_number_of_days_drill
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Number of Days Drill Rental'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

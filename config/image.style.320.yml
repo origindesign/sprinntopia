@@ -1,0 +1,15 @@
+uuid: 528d8d99-1383-4265-9027-6fd1eeec21d9
+langcode: en
+status: true
+dependencies: {  }
+name: '320'
+label: '320'
+effects:
+  00f9eeec-f320-4f7c-b508-cb0a07c26369:
+    uuid: 00f9eeec-f320-4f7c-b508-cb0a07c26369
+    id: image_scale
+    weight: 1
+    data:
+      width: 320
+      height: null
+      upscale: false

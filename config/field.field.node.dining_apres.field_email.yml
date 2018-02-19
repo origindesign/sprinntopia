@@ -1,0 +1,19 @@
+uuid: 0fb61d16-fd33-4171-9bd7-f18761a4ac39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.dining_apres
+id: node.dining_apres.field_email
+field_name: field_email
+entity_type: node
+bundle: dining_apres
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,21 @@
+uuid: d0b586e7-6dc1-4d60-9784-8a843355d92e
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_response_time_to_inquiries
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_response_time_to_inquiries
+field_name: field_response_time_to_inquiries
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Response time to inquiries'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

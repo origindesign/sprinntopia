@@ -1,0 +1,23 @@
+uuid: 3c4a8ab6-e2b5-4a65-a036-95f612356fb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_column_style
+    - node.type.fragment
+  module:
+    - options
+id: node.fragment.field_column_style
+field_name: field_column_style
+entity_type: node
+bundle: fragment
+label: 'Column Style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: even
+default_value_callback: ''
+settings: {  }
+field_type: list_string

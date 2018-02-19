@@ -1,0 +1,28 @@
+uuid: df8f7f13-4eec-4a12-92d6-61041aba7bff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categories
+    - node.type.dining_apres
+    - taxonomy.vocabulary.dining_apres_type
+id: node.dining_apres.field_categories
+field_name: field_categories
+entity_type: node
+bundle: dining_apres
+label: Categories
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      dining_apres_type: dining_apres_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

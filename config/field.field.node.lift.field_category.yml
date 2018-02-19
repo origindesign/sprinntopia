@@ -1,0 +1,32 @@
+uuid: a4b7c377-5905-41d0-9bbb-46538587357c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.lift
+    - taxonomy.vocabulary.season
+  content:
+    - 'taxonomy_term:season:afbeb824-8ad7-4405-bf6e-def29e5fdc52'
+id: node.lift.field_category
+field_name: field_category
+entity_type: node
+bundle: lift
+label: Season
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: afbeb824-8ad7-4405-bf6e-def29e5fdc52
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      season: season
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

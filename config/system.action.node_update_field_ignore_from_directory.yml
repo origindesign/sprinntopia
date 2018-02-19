@@ -1,0 +1,13 @@
+uuid: a1e40aa7-4e6c-4f75-bad1-2de3d78128f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_actions
+_core:
+  default_config_hash: '-MCFKkTKPDF7UAvU5jTnxY19uTI4GmnwBauB-pEXjVw'
+id: node_update_field_ignore_from_directory
+label: 'Ignore from Business Directory'
+type: node
+plugin: node_update_field_ignore_from_directory
+configuration: {  }

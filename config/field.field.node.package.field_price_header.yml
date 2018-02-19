@@ -1,0 +1,32 @@
+uuid: e0e5b458-0a43-4a13-9851-bff296c1797b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price_header
+    - node.type.package
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.package.field_price_header
+field_name: field_price_header
+entity_type: node
+bundle: package
+label: 'Price Header'
+description: 'ie: From'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

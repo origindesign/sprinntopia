@@ -1,0 +1,22 @@
+uuid: b7a62bfb-be6e-4f3b-952b-bb9baa89eb9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.forecast
+id: node.forecast.promote
+field_name: promote
+entity_type: node
+bundle: forecast
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

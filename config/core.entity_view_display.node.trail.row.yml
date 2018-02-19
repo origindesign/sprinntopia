@@ -1,0 +1,76 @@
+uuid: 0bb9d067-99b6-4c0f-987b-ffb56170856a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.row
+    - field.field.node.trail.field_ability
+    - field.field.node.trail.field_category
+    - field.field.node.trail.field_freeride
+    - field.field.node.trail.field_notes
+    - field.field.node.trail.field_sport
+    - field.field.node.trail.field_status
+    - field.field.node.trail.field_weight
+    - node.type.trail
+  module:
+    - user
+id: node.trail.row
+targetEntityType: node
+bundle: trail
+mode: row
+content:
+  field_ability:
+    weight: 2
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_category:
+    weight: 3
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_freeride:
+    type: boolean
+    weight: 5
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    region: content
+  field_notes:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_sport:
+    weight: 4
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_status:
+    type: entity_reference_entity_id
+    weight: 6
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_weight: true

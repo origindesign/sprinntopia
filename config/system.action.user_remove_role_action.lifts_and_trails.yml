@@ -1,0 +1,14 @@
+uuid: b0017357-c63c-41bb-a845-ee5a30437cd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.lifts_and_trails
+  module:
+    - user
+id: user_remove_role_action.lifts_and_trails
+label: 'Remove the Lifts and Trails role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: lifts_and_trails

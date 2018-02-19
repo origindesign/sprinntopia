@@ -1,0 +1,32 @@
+uuid: 763f4a39-0e75-472a-807c-1a1d3d3fd6d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mid_1600_1600
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_mid_1600_1600
+field_name: field_mid_1600_1600
+entity_type: node
+bundle: resort_settings
+label: 'mid_1600_1600 (New Snow)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

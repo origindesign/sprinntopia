@@ -1,0 +1,20 @@
+uuid: 0c09d246-2510-4261-8c69-41e8a3885af2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Blog
+type: blog
+description: 'Use for a blog post on the Stories & Inspiration page and to feature on the home page'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

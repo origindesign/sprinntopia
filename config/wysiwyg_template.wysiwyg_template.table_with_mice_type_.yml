@@ -1,0 +1,12 @@
+uuid: f8e685b3-6335-4536-b01e-cb6618ac36ea
+langcode: en
+status: true
+dependencies: {  }
+id: table_with_mice_type_
+label: 'Table (with mice type)'
+description: 'A table of content'
+body:
+  value: "<div class=\"template table \">\r\n<table>\r\n\t<caption>Table Heading</caption>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th>&nbsp;</th>\r\n\t\t\t<th>Column Heading</th>\r\n\t\t\t<th>Column Heading</th>\r\n\t\t\t<th>Column Heading</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p class=\"footer\">Add mice type here</p>\r\n</div>\r\n"
+  format: basic_html
+weight: null
+node_types: {  }

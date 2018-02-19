@@ -1,0 +1,217 @@
+uuid: ad27d0c5-b098-423f-83ca-bd1b8287ba84
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files_modal
+    - field.field.node.fragment.body
+    - field.field.node.fragment.field_column_style
+    - field.field.node.fragment.field_copy_left
+    - field.field.node.fragment.field_copy_right
+    - field.field.node.fragment.field_hide_title
+    - field.field.node.fragment.field_images
+    - field.field.node.fragment.field_video
+    - field.field.node.fragment.field_video_caption
+    - node.type.fragment
+  module:
+    - entity_browser
+    - field_group
+    - path
+    - text
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_available_fields:
+      children:
+        - group_copy
+        - group_two_column_copy
+        - group_slideshow
+        - group_video
+      parent_name: ''
+      weight: 2
+      label: 'Available Fields'
+      format_type: tabs
+      format_settings:
+        label: 'Available Fields'
+        id: ''
+        classes: ''
+        direction: vertical
+    group_copy:
+      children:
+        - body
+      parent_name: group_available_fields
+      weight: 10
+      label: Copy
+      format_type: tab
+      format_settings:
+        label: Copy
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_slideshow:
+      children:
+        - field_images
+      parent_name: group_available_fields
+      weight: 12
+      label: Slideshow
+      format_type: tab
+      format_settings:
+        label: Slideshow
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_video:
+      children:
+        - field_video
+        - field_video_caption
+      parent_name: group_available_fields
+      weight: 13
+      label: Video
+      format_type: tab
+      format_settings:
+        label: Video
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_two_column_copy:
+      children:
+        - field_column_style
+        - field_copy_left
+        - field_copy_right
+      parent_name: group_available_fields
+      weight: 11
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Two Column Copy'
+id: node.fragment.default
+targetEntityType: node
+bundle: fragment
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_column_style:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_copy_left:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_copy_right:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_hide_title:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_images:
+    weight: 3
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      open: false
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: content
+  field_video:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: video_embed_field_textfield
+    region: content
+  field_video_caption:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  path:
+    type: path
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

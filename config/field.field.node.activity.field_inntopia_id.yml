@@ -1,0 +1,32 @@
+uuid: 6b6a43b9-79aa-4dd5-b002-470c383d71b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_inntopia_id
+    - node.type.activity
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.activity.field_inntopia_id
+field_name: field_inntopia_id
+entity_type: node
+bundle: activity
+label: 'Inntopia ID'
+description: 'Enter the Inntopia ID for the activity to show a booking widget'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

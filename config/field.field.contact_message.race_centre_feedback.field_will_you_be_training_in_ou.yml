@@ -1,0 +1,21 @@
+uuid: b5fd3463-21aa-47e2-9219-45f887332110
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_will_you_be_training_in_ou
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_will_you_be_training_in_ou
+field_name: field_will_you_be_training_in_ou
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Will you be training in our facilities next season?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

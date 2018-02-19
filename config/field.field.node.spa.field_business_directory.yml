@@ -1,0 +1,32 @@
+uuid: 61f29d75-cbb2-40f9-a0c9-86868e44823c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_business_directory
+    - node.type.spa
+    - taxonomy.vocabulary.business_type
+  content:
+    - 'taxonomy_term:business_type:e366222b-394a-4d6a-82f4-f765a67842da'
+id: node.spa.field_business_directory
+field_name: field_business_directory
+entity_type: node
+bundle: spa
+label: 'Business Directory Category'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    target_uuid: e366222b-394a-4d6a-82f4-f765a67842da
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      business_type: business_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,25 @@
+uuid: fce05c20-d6db-4a37-9eb9-8ab8fc8faa57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.trail
+id: node.trail.field_weight
+field_name: field_weight
+entity_type: node
+bundle: trail
+label: Weight
+description: 'A higher number orders the entry higher in the list (Tip: Use numbers like 100, 200 so new entries can easily be inserted anywhere)'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

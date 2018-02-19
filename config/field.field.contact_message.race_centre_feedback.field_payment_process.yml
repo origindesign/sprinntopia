@@ -1,0 +1,21 @@
+uuid: efec3fdb-fed6-4702-a5ea-9c6ef2c91ad9
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_payment_process
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_payment_process
+field_name: field_payment_process
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Payment process'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

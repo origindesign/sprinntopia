@@ -1,0 +1,19 @@
+uuid: bf95b34c-953b-426f-a0da-1c18492c9801
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_why_or_why_not_slopeside_r
+id: contact_message.2015_16_slopeside_programs_feedb.field_why_or_why_not_slopeside_r
+field_name: field_why_or_why_not_slopeside_r
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Why or why not?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

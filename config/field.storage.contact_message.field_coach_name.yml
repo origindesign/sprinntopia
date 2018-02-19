@@ -1,0 +1,21 @@
+uuid: 45f16108-0391-4a23-adf1-ebf3a559cb3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_coach_name
+field_name: field_coach_name
+entity_type: contact_message
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

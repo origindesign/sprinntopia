@@ -1,0 +1,13 @@
+uuid: 6cf70950-cc3e-427a-ae21-e101bdd58d87
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_actions
+_core:
+  default_config_hash: BZ06fIPiaSKD1JFAb6kUvDmAsA30aSW6-NnlIg40Y6A
+id: node_update_term_groomed_with_fresh
+label: 'Change Status to Groomed with fresh'
+type: node
+plugin: node_update_term_groomed_with_fresh
+configuration: {  }

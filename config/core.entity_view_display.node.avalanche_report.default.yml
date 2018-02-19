@@ -1,0 +1,28 @@
+uuid: 8212e736-2564-4543-9b41-32a3301e3488
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.avalanche_report.field_file
+    - node.type.avalanche_report
+  module:
+    - file
+    - user
+id: node.avalanche_report.default
+targetEntityType: node
+bundle: avalanche_report
+mode: default
+content:
+  field_file:
+    weight: 102
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

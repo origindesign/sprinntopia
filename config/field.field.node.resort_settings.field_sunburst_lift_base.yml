@@ -1,0 +1,23 @@
+uuid: 9acd10d3-63f7-44a2-8a2e-c5061bcff2ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sunburst_lift_base
+    - node.type.resort_settings
+id: node.resort_settings.field_sunburst_lift_base
+field_name: field_sunburst_lift_base
+entity_type: node
+bundle: resort_settings
+label: 'Sunburst Lift Base'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,64 @@
+uuid: be242cbe-fbb3-476f-bc13-ef4ecbf5f478
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.member_page.body
+    - field.field.node.member_page.field_form
+    - field.field.node.member_page.field_fragments
+    - field.field.node.member_page.field_images
+    - field.field.node.member_page.field_metatags
+    - field.field.node.member_page.field_page_listings
+    - field.field.node.member_page.field_page_listings_heading
+    - field.field.node.member_page.field_sidebar_cta
+    - field.field.node.member_page.field_text_listing
+    - node.type.member_page
+    - responsive_image.styles.listing_image
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.member_page.teaser
+targetEntityType: node
+bundle: member_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_form: true
+  field_fragments: true
+  field_metatags: true
+  field_page_listings: true
+  field_page_listings_heading: true
+  field_sidebar_cta: true
+  field_text_listing: true

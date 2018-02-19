@@ -1,0 +1,32 @@
+uuid: dbe69e99-9bab-47ba-87d8-3263e61b3643
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_toll_free
+    - node.type.business
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.business.field_toll_free
+field_name: field_toll_free
+entity_type: node
+bundle: business
+label: 'Toll Free'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

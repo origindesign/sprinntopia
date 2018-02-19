@@ -1,0 +1,86 @@
+uuid: 63f03675-bd42-4218-93c0-15763b29f61d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resort_settings.field_alert_link
+    - field.field.node.resort_settings.field_alert_text
+    - field.field.node.resort_settings.field_alpinesnowdepth
+    - field.field.node.resort_settings.field_alpinestorm12hr
+    - field.field.node.resort_settings.field_alpinestorm1hr
+    - field.field.node.resort_settings.field_alpinestorm24hr
+    - field.field.node.resort_settings.field_alpinestorm48hr
+    - field.field.node.resort_settings.field_alpinestorm7day
+    - field.field.node.resort_settings.field_current_season
+    - field.field.node.resort_settings.field_elevation_chair
+    - field.field.node.resort_settings.field_golf_course
+    - field.field.node.resort_settings.field_mid_1600_1600
+    - field.field.node.resort_settings.field_midmtndepth
+    - field.field.node.resort_settings.field_midmtnstorm12hr
+    - field.field.node.resort_settings.field_midmtnstorm1hr
+    - field.field.node.resort_settings.field_midmtnstorm24hr
+    - field.field.node.resort_settings.field_midmtnstorm48hr
+    - field.field.node.resort_settings.field_midmtnstorm7day
+    - field.field.node.resort_settings.field_midmtntemp
+    - field.field.node.resort_settings.field_moextemp
+    - field.field.node.resort_settings.field_mt_tod
+    - field.field.node.resort_settings.field_show_alert
+    - field.field.node.resort_settings.field_snow_description
+    - field.field.node.resort_settings.field_sunburst_lift_base
+    - field.field.node.resort_settings.field_sundance
+    - field.field.node.resort_settings.field_sundance_lift_base
+    - field.field.node.resort_settings.field_today_conditions
+    - field.field.node.resort_settings.field_today_description
+    - field.field.node.resort_settings.field_totwtemp
+    - field.field.node.resort_settings.field_usd_exchange_rate
+    - field.field.node.resort_settings.field_valley
+    - field.field.node.resort_settings.field_valleytemp
+    - field.field.node.resort_settings.field_village_clock_tower
+    - field.field.node.resort_settings.field_village_day_lodge
+    - node.type.resort_settings
+  module:
+    - user
+id: node.resort_settings.teaser
+targetEntityType: node
+bundle: resort_settings
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_alert_link: true
+  field_alert_text: true
+  field_alpinesnowdepth: true
+  field_alpinestorm12hr: true
+  field_alpinestorm1hr: true
+  field_alpinestorm24hr: true
+  field_alpinestorm48hr: true
+  field_alpinestorm7day: true
+  field_current_season: true
+  field_elevation_chair: true
+  field_golf_course: true
+  field_mid_1600_1600: true
+  field_midmtndepth: true
+  field_midmtnstorm12hr: true
+  field_midmtnstorm1hr: true
+  field_midmtnstorm24hr: true
+  field_midmtnstorm48hr: true
+  field_midmtnstorm7day: true
+  field_midmtntemp: true
+  field_moextemp: true
+  field_mt_tod: true
+  field_show_alert: true
+  field_snow_description: true
+  field_sunburst_lift_base: true
+  field_sundance: true
+  field_sundance_lift_base: true
+  field_today_conditions: true
+  field_today_description: true
+  field_totwtemp: true
+  field_usd_exchange_rate: true
+  field_valley: true
+  field_valleytemp: true
+  field_village_clock_tower: true
+  field_village_day_lodge: true

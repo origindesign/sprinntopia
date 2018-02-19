@@ -1,0 +1,32 @@
+uuid: 37b86cb9-1afb-4067-b6ca-0b6025f8fd0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_phone_number
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.donation_request.field_phone_number
+field_name: field_phone_number
+entity_type: contact_message
+bundle: donation_request
+label: 'Phone Number'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,27 @@
+bundles:
+  avalanche_report: avalanche_report
+  editorial: editorial
+  forecast: forecast
+  fragment: fragment
+  home_page: home_page
+  job: job
+  lift: lift
+  member_page: member_page
+  package: package
+  promo: promo
+  resort_settings: resort_settings
+  trail: trail
+  video: video
+  accomodation: 0
+  activity: 0
+  blog: 0
+  business: 0
+  dining_apres: 0
+  event: 0
+  lesson: 0
+  new_release: 0
+  page: 0
+  shopping: 0
+  spa: 0
+  summer_lesson: 0
+  update: 0

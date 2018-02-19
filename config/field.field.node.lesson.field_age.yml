@@ -1,0 +1,28 @@
+uuid: 19cf74fe-b5a4-4f62-aff0-9eac949e16e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_age
+    - node.type.lesson
+    - taxonomy.vocabulary.age
+id: node.lesson.field_age
+field_name: field_age
+entity_type: node
+bundle: lesson
+label: Age
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      age: age
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

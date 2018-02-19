@@ -1,0 +1,20 @@
+uuid: 990e5fd0-436f-4153-ae31-b846e56190e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: 'Summer Lesson'
+type: summer_lesson
+description: 'A biking lesson'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

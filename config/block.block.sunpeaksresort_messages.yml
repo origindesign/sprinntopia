@@ -1,0 +1,22 @@
+uuid: d2c847f7-7038-4f0f-9baf-0f46ecb2c35e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sunpeaksresort
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: sunpeaksresort_messages
+theme: sunpeaksresort
+region: content
+weight: -12
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

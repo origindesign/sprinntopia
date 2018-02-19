@@ -1,0 +1,32 @@
+uuid: 3a3b6c72-7af9-4443-b774-3a931b436c08
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.travel_trade_newsletter_
+    - field.storage.contact_message.field_company
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.travel_trade_newsletter_.field_company
+field_name: field_company
+entity_type: contact_message
+bundle: travel_trade_newsletter_
+label: Company
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

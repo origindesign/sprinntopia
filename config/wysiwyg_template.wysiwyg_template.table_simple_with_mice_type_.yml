@@ -1,0 +1,12 @@
+uuid: 86445d14-ec1b-4969-9de0-cadcf2c0f9bc
+langcode: en
+status: true
+dependencies: {  }
+id: table_simple_with_mice_type_
+label: 'Table - Simple (with mice type)'
+description: 'A simple table with ONLY 2 columns'
+body:
+  value: "<div class=\"template table simple\">\r\n<table>\r\n\t<caption>Table Heading</caption>\r\n\t<thead>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<th>Row Heading</th>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p class=\"footer\">Add mice type here</p>\r\n</div>\r\n"
+  format: basic_html
+weight: null
+node_types: {  }

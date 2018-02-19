@@ -1,0 +1,21 @@
+uuid: ae05f084-b6ff-40cf-8d4c-36747519f5d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_village_facilities
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_village_facilities
+field_name: field_village_facilities
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Village facilities'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

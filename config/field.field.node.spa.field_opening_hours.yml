@@ -1,0 +1,33 @@
+uuid: 83fc8a2f-7d60-410c-8583-1a106b8ca034
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_opening_hours
+    - node.type.spa
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.spa.field_opening_hours
+field_name: field_opening_hours
+entity_type: node
+bundle: spa
+label: 'Opening Hours'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,32 @@
+uuid: 087493be-1376-4351-bfd6-5f715c555376
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alpinestorm48hr
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_alpinestorm48hr
+field_name: field_alpinestorm48hr
+entity_type: node
+bundle: resort_settings
+label: alpineStorm48hr
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

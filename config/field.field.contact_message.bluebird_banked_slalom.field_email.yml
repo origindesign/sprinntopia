@@ -1,0 +1,19 @@
+uuid: 53351808-2674-4450-b15c-e83497543b7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.bluebird_banked_slalom
+    - field.storage.contact_message.field_email
+id: contact_message.bluebird_banked_slalom.field_email
+field_name: field_email
+entity_type: contact_message
+bundle: bluebird_banked_slalom
+label: Email
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

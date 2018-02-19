@@ -1,0 +1,22 @@
+uuid: 2a4e8db4-f689-4d33-b681-d18fbdf6e15e
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: Submit
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+id: bluebird_banked_slalom
+label: 'Bluebird Banked Slalom'
+recipients:
+  - events@sunpeaksresort.com
+  - gsadmin@sunpeaksresort.com
+reply: ''
+weight: 0
+message: "Your registration form has now been processed for the Bluebird Banked Slalom, you will receive a confirmation phone call from Sun Peaks Guest Services to finalize your payment details.\r\n\r\nFor more information on the event registration, bib pick-up and race practice please visit http://www.sunpeaksresort.com/events-things-to-do/events/6th-annual-bluebird-banked-slalom or call 250.578-5474."
+redirect: /bluebird-banked-slalom

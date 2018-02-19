@@ -1,0 +1,59 @@
+uuid: 92020314-612a-4a08-8639-4809b624c5eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_listings
+    - node.type.accomodation
+    - node.type.activity
+    - node.type.blog
+    - node.type.business
+    - node.type.dining_apres
+    - node.type.editorial
+    - node.type.event
+    - node.type.lesson
+    - node.type.member_page
+    - node.type.new_release
+    - node.type.package
+    - node.type.page
+    - node.type.promo
+    - node.type.shopping
+    - node.type.spa
+    - node.type.summer_lesson
+    - node.type.update
+id: node.page.field_page_listings
+field_name: field_page_listings
+entity_type: node
+bundle: page
+label: 'Page Listings'
+description: 'Pages to show as a teaser listing'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      accomodation: accomodation
+      activity: activity
+      blog: blog
+      business: business
+      dining_apres: dining_apres
+      editorial: editorial
+      event: event
+      member_page: member_page
+      new_release: new_release
+      package: package
+      page: page
+      promo: promo
+      shopping: shopping
+      spa: spa
+      summer_lesson: summer_lesson
+      update: update
+      lesson: lesson
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: blog
+field_type: entity_reference

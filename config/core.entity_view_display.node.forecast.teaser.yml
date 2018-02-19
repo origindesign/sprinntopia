@@ -1,0 +1,84 @@
+uuid: 05c207f3-a1d3-4b35-91ab-23e9a85b9cc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.forecast.field_day_0_conditions
+    - field.field.node.forecast.field_day_0_description
+    - field.field.node.forecast.field_day_0_high
+    - field.field.node.forecast.field_day_0_low
+    - field.field.node.forecast.field_day_0_name
+    - field.field.node.forecast.field_day_1_conditions
+    - field.field.node.forecast.field_day_1_description
+    - field.field.node.forecast.field_day_1_high
+    - field.field.node.forecast.field_day_1_low
+    - field.field.node.forecast.field_day_1_name
+    - field.field.node.forecast.field_day_2_conditions
+    - field.field.node.forecast.field_day_2_description
+    - field.field.node.forecast.field_day_2_high
+    - field.field.node.forecast.field_day_2_low
+    - field.field.node.forecast.field_day_2_name
+    - field.field.node.forecast.field_day_3_conditions
+    - field.field.node.forecast.field_day_3_description
+    - field.field.node.forecast.field_day_3_high
+    - field.field.node.forecast.field_day_3_low
+    - field.field.node.forecast.field_day_3_name
+    - field.field.node.forecast.field_day_4_conditions
+    - field.field.node.forecast.field_day_4_description
+    - field.field.node.forecast.field_day_4_high
+    - field.field.node.forecast.field_day_4_low
+    - field.field.node.forecast.field_day_4_name
+    - field.field.node.forecast.field_day_5_conditions
+    - field.field.node.forecast.field_day_5_description
+    - field.field.node.forecast.field_day_5_high
+    - field.field.node.forecast.field_day_5_low
+    - field.field.node.forecast.field_day_5_name
+    - field.field.node.forecast.field_detailed_forecast
+    - field.field.node.forecast.field_extended_outlook
+    - field.field.node.forecast.field_synopsis
+    - node.type.forecast
+  module:
+    - user
+id: node.forecast.teaser
+targetEntityType: node
+bundle: forecast
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_day_0_conditions: true
+  field_day_0_description: true
+  field_day_0_high: true
+  field_day_0_low: true
+  field_day_0_name: true
+  field_day_1_conditions: true
+  field_day_1_description: true
+  field_day_1_high: true
+  field_day_1_low: true
+  field_day_1_name: true
+  field_day_2_conditions: true
+  field_day_2_description: true
+  field_day_2_high: true
+  field_day_2_low: true
+  field_day_2_name: true
+  field_day_3_conditions: true
+  field_day_3_description: true
+  field_day_3_high: true
+  field_day_3_low: true
+  field_day_3_name: true
+  field_day_4_conditions: true
+  field_day_4_description: true
+  field_day_4_high: true
+  field_day_4_low: true
+  field_day_4_name: true
+  field_day_5_conditions: true
+  field_day_5_description: true
+  field_day_5_high: true
+  field_day_5_low: true
+  field_day_5_name: true
+  field_detailed_forecast: true
+  field_extended_outlook: true
+  field_synopsis: true

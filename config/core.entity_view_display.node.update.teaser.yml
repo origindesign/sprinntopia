@@ -1,0 +1,56 @@
+uuid: 42aae31f-60fb-4627-9a2e-0f4c3eafd1ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.update.body
+    - field.field.node.update.field_category
+    - field.field.node.update.field_fragments
+    - field.field.node.update.field_image
+    - field.field.node.update.field_metatags
+    - node.type.update
+    - responsive_image.styles.listing_image
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.update.teaser
+targetEntityType: node
+bundle: update
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 2
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: responsive_image
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_category: true
+  field_fragments: true
+  field_metatags: true

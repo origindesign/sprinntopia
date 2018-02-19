@@ -1,0 +1,19 @@
+uuid: 5b84230c-3b55-4b26-9e41-0364994c927d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_additional_comments_race_c
+id: contact_message.race_centre_feedback.field_additional_comments_race_c
+field_name: field_additional_comments_race_c
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Additional Comments - Race Centre'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

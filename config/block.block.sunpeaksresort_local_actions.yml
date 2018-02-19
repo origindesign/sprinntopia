@@ -1,0 +1,20 @@
+uuid: 69959703-6708-4f49-a33d-6759f92355b2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - sunpeaksresort
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: sunpeaksresort_local_actions
+theme: sunpeaksresort
+region: content
+weight: -9
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

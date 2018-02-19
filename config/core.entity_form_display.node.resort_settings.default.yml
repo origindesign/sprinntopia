@@ -1,0 +1,454 @@
+uuid: e9da5f88-6939-4a49-a671-63c5092fe248
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resort_settings.field_alert_link
+    - field.field.node.resort_settings.field_alert_text
+    - field.field.node.resort_settings.field_alpinesnowdepth
+    - field.field.node.resort_settings.field_alpinestorm12hr
+    - field.field.node.resort_settings.field_alpinestorm1hr
+    - field.field.node.resort_settings.field_alpinestorm24hr
+    - field.field.node.resort_settings.field_alpinestorm48hr
+    - field.field.node.resort_settings.field_alpinestorm7day
+    - field.field.node.resort_settings.field_current_season
+    - field.field.node.resort_settings.field_elevation_chair
+    - field.field.node.resort_settings.field_golf_course
+    - field.field.node.resort_settings.field_mid_1600_1600
+    - field.field.node.resort_settings.field_midmtndepth
+    - field.field.node.resort_settings.field_midmtnstorm12hr
+    - field.field.node.resort_settings.field_midmtnstorm1hr
+    - field.field.node.resort_settings.field_midmtnstorm24hr
+    - field.field.node.resort_settings.field_midmtnstorm48hr
+    - field.field.node.resort_settings.field_midmtnstorm7day
+    - field.field.node.resort_settings.field_midmtntemp
+    - field.field.node.resort_settings.field_moextemp
+    - field.field.node.resort_settings.field_mt_tod
+    - field.field.node.resort_settings.field_override_lifts_trails
+    - field.field.node.resort_settings.field_show_alert
+    - field.field.node.resort_settings.field_snow_description
+    - field.field.node.resort_settings.field_sunburst_lift_base
+    - field.field.node.resort_settings.field_sundance
+    - field.field.node.resort_settings.field_sundance_lift_base
+    - field.field.node.resort_settings.field_today_conditions
+    - field.field.node.resort_settings.field_today_description
+    - field.field.node.resort_settings.field_totwtemp
+    - field.field.node.resort_settings.field_usd_exchange_rate
+    - field.field.node.resort_settings.field_valley
+    - field.field.node.resort_settings.field_valleytemp
+    - field.field.node.resort_settings.field_village_clock_tower
+    - field.field.node.resort_settings.field_village_day_lodge
+    - node.type.resort_settings
+  module:
+    - field_group
+    - link
+    - path
+third_party_settings:
+  field_group:
+    group_available_fields:
+      children:
+        - group_today_weather
+        - group_snow_conditions
+        - group_webcams
+        - group_alert
+        - group_exchange_rate
+        - group_override_lifts_trails
+      parent_name: ''
+      weight: 2
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Available Fields'
+    group_snow_conditions:
+      children:
+        - field_snow_description
+        - field_mid_1600_1600
+        - field_midmtndepth
+        - field_midmtnstorm24hr
+        - field_midmtnstorm48hr
+        - field_midmtnstorm7day
+        - field_alpinesnowdepth
+        - field_alpinestorm24hr
+        - field_alpinestorm48hr
+        - field_alpinestorm7day
+      parent_name: group_available_fields
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Snow Conditions'
+    group_today_weather:
+      children:
+        - field_today_conditions
+        - field_today_description
+        - field_valleytemp
+        - field_midmtntemp
+        - field_moextemp
+        - field_totwtemp
+      parent_name: group_available_fields
+      weight: 21
+      format_type: tab
+      format_settings:
+        label: 'Today Weather'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Today Weather'
+    group_alert:
+      children:
+        - field_show_alert
+        - field_alert_text
+        - field_alert_link
+      parent_name: group_available_fields
+      weight: 24
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Alert Bar'
+    group_webcams:
+      children:
+        - field_valley
+        - field_village_day_lodge
+        - field_sunburst_lift_base
+        - field_elevation_chair
+        - field_sundance_lift_base
+        - field_sundance
+        - field_mt_tod
+        - field_village_clock_tower
+        - field_golf_course
+      parent_name: group_available_fields
+      weight: 23
+      format_type: tab
+      format_settings:
+        label: 'Disable Webcams'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Disable Webcams'
+    group_exchange_rate:
+      children:
+        - field_usd_exchange_rate
+      parent_name: group_available_fields
+      weight: 25
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Exchange Rate'
+    group_override_lifts_trails:
+      children:
+        - field_override_lifts_trails
+      parent_name: group_available_fields
+      weight: 26
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Override Lifts/Trails'
+id: node.resort_settings.default
+targetEntityType: node
+bundle: resort_settings
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_alert_link:
+    weight: 35
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_alert_text:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_alpinesnowdepth:
+    type: string_textfield
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_alpinestorm24hr:
+    type: string_textfield
+    weight: 47
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_alpinestorm48hr:
+    type: string_textfield
+    weight: 48
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_alpinestorm7day:
+    type: string_textfield
+    weight: 49
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_elevation_chair:
+    weight: 54
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_golf_course:
+    weight: 59
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_mid_1600_1600:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_midmtndepth:
+    type: string_textfield
+    weight: 38
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_midmtnstorm24hr:
+    type: string_textfield
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_midmtnstorm48hr:
+    type: string_textfield
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_midmtnstorm7day:
+    type: string_textfield
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_midmtntemp:
+    type: string_textfield
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_moextemp:
+    type: string_textfield
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_mt_tod:
+    weight: 57
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_override_lifts_trails:
+    weight: 61
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_alert:
+    weight: 33
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_snow_description:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sunburst_lift_base:
+    weight: 53
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sundance:
+    weight: 56
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_sundance_lift_base:
+    weight: 55
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_today_conditions:
+    type: options_select
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_today_description:
+    weight: 1
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_totwtemp:
+    type: string_textfield
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_usd_exchange_rate:
+    weight: 60
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_valley:
+    weight: 51
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_valleytemp:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_village_clock_tower:
+    weight: 58
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_village_day_lodge:
+    weight: 52
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  path:
+    type: path
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_alpinestorm12hr: true
+  field_alpinestorm1hr: true
+  field_current_season: true
+  field_midmtnstorm12hr: true
+  field_midmtnstorm1hr: true

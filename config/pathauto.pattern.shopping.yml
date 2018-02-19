@@ -1,0 +1,22 @@
+uuid: 234ed389-35a3-44be-a4e0-802757cadad2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: shopping
+label: Shopping
+type: 'canonical_entities:node'
+pattern: '/events-things-to-do/shopping/[node:title]'
+selection_criteria:
+  33328a23-38ee-4613-9979-677cceffc418:
+    id: node_type
+    bundles:
+      shopping: shopping
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 33328a23-38ee-4613-9979-677cceffc418
+selection_logic: and
+weight: -5
+relationships: {  }

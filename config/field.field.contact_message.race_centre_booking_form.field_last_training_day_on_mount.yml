@@ -1,0 +1,21 @@
+uuid: 23569b9f-9200-4b36-8775-cae10f179111
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_last_training_day_on_mount
+  module:
+    - datetime
+id: contact_message.race_centre_booking_form.field_last_training_day_on_mount
+field_name: field_last_training_day_on_mount
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Last Training Day on Mountain'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

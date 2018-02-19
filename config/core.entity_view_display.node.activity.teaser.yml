@@ -1,0 +1,56 @@
+uuid: 8475a4c0-af7a-4ced-9d0f-18995d32e329
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.activity.body
+    - field.field.node.activity.field_categories
+    - field.field.node.activity.field_fragments
+    - field.field.node.activity.field_images
+    - field.field.node.activity.field_inntopia_id
+    - field.field.node.activity.field_metatags
+    - field.field.node.activity.field_season
+    - node.type.activity
+    - responsive_image.styles.listing_image
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.activity.teaser
+targetEntityType: node
+bundle: activity
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_categories: true
+  field_fragments: true
+  field_inntopia_id: true
+  field_metatags: true
+  field_season: true
+  links: true

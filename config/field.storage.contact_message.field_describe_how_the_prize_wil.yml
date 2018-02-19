@@ -1,0 +1,19 @@
+uuid: 09f1ab74-3d4b-4b96-8e37-4e6d249538b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_describe_how_the_prize_wil
+field_name: field_describe_how_the_prize_wil
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

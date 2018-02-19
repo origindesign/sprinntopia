@@ -1,0 +1,21 @@
+uuid: 1cc30aa9-a373-4044-913d-515fe346c036
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_day_0_conditions
+    - node.type.forecast
+  module:
+    - options
+id: node.forecast.field_day_0_conditions
+field_name: field_day_0_conditions
+entity_type: node
+bundle: forecast
+label: 'Day 0 Conditions'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

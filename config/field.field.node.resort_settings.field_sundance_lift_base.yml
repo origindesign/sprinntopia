@@ -1,0 +1,23 @@
+uuid: 1ee957e4-67f6-419b-b384-d84f28a373ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sundance_lift_base
+    - node.type.resort_settings
+id: node.resort_settings.field_sundance_lift_base
+field_name: field_sundance_lift_base
+entity_type: node
+bundle: resort_settings
+label: 'Sundance Lift Base'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

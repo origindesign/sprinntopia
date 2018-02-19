@@ -1,0 +1,14 @@
+uuid: 33803980-5887-4ca2-abf4-0b9b1e860c0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.avalanche_report
+  module:
+    - user
+id: user_remove_role_action.avalanche_report
+label: 'Remove the Avalanche Report role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: avalanche_report

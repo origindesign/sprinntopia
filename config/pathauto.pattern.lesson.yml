@@ -1,0 +1,22 @@
+uuid: 52ff58ad-c2c5-412e-a06c-2592aa94d877
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: lesson
+label: 'Winter Lesson'
+type: 'canonical_entities:node'
+pattern: '/ski-ride/sports-school-rentals/lessons-camps-programs/[node:title]'
+selection_criteria:
+  689cf46c-afae-4a62-9b7b-123a4946bd5c:
+    id: node_type
+    bundles:
+      lesson: lesson
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 689cf46c-afae-4a62-9b7b-123a4946bd5c
+selection_logic: and
+weight: -5
+relationships: {  }

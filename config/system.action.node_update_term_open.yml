@@ -1,0 +1,13 @@
+uuid: 639279ad-1405-4438-9ef7-5e6441f9c0d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_actions
+_core:
+  default_config_hash: df7IEtUZtdj3hdsqNEaLgoCRAKekMd6lo49jO6DQURU
+id: node_update_term_open
+label: 'Change Status to Open'
+type: node
+plugin: node_update_term_open
+configuration: {  }

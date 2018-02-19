@@ -1,0 +1,21 @@
+uuid: a61992cf-fc2a-4782-bf8d-734b71f977e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_first_training_day_on_moun
+  module:
+    - datetime
+id: contact_message.race_centre_booking_form.field_first_training_day_on_moun
+field_name: field_first_training_day_on_moun
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'First Training Day on Mountain'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

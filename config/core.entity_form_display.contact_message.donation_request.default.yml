@@ -1,0 +1,265 @@
+uuid: 6282fcf9-00f7-4248-a753-acc34296743a
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.field.contact_message.donation_request.field_charitable_registration_nu
+    - field.field.contact_message.donation_request.field_city
+    - field.field.contact_message.donation_request.field_contact_name
+    - field.field.contact_message.donation_request.field_describe_how_the_prize_wil
+    - field.field.contact_message.donation_request.field_describe_the_charity_and_i
+    - field.field.contact_message.donation_request.field_describe_the_event_and_ide
+    - field.field.contact_message.donation_request.field_describe_the_marketing_opp
+    - field.field.contact_message.donation_request.field_email
+    - field.field.contact_message.donation_request.field_how_many_people_attended_t
+    - field.field.contact_message.donation_request.field_how_many_people_will_atten
+    - field.field.contact_message.donation_request.field_identify_whether_sun_peaks
+    - field.field.contact_message.donation_request.field_mailing_address
+    - field.field.contact_message.donation_request.field_organization_name
+    - field.field.contact_message.donation_request.field_phone_number
+    - field.field.contact_message.donation_request.field_please_identify_any_additi
+    - field.field.contact_message.donation_request.field_postal_zip_code
+    - field.field.contact_message.donation_request.field_province_state
+    - field.field.contact_message.donation_request.field_social_channels
+    - field.field.contact_message.donation_request.field_website
+    - field.field.contact_message.donation_request.field_what_is_your_donation_requ
+    - field.field.contact_message.donation_request.field_year_established
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_contact_information:
+      children:
+        - field_organization_name
+        - field_year_established
+        - field_charitable_registration_nu
+        - field_contact_name
+        - field_mailing_address
+        - field_city
+        - field_province_state
+        - field_postal_zip_code
+        - field_email
+        - field_phone_number
+        - field_website
+        - field_social_channels
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Contact Information'
+    group_event_information:
+      children:
+        - field_describe_the_charity_and_i
+        - field_describe_the_event_and_ide
+        - field_how_many_people_will_atten
+        - field_how_many_people_attended_t
+        - field_describe_the_marketing_opp
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Event Information'
+    group_donation_information:
+      children:
+        - field_what_is_your_donation_requ
+        - field_describe_how_the_prize_wil
+        - field_identify_whether_sun_peaks
+        - field_please_identify_any_additi
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Donation Information'
+id: contact_message.donation_request.default
+targetEntityType: contact_message
+bundle: donation_request
+mode: default
+content:
+  field_charitable_registration_nu:
+    weight: 53
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_city:
+    weight: 56
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_contact_name:
+    weight: 54
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_describe_how_the_prize_wil:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_describe_the_charity_and_i:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_describe_the_event_and_ide:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_describe_the_marketing_opp:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_email:
+    weight: 59
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_how_many_people_attended_t:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_how_many_people_will_atten:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_identify_whether_sun_peaks:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_mailing_address:
+    weight: 55
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_organization_name:
+    weight: 51
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone_number:
+    weight: 60
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_please_identify_any_additi:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_postal_zip_code:
+    weight: 58
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_province_state:
+    weight: 57
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_social_channels:
+    weight: 62
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_website:
+    weight: 61
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_what_is_your_donation_requ:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_year_established:
+    weight: 52
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  preview: true
+  subject: true

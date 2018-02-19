@@ -1,0 +1,32 @@
+uuid: 173c44ee-f821-41c3-a205-d902e72a61b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_toll_free
+    - node.type.spa
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.spa.field_toll_free
+field_name: field_toll_free
+entity_type: node
+bundle: spa
+label: 'Toll Free'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,32 @@
+uuid: 17accc60-a63b-4ab4-8beb-19115de646c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_moextemp
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_moextemp
+field_name: field_moextemp
+entity_type: node
+bundle: resort_settings
+label: moExTemp
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

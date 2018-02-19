@@ -1,0 +1,15 @@
+uuid: f842d0f8-ec79-4fd3-a3e3-f8d04a69ce8f
+langcode: en
+status: true
+dependencies: {  }
+name: '1536'
+label: '1536'
+effects:
+  1ce9c260-c4bb-47a3-9145-bf1db0b5aa38:
+    uuid: 1ce9c260-c4bb-47a3-9145-bf1db0b5aa38
+    id: image_scale
+    weight: 1
+    data:
+      width: 1536
+      height: null
+      upscale: false

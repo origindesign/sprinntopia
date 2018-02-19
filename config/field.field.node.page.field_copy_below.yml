@@ -1,0 +1,33 @@
+uuid: 5f22ae6c-b3dd-4851-9bdb-d7b39c7e13df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_copy_below
+    - node.type.page
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.page.field_copy_below
+field_name: field_copy_below
+entity_type: node
+bundle: page
+label: 'Copy Below'
+description: 'Add copy to appear at the bottom of the page, below any listings or other content'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

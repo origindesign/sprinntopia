@@ -1,0 +1,21 @@
+uuid: 937eb940-d0f7-463f-bb9e-8b8212c1037d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_ticket_issuance_guest
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_ticket_issuance_guest
+field_name: field_ticket_issuance_guest
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Ticket issuance'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

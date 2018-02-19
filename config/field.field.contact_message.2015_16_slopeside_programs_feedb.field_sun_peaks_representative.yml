@@ -1,0 +1,21 @@
+uuid: f64964ab-bcdf-48b2-9acd-71c1629bb5ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_sun_peaks_representative
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_sun_peaks_representative
+field_name: field_sun_peaks_representative
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Sun Peaks representative'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

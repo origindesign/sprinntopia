@@ -1,0 +1,22 @@
+uuid: 8e336177-1c1c-4cb3-b5a6-909b360c9f60
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lift.field_category
+    - field.field.node.lift.field_notes
+    - node.type.lift
+  module:
+    - user
+id: node.lift.teaser
+targetEntityType: node
+bundle: lift
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_category: true
+  field_notes: true

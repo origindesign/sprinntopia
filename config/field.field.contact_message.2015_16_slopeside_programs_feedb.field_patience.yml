@@ -1,0 +1,21 @@
+uuid: b24b554c-d834-43b6-8163-1980172ca211
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_patience
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_patience
+field_name: field_patience
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: Patience
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

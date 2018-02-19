@@ -1,0 +1,70 @@
+uuid: af829f0b-5703-4330-89c3-f0afdab257ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.bluebird_banked_slalom
+    - field.field.contact_message.bluebird_banked_slalom.field_category
+    - field.field.contact_message.bluebird_banked_slalom.field_date_of_birth
+    - field.field.contact_message.bluebird_banked_slalom.field_email
+    - field.field.contact_message.bluebird_banked_slalom.field_first_name
+    - field.field.contact_message.bluebird_banked_slalom.field_last_name
+    - field.field.contact_message.bluebird_banked_slalom.field_phone_number
+id: contact_message.bluebird_banked_slalom.default
+targetEntityType: contact_message
+bundle: bluebird_banked_slalom
+mode: default
+content:
+  field_category:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_date_of_birth:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_email:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone_number:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  preview: true
+  subject: true

@@ -1,0 +1,19 @@
+uuid: dba68a87-3caa-46f0-baff-03a4a8f6c188
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_why_or_why_not_recommend
+field_name: field_why_or_why_not_recommend
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

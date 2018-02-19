@@ -1,0 +1,22 @@
+uuid: de365b97-c4d1-49c7-b67e-d46ef0b6c175
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: new_release
+label: 'New Release'
+type: 'canonical_entities:node'
+pattern: 'media/new-releases/[node:title]'
+selection_criteria:
+  e57d93f7-c377-46b1-99e8-f21ea651060c:
+    id: node_type
+    bundles:
+      new_release: new_release
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e57d93f7-c377-46b1-99e8-f21ea651060c
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,23 @@
+uuid: 6e0d6680-c49f-40c0-960f-bd9d896eb4b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - corporate-menu
+      - footer
+      - main
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+name: 'Member Page'
+type: member_page
+description: 'A page that is restricted to the Member role'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

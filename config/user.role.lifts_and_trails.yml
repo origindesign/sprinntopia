@@ -1,0 +1,31 @@
+uuid: 058c367e-6a46-4153-82fe-04ad586be0f3
+langcode: en
+status: true
+dependencies: {  }
+id: lifts_and_trails
+label: 'Lifts and Trails'
+weight: 7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'create lift content'
+  - 'create trail content'
+  - 'delete any lift content'
+  - 'delete any trail content'
+  - 'delete lift revisions'
+  - 'delete own lift content'
+  - 'delete own trail content'
+  - 'delete trail revisions'
+  - 'edit any lift content'
+  - 'edit any trail content'
+  - 'edit own lift content'
+  - 'edit own trail content'
+  - 'revert lift revisions'
+  - 'revert trail revisions'
+  - 'view lift revisions'
+  - 'view the administration theme'
+  - 'view trail revisions'

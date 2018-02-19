@@ -1,0 +1,23 @@
+uuid: 8030d20d-80f0-4b47-9066-71cf543335a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_listing
+    - node.type.member_page
+id: node.member_page.field_text_listing
+field_name: field_text_listing
+entity_type: node
+bundle: member_page
+label: 'Text Listing'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Text Listing (no images)'
+  off_label: 'Off'
+field_type: boolean

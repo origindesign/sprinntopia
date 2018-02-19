@@ -1,0 +1,21 @@
+uuid: a6f01f82-39b6-488a-9eba-c2ca9dab0132
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.12_days
+    - field.storage.contact_message.field_newsletter_sign_up
+  module:
+    - options
+id: contact_message.12_days.field_newsletter_sign_up
+field_name: field_newsletter_sign_up
+entity_type: contact_message
+bundle: 12_days
+label: 'Newsletter Sign-Up'
+description: 'Would you like to receive information from Sun Peaks Resort LLP and Tourism Sun Peaks by email? If so, select the types of subscriptions you would like to opt-in to receive.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: 568d797c-0a67-4bad-9e06-dffeac78154c
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_quality
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_quality
+field_name: field_quality
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Grooming Quality'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

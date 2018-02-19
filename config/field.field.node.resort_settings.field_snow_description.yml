@@ -1,0 +1,32 @@
+uuid: a9102b52-7a65-470f-a83d-6c68b463783f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_snow_description
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_snow_description
+field_name: field_snow_description
+entity_type: node
+bundle: resort_settings
+label: 'Snow Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

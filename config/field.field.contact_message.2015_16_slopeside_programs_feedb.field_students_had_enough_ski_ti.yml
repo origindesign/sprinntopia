@@ -1,0 +1,21 @@
+uuid: 024e18c2-b506-417d-9eed-72029078b575
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_students_had_enough_ski_ti
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_students_had_enough_ski_ti
+field_name: field_students_had_enough_ski_ti
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Students had enough ski time during lesson'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

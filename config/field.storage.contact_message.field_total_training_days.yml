@@ -1,0 +1,21 @@
+uuid: 84006ff4-6370-44f4-ad59-a7ff30e4cf6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_total_training_days
+field_name: field_total_training_days
+entity_type: contact_message
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

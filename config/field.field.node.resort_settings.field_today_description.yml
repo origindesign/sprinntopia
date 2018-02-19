@@ -1,0 +1,32 @@
+uuid: 3ff6b7a2-c410-4561-88fe-1496cdc4e323
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_today_description
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_today_description
+field_name: field_today_description
+entity_type: node
+bundle: resort_settings
+label: 'Today Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

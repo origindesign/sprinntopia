@@ -1,0 +1,21 @@
+uuid: cf5a0c97-eca3-4b20-9e9e-bae31bbcaa04
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_on_mountain_facilities
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_on_mountain_facilities
+field_name: field_on_mountain_facilities
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'On-mountain facilities'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

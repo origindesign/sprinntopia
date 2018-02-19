@@ -1,0 +1,21 @@
+uuid: e28fb867-0196-4d93-900c-b417ab6df181
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_equipment_was_preset_upon_
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_equipment_was_preset_upon_
+field_name: field_equipment_was_preset_upon_
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Equipment was preset upon your arrival'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

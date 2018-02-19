@@ -1,0 +1,32 @@
+uuid: ebb53cf3-becb-479e-bfe6-69c36733b03f
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_postal_zip_code
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.race_centre_booking_form.field_postal_zip_code
+field_name: field_postal_zip_code
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Postal/Zip Code'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

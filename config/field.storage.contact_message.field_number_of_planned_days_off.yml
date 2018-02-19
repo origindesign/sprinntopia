@@ -1,0 +1,21 @@
+uuid: fa78c53b-02b9-40fd-8048-a8eab1beb5ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_number_of_planned_days_off
+field_name: field_number_of_planned_days_off
+entity_type: contact_message
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

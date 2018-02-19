@@ -1,0 +1,13 @@
+uuid: 55ad962a-517c-422c-9900-8f094178ff12
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_actions
+_core:
+  default_config_hash: SOx7kvR84p8p2fIiOps3aGzyygKaoAkni3L9lw3KKxk
+id: node_update_field_add_to_directory
+label: 'Add to Business Directory'
+type: node
+plugin: node_update_field_add_to_directory
+configuration: {  }

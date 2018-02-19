@@ -1,0 +1,19 @@
+uuid: 3d540590-8181-4133-b736-bb21c8538ffb
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_identify_whether_sun_peaks
+field_name: field_identify_whether_sun_peaks
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

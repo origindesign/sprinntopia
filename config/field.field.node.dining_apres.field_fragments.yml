@@ -1,0 +1,28 @@
+uuid: 198a6626-64be-45bc-bc1a-5ebb5800b5f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fragments
+    - node.type.dining_apres
+    - node.type.fragment
+id: node.dining_apres.field_fragments
+field_name: field_fragments
+entity_type: node
+bundle: dining_apres
+label: Fragments
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      fragment: fragment
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

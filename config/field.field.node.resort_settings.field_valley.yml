@@ -1,0 +1,23 @@
+uuid: a8e2ec65-de55-4327-8d6c-d1851ddb1163
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_valley
+    - node.type.resort_settings
+id: node.resort_settings.field_valley
+field_name: field_valley
+entity_type: node
+bundle: resort_settings
+label: Valley
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

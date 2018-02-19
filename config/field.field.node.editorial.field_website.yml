@@ -1,0 +1,23 @@
+uuid: cf98abff-7cdc-45b7-8d30-e155b39ada69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.editorial
+  module:
+    - link
+id: node.editorial.field_website
+field_name: field_website
+entity_type: node
+bundle: editorial
+label: Link
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,21 @@
+uuid: 24bbf23d-1a53-455e-b262-4389fbdc9a7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_7_am
+  module:
+    - options
+id: contact_message.race_centre_booking_form.field_day_7_am
+field_name: field_day_7_am
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 07 AM Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

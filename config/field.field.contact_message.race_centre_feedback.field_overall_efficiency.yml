@@ -1,0 +1,21 @@
+uuid: feb82f84-b9cf-4b2a-9afc-e0e0600acf80
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_overall_efficiency
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_overall_efficiency
+field_name: field_overall_efficiency
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Overall efficiency'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,18 @@
+uuid: c75573da-6712-4545-9e0e-8a8f3a32f7b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_terms_conditions
+field_name: field_terms_conditions
+entity_type: contact_message
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

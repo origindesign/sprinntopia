@@ -1,0 +1,19 @@
+uuid: 160af044-6004-4d84-954b-c9c1ee09c03e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.shopping
+id: node.shopping.field_email
+field_name: field_email
+entity_type: node
+bundle: shopping
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

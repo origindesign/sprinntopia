@@ -1,0 +1,21 @@
+uuid: d3df6814-5b82-46f7-9e8b-3cb9f27626f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_5
+  module:
+    - datetime
+id: contact_message.race_centre_booking_form.field_day_5
+field_name: field_day_5
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 05'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

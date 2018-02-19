@@ -1,0 +1,43 @@
+uuid: 909db61d-3dd5-4f09-861d-f0bd0042c0b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.editorial.body
+    - field.field.node.editorial.field_author
+    - field.field.node.editorial.field_image
+    - field.field.node.editorial.field_website
+    - node.type.editorial
+  module:
+    - image
+    - text
+    - user
+id: node.editorial.default
+targetEntityType: node
+bundle: editorial
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_author: true
+  field_website: true

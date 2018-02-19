@@ -1,0 +1,21 @@
+uuid: 18589786-9b1a-4a30-a35a-fe2c8327eaa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_value
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_value
+field_name: field_value
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: Value
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

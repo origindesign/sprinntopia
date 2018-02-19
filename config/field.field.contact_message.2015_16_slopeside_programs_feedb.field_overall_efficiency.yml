@@ -1,0 +1,21 @@
+uuid: 8081e339-f3c7-4910-833c-4dd6e6800ff9
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_overall_efficiency
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_overall_efficiency
+field_name: field_overall_efficiency
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Overall efficiency'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

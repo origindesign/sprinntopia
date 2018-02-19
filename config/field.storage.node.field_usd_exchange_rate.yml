@@ -1,0 +1,18 @@
+uuid: da47dbfd-040b-4345-a797-076f1b687446
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_usd_exchange_rate
+field_name: field_usd_exchange_rate
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

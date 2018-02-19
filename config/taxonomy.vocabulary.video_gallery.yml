@@ -1,0 +1,9 @@
+uuid: ab3e47d2-7325-47d5-8402-d0ec62fec0e6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Video Gallery'
+vid: video_gallery
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,21 @@
+uuid: ff467fe6-d3bf-44b8-a898-1718db503992
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_would_you_recommend_the_na
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_would_you_recommend_the_na
+field_name: field_would_you_recommend_the_na
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Would you recommend the Nancy Greene International Race Centre to others?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,19 @@
+uuid: b4beaacc-a56b-4e55-be76-7577611321af
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_please_identify_any_additi
+id: contact_message.donation_request.field_please_identify_any_additi
+field_name: field_please_identify_any_additi
+entity_type: contact_message
+bundle: donation_request
+label: 'Please identify any additional information that may better your charity''s chance of being selected'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

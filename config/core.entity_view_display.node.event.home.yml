@@ -1,0 +1,79 @@
+uuid: e6a29aef-d108-4070-ac79-bdc595f92bb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.home
+    - field.field.node.event.body
+    - field.field.node.event.field_additional_info
+    - field.field.node.event.field_address
+    - field.field.node.event.field_all_day
+    - field.field.node.event.field_date
+    - field.field.node.event.field_email
+    - field.field.node.event.field_fragments
+    - field.field.node.event.field_images
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_description
+    - field.field.node.event.field_metatags
+    - field.field.node.event.field_phone
+    - field.field.node.event.field_toll_free
+    - field.field.node.event.field_website
+    - node.type.event
+    - responsive_image.styles.home_featured
+  module:
+    - datetime
+    - responsive_image
+    - smart_trim
+    - user
+id: node.event.home
+targetEntityType: node
+bundle: event
+mode: home
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '20'
+      trim_type: words
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: home_featured
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_additional_info: true
+  field_address: true
+  field_all_day: true
+  field_email: true
+  field_fragments: true
+  field_location: true
+  field_location_description: true
+  field_metatags: true
+  field_phone: true
+  field_toll_free: true
+  field_website: true
+  links: true

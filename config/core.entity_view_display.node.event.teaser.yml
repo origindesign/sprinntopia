@@ -1,0 +1,99 @@
+uuid: fe54cdfc-fc18-4f07-8757-715e523f1469
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_additional_info
+    - field.field.node.event.field_address
+    - field.field.node.event.field_all_day
+    - field.field.node.event.field_date
+    - field.field.node.event.field_email
+    - field.field.node.event.field_fragments
+    - field.field.node.event.field_images
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_description
+    - field.field.node.event.field_metatags
+    - field.field.node.event.field_phone
+    - field.field.node.event.field_toll_free
+    - field.field.node.event.field_website
+    - node.type.event
+    - responsive_image.styles.listing_image
+  module:
+    - datetime
+    - responsive_image
+    - smart_trim
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_additional_info:
+    type: string
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_all_day:
+    type: boolean
+    weight: 5
+    label: above
+    settings:
+      format: yes-no
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    region: content
+  field_date:
+    type: datetime_default
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 2
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_email: true
+  field_fragments: true
+  field_location: true
+  field_location_description: true
+  field_metatags: true
+  field_phone: true
+  field_toll_free: true
+  field_website: true

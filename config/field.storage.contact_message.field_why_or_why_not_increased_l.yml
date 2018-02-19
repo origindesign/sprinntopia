@@ -1,0 +1,19 @@
+uuid: 6b1aa367-af8b-4ab8-b1f3-e2ec2c2569ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_why_or_why_not_increased_l
+field_name: field_why_or_why_not_increased_l
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,26 @@
+uuid: f5ee97f6-09c3-48cb-9c63-6dc564812608
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - corporate-menu
+      - footer
+      - main
+      - privacy-menu
+    parent: 'main:'
+  wysiwyg_template:
+    default_template: ''
+_core:
+  default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
+name: Page
+type: page
+description: 'Use to add a static page within the site navigation'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

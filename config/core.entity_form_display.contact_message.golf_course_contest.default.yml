@@ -1,0 +1,72 @@
+uuid: 83f035f2-d985-4346-98ae-80f20336adb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.golf_course_contest
+    - field.field.contact_message.golf_course_contest.field_date
+    - field.field.contact_message.golf_course_contest.field_email
+    - field.field.contact_message.golf_course_contest.field_first_name
+    - field.field.contact_message.golf_course_contest.field_last_name
+    - field.field.contact_message.golf_course_contest.field_phone_number
+    - field.field.contact_message.golf_course_contest.field_time
+  module:
+    - datetime
+id: contact_message.golf_course_contest.default
+targetEntityType: contact_message
+bundle: golf_course_contest
+mode: default
+content:
+  field_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_email:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone_number:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_time:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  copy: true
+  mail: true
+  message: true
+  name: true
+  preview: true
+  subject: true

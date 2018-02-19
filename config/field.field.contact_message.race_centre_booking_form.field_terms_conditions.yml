@@ -1,0 +1,23 @@
+uuid: f4c3b512-c3a3-4385-9d41-1a8b75c22bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_terms_conditions
+id: contact_message.race_centre_booking_form.field_terms_conditions
+field_name: field_terms_conditions
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Terms & Conditions'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'I have read and understand the terms, conditions, rates, policies, procedures and agree to abide by them.'
+  off_label: 'Off'
+field_type: boolean

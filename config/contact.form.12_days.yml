@@ -1,0 +1,21 @@
+uuid: 298851b9-5daf-481e-9816-f6721c0a63ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: Submit
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+id: 12_days
+label: '12 Days'
+recipients:
+  - marketing@sunpeaksresort.com
+reply: ''
+weight: 0
+message: ''
+redirect: /12-days-thank-you

@@ -1,0 +1,30 @@
+uuid: 7c43a0fd-5c2e-4899-9dbd-fea4ff013342
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_lesson_length
+field_name: field_lesson_length
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1.5 hours'
+      label: '1.5 hours'
+    -
+      value: '2.5 hours'
+      label: '2.5 hours'
+    -
+      value: '4 hours'
+      label: '4 hours'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 67ffaf1b-5258-4d57-ab28-255f24ef78e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_describe_the_event_and_ide
+id: contact_message.donation_request.field_describe_the_event_and_ide
+field_name: field_describe_the_event_and_ide
+entity_type: contact_message
+bundle: donation_request
+label: 'Describe the event and identify the date and location'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

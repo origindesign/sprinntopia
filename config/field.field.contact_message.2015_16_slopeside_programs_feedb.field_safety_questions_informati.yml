@@ -1,0 +1,21 @@
+uuid: 50947485-4006-44e1-8e19-de7a5d2f9ac0
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_safety_questions_informati
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_safety_questions_informati
+field_name: field_safety_questions_informati
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Safety questions/information covered'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

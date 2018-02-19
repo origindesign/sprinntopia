@@ -1,0 +1,21 @@
+uuid: 8e39875d-a65b-4eb2-965f-c4831477aab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_day_9
+  module:
+    - datetime
+id: contact_message.race_centre_booking_form.field_day_9
+field_name: field_day_9
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Day 09'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

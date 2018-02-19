@@ -1,0 +1,41 @@
+uuid: 5ef95328-00ff-4997-96e9-8cf153c7e870
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.event
+  module:
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: source
+    weight: '0'
+    geocode_field: field_address
+    reverse_geocode_field: {  }
+    hidden: 0
+    disabled: 0
+    plugins:
+      - geoip
+      - googlemaps
+      - ipinfodb
+      - openstreetmap
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.event.field_location
+field_name: field_location
+entity_type: node
+bundle: event
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

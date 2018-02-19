@@ -1,0 +1,23 @@
+uuid: fb9490e5-e9f5-4032-8c93-21bc2ca08e67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.accomodation
+  module:
+    - metatag
+id: node.accomodation.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: accomodation
+label: Metatags
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag

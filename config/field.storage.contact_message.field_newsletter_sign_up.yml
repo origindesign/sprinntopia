@@ -1,0 +1,33 @@
+uuid: 98c81b28-50c4-4e10-9767-65e724d831aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_newsletter_sign_up
+field_name: field_newsletter_sign_up
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Tourism Sun Peaks'
+      label: 'Tourism Sun Peaks'
+    -
+      value: 'The 311 E-Newsletter'
+      label: 'The 311 E-Newsletter'
+    -
+      value: 'The 311 Daily Snow Report'
+      label: 'The 311 Daily Snow Report'
+    -
+      value: 'The 311 Snow Dump Alert (10cm+ fresh snowfall)'
+      label: 'The 311 Snow Dump Alert (10cm+ fresh snowfall)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

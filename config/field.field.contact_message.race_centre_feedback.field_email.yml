@@ -1,0 +1,19 @@
+uuid: ec936bef-eeb0-44dd-bbae-e43fa175e93d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_email
+id: contact_message.race_centre_feedback.field_email
+field_name: field_email
+entity_type: contact_message
+bundle: race_centre_feedback
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

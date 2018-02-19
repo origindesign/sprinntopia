@@ -1,0 +1,21 @@
+uuid: a6f4d4fb-8840-4df7-ac06-604eff405f17
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_response_time_to_inquiries
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_response_time_to_inquiries
+field_name: field_response_time_to_inquiries
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Response time to inquiries'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

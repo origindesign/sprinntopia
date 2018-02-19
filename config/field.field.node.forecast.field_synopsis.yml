@@ -1,0 +1,33 @@
+uuid: cf75f9ed-9e38-4261-8cc8-e4af9895e74b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_synopsis
+    - node.type.forecast
+  module:
+    - geocoder_field
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.forecast.field_synopsis
+field_name: field_synopsis
+entity_type: node
+bundle: forecast
+label: Synopsis
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

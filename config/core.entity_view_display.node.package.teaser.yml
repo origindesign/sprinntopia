@@ -1,0 +1,86 @@
+uuid: fcc1a6cd-17f2-4b5d-93b9-092f690d851e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.package.body
+    - field.field.node.package.field_image
+    - field.field.node.package.field_price
+    - field.field.node.package.field_price_header
+    - field.field.node.package.field_reservations_link
+    - field.field.node.package.field_season
+    - field.field.node.package.field_terms
+    - field.field.node.package.field_weight
+    - node.type.package
+    - responsive_image.styles.listing_image
+  module:
+    - link
+    - responsive_image
+    - text
+    - user
+id: node.package.teaser
+targetEntityType: node
+bundle: package
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    type: responsive_image
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_price:
+    type: string
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_price_header:
+    type: string
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_reservations_link:
+    type: link
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: null
+      url_plain: true
+      url_only: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    region: content
+  field_terms:
+    type: string
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_season: true
+  field_weight: true

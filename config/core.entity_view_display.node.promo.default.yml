@@ -1,0 +1,81 @@
+uuid: 7e5d5268-8846-44c5-8a85-e3b6dfc92572
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.promo.body
+    - field.field.node.promo.field_image
+    - field.field.node.promo.field_price
+    - field.field.node.promo.field_price_header
+    - field.field.node.promo.field_reservations_link
+    - field.field.node.promo.field_terms
+    - node.type.promo
+    - responsive_image.styles.content_full_width
+  module:
+    - link
+    - responsive_image
+    - text
+    - user
+id: node.promo.default
+targetEntityType: node
+bundle: promo
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: content_full_width
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+  field_price:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_price_header:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_reservations_link:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: true
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_terms:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

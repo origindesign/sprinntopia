@@ -1,0 +1,32 @@
+uuid: 5d4fac09-2b94-4953-a128-84e65c3f28c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.12_days
+    - field.storage.contact_message.field_province_state
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.12_days.field_province_state
+field_name: field_province_state
+entity_type: contact_message
+bundle: 12_days
+label: Province/State
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

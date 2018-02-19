@@ -1,0 +1,32 @@
+uuid: c63086e6-5045-4d0b-95f0-9fe396b9586c
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_booking_form
+    - field.storage.contact_message.field_coach_name
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.race_centre_booking_form.field_coach_name
+field_name: field_coach_name
+entity_type: contact_message
+bundle: race_centre_booking_form
+label: 'Coach Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

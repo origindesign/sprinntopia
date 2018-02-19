@@ -1,0 +1,36 @@
+uuid: 8410fd81-7237-41e8-8008-4e0efb95c368
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_package
+    - node.type.blog
+    - node.type.event
+    - node.type.home_page
+    - node.type.package
+    - node.type.promo
+    - node.type.update
+id: node.home_page.field_featured_package
+field_name: field_featured_package
+entity_type: node
+bundle: home_page
+label: 'Featured Left'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      blog: blog
+      event: event
+      package: package
+      promo: promo
+      update: update
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: event
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 91ffa869-16ff-46bb-9489-53cb68028f16
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_terrain
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_terrain
+field_name: field_terrain
+entity_type: contact_message
+bundle: race_centre_feedback
+label: Terrain
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

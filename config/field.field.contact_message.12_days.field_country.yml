@@ -1,0 +1,32 @@
+uuid: aac17913-4b78-47f9-a148-0afe4547fadb
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.12_days
+    - field.storage.contact_message.field_country
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.12_days.field_country
+field_name: field_country
+entity_type: contact_message
+bundle: 12_days
+label: Country
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

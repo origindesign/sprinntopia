@@ -1,0 +1,15 @@
+uuid: e00f7aa0-e070-4bd4-99c8-2d055ba37413
+langcode: en
+status: true
+dependencies: {  }
+id: weather_forecast
+label: 'Weather Forecast'
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'edit any forecast content'
+  - 'edit own forecast content'
+  - 'view the administration theme'

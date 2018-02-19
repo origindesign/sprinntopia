@@ -1,0 +1,9 @@
+uuid: 487b1840-29a1-4e43-a009-aca506ac479e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Mountain Zones'
+vid: mountain_zones
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,9 @@
+uuid: a73da7b8-7eb1-428f-8369-ad7fc30228e6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Accommodation Type'
+vid: accommodation_type
+description: ''
+hierarchy: 0
+weight: 0

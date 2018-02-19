@@ -1,0 +1,50 @@
+uuid: 0f6be951-6dd4-4443-910d-3d96d5926848
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.home
+    - field.field.node.blog.body
+    - field.field.node.blog.field_fragments
+    - field.field.node.blog.field_images
+    - field.field.node.blog.field_metatags
+    - node.type.blog
+    - responsive_image.styles.full_width
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+id: node.blog.home
+targetEntityType: node
+bundle: blog
+mode: home
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '50'
+      trim_type: words
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: full_width
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_fragments: true
+  field_metatags: true
+  links: true

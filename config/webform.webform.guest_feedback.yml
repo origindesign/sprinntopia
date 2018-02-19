@@ -1,0 +1,168 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 1
+template: false
+id: guest_feedback
+title: 'Guest Feedback'
+description: ''
+category: ''
+elements: "date_of_occurrence:\n  '#type': date\n  '#title': 'Date of occurrence'\n  '#datepicker': true\n  '#date_date_format': 'D, m/d/Y'\nwhat_did_we_do_well_:\n  '#type': textarea\n  '#title': 'What did we do well?'\nprocessed_text:\n  '#type': processed_text\n  '#text': \"<h3><span>Did a member of our team make your day enjoyable?</span></h3>\\n\"\n  '#format': basic_html\nemployee_name:\n  '#type': textfield\n  '#title': 'Employee name'\ndepartment:\n  '#type': textfield\n  '#title': Department\nyour_experience:\n  '#type': textarea\n  '#title': 'Your experience'\nhow_can_we_improve_:\n  '#type': textarea\n  '#title': 'How can we improve?'\nprocessed_text_01:\n  '#type': processed_text\n  '#text': \"<h3><span>Your information</span></h3>\\n\"\n  '#format': basic_html\nname:\n  '#type': textfield\n  '#title': Name\nphone:\n  '#type': textfield\n  '#title': Phone\nemail:\n  '#type': email\n  '#title': Email\nmay_we_contact_you_to_follow_up_on_comments_:\n  '#type': radios\n  '#title': 'May we contact you to follow up on comments?'\n  '#options':\n    'yes': 'Yes'\n    'no': 'No'\nmay_we_include_your_comments_on_our_website_:\n  '#type': radios\n  '#title': 'May we include your comments on our website?'\n  '#options':\n    'yes': 'Yes'\n    'no': 'No'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: inline
+  confirmation_title: ''
+  confirmation_message: "<p>Thank you for taking the time to provide feedback!</p>\r\n\r\n<h3>ARE YOU INTERERSTED IN RECEIVING RESORT INFORMATION BY EMAIL?</h3>\r\n\r\n<p>Be among the first know about what&rsquo;s happening in Sun Peaks. Get the latest resort news and updates, right to your inbox.</p>\r\n\r\n<p><a class=\"btn-solid\" href=\"/newsletter\">SIGN ME UP</a></p>\r\n\r\n<p>At Sun Peaks Resort our mission is to provide the finest mountain resort experience. Your feedback is extremely valuable to us. If you would like to discuss your matters further please contact Guest Services at Sun Peaks Resort LLP by phone at 250.578.5474&nbsp;or send us an email at guestservices@sunpeaksresort.com. To view our privacy policy online please visit <a href=\"http://www.sunpeaksresort.com/privacy\">www.sunpeaksresort.com/privacy</a>.</p>"
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: sales@sunpeaksresort.com
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      subject: default
+      body: default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      html: true
+      attachments: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      twig: false
+uuid: 5424c029-69de-494a-9139-ccad9c413dbe

@@ -1,0 +1,22 @@
+uuid: ccba8ad0-561c-4322-b3db-1cadc6b1b9b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: dining_apres
+label: 'Dining & Apres'
+type: 'canonical_entities:node'
+pattern: 'events-things-to-do/dining-apres/[node:title]'
+selection_criteria:
+  79a412ad-61bd-4132-a26c-f5ddaf35616d:
+    id: node_type
+    bundles:
+      dining_apres: dining_apres
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 79a412ad-61bd-4132-a26c-f5ddaf35616d
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,21 @@
+uuid: fdb38a29-c86b-4479-a31b-d589f29c7243
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_length_of_presentation_was
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_length_of_presentation_was
+field_name: field_length_of_presentation_was
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Length of presentation was appropriate'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

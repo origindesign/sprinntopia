@@ -1,0 +1,21 @@
+uuid: 065c0ccc-5e03-4e54-837d-77ebf27fb898
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.race_centre_feedback
+    - field.storage.contact_message.field_staff_friendliness_lift_op
+  module:
+    - options
+id: contact_message.race_centre_feedback.field_staff_friendliness_lift_op
+field_name: field_staff_friendliness_lift_op
+entity_type: contact_message
+bundle: race_centre_feedback
+label: 'Staff friendliness - lift operations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

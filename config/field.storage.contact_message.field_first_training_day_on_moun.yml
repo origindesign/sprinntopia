@@ -1,0 +1,20 @@
+uuid: cda2d535-0203-4182-9a7e-f66b33f5468c
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - datetime
+id: contact_message.field_first_training_day_on_moun
+field_name: field_first_training_day_on_moun
+entity_type: contact_message
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

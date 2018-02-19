@@ -1,0 +1,32 @@
+uuid: 2e74a9f3-957b-40d6-9b0f-7b2c0b61e20e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alpinestorm12hr
+    - node.type.resort_settings
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.resort_settings.field_alpinestorm12hr
+field_name: field_alpinestorm12hr
+entity_type: node
+bundle: resort_settings
+label: alpineStorm12hr
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

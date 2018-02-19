@@ -1,0 +1,20 @@
+uuid: 35427251-39b5-42ed-b588-f6d69a813035
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - wysiwyg_template
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  wysiwyg_template:
+    default_template: ''
+name: Editorial
+type: editorial
+description: 'Use for an entry for the Editorial Coverage page in the media section'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

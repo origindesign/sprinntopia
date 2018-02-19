@@ -1,0 +1,19 @@
+uuid: 5fa847bf-46a4-485b-a8a1-4057427a6d55
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_describe_the_marketing_opp
+field_name: field_describe_the_marketing_opp
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

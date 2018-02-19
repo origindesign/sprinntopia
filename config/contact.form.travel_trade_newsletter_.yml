@@ -1,0 +1,21 @@
+uuid: c7624488-b0f5-4957-85ea-8aa8ccf3bdef
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: 'Sign Up'
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+    page_autoreply_format: plain_text
+id: travel_trade_newsletter_
+label: 'Travel Trade Newsletter '
+recipients:
+  - megan@sunpeakstourism.com
+reply: ''
+weight: 0
+message: ''
+redirect: ''

@@ -1,0 +1,23 @@
+uuid: 8773a908-efa2-43f8-bf73-dbc85bbd5971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_override_lifts_trails
+    - node.type.resort_settings
+id: node.resort_settings.field_override_lifts_trails
+field_name: field_override_lifts_trails
+entity_type: node
+bundle: resort_settings
+label: 'Override Lifts/Trails'
+description: 'Check to ignore the feed and manually set Lift and Trail status'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

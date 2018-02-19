@@ -1,0 +1,41 @@
+uuid: e8f20778-5b46-4352-9db1-78f7ed7fffc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.shopping
+  module:
+    - geocoder_field
+    - geofield
+third_party_settings:
+  geocoder_field:
+    method: source
+    weight: '0'
+    geocode_field: field_address
+    reverse_geocode_field: {  }
+    hidden: 0
+    disabled: 0
+    plugins:
+      - geoip
+      - googlemaps
+      - ipinfodb
+      - openstreetmap
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.shopping.field_location
+field_name: field_location
+entity_type: node
+bundle: shopping
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

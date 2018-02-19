@@ -1,0 +1,13 @@
+uuid: 8558b407-d8d6-42ca-866a-f072bea7f8f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - bulk_actions
+_core:
+  default_config_hash: CzjRcvwsmPALyVYFAy3vBpZGfej0lFLkts-u6Fo-l_E
+id: node_update_term_close
+label: 'Change Status to Closed'
+type: node
+plugin: node_update_term_close
+configuration: {  }

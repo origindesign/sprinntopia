@@ -1,0 +1,72 @@
+uuid: 2912c21e-c36c-43ce-8b08-ed4e2ef82da1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_copy_below
+    - field.field.node.page.field_form
+    - field.field.node.page.field_fragments
+    - field.field.node.page.field_hide_header_image
+    - field.field.node.page.field_images
+    - field.field.node.page.field_metatags
+    - field.field.node.page.field_page_listings
+    - field.field.node.page.field_page_listings_heading
+    - field.field.node.page.field_search_terms
+    - field.field.node.page.field_sidebar_cta
+    - field.field.node.page.field_text_listing
+    - node.type.page
+    - responsive_image.styles.listing_image
+  module:
+    - responsive_image
+    - smart_trim
+    - user
+_core:
+  default_config_hash: rN2zrScZAJ9xB16hm_Deb9QJKy6JXnn0PdI2n5Z3KRs
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: smart_trim
+    weight: 1
+    settings:
+      trim_length: '300'
+      trim_type: chars
+      trim_suffix: ...
+      more_link: '0'
+      more_text: More
+      summary_handler: full
+      trim_options:
+        text: text
+      more_class: more-link
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: listing_image
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_copy_below: true
+  field_form: true
+  field_fragments: true
+  field_hide_header_image: true
+  field_metatags: true
+  field_page_listings: true
+  field_page_listings_heading: true
+  field_search_terms: true
+  field_sidebar_cta: true
+  field_text_listing: true

@@ -1,0 +1,33 @@
+uuid: 75668c37-86a7-4f8d-bf96-c919ec06c240
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.activity
+  module:
+    - text
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.activity.body
+field_name: body
+entity_type: node
+bundle: activity
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

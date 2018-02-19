@@ -1,0 +1,27 @@
+uuid: 626b6775-ba56-4849-9db9-30d388474880
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+  theme:
+    - sunpeaksresort
+id: golf_menu
+theme: sunpeaksresort
+region: content
+weight: -4
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Golf Menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand: 1
+  parent: 'main:menu_link_content:3dbc0d16-97f0-40f8-9699-08d75195da68'
+  suggestion: main
+visibility: {  }

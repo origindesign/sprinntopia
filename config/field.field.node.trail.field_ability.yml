@@ -1,0 +1,28 @@
+uuid: 76268808-41fe-440a-beae-6187742972f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ability
+    - node.type.trail
+    - taxonomy.vocabulary.ability
+id: node.trail.field_ability
+field_name: field_ability
+entity_type: node
+bundle: trail
+label: Ability
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ability: ability
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

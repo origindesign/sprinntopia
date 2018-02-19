@@ -1,0 +1,22 @@
+uuid: 5cd8e5af-537a-4c55-9b02-512a38f66dbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: spa
+label: Spa
+type: 'canonical_entities:node'
+pattern: '/events-things-to-do/spa-wellness/[node:title]'
+selection_criteria:
+  5dec38c7-227a-4588-9d6a-843049f077a7:
+    id: node_type
+    bundles:
+      spa: spa
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5dec38c7-227a-4588-9d6a-843049f077a7
+selection_logic: and
+weight: -5
+relationships: {  }

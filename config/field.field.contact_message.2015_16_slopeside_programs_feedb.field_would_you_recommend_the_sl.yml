@@ -1,0 +1,21 @@
+uuid: ce0f5821-24ac-473a-b797-1d98088a51a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.2015_16_slopeside_programs_feedb
+    - field.storage.contact_message.field_would_you_recommend_the_sl
+  module:
+    - options
+id: contact_message.2015_16_slopeside_programs_feedb.field_would_you_recommend_the_sl
+field_name: field_would_you_recommend_the_sl
+entity_type: contact_message
+bundle: 2015_16_slopeside_programs_feedb
+label: 'Would you recommend the Slopeside School Program to others?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

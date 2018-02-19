@@ -1,0 +1,21 @@
+uuid: 7e8354ec-822d-4d4d-839a-375d4be234f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_midmtnstorm7day
+field_name: field_midmtnstorm7day
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

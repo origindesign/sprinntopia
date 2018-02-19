@@ -1,0 +1,307 @@
+uuid: 157efc7a-0709-4716-b91d-4ac0bf5a967b
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files_modal
+    - field.field.node.accomodation.body
+    - field.field.node.accomodation.field_address
+    - field.field.node.accomodation.field_business_directory
+    - field.field.node.accomodation.field_category
+    - field.field.node.accomodation.field_email
+    - field.field.node.accomodation.field_fragments
+    - field.field.node.accomodation.field_ignore
+    - field.field.node.accomodation.field_images
+    - field.field.node.accomodation.field_location
+    - field.field.node.accomodation.field_location_description
+    - field.field.node.accomodation.field_metatags
+    - field.field.node.accomodation.field_phone
+    - field.field.node.accomodation.field_reservations_link
+    - field.field.node.accomodation.field_toll_free
+    - field.field.node.accomodation.field_website
+    - node.type.accomodation
+  module:
+    - address
+    - entity_browser
+    - field_group
+    - geofield
+    - link
+    - metatag
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_available_fields:
+      children:
+        - group_copy_image
+        - group_fragments
+        - group_address
+        - group_contact_information
+        - group_categories
+      parent_name: ''
+      weight: 3
+      label: 'Available Fields'
+      format_type: tabs
+      format_settings:
+        label: 'Available Fields'
+        id: ''
+        classes: ''
+        direction: vertical
+    group_address:
+      children:
+        - field_address
+        - field_location_description
+        - field_location
+      parent_name: group_available_fields
+      weight: 31
+      label: Address
+      format_type: tab
+      format_settings:
+        label: Address
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_contact_information:
+      children:
+        - field_website
+        - field_reservations_link
+        - field_email
+        - field_phone
+        - field_toll_free
+      parent_name: group_available_fields
+      weight: 32
+      label: 'Contact Information'
+      format_type: tab
+      format_settings:
+        label: 'Contact Information'
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_categories:
+      children:
+        - field_ignore
+        - field_category
+        - field_business_directory
+      parent_name: group_available_fields
+      weight: 33
+      label: Categories
+      format_type: tab
+      format_settings:
+        label: Categories
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_copy_image:
+      children:
+        - field_images
+        - body
+      parent_name: group_available_fields
+      weight: 29
+      label: Copy/Image
+      format_type: tab
+      format_settings:
+        label: Copy/Image
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+    group_fragments:
+      children:
+        - field_fragments
+      parent_name: group_available_fields
+      weight: 30
+      label: Fragments
+      format_type: tab
+      format_settings:
+        label: Fragments
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.accomodation.default
+targetEntityType: node
+bundle: accomodation
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 40
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_address:
+    weight: 33
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_business_directory:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_category:
+    weight: 123
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_email:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_fragments:
+    weight: 40
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_ignore:
+    weight: 122
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_images:
+    weight: 39
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      open: false
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: content
+  field_location:
+    weight: 35
+    settings:
+      html5_geolocation: false
+    third_party_settings: {  }
+    type: geofield_latlon
+    region: content
+  field_location_description:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_metatags:
+    weight: 41
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_phone:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_reservations_link:
+    weight: 36
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_toll_free:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_website:
+    weight: 35
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  path:
+    type: path
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

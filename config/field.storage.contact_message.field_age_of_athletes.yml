@@ -1,0 +1,39 @@
+uuid: 2a7d649f-e049-488b-86d7-a3369815dc88
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_age_of_athletes
+field_name: field_age_of_athletes
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: U12
+      label: U12
+    -
+      value: U14
+      label: U14
+    -
+      value: U16
+      label: U16
+    -
+      value: FIS
+      label: FIS
+    -
+      value: Masters
+      label: Masters
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

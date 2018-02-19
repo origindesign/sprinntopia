@@ -1,0 +1,72 @@
+uuid: 7f205dde-edb9-4229-9dbf-aa14171170d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.activity.body
+    - field.field.node.activity.field_categories
+    - field.field.node.activity.field_fragments
+    - field.field.node.activity.field_images
+    - field.field.node.activity.field_inntopia_id
+    - field.field.node.activity.field_metatags
+    - field.field.node.activity.field_season
+    - node.type.activity
+    - responsive_image.styles.content_full_width
+  module:
+    - metatag
+    - responsive_image
+    - text
+    - user
+id: node.activity.default
+targetEntityType: node
+bundle: activity
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_fragments:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: fragment
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_images:
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: content_full_width
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+  field_inntopia_id:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_metatags:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_categories: true
+  field_season: true

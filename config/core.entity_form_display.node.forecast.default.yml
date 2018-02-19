@@ -1,0 +1,459 @@
+uuid: 12eec109-f801-4b0d-89ff-e648f2c7ef58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.forecast.field_day_0_conditions
+    - field.field.node.forecast.field_day_0_description
+    - field.field.node.forecast.field_day_0_high
+    - field.field.node.forecast.field_day_0_low
+    - field.field.node.forecast.field_day_0_name
+    - field.field.node.forecast.field_day_1_conditions
+    - field.field.node.forecast.field_day_1_description
+    - field.field.node.forecast.field_day_1_high
+    - field.field.node.forecast.field_day_1_low
+    - field.field.node.forecast.field_day_1_name
+    - field.field.node.forecast.field_day_2_conditions
+    - field.field.node.forecast.field_day_2_description
+    - field.field.node.forecast.field_day_2_high
+    - field.field.node.forecast.field_day_2_low
+    - field.field.node.forecast.field_day_2_name
+    - field.field.node.forecast.field_day_3_conditions
+    - field.field.node.forecast.field_day_3_description
+    - field.field.node.forecast.field_day_3_high
+    - field.field.node.forecast.field_day_3_low
+    - field.field.node.forecast.field_day_3_name
+    - field.field.node.forecast.field_day_4_conditions
+    - field.field.node.forecast.field_day_4_description
+    - field.field.node.forecast.field_day_4_high
+    - field.field.node.forecast.field_day_4_low
+    - field.field.node.forecast.field_day_4_name
+    - field.field.node.forecast.field_day_5_conditions
+    - field.field.node.forecast.field_day_5_description
+    - field.field.node.forecast.field_day_5_high
+    - field.field.node.forecast.field_day_5_low
+    - field.field.node.forecast.field_day_5_name
+    - field.field.node.forecast.field_detailed_forecast
+    - field.field.node.forecast.field_extended_outlook
+    - field.field.node.forecast.field_synopsis
+    - node.type.forecast
+  module:
+    - field_group
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_available_fields:
+      children:
+        - group_day_0
+        - group_da
+        - group_day_2
+        - group_day_3
+        - group_day_4
+        - group_day_5
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: 'Available Fields'
+    group_day_0:
+      children:
+        - field_day_0_name
+        - field_day_0_conditions
+        - field_day_0_low
+        - field_day_0_high
+        - field_day_0_description
+      parent_name: group_available_fields
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Day 0'
+    group_da:
+      children:
+        - field_day_1_name
+        - field_day_1_conditions
+        - field_day_1_low
+        - field_day_1_high
+        - field_day_1_description
+      parent_name: group_available_fields
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Day 1'
+    group_day_2:
+      children:
+        - field_day_2_name
+        - field_day_2_conditions
+        - field_day_2_low
+        - field_day_2_high
+        - field_day_2_description
+      parent_name: group_available_fields
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Day 2'
+    group_day_3:
+      children:
+        - field_day_3_name
+        - field_day_3_conditions
+        - field_day_3_low
+        - field_day_3_high
+        - field_day_3_description
+      parent_name: group_available_fields
+      weight: 9
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Day 3'
+    group_day_4:
+      children:
+        - field_day_4_name
+        - field_day_4_conditions
+        - field_day_4_low
+        - field_day_4_high
+        - field_day_4_description
+      parent_name: group_available_fields
+      weight: 10
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Day 4'
+    group_day_5:
+      children:
+        - field_day_5_name
+        - field_day_5_conditions
+        - field_day_5_low
+        - field_day_5_high
+        - field_day_5_description
+      parent_name: group_available_fields
+      weight: 11
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Day 5'
+id: node.forecast.default
+targetEntityType: node
+bundle: forecast
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_day_0_conditions:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_0_description:
+    weight: 12
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_0_high:
+    weight: 11
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_0_low:
+    weight: 10
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_0_name:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_1_conditions:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_1_description:
+    weight: 30
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_1_high:
+    weight: 29
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_1_low:
+    weight: 28
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_1_name:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_2_conditions:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_2_description:
+    weight: 38
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_2_high:
+    weight: 37
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_2_low:
+    weight: 36
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_2_name:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_3_conditions:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_3_description:
+    weight: 43
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_3_high:
+    weight: 42
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_3_low:
+    weight: 41
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_3_name:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_4_conditions:
+    weight: 45
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_4_description:
+    weight: 48
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_4_high:
+    weight: 47
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_4_low:
+    weight: 46
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_4_name:
+    weight: 44
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_5_conditions:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_day_5_description:
+    weight: 53
+    settings:
+      size: 255
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_5_high:
+    weight: 52
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_5_low:
+    weight: 51
+    settings:
+      size: 20
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_day_5_name:
+    weight: 49
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_detailed_forecast:
+    weight: 2
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_extended_outlook:
+    weight: 3
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_synopsis:
+    weight: 4
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  path:
+    type: path
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

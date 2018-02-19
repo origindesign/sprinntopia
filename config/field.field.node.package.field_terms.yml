@@ -1,0 +1,32 @@
+uuid: 76825d29-6a2d-4eac-8672-a52636ce80ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_terms
+    - node.type.package
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: title
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: node.package.field_terms
+field_name: field_terms
+entity_type: node
+bundle: package
+label: Terms
+description: 'Keep this text short and include full terms on product page'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

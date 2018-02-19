@@ -1,0 +1,22 @@
+uuid: f3c05e06-fbf6-409e-ab99-d6946cbc7fe7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.spa
+id: node.spa.promote
+field_name: promote
+entity_type: node
+bundle: spa
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

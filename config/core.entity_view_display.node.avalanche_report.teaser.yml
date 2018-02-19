@@ -1,0 +1,20 @@
+uuid: 9bfb63bd-a3f5-4fb6-bde1-92aeebb1c6a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.avalanche_report.field_file
+    - node.type.avalanche_report
+  module:
+    - user
+id: node.avalanche_report.teaser
+targetEntityType: node
+bundle: avalanche_report
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_file: true

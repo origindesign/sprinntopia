@@ -1,0 +1,69 @@
+uuid: b3dfa6ab-f93c-48c4-a185-b2c9fe7f9101
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_day_0_conditions
+field_name: field_day_0_conditions
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: partly_cloudy
+      label: 'Partly Cloudy'
+    -
+      value: mainly_cloudy
+      label: 'Mainly Cloudy'
+    -
+      value: cloudy
+      label: Cloudy
+    -
+      value: mixed_snow
+      label: 'Mixed Snow'
+    -
+      value: rain
+      label: Rain
+    -
+      value: snow_flurries
+      label: 'Snow / Flurries'
+    -
+      value: heavy_snow
+      label: 'Heavy Snow'
+    -
+      value: sunny_clear_skies
+      label: 'Sunny / Clear Skies'
+    -
+      value: partly_cloudy_night
+      label: 'Partly Cloudy (Night)'
+    -
+      value: mainly_cloudy_night
+      label: 'Mainly Cloudy (Night)'
+    -
+      value: cloudy_night
+      label: 'Cloudy (Night)'
+    -
+      value: mixed_snow_night
+      label: 'Mixed Snow (Night)'
+    -
+      value: rain_night
+      label: 'Rain (Night)'
+    -
+      value: snow_flurries_night
+      label: 'Snow / Flurries (Night)'
+    -
+      value: heavy_snow_night
+      label: 'Heavy Snow (Night)'
+    -
+      value: clear_skies_night
+      label: 'Clear Skies (Night)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

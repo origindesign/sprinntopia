@@ -1,0 +1,32 @@
+uuid: 4ff532e4-22fb-45d3-929c-11b2e14944f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.donation_request
+    - field.storage.contact_message.field_province_state
+  module:
+    - geocoder_field
+third_party_settings:
+  geocoder_field:
+    method: none
+    field: name
+    plugins: {  }
+    dumper: wkt
+    delta_handling: default
+    failure:
+      handling: preserve
+      status_message: true
+      log: true
+id: contact_message.donation_request.field_province_state
+field_name: field_province_state
+entity_type: contact_message
+bundle: donation_request
+label: Province/State
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

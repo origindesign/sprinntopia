@@ -1,0 +1,19 @@
+uuid: 9dd17b52-8f09-4a35-b6c7-6997d43f4298
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.field_why_or_why_not_slopeside_r
+field_name: field_why_or_why_not_slopeside_r
+entity_type: contact_message
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

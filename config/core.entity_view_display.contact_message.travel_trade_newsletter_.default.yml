@@ -1,0 +1,60 @@
+uuid: 65b4d70b-c0b7-4a98-b29a-79c128482595
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.travel_trade_newsletter_
+    - field.field.contact_message.travel_trade_newsletter_.field_company
+    - field.field.contact_message.travel_trade_newsletter_.field_country
+id: contact_message.travel_trade_newsletter_.default
+targetEntityType: contact_message
+bundle: travel_trade_newsletter_
+mode: default
+content:
+  field_company:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_country:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  mail:
+    weight: -2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  message:
+    type: basic_string
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    weight: -3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  subject:
+    weight: -1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
