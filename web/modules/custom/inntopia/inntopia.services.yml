@@ -1,0 +1,4 @@
+services:
+    inntopia.inntopia_storage:
+        class: Drupal\inntopia\InntopiaStorage
+        arguments: ['@config.factory']

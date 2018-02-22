@@ -3,3 +3,4 @@ type: module
 description: 'Integration of Inntopia booking funnel.'
 package: Ecommerce
 core: 8.x
+configure: inntopia.settings

@@ -1,0 +1,53 @@
+<div id="lodging-widget">
+    <h3>Book Lodging</h3>
+    <form class="form">
+        <div class="form-item from">
+            <label for="arrivalDate">Arrival Date</label>
+            <div class="wrap-picker">
+                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small">
+            </div>
+        </div>
+        <div class="form-item to">
+            <label for="departureDate">Departure Date</label>
+            <div class="wrap-picker">
+                <input type="text" id="departureDate" name="departureDate" class="input-small">
+            </div>
+        </div><div class="form-item adults">
+            <label for="adultCount">Adults</label>
+            <select id="adultCount" name="adultCount" class="input-mini" data-defaultvalue="2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="10">--</option>
+            </select>
+        </div>
+        <div class="form-item children">
+            <label for="childrenCount">Children</label>
+            <select id="childrenCount" name="childrenCount" class="input-mini" data-defaultvalue="0">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="10">--</option>
+            </select>
+        </div>
+        <div class="form-actions">
+            <input type="submit" value="Check Availability" id="checkAvailability">
+        </div>
+    </form>
+    <span id="formError"></span>
+</div>

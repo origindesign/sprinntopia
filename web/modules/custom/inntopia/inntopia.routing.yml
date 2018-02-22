@@ -1,4 +1,20 @@
-inntopia.simple:
+inntopia.settings:
+  path: '/admin/config/services/inntopia'
+  defaults:
+    _form: '\Drupal\inntopia\Form\InntopiaSettingsForm'
+    _title: 'Inntopia Settings'
+  requirements:
+    _permission: 'administer Inntopia'
+
+inntopia.info:
+    path: '/inntopia/info'
+    defaults:
+        _controller: '\Drupal\inntopia\Controller\InntopiaController::info'
+        _title: 'Inntopia Info'
+    requirements:
+        _access: 'TRUE'
+
+inntopia.funnel:
     path: '/book'
     defaults:
         _controller: '\Drupal\inntopia\Controller\InntopiaController::display'

@@ -1,0 +1,40 @@
+{% set image_path = '//images.inntopia.com/photos' %}
+
+
+{% include '@inntopia/lodging/filters.html.twig' %}
+
+
+{% block listing %}
+
+    <div class="listing">
+
+        <div class="container">
+
+            {% for lodging in data %}
+
+                <article role="article" class="node node-teaser node-view-teaser">
+
+                    <div class="image">
+                        <a href="#" class="image-link">
+                            <img src="{{ image_path ~ lodging.image_filename }}" alt="{{ lodging.name }}" typeof="foaf:Image">
+                        </a>
+                    </div>
+
+                    <a href="#" class="copy">
+                        <h4><span class="field field--name-title">{{ lodging.name }}</span></h4>
+                        <div class="field field--name-body field__item clearfix">{{ lodging.description|length > 250 ? lodging.description|slice(0, 250) ~ '...' : lodging.description  }}</div>
+                    </a>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+{% endblock %}
+
+
+

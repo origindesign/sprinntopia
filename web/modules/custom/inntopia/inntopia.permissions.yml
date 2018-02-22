@@ -1,0 +1,4 @@
+administer inntopia:
+    title: 'Administer Inntopia settings.'
+    description: 'Adding or updating Inntopia API settings.'
+    restrict access: true
