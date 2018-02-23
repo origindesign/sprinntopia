@@ -4,37 +4,46 @@
 {% include '@inntopia/lodging/filters.html.twig' %}
 
 
-{% block listing %}
+<div class="listing">
 
-    <div class="listing">
+    <div class="container">
 
-        <div class="container">
+        {% for lodging in data.listing %}
 
-            {% for lodging in data %}
+            {% set product_url = '/book/product?supplierId=' ~ lodging.id ~ '&arrivalDate=' ~ data.filters.arrivalDate ~ '&departureDate=' ~ data.filters.departureDate ~ '&adultCount=' ~ data.filters.adultCount ~ '&childrenCount=' ~ data.filters.childrenCount %}
 
-                <article role="article" class="node node-teaser node-view-teaser">
+            <article role="article" class="node node-teaser node-view-teaser">
 
-                    <div class="image">
-                        <a href="#" class="image-link">
-                            <img src="{{ image_path ~ lodging.image_filename }}" alt="{{ lodging.name }}" typeof="foaf:Image">
-                        </a>
+                <div class="image">
+                    <a href="{{ product_url }}" class="image-link">
+                        <img src="{{ image_path ~ lodging.image_filename }}" alt="{{ lodging.name }}" typeof="foaf:Image">
+                    </a>
+                </div>
+
+                <a href="{{ product_url }}" class="copy">
+                    <h4><span class="field field--name-title">{{ lodging.name }}</span></h4>
+                    <div class="field field--name-body field__item clearfix">{{ lodging.description|length > 250 ? lodging.description|slice(0, 250) ~ '...' : lodging.description  }}</div>
+
+                    <div class="price">
+                        {% if lodging.bestPrice == lodging.originalPrice %}
+                            <h5>${{ lodging.originalPrice }}/night</h5>
+                        {% else %}
+                            <h6><del>was ${{ lodging.originalPrice }}</del></h6>
+                            <h5 class="text-danger">${{ lodging.bestPrice }}/night</h5>
+                        {% endif %}
                     </div>
 
-                    <a href="#" class="copy">
-                        <h4><span class="field field--name-title">{{ lodging.name }}</span></h4>
-                        <div class="field field--name-body field__item clearfix">{{ lodging.description|length > 250 ? lodging.description|slice(0, 250) ~ '...' : lodging.description  }}</div>
-                    </a>
+                </a>
 
-                </article>
 
-            {% endfor %}
+            </article>
 
-        </div>
-
+        {% endfor %}
 
     </div>
 
-{% endblock %}
+
+</div>
 
 
 

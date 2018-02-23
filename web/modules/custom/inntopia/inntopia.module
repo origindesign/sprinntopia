@@ -1,7 +1,6 @@
 <?php
 
 
-
 /**
  *  Define which template to use
  *
@@ -11,6 +10,13 @@ function inntopia_theme($existing, $type, $theme, $path) {
 		'lodging_listing' => array(
 			'variables' => array('data' => NULL),
 			'template' => 'lodging/listing',
+		),
+		'lodging_detail' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'lodging/product',
 		)
 	);
 }
+
+
+

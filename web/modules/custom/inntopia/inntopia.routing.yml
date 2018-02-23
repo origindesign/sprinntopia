@@ -9,7 +9,7 @@ inntopia.settings:
 inntopia.info:
     path: '/inntopia/info'
     defaults:
-        _controller: '\Drupal\inntopia\Controller\InntopiaController::info'
+        _controller: '\Drupal\inntopia\Controller\ShoppingController::info'
         _title: 'Inntopia Info'
     requirements:
         _access: 'TRUE'
@@ -17,7 +17,15 @@ inntopia.info:
 inntopia.funnel:
     path: '/book'
     defaults:
-        _controller: '\Drupal\inntopia\Controller\InntopiaController::display'
+        _controller: '\Drupal\inntopia\Controller\ShoppingController::displayLodging'
+        _title: 'Book your Vacation'
+    requirements:
+        _access: 'TRUE'
+
+inntopia.product:
+    path: '/book/product'
+    defaults:
+        _controller: '\Drupal\inntopia\Controller\ShoppingController::displayProduct'
         _title: 'Book your Vacation'
     requirements:
         _access: 'TRUE'

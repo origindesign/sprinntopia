@@ -4,17 +4,17 @@
         <div class="form-item from">
             <label for="arrivalDate">Arrival Date</label>
             <div class="wrap-picker">
-                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small">
+                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small" value="{{ data.filters.arrivalDate }}">
             </div>
         </div>
         <div class="form-item to">
             <label for="departureDate">Departure Date</label>
             <div class="wrap-picker">
-                <input type="text" id="departureDate" name="departureDate" class="input-small">
+                <input type="text" id="departureDate" name="departureDate" class="input-small" value="{{ data.filters.departureDate }}">
             </div>
         </div><div class="form-item adults">
             <label for="adultCount">Adults</label>
-            <select id="adultCount" name="adultCount" class="input-mini" data-defaultvalue="2">
+            <select id="adultCount" name="adultCount" class="input-mini input-select" data-defaultvalue="{{ data.filters.adultCount }}">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -30,7 +30,7 @@
         </div>
         <div class="form-item children">
             <label for="childrenCount">Children</label>
-            <select id="childrenCount" name="childrenCount" class="input-mini" data-defaultvalue="0">
+            <select id="childrenCount" name="childrenCount" class="input-mini input-select" data-defaultvalue="{{ data.filters.childrenCount }}">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>

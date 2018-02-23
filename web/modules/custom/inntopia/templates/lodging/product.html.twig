@@ -1,0 +1,17 @@
+{% set image_path = '//images.inntopia.com/photos' %}
+
+
+
+<article role="article" class="node node-view-full">
+
+    <div class="field--name-field-images">
+        <img src="{{ image_path ~ data.image_filename }}" alt="{{ data.name }}">
+    </div>
+
+    <h2>{{ data.name }}</h2>
+
+    <p>{{ data.description }}</p>
+
+</article>
+
+

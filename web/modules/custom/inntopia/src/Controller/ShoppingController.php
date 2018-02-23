@@ -1,20 +1,22 @@
 <?php
 /**
  * @file
- * Contains \Drupal\inntopia\Controller\InntopiaController.
+ * Contains \Drupal\inntopia\Controller\ShoppingController.
  */
  
 namespace Drupal\inntopia\Controller;
  
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
+
 use Drupal\inntopia\InntopiaStorage;
 use Drupal\inntopia\InntopiaLodging;
 use Origindesign\Inntopia\Session;
 
 
 
-class InntopiaController extends ControllerBase {
+class ShoppingController extends ControllerBase {
 
 
 	private $session;
@@ -23,6 +25,9 @@ class InntopiaController extends ControllerBase {
 
 	private $api_url;
 
+	private $requestStack;
+
+	private $inntopiaLodging;
 
 
 	/**
@@ -30,12 +35,13 @@ class InntopiaController extends ControllerBase {
 	 *
 	 * @param \Drupal\inntopia\InntopiaStorage $inntopiaStorage
 	 */
-	public function __construct(InntopiaStorage $inntopiaStorage) {
+	public function __construct(InntopiaStorage $inntopiaStorage, RequestStack $requestStack) {
 
 		// Store settings in private variable
 		$inntopiaStorage = $inntopiaStorage->getSettings();
 		$this->sales_id = $inntopiaStorage['sales_id'];
 		$this->api_url = $inntopiaStorage['server'];
+		$this->requestStack = $requestStack;
 
 		// If there is no session set, set one using Inntopia Session
 		if ( !isset($_SESSION["inntopia"]) ){
@@ -59,7 +65,8 @@ class InntopiaController extends ControllerBase {
 	 */
 	public static function create(ContainerInterface $container) {
 		return new static(
-			$container->get('inntopia.inntopia_storage')
+			$container->get('inntopia.inntopia_storage'),
+			$container->get('request_stack')
 		);
 	}
 
@@ -85,28 +92,72 @@ class InntopiaController extends ControllerBase {
 
 
 
+	public function displayLodging() {
 
+		// Get parameters
+		$params = $this->requestStack->getCurrentRequest()->query->all();
 
-	public function display() {
-
+		// Get Listing
 		$inntopiaLodging = new InntopiaLodging($this->sales_id, $this->api_url);
-		$lodgingList = $inntopiaLodging->getLodgingList();
+		$lodgingList = $inntopiaLodging->getLodgingList($params);
+		$filters = $inntopiaLodging->getParams();
 
+		$data = array(
+			'filters' => $filters,
+			'listing' => $lodgingList
+		);
+
+		// Format Listing
 		$build[] =  [
 			'#theme' => 'lodging_listing',
-			'#data' => $lodgingList,
+			'#data' => $data,
+			'#attached' => array(
+				'library' => array(
+					'inntopia/inntopia',
+				),
+			),
 			'#cache' => array(
 				'max-age' => 0,
 			)
 		];
 
-
+		// Return listing ready for display
         return $build;
-
 
     }
 
 
-  
+
+
+
+
+	public function displayProduct() {
+
+		// Get parameters
+		$params = $this->requestStack->getCurrentRequest()->query->all();
+
+		// Get Listing
+		$inntopiaLodging = new InntopiaLodging($this->sales_id, $this->api_url);
+		$lodging = $inntopiaLodging->getLodgingDetail($params);
+
+		$data = $lodging;
+
+		// Format Listing
+		$build[] =  [
+			'#theme' => 'lodging_detail',
+			'#data' => $data,
+			'#attached' => array(
+				'library' => array(
+					'inntopia/inntopia',
+				),
+			),
+			'#cache' => array(
+				'max-age' => 0,
+			)
+		];
+
+		// Return listing ready for display
+		return $build;
+	}
   
 }

@@ -1,0 +1,13 @@
+inntopia:
+  version: 1.x
+  css:
+    layout:
+      css/inntopia.css: {}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js: { type: external, minified: true }
+    js/inntopia.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.easing
