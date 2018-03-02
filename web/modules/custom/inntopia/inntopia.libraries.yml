@@ -5,6 +5,8 @@ inntopia:
       css/inntopia.css: {}
   js:
     https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js: { type: external, minified: true }
+    https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js: { type: external, minified: true }
+    js/ajax.js: {}
     js/inntopia.js: {}
   dependencies:
     - core/drupal

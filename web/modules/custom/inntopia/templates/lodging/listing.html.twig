@@ -1,7 +1,4 @@
-{% set image_path = '//images.inntopia.com/photos' %}
-
-
-{% include '@inntopia/lodging/filters.html.twig' %}
+{% set image_path = 'https://rmstest.inntopia.com/photos' %}
 
 
 <div class="listing">
@@ -16,7 +13,7 @@
 
                 <div class="image">
                     <a href="{{ product_url }}" class="image-link">
-                        <img src="{{ image_path ~ lodging.image_filename }}" alt="{{ lodging.name }}" typeof="foaf:Image">
+                        {{ drupalizeImage(image_path ~ lodging.image_filename, lodging.name, 'large' ) }}
                     </a>
                 </div>
 
@@ -44,6 +41,3 @@
 
 
 </div>
-
-
-

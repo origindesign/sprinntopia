@@ -133,7 +133,7 @@
             $('.node table td', context).once('responsiveTable').each(function (index) {
 
                 // If 2 column table, do not add responsive table class
-                var nbTd = $(this).siblings().andSelf().length;
+                var nbTd = $(this).siblings().addBack().length;
                 if (nbTd > 2) {
                     $(this).parents('table').addClass("responsive-table");
                 }

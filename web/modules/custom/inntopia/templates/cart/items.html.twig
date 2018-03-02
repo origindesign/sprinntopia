@@ -1,0 +1,52 @@
+{% set image_path = 'https://rmstest.inntopia.com/photos' %}
+
+<div class="cart">
+
+    <div class="container">
+
+
+        {% if data.nb_cart_items > 0 %}
+
+
+            {% set currency = data.cart.0.Currency %}
+
+
+            {% for cart_item in data.cart %}
+
+
+                <div class="list-group-item cart-item clearfix" data-itineraryitemid="{{ cart_item.ItineraryItemId }}">
+                    <h4>
+                        {{ cart_item.ProductName }} at {{ cart_item.SupplierName }}
+                        {% if cart_item.PackageName %}
+                            <span class="text-success"> - {{ cart_item.PackageName }}</span>
+                        {% endif %}
+
+                    </h4>
+                    <div class="cart-item-info">From {{ cart_item.ArrivalDate }} to {{ cart_item.DepartureDate }}</div>
+                    <div class="price float-left">
+                        Price: {{ currency ~ cart_item.Price }}<br />
+                        Taxes: {{ currency ~ cart_item.TaxesFees }}
+                    </div>
+
+                    <button type="button" class="btn-solid btn-remove-cart">Remove</button>
+
+                </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+            <p>Your cart is empty, click <a href="/book">here</a> to choose your lodging.</p>
+
+        {% endif %}
+
+
+
+    </div>
+
+
+</div>
+
+
+

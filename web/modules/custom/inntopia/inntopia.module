@@ -1,12 +1,45 @@
 <?php
 
 
+
+/**
+ *  Change layout of page to have no wrappers when on EFQ call
+ *
+ */
+function inntopia_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+	if(strpos(\Drupal::service('path.current')->getPath(), 'inntopia-ajax') !== false){
+		$suggestions[] = 'page__ajax';
+	}
+
+}
+
+
+
+/**
+ *  Change layout of html to have no wrappers when on EFQ call
+ *
+ */
+function inntopia_theme_suggestions_html_alter(array &$suggestions, array $variables) {
+
+	if(strpos(\Drupal::service('path.current')->getPath(), 'inntopia-ajax') !== false){
+		$suggestions[] = 'html__ajax';
+	}
+
+}
+
+
+
 /**
  *  Define which template to use
  *
  */
 function inntopia_theme($existing, $type, $theme, $path) {
 	return array(
+		'lodging_container' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'lodging/container',
+		),
 		'lodging_listing' => array(
 			'variables' => array('data' => NULL),
 			'template' => 'lodging/listing',
@@ -14,6 +47,10 @@ function inntopia_theme($existing, $type, $theme, $path) {
 		'lodging_detail' => array(
 			'variables' => array('data' => NULL),
 			'template' => 'lodging/product',
+		),
+		'cart' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'cart/items',
 		)
 	);
 }

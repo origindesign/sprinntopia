@@ -1,17 +1,75 @@
-{% set image_path = '//images.inntopia.com/photos' %}
+{% set image_path = 'https://rmstest.inntopia.com/photos' %}
 
 
+{% block detail %}
 
-<article role="article" class="node node-view-full">
+    <article role="article" class="node node-view-full">
 
-    <div class="field--name-field-images">
-        <img src="{{ image_path ~ data.image_filename }}" alt="{{ data.name }}">
-    </div>
+        {# kint(data) #}
 
-    <h2>{{ data.name }}</h2>
 
-    <p>{{ data.description }}</p>
+        <h2>{{ data.detail.name }}</h2>
 
-</article>
+        <div class="field--name-field-images">
+            {{ drupalizeImage(image_path ~ data.detail.image_filename, data.detail.name, '1200' ) }}
+        </div>
+
+        <p>{{ data.detail.description }}</p>
+
+        <div class="rooms">
+
+            <h3>Available Rooms</h3>
+
+            {% for room in data.detail.rooms %}
+
+                <div class="row room product-data"
+                     data-salesid="{{ data.settings.sales_id }}"
+                     data-supplierid="{{ data.detail.id }}"
+                     data-productid="{{ room.id }}"
+                     data-arrivaldate="{{ data.filters.arrivalDate }}"
+                     data-departuredate="{{ data.filters.departureDate }}"
+                     data-adultcount="{{ data.filters.adultCount }}"
+                     data-childcount="{{ data.filters.childrenCount }}"
+                     data-quantity="1"
+                >
+
+
+                    <h4>{{ room.name }}</h4>
+                    <div class="price">${{ room.bestPrice }}/night</div>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="align-middle"><h5 class="font-weight-light">{{ room.name }}</h5></td>
+                                <td class="align-middle">${{ room.originalPrice }}/night</td>
+                                <td class="align-middle"><a href="/inntopia-ajax/add-to-cart" class="btn-solid product-action" data-role="button">Add to Cart</a></td>
+                            </tr>
+
+                            {% if( room.packages ) %}
+
+                                {% for package in room.packages %}
+
+                                    <tr>
+                                        <td class="align-middle"><h5 class="font-weight-light">{{ room.name }} - <span class="text-success">{{ package.name }}</span></h5></td>
+                                        <td class="align-middle">${{ package.price }}/night</td>
+                                        <td class="align-middle"><a href="/inntopia-ajax/add-to-cart" class="btn-solid product-action" data-role="button" data-packageid="{{ package.id }}">Add to Cart</a></td>
+                                    </tr>
+
+                                {% endfor %}
+
+                            {% endif %}
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </article>
+
+{% endblock %}
 
 

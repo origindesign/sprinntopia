@@ -1,6 +1,8 @@
 name: 'Inntopia'
 type: module
 description: 'Integration of Inntopia booking funnel.'
+dependencies:
+  - imagecache_external
 package: Ecommerce
 core: 8.x
 configure: inntopia.settings

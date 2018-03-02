@@ -6,18 +6,12 @@ inntopia.settings:
   requirements:
     _permission: 'administer Inntopia'
 
-inntopia.info:
-    path: '/inntopia/info'
-    defaults:
-        _controller: '\Drupal\inntopia\Controller\ShoppingController::info'
-        _title: 'Inntopia Info'
-    requirements:
-        _access: 'TRUE'
 
-inntopia.funnel:
+
+inntopia.container:
     path: '/book'
     defaults:
-        _controller: '\Drupal\inntopia\Controller\ShoppingController::displayLodging'
+        _controller: '\Drupal\inntopia\Controller\ShoppingController::displayContainer'
         _title: 'Book your Vacation'
     requirements:
         _access: 'TRUE'
@@ -29,3 +23,36 @@ inntopia.product:
         _title: 'Book your Vacation'
     requirements:
         _access: 'TRUE'
+
+
+
+
+
+inntopia.ajax_display:
+    path: '/inntopia-ajax/display/{method}'
+    defaults:
+        _controller: '\Drupal\inntopia\Controller\AjaxDisplayController::dispatch'
+    requirements:
+        _access: 'TRUE'
+
+inntopia.ajax_actions:
+    path: '/inntopia-ajax/actions/{method}'
+    defaults:
+        _controller: '\Drupal\inntopia\Controller\AjaxActionsController::dispatch'
+    requirements:
+        _access: 'TRUE'
+
+
+
+
+
+inntopia.cart:
+    path: '/cart'
+    defaults:
+        _controller: '\Drupal\inntopia\Controller\CartController::displayCart'
+        _title: 'Your Cart'
+    requirements:
+        _access: 'TRUE'
+
+
+

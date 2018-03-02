@@ -1,0 +1,1 @@
+{"version":3,"sources":["app/_app.scss"],"names":[],"mappings":"AAAA,OACI,gBACA,aAAe,CAClB,eAIG,eAAiB,CACpB","file":"../inntopia.css","sourcesContent":[".price {\r\n    margin-top: 20px;\r\n    padding-top: 0;\r\n}\r\n\r\n\r\n#ajaxContainer {\r\n    margin-top: 60px;\r\n}"]}

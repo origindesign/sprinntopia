@@ -12,6 +12,7 @@
     }
   ],
   "require": {
-    "origindesign/inntopia": "dev-master"
+    "origindesign/inntopia": "dev-master",
+    "drupal/imagecache_external": "1.x-dev"
   }
 }

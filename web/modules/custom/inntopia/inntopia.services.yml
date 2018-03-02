@@ -2,3 +2,8 @@ services:
     inntopia.inntopia_storage:
         class: Drupal\inntopia\InntopiaStorage
         arguments: ['@config.factory']
+    inntopia.twig.image_format:
+        class: Drupal\inntopia\Twig\ImageFormat
+        arguments: ['@renderer']
+        tags:
+          - { name: twig.extension }
