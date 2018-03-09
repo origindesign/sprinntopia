@@ -216,7 +216,7 @@ select {
     }
     &:after{
       @include pseudo;
-      background: linear-gradient($button-corner-angle, #fff $button-corner-size, $input-highlight-color 0) bottom right;
+      background: linear-gradient($button-corner-angle, transparent $button-corner-size, $input-highlight-color 0) bottom right;
       border:none; width:55px; left:auto; right:0; z-index:1;
     }
   }
@@ -311,7 +311,7 @@ select {
   }
   &:after{
     @include pseudo;
-    background: linear-gradient($button-corner-angle, #fff $button-corner-size, $input-highlight-color 0) bottom right;
+    background: linear-gradient($button-corner-angle, transparent $button-corner-size, $input-highlight-color 0) bottom right;
     width:55px; left:auto; right:0; z-index:1;
   }
 }

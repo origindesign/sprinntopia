@@ -14,42 +14,35 @@ use Drupal\inntopia\InntopiaLodging;
 class ShoppingController extends InntopiaBaseController {
 
 
-	public function displayContainer() {
+	public function dispatch($method = 'lodging') {
 
-		// Get parameters
-		$params = $this->requestStack->getCurrentRequest()->query->all();
+		switch ($method){
+			case "activities": $result = $this->displayContainer('activities_container'); break;
+			case "lodging": $result = $this->displayContainer('lodging_container'); break;
+			case "product": $result = $this->displayProduct(); break;
+			default: $result = $this->displayContainer();
+		}
 
-		// Get Listing
-		$inntopiaLodging = new InntopiaLodging($this->sales_id, $this->api_url, $params);
-		$filters = $inntopiaLodging->getFilters();
-
-		$data = array(
-			'filters' => $filters,
-		);
-
-		// Format Listing
-		$build[] =  [
-			'#theme' => 'lodging_container',
-			'#data' => $data,
-			'#attached' => array(
-				'library' => array(
-					'inntopia/inntopia',
-				),
-			),
-			'#cache' => array(
-				'max-age' => 0,
-			)
-		];
-
-		// Return listing ready for display
-        return $build;
+		return $result;
 
     }
 
 
+	/**
+	 * Display main container (loading ajax inside template)
+	 * @return array
+	 */
+    private function displayContainer($theme){
+		$build[] =  ['#theme' => $theme];
+		return $build;
+	}
 
 
-	public function displayProduct() {
+	/**
+	 * Display Lodging Product
+	 * @return array
+	 */
+	private function displayProduct() {
 
 		// Get parameters
 		$params = $this->requestStack->getCurrentRequest()->query->all();
@@ -72,11 +65,6 @@ class ShoppingController extends InntopiaBaseController {
 		$build[] =  [
 			'#theme' => 'lodging_detail',
 			'#data' => $data,
-			'#attached' => array(
-				'library' => array(
-					'inntopia/inntopia',
-				),
-			),
 			'#cache' => array(
 				'max-age' => 0,
 			)
@@ -85,5 +73,42 @@ class ShoppingController extends InntopiaBaseController {
 		// Return listing ready for display
 		return $build;
 	}
+
+
+
+
+	/**
+	 * Display Lodging Sidebar
+	 * @return array
+	 */
+	public function displaySidebar( $method ) {
+
+		// Get parameters
+		$params = $this->requestStack->getCurrentRequest()->query->all();
+
+		switch ($method){
+			case "lodging":
+				$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);
+				$theme = 'lodging_filters';
+				break;
+			default:
+				$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);
+				$theme = 'lodging_filters';
+		}
+
+		$filters = $instance->getFilters();
+
+		// Format Listing
+		$build[] =  [
+			'#theme' => $theme,
+			'#data' => $filters
+		];
+
+		// Return listing ready for display
+		return $build;
+
+
+	}
+
   
 }

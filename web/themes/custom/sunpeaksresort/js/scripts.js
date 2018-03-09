@@ -113,7 +113,42 @@
                     event.preventDefault();
                     event.stopPropagation();
                     window.open("https://twitter.com/share?url="+location.href, "pop", "width=600, height=400");
-                })
+                });
+
+
+                // Accordion
+                $('.accordions').on('click', '.accordion-header' ,function(event){
+
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    var $accordion = $(this).parents(".accordion");
+                    var $content = $(this).siblings('.accordion-content');
+
+
+                    // Open this accordion
+                    if ( !$accordion.hasClass('active') ){
+
+                        $('.accordions .accordion').each( function(){
+                            $(this).removeClass('active');
+                            $(this).find('.accordion-content').slideUp();
+                        });
+
+                        $accordion.addClass('active');
+                        $content.slideDown();
+
+                    }else{
+
+                        $('.accordions .accordion').each( function(){
+                            $(this).removeClass('active');
+                            $(this).find('.accordion-content').slideUp();
+                        });
+
+                    }
+
+
+
+                });
 
 
             });

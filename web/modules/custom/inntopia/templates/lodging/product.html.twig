@@ -3,26 +3,51 @@
 
 {% block detail %}
 
-    <article role="article" class="node node-view-full">
+    <article role="article" class="node node-view-full inntopia-detail">
 
         {# kint(data) #}
 
+        <div class="top-detail">
 
-        <h2>{{ data.detail.name }}</h2>
+            <div class="zone-copy">
 
-        <div class="field--name-field-images">
-            {{ drupalizeImage(image_path ~ data.detail.image_filename, data.detail.name, '1200' ) }}
+                <h2>{{ data.detail.name }}</h2>
+                <div class="inn-review"><img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-24046-5.svg" alt="Trip Advisor" title="Trip Advisor"></div>
+                <div class="inn-address"><i class="material-icons">location_on</i><span>{{ data.detail.Supplier.Address }}</span></div>
+
+
+                <p>{{ data.detail.description }}</p>
+
+            </div>
+
+
+            <div class="zone-image">
+
+                <div class="carousel-thumb {{ data.detail.Images.1.FileName ? 'hasSlider' : '' }}" >
+                    {% for i in 0..10 %}
+                        {% set image = attribute(data.detail.Images, i)  %}
+                        {% if image.FileName  %}
+                            <div class="image">
+                                {{ drupalizeImage(image_path ~  image.FileName, data.detail.name, '1200' ) }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+
         </div>
 
-        <p>{{ data.detail.description }}</p>
 
-        <div class="rooms">
 
-            <h3>Available Rooms</h3>
+        <div class="rooms accordions">
+
+            <div class="table-caption"><span><p>Available Rooms</p></span></div>
 
             {% for room in data.detail.rooms %}
 
-                <div class="row room product-data"
+                <div class="accordion room product-data"
                      data-salesid="{{ data.settings.sales_id }}"
                      data-supplierid="{{ data.detail.id }}"
                      data-productid="{{ room.id }}"
@@ -34,11 +59,21 @@
                 >
 
 
-                    <h4>{{ room.name }}</h4>
-                    <div class="price">${{ room.bestPrice }}/night</div>
+                    <div class="accordion-header">
 
-                    <table class="table">
-                        <tbody>
+                        <h2>{{ room.name }}</h2>
+                        <div class="price push-right">${{ room.bestPrice }}/night</div>
+
+                    </div>
+
+
+
+                    <div class="accordion-content">
+
+                        <p>{{ room.description }}</p>
+
+                        <table class="table">
+                            <tbody>
                             <tr>
                                 <td class="align-middle"><h5 class="font-weight-light">{{ room.name }}</h5></td>
                                 <td class="align-middle">${{ room.originalPrice }}/night</td>
@@ -59,8 +94,12 @@
 
                             {% endif %}
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
 
                 </div>
 

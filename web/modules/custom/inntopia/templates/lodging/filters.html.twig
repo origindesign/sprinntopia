@@ -1,20 +1,19 @@
-<div id="lodging-widget">
-    <h3>Book Lodging</h3>
-    <form class="form">
+<div id="inntopia-lodging-filters" class="inntopia-filters">
+    <form class="form" action="/book/lodging">
         <div class="form-item from">
-            <label for="arrivalDate">Arrival Date</label>
+            <label for="arrivalDate">Arrival</label>
             <div class="wrap-picker">
-                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small" value="{{ data.filters.arrivalDate }}">
+                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small" value="{{ data.arrivalDate }}">
             </div>
         </div>
         <div class="form-item to">
-            <label for="departureDate">Departure Date</label>
+            <label for="departureDate">Departure</label>
             <div class="wrap-picker">
-                <input type="text" id="departureDate" name="departureDate" class="input-small" value="{{ data.filters.departureDate }}">
+                <input type="text" id="departureDate" name="departureDate" class="input-small" value="{{ data.departureDate }}">
             </div>
         </div><div class="form-item adults">
             <label for="adultCount">Adults</label>
-            <select id="adultCount" name="adultCount" class="input-mini input-select" data-defaultvalue="{{ data.filters.adultCount }}">
+            <select id="adultCount" name="adultCount" class="input-mini input-select" data-defaultvalue="{{ data.adultCount }}">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -30,7 +29,7 @@
         </div>
         <div class="form-item children">
             <label for="childrenCount">Children</label>
-            <select id="childrenCount" name="childrenCount" class="input-mini input-select" data-defaultvalue="{{ data.filters.childrenCount }}">
+            <select id="childrenCount" name="childrenCount" class="input-mini input-select" data-defaultvalue="{{ data.childrenCount }}">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -46,7 +45,6 @@
             </select>
         </div>
         <div class="form-actions">
-            <!-- <input type="hidden" name="salesid" value="{{  data.settings.sales_id }}"> -->
             <input type="submit" value="Check Availability">
         </div>
     </form>

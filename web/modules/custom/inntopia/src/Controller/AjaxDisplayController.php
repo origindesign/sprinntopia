@@ -32,10 +32,9 @@ class AjaxDisplayController extends InntopiaBaseController {
 
 			switch ($method){
 
-				case "listing-lodging":
-					$result = $this->lodgingListing( $this->data );
-					break;
-
+				case "listing-lodging": $result = $this->lodgingListing( $this->data );	break;
+				case "listing-activities": $result = $this->activitiesListing( $this->data ); break;
+				case "display-quickcart": $result = $this->displayQuickCart(); break;
 				default:
 					$result = array(
 						'#type' => 'markup',
@@ -56,6 +55,25 @@ class AjaxDisplayController extends InntopiaBaseController {
 
 	}
 
+
+
+	private function activitiesListing( $data ) {
+
+		// @TODO implement activities listing
+
+		$data = NULL;
+
+		$result =  array(
+			'#theme' => 'activities_listing',
+			'#data' => $data,
+			'#cache' => array(
+				'max-age' => 0,
+			)
+		);
+
+		return $result;
+
+	}
 
 
 
@@ -87,16 +105,21 @@ class AjaxDisplayController extends InntopiaBaseController {
 		$result =  array(
 			'#theme' => 'lodging_listing',
 			'#data' => $data,
-			'#attached' => array(
-				'library' => array(
-					'inntopia/inntopia',
-				),
-			),
 			'#cache' => array(
 				'max-age' => 0,
 			)
 		);
 
+		return $result;
+
+	}
+
+
+
+	private function displayQuickCart (){
+
+		$cart = new CartController($this->inntopiaStorage, $this->requestStack);
+		$result = $cart->displayCart();
 		return $result;
 
 	}

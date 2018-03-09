@@ -1,0 +1,21 @@
+// Layout
+// --------------------------------------------------
+$quick-cart-width: 400px;
+
+
+// Animation
+// --------------------------------------------------
+$base-duration: 400ms;
+$base-timing: cubic-bezier(.24,.52,.33,.99);
+
+@mixin transition ($property: all, $duration:$base-duration, $ease: $base-timing) {
+    transition: $property $duration $ease;
+}
+
+
+
+@mixin clearfix(){
+    &:after {
+        content: ""; display: table; clear: both;
+    }
+}

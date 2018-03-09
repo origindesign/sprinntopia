@@ -1,5 +1,5 @@
 services:
-    inntopia.inntopia_storage:
+    inntopia.storage:
         class: Drupal\inntopia\InntopiaStorage
         arguments: ['@config.factory']
     inntopia.twig.image_format:
@@ -7,3 +7,6 @@ services:
         arguments: ['@renderer']
         tags:
           - { name: twig.extension }
+    inntopia.shopping:
+        class: Drupal\inntopia\Controller\ShoppingController
+        arguments: ['@inntopia.storage', '@request_stack']

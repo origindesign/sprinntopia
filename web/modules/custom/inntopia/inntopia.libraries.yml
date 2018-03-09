@@ -2,8 +2,11 @@ inntopia:
   version: 1.x
   css:
     layout:
+      https://fonts.googleapis.com/icon?family=Material+Icons: { type: external }
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css: { type: external }
       css/inntopia.css: {}
   js:
+    https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js: { type: external, minified: true }
     https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js: { type: external, minified: true }
     https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js: { type: external, minified: true }
     js/ajax.js: {}

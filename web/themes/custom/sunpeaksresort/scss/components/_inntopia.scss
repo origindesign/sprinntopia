@@ -1,0 +1,92 @@
+#inntopia-nav{
+
+    background: $blue-light;
+
+    ul {
+        li {
+            a {
+                color: $green;
+                font-family: $base-font-family;
+                font-weight: 900;
+                &:hover { color: $blue; }
+                &.active { color: $blue; }
+            }
+        }
+    }
+
+}
+
+
+
+.inntopia-filters {
+    form input[type="text"], form select { background: #FFF; }
+    .fs-dropdown.fs-light .fs-dropdown-selected {  background: #FFF; }
+}
+
+
+
+.path-book #sidebar {
+    display: block;
+}
+
+
+#quickCart{
+
+    h3 { color: $green; background-color: $blue-light; }
+    h4 .btn-remove-cart {
+        .material-icons{ color: $green; @include transition; }
+        &:hover .material-icons{ color: $blue; }
+    }
+
+}
+
+
+#header .utility .cart {
+
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0 20px;
+    padding: 0 0 0 20px;
+
+    .material-icons { color: #FFF; font-size: 30px;  @include transition; }
+    .number {
+        position: absolute;
+        top: 15px;
+        left: 12px;
+        @include circle(12px,$green );
+        color: #fff;
+        font-size: 8px;
+        text-align: center;
+        &.empty { display: none; }
+    }
+
+    &:hover,
+    &:focus{
+        .material-icons { color:$green; }
+    }
+
+    &:before{
+        @include pseudo;
+        background:rgba(#fff,0.3); width:1px; height:25px; top:2px; left:0; right:auto;
+    }
+
+}
+
+.inntopia-teaser{
+
+    h2 {
+        margin-bottom: 15px;
+        a:hover { color: $green; }
+    }
+
+    .cta {
+        & > a {
+            @include fonticon('\e905',15px,$blue,50%,auto,10px);
+            &:before { @include transition; right: -40px; }
+            &:hover:before { right: -30px; }
+        }
+        .label, .price { color: $yellow; }
+    }
+}
+
+.inn-address .material-icons { color: $blue; }

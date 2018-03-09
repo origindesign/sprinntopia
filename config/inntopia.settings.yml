@@ -3,7 +3,7 @@ inntopia_server: stage
 _core:
   default_config_hash: WrB4NPUhR6RdQXr8MunJ5bjnWOLGvf-WMi7lO7D4WF8
 submit: 'Save configuration'
-form_build_id: form-I0OVo6bVXZ-NUUgQJ6bKjMTY6ZiqiaUdHnOLFsM5oSc
-form_token: ll6QY0LC5PnhgWKXmOffhRkqTLp7jXLiymTBS0bEc8E
+form_build_id: form-atLRLz7iKotONW0hj_PszeKg8PeVNUJqcce3SKIX2Os
+form_token: yi82J-EOi8ZeXjUizVZ444goM5lPEx4BOXZktgcKoAU
 form_id: inntopia_settings_form
 op: 'Save configuration'

@@ -1,9 +1,231 @@
-.price {
-    margin-top: 20px;
-    padding-top: 0;
+body.noscroll{
+    overflow: hidden;
+}
+
+
+#pageContainer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#header, #pageContainer {
+    @include transition;
+    left: 0;
+    right: 0;
+    &.slided{
+        //transform: translateX(-320px);
+        left: - $quick-cart-width;
+        right: $quick-cart-width;
+    }
+}
+
+
+#quickCart{
+
+    position: fixed;
+    width: $quick-cart-width;
+    height: 100%;
+    top: 0;
+    right: -$quick-cart-width;
+    background: #FFF;
+    z-index: 100;
+    overflow-y: scroll;
+    @include transition;
+
+    &.slided{
+        right: 0;
+    }
+
+    & > .wrapper { position: relative; margin: 50px 30px; }
+
+    a.close {
+        &, &:before { color: #9BA0A7; }
+        &:hover, &:hover:before { color: #333; }
+    }
+
+    h3 {
+        padding: 15px;
+        background: #eee;
+        border-top: 1px solid #D3D5D8;
+        text-align: center;
+        font-weight: 900;
+    }
+
+    h4 {
+        position: relative;
+        color: #505865;
+        font-weight: normal;
+        padding-right: 40px;
+        @include clearfix;
+        .btn-remove-cart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 0;
+            top: 0;
+            .material-icons{ color: #9BA0A7; }
+            &:hover .material-icons{ color: #333333; }
+
+        }
+    }
+
+    .cart-item {
+        & > .wrapper { padding: 15px; }
+        border-bottom: 1px solid #D3D5D8;
+    }
+
+    .cart-item:last-child { border-bottom: 0; }
+
+    .cart-item-info { margin-top: 10px; }
+    .row{
+        @include clearfix;
+        margin: 0;
+        padding: 3px 0;
+        .cell{ float: left; width: 50%;}
+        .value { font-weight: 700; }
+    }
+
+
+    .checkout-zone{
+        margin-top: 30px;
+        text-align: center;
+    }
+
+
+
+}
+
+#inntopia-nav{
+
+    background: #EEE;
+
+    ul {
+        li {
+            float: left;
+            width: calc(100%  /3);
+            margin: 0;
+            list-style: none;
+            a {
+                display: block;
+                position: relative;
+                font-size: 20px;
+                padding: 25px;
+                color: #CCC;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: Sans-Serif;
+                text-decoration: none;
+                &:hover { color: #333; }
+                &.active { color: #333; }
+                .material-icons {
+                    position: absolute;
+                    top: 20px;
+                    display: inline-block;
+                    font-size: 36px;
+                }
+                span { display: inline-block; padding-left: 45px; }
+            }
+        }
+    }
+
+}
+
+.inntopia-filters {
+    margin: 40px;
 }
 
 
 #ajaxContainer {
     margin-top: 60px;
 }
+
+
+.price {
+    margin-top: 20px;
+    padding-top: 0;
+}
+
+.inn-address{
+    margin-top: 5px;
+    .material-icons { display: inline-block; font-size: 28px; float: left;}
+    span { display: inline-block; line-height: 30px; }
+}
+
+
+.inntopia-teaser{
+
+    margin: 40px 0 0 0;
+    padding: 40px 0 0 0;
+    border-top: 1px solid #D3D5D8;
+    @include clearfix;
+
+
+    .zone-image {
+        float: left;
+        width: 35%;
+    }
+
+    .zone-copy {
+        float: left;
+        width: 65%;
+
+        & > .wrapper { padding: 40px; @include clearfix; }
+
+        .info { float: left; width: 60%; }
+        .cta { float: left; width: 40%; }
+    }
+
+    .cta{
+        text-align: right;
+        padding-top: 100px;
+
+        & > a {
+            display: inline-block;
+            position: relative;
+        }
+
+        .label { position: absolute; display: block; font-size: 14px;  line-height: 1; }
+        .price { display: inline-block; font-size: 50px; line-height: 1; font-weight: 500; text-align: left; margin: 0;}
+        .top-label { left: 0; top: -18px;  }
+        .bottom-label { right: 0; bottom: -15px; }
+    }
+
+
+    .slick-arrow{
+        padding: 5px;
+        &:before { font-size: 20px; line-height: 20px;width: 20px; height: 20px; }
+        &.slick-next { right: 5px; }
+        &.slick-prev { left: 5px; }
+    }
+
+    .slick-dots {
+        bottom: 10px;
+        li { margin: 0 5px 0 0; }
+        li button { background: rgba(255,255,255,0.25); }
+        li.slick-active button { background: rgba(255,255,255,0.75); }
+    }
+
+}
+
+
+
+
+.inntopia-detail {
+
+    .top-detail {
+        @include clearfix;
+        .zone-copy{
+            float: left; width: 50%;
+            padding-right: 40px;
+        }
+        .zone-image{
+            float: left; width: 50%;
+        }
+    }
+
+    .rooms { margin-top: 60px; }
+}
+
+
+

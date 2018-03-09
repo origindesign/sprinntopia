@@ -3,133 +3,150 @@
 
 {% include  directory  ~ '/templates/layout/header.html.twig' %}
 
+<div id="pageContainer">
 
-<div id="page" role="document" class="{{ ENV }}">
+    <div id="page" role="document" class="{{ ENV }}">
 
-    {%  if not is_front %}
-    <div id="background" class="{{ season }}">
-        <div class="background"></div>
-        <div class="foreground">
-            <img src="/{{ directory }}/images/hero-foreground-{{ season }}-1200.png" alt=""
-                 srcset="
-                {% for size in sizes %}
-                    /{{ directory }}/images/hero-foreground-{{ season }}-{{ size }}.png {{ size }}w{% if loop.index != sizes|length %}, {% endif %}
-                {% endfor %}
-            " sizes="100vw"
-            />
+        {%  if not is_front %}
+        <div id="background" class="{{ season }}">
+            <div class="background"></div>
+            <div class="foreground">
+                <img src="/{{ directory }}/images/hero-foreground-{{ season }}-1200.png" alt=""
+                     srcset="
+                    {% for size in sizes %}
+                        /{{ directory }}/images/hero-foreground-{{ season }}-{{ size }}.png {{ size }}w{% if loop.index != sizes|length %}, {% endif %}
+                    {% endfor %}
+                " sizes="100vw"
+                />
+            </div>
         </div>
-    </div>
-    {% endif %}
-
-    {% if page['#title'] and not is_front %}
-        <header id="page-title">
-            <h1>{{ page['#title'] }}</h1>
-        </header>
-    {% endif %}
-
-    <div id="main-wrap" class="clearfix">
-
-        <main id="main"  role="main">
-
-            <section id="content">
-
-                {% if messages %}
-                    <section id="messages">
-                        <div class="outer-wrapper">
-                            {{ messages }}
-                        </div>
-                    </section>
-                {% endif %}
-
-                {{ page.content }}
-
-            </section>
-
-            <a class="to-top" href="#">Top</a>
-
-        </main>
-
-
-        {% if second_nav and not is_front %}
-
-            <aside id="sidebar">
-
-                {{ second_nav }}
-                {{ corporate_nav_sidebar }}
-                {{ footer_nav_sidebar }}
-
-                {% if sidebar_cta %}
-                    {% include  directory  ~ sidebar_cta %}
-                {% endif %}
-
-            </aside>
-
         {% endif %}
 
-    </div>
+        {% if page['#title'] and not is_front %}
+            <header id="page-title">
+                <h1>{{ page['#title'] }}</h1>
+            </header>
+        {% endif %}
 
-</div>
+        <div id="main-wrap" class="clearfix">
+
+            {% if inntopia_nav %}
+
+                {{ inntopia_nav }}
+
+            {% endif %}
+
+            <main id="main"  role="main">
+
+                <section id="content">
+
+                    {% if messages %}
+                        <section id="messages">
+                            <div class="outer-wrapper">
+                                {{ messages }}
+                            </div>
+                        </section>
+                    {% endif %}
+
+                    {{ page.content }}
+
+                </section>
+
+                <a class="to-top" href="#">Top</a>
+
+            </main>
 
 
-{% include  directory  ~ '/templates/layout/footer.html.twig' %}
+            {% if second_nav or inntopia_sidebar and not is_front %}
 
+                <aside id="sidebar">
 
-<div id="search-overlay" class="overlay utility-overlay" tabindex="0" role="dialog" aria-hidden="true" aria-labelledby="search-title">
-    <div class="container">
-        <div class="wrapper">
+                    {{ inntopia_sidebar }}
+                    {{ second_nav }}
+                    {{ corporate_nav_sidebar }}
+                    {{ footer_nav_sidebar }}
 
-            <h2 id="search-title" class="visually-hidden">Search</h2>
+                    {% if sidebar_cta %}
+                        {% include  directory  ~ sidebar_cta %}
+                    {% endif %}
 
-            <div class="inner">
-                {{ search }}
-            </div>
+                </aside>
 
-            <a class="close" href="#">Close</a>
+            {% endif %}
 
         </div>
 
     </div>
-</div>
 
 
-<div id="weather-overlay" class="overlay utility-overlay" tabindex="0" role="dialog" aria-hidden="true" aria-labelledby="weather-title">
-    <div class="container">
-        <div class="wrapper nano">
-            <div class="nano-content">
+    {% include  directory  ~ '/templates/layout/footer.html.twig' %}
 
-                <h2 id="weather-title" class="visually-hidden">Current Conditions</h2>
 
-                {% include  directory  ~ '/templates/block/block--widget.html.twig' %}
+    <div id="search-overlay" class="overlay utility-overlay" tabindex="0" role="dialog" aria-hidden="true" aria-labelledby="search-title">
+        <div class="container">
+            <div class="wrapper">
+
+                <h2 id="search-title" class="visually-hidden">Search</h2>
+
+                <div class="inner">
+                    {{ search }}
+                </div>
+
+                <a class="close" href="#">Close</a>
 
             </div>
+
         </div>
     </div>
-</div>
 
 
-<div id="gallery-overlay" class="overlay utility-overlay" tabindex="0">
-    <div class="container">
-        <div class="wrapper">
+    <div id="weather-overlay" class="overlay utility-overlay" tabindex="0" role="dialog" aria-hidden="true" aria-labelledby="weather-title">
+        <div class="container">
+            <div class="wrapper nano">
+                <div class="nano-content">
 
-            <div class="inner">
-                <div class="placeholder">
+                    <h2 id="weather-title" class="visually-hidden">Current Conditions</h2>
+
+                    {% include  directory  ~ '/templates/block/block--widget.html.twig' %}
+
                 </div>
             </div>
+        </div>
+    </div>
 
-            <a class="overlay-arrow next" href="#" >Next</a>
-            <a class="overlay-arrow prev" href="#" >Previous</a>
 
-            <a class="close" href="#">Close</a>
+    <div id="gallery-overlay" class="overlay utility-overlay" tabindex="0">
+        <div class="container">
+            <div class="wrapper">
+
+                <div class="inner">
+                    <div class="placeholder">
+                    </div>
+                </div>
+
+                <a class="overlay-arrow next" href="#" >Next</a>
+                <a class="overlay-arrow prev" href="#" >Previous</a>
+
+                <a class="close" href="#">Close</a>
+
+            </div>
 
         </div>
-
     </div>
+
+    {% if block_no_cache %}
+
+        {{ block_no_cache }}
+
+    {% endif %}
+
+    <div class="usd-rate">{{ settings['field_usd_exchange_rate'] }}</div>
+
 </div>
 
-{% if block_no_cache %}
 
-    {{ block_no_cache }}
+{% if inntopia_quickcart %}
+
+    {{ inntopia_quickcart }}
 
 {% endif %}
-
-<div class="usd-rate">{{ settings['field_usd_exchange_rate'] }}</div>

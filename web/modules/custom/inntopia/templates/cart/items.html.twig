@@ -1,46 +1,84 @@
 {% set image_path = 'https://rmstest.inntopia.com/photos' %}
 
-<div class="cart">
+<div class="cart" data-nb-items="{{ data.nb_cart_items }}">
 
     <div class="container">
 
-
         {% if data.nb_cart_items > 0 %}
 
-
             {% set currency = data.cart.0.Currency %}
-
+            {% set current_category = "" %}
 
             {% for cart_item in data.cart %}
 
-
                 <div class="list-group-item cart-item clearfix" data-itineraryitemid="{{ cart_item.ItineraryItemId }}">
-                    <h4>
-                        {{ cart_item.ProductName }} at {{ cart_item.SupplierName }}
-                        {% if cart_item.PackageName %}
-                            <span class="text-success"> - {{ cart_item.PackageName }}</span>
-                        {% endif %}
 
-                    </h4>
-                    <div class="cart-item-info">From {{ cart_item.ArrivalDate }} to {{ cart_item.DepartureDate }}</div>
-                    <div class="price float-left">
-                        Price: {{ currency ~ cart_item.Price }}<br />
-                        Taxes: {{ currency ~ cart_item.TaxesFees }}
+                    {% if not cart_item.CategoryName == current_category  %}
+                        <h3>{{ cart_item.CategoryName }}</h3>
+                    {% endif %}
+
+                    <div class="wrapper">
+
+                        <h4>
+                            {{ cart_item.SupplierName }}
+                            <a href="#" class="btn-remove-cart"><i class="material-icons">delete</i></a>
+                        </h4>
+
+                        <div class="product-name">
+                            {{ cart_item.ProductName }}
+                            {% if cart_item.PackageName %}
+                                <span class="text-success"> - {{ cart_item.PackageName }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="cart-item-info">
+                            <div class="row">
+                                <div class="cell label">Arrival</div>
+                                <div class="cell value">{{ cart_item.ArrivalDate }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="cell label">Departure</div>
+                                <div class="cell value">{{ cart_item.DepartureDate }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="cell label">Adults</div>
+                                <div class="cell value">{{ cart_item.AdultCount }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="cell label">Children</div>
+                                <div class="cell value">{{ cart_item.ChildCount }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="cell label">Price</div>
+                                <div class="cell value">${{ cart_item.Price }}</div>
+                            </div>
+                            {#
+                            <div class="row">
+                                <div class="cell label">Taxes</div>
+                                <div class="cell value">{{ cart_item.TaxesFees }}</div>
+                            </div>
+                            #}
+                        </div>
+
+
                     </div>
-
-                    <button type="button" class="btn-solid btn-remove-cart">Remove</button>
 
                 </div>
 
+                {% set current_category = cart_item.CategoryName %}
+
             {% endfor %}
+
+            <div class="checkout-zone">
+                <a href="/cart" class="btn-solid product-action" data-role="button">Check Out</a>
+            </div>
 
 
         {% else %}
 
-            <p>Your cart is empty, click <a href="/book">here</a> to choose your lodging.</p>
+            <p>Your cart is empty.</p>
 
         {% endif %}
-
 
 
     </div>

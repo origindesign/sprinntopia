@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: inntopia_thumb
+label: 'Inntopia Thumb'
+effects:
+  1318ebf6-4ab6-4d8c-aa50-cbacea9d670b:
+    uuid: 1318ebf6-4ab6-4d8c-aa50-cbacea9d670b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 320

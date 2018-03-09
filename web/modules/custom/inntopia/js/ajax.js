@@ -3,8 +3,15 @@
     'use strict';
 
 
+
+
+    /**
+     * AJAX ACTIONS
+     *
+     */
     Drupal.behaviors.inntopiaAjaxAction = {};
 
+    /*
     Drupal.behaviors.inntopiaAjaxAction.call = function( $url, $params, $redirectUrl ){
 
         var request = $.ajax({
@@ -27,12 +34,13 @@
 
 
     };
+    */
 
 
 
     Drupal.behaviors.inntopiaAjaxAction.attach = function (context, settings) {
 
-        $('body', context).once('inntopiaAjax').each(function () {
+        $('body', context).once('inntopiaAjaxAction').each(function () {
 
             /**
              * Add to cart, load add-to-cart through ajax
@@ -59,7 +67,7 @@
                     productData.PackageId = $(this).data('packageid');
                 }
 
-                Drupal.behaviors.inntopiaAjaxAction.call( '/inntopia-ajax/actions/add-to-cart', productData, '/cart');
+                Drupal.behaviors.inntopiaAjaxAction.addToCart( productData );
 
             });
 
@@ -67,7 +75,7 @@
             /**
              * Remove from cart, load remove-from-cart through ajax
              */
-            $(".btn-remove-cart").on( "click", function(event) {
+            $( "#quickCart" ).on( "click", ".btn-remove-cart", function(event) {
 
                 event.preventDefault();
                 event.stopPropagation();
@@ -78,7 +86,7 @@
                     'ItineraryItemId' : itemContainer.data('itineraryitemid')
                 };
 
-                Drupal.behaviors.inntopiaAjaxAction.call( '/inntopia-ajax/actions/remove-from-cart', itemData, '/cart');
+                Drupal.behaviors.inntopiaAjaxAction.removeFromCart( itemData );
 
             });
 
@@ -87,40 +95,121 @@
 
 
 
+    Drupal.behaviors.inntopiaAjaxAction.removeFromCart = function( $data ){
+
+        var $url = '/inntopia-ajax/actions/remove-from-cart';
+        var ajaxPlaceholder = Drupal.behaviors.inntopia.quickCart.find('.ajaxContent');
+
+        ajaxPlaceholder.addClass('loading');
+
+        var request = $.ajax({
+            type: "POST",
+            data: {data: $data},
+            url: $url,
+            success: function( result ){
+                //console.log( result );
+            }
+        });
+
+        request.done(function( result ) {
+            // Empty quick cart before adding the refreshed one
+            var ajaxPlaceholder = Drupal.behaviors.inntopia.quickCart.find('.ajaxContent');
+            Drupal.behaviors.inntopiaAjaxDisplay.call( ajaxPlaceholder, '/inntopia-ajax/display/display-quickcart', null );
+        });
+
+        request.fail(function() {
+            console.log( "Error in ajax actions." );
+        });
+
+    };
 
 
 
 
+
+    Drupal.behaviors.inntopiaAjaxAction.addToCart = function( $data){
+
+        var $url = '/inntopia-ajax/actions/add-to-cart';
+        var ajaxPlaceholder = Drupal.behaviors.inntopia.quickCart.find('.ajaxContent');
+
+        ajaxPlaceholder.addClass('loading');
+
+        // Open Quick Cart
+        Drupal.behaviors.inntopia.openCart();
+
+        var request = $.ajax({
+            type: "POST",
+            data: {data: $data},
+            url: $url,
+            success: function( result ){
+                //console.log( result );
+            }
+        });
+
+        request.done(function( result ) {
+            // Empty quick cart before adding the refreshed one
+            var ajaxPlaceholder = Drupal.behaviors.inntopia.quickCart.find('.ajaxContent');
+            Drupal.behaviors.inntopiaAjaxDisplay.call( ajaxPlaceholder, '/inntopia-ajax/display/display-quickcart', null );
+        });
+
+        request.fail(function() {
+            console.log( "Error in ajax actions." );
+        });
+
+
+    };
+
+
+
+
+
+
+
+
+    /**
+     * AJAX DISPLAY
+     *
+     */
     Drupal.behaviors.inntopiaAjaxDisplay = {};
 
     Drupal.behaviors.inntopiaAjaxDisplay.attach = function (context, settings) {
 
-        $('#ajaxContainer ', context).once('inntopiaAjax').each(function () {
+        $('body', context).once('inntopiaAjaxDisplay').each(function () {
 
-            var ajaxPlaceholder = $(this).find('.ajaxContent');
-            var ajaxPath = ajaxPlaceholder.data('ajax-url');
-            var currentUrl = new URI(window.location.href);
-            var params = currentUrl.search(true); // transform get string into POST object
+            $(".ajaxContainer").each(function( index ) {
 
-            Drupal.behaviors.inntopiaAjaxDisplay.call( ajaxPlaceholder, ajaxPath, params );
+                var ajaxPlaceholder = $(this).find('.ajaxContent');
+                var ajaxPath = ajaxPlaceholder.data('ajax-url');
+                var currentUrl = new URI(window.location.href);
+                var params = currentUrl.search(true); // transform get string into POST object
 
+                Drupal.behaviors.inntopiaAjaxDisplay.call( ajaxPlaceholder, ajaxPath, params );
+
+            });
         });
 
     };
 
     Drupal.behaviors.inntopiaAjaxDisplay.call = function( $container, $url, $params ){
 
-        // Handle class for loading icon
-        $container.html('').removeClass('loaded');
+        $container.addClass('loading');
 
         var request = $.ajax({
             type: "GET",
             data: {data: $params},
             url: $url,
             success: function( result ){
-                var resultHTML = $('<div />').append(result).find('#block-sunpeaksresort-content').html();
+                // Handle class for loading icon
+                $container.html('');
+                var resultDiv = $('<div />').append(result).find('#block-sunpeaksresort-content');
+                var resultHTML = resultDiv.html();
+                var cartDiv = resultDiv.find('.cart');
+                if( cartDiv.length > 0 ){
+                    Drupal.behaviors.inntopiaAjaxDisplay.displayNbCartItems( cartDiv.data("nb-items") );
+                }
                 $container.html(resultHTML);
-                $container.addClass('loaded');
+                Drupal.attachBehaviors();
+                $container.removeClass('loading');
             }
         });
 
@@ -130,6 +219,20 @@
 
 
     };
+
+
+
+
+
+    Drupal.behaviors.inntopiaAjaxDisplay.displayNbCartItems = function( $nb ){
+        if ( $nb !== undefined && $nb !== 0){
+            $('#cartBtn .number').removeClass('empty').text($nb);
+        }else{
+            $('#cartBtn .number').addClass('empty').text('');
+        }
+    };
+
+
 
 
 

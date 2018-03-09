@@ -32,6 +32,9 @@ abstract class InntopiaBaseController extends ControllerBase {
 	protected $requestStack;
 
 
+	protected $inntopiaStorage;
+
+
 
 	/**
 	 * InntopiaBaseController constructor.
@@ -41,10 +44,12 @@ abstract class InntopiaBaseController extends ControllerBase {
 	public function __construct(InntopiaStorage $inntopiaStorage, RequestStack $requestStack) {
 
 		// Store settings in private variable
-		$inntopiaStorage = $inntopiaStorage->getSettings();
-		$this->sales_id = $inntopiaStorage['sales_id'];
-		$this->api_url = $inntopiaStorage['server'];
+		$this->inntopiaStorage = $inntopiaStorage;
 		$this->requestStack = $requestStack;
+
+		$settings = $this->inntopiaStorage->getSettings();
+		$this->sales_id = $settings['sales_id'];
+		$this->api_url = $settings['server'];
 
 		// If there is no session set, set one using Inntopia Session
 		if ( !isset($_SESSION["inntopia"]) ){
@@ -70,7 +75,7 @@ abstract class InntopiaBaseController extends ControllerBase {
 	 */
 	public static function create(ContainerInterface $container) {
 		return new static(
-			$container->get('inntopia.inntopia_storage'),
+			$container->get('inntopia.storage'),
 			$container->get('request_stack')
 		);
 	}

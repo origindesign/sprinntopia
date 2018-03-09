@@ -36,9 +36,29 @@ function inntopia_theme_suggestions_html_alter(array &$suggestions, array $varia
  */
 function inntopia_theme($existing, $type, $theme, $path) {
 	return array(
+		'inntopia_navigation' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'global/navigation',
+		),
+		'inntopia_quickcart' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'cart/quickcart',
+		),
+		'activities_container' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'activities/container',
+		),
+		'activities_listing' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'activities/listing',
+		),
 		'lodging_container' => array(
 			'variables' => array('data' => NULL),
 			'template' => 'lodging/container',
+		),
+		'lodging_filters' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'lodging/filters',
 		),
 		'lodging_listing' => array(
 			'variables' => array('data' => NULL),
@@ -55,5 +75,39 @@ function inntopia_theme($existing, $type, $theme, $path) {
 	);
 }
 
+
+
+/**
+ *  Hook page preprocess
+ *  (Used mostly for layout setup)
+ *
+ */
+function inntopia_preprocess_page(&$variables) {
+
+	// Adding quickcart and library on every page (since users can open the quickcart from any pages)
+	$variables['#attached']['library'][] = 'inntopia/inntopia';
+	$variables['inntopia_quickcart'] = ['#theme' => 'inntopia_quickcart', '#data' => null ];
+
+	// Check current path
+	$current_path = \Drupal::service('path.current')->getPath();
+	$arr_path = explode("/", substr($current_path, 1) );
+
+	// Include common items (sidebar and navigation) on inntopia pages only
+	if( isset($arr_path[0]) ) {
+
+		if ($arr_path[0] == "book") {
+
+			$section = ( isset($arr_path[1]) ) ? $arr_path[1] : 'unknown';
+			$variables['inntopia_nav'] = ['#theme' => 'inntopia_navigation', '#data' => array( 'section' => $section) ];
+
+			$filters = \Drupal::service('inntopia.shopping')->displaySidebar( $section );
+
+			$variables['inntopia_sidebar'] = $filters;
+
+		}
+	}
+
+
+}
 
 

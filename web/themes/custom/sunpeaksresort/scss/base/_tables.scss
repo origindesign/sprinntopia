@@ -34,12 +34,16 @@ table {
   }
 }
 
-caption{
+caption, .table-caption{
   color: #505865; font-size: 1.7rem; font-weight: 900; line-height: 1; margin: 0 0 25px; text-transform: uppercase; text-align:left;
 
   @include media($medium-screen){
     @include headingLine;
   }
+}
+
+.table-caption{
+  ackground: none; font-style: normal;
 }
 
 th{
@@ -89,4 +93,32 @@ tbody{
       width:65%;
     }
   }
+}
+
+
+
+.accordions{
+
+  .accordion {
+
+    border-bottom: $base-border;
+
+    .accordion-header{
+
+      cursor: pointer;
+      padding: 50px 0;
+      position: relative;
+      @include fonticon('\e905',15px,$blue,50%, 0, auto);
+
+      &:before { margin-top: -8px; }
+
+      h2 { padding-left: 40px; margin-bottom: 0;}
+      .push-right { float: right; display: inline-block; }
+
+    }
+
+    .accordion-content { display: none; }
+
+  }
+
 }
