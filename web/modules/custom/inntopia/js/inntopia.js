@@ -62,6 +62,15 @@
                 Drupal.behaviors.inntopia.closeCart();
             });
 
+
+            // Detail Page Carousel
+            $('.carousel-large.hasSlider').slick({
+                slide: '.image',
+                dots: true,
+                adaptiveHeight: true
+            });
+
+
         });
 
 
@@ -71,8 +80,7 @@
         // Slick thumb Carousel
         $('.carousel-thumb.hasSlider').slick({
             slide: '.image',
-            dots: true,
-            adaptiveHeight: true
+            dots: true
         });
 
 
@@ -99,6 +107,9 @@
         $('body').removeClass('noscroll');
 
     };
+
+
+
 
 
 

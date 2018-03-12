@@ -23,7 +23,7 @@
 
             <div class="zone-image">
 
-                <div class="carousel-thumb {{ data.detail.Images.1.FileName ? 'hasSlider' : '' }}" >
+                <div class="carousel-large {{ data.detail.Images.1.FileName ? 'hasSlider' : '' }}" >
                     {% for i in 0..10 %}
                         {% set image = attribute(data.detail.Images, i)  %}
                         {% if image.FileName  %}
@@ -62,7 +62,10 @@
                     <div class="accordion-header">
 
                         <h2>{{ room.name }}</h2>
-                        <div class="price push-right">${{ room.bestPrice }}/night</div>
+                        <div class="inn-price push-right">
+                            <div class="price">${{ room.bestPrice }}</div>
+                            <div class="label right-label">/night</div>
+                        </div>
 
                     </div>
 
@@ -70,42 +73,123 @@
 
                     <div class="accordion-content">
 
-                        <p>{{ room.description }}</p>
+                        <div class="room-detail">
 
-                        <table class="table">
+                            <div class="zone-copy">
+
+                                <p>{{ room.description }}</p>
+
+                                {% if room.amenities %}
+                                    <h5>Amenities</h5>
+
+                                    <ul class="inn-amenities">
+                                        {% for amenity in room.amenities %}
+                                            <li>{{ amenity }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+
+                            </div>
+
+                            <div class="zone-image">
+
+                                <div class="carousel-large {{ room.Images.1.FileName ? 'hasSlider' : '' }}" >
+                                    {% for i in 0..10 %}
+                                        {% set imageRoom = attribute(room.Images, i)  %}
+                                        {% if imageRoom.FileName  %}
+                                            <div class="image">
+                                                {{ drupalizeImage(image_path ~  imageRoom.FileName, room.name, '1200' ) }}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <table class="room-price">
                             <tbody>
-                            <tr>
-                                <td class="align-middle"><h5 class="font-weight-light">{{ room.name }}</h5></td>
-                                <td class="align-middle">${{ room.originalPrice }}/night</td>
-                                <td class="align-middle"><a href="/inntopia-ajax/add-to-cart" class="btn-solid product-action" data-role="button">Add to Cart</a></td>
-                            </tr>
+                                <tr>
+                                    <th data-label="name">
+                                        <h5 class="font-weight-light">{{ room.name }}</h5>
+                                    </th>
+                                    <td data-label="price">
+                                        ${{ room.originalPrice }}/night
+                                    </td>
+                                    <td data-label="cta">
+                                        <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><i class="material-icons">add_shopping_cart</i></a>
+                                    </td>
+                                </tr>
 
-                            {% if( room.packages ) %}
+                                {% if( room.packages ) %}
 
-                                {% for package in room.packages %}
+                                    {% for package in room.packages %}
 
-                                    <tr>
-                                        <td class="align-middle"><h5 class="font-weight-light">{{ room.name }} - <span class="text-success">{{ package.name }}</span></h5></td>
-                                        <td class="align-middle">${{ package.price }}/night</td>
-                                        <td class="align-middle"><a href="/inntopia-ajax/add-to-cart" class="btn-solid product-action" data-role="button" data-packageid="{{ package.id }}">Add to Cart</a></td>
-                                    </tr>
+                                        <tr>
+                                            <th data-label="name">
+                                                <h5 class="font-weight-light">{{ room.name }} - <span class="package-name">{{ package.name }}</h5>
+                                            </th>
+                                            <td data-label="price">
+                                                ${{ package.price }}/night
+                                            </td>
+                                            <td data-label="cta">
+                                                <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button" data-packageid="{{ package.id }}"><span>add</span><i class="material-icons">add_shopping_cart</i></a>
+                                            </td>
+                                        </tr>
 
-                                {% endfor %}
+                                    {% endfor %}
 
-                            {% endif %}
+                                {% endif %}
 
                             </tbody>
                         </table>
 
-
                     </div>
-
 
                 </div>
 
             {% endfor %}
 
         </div>
+
+
+
+
+        <div class="informations">
+
+            <div class="table-caption"><span><p>Additional Information</p></span></div>
+
+            <div class="info-detail">
+
+                <div class="zone-copy">
+
+                    <h5>Contact</h5>
+                    <p>
+                        {{ data.detail.name }}<br />
+                        {{ data.detail.Supplier.Address }}<br />
+                        {{ data.detail.Supplier.City }}, {{ data.detail.Supplier.Region }} {{ data.detail.Supplier.Country }}<br />
+                    </p>
+
+                </div>
+
+                <div class="zone-image">
+
+                    <div class="field--name-field-location">
+                        <div id="single-data-map"></div>
+                        <div class="value_geodata"><span class="latlon latlon-lat">50.884546</span>,<span class="latlon latlon-lon">-119.879204</span></div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
 
     </article>
 

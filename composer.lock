@@ -5495,12 +5495,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:origindesign/inntopia-php.git",
-                "reference": "6d6bef5507883a13556c1bdef69109d95e1452ef"
+                "reference": "491fbe3151ccad6365808ceac61955cad4e9b90a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/origindesign/inntopia-php/zipball/6d6bef5507883a13556c1bdef69109d95e1452ef",
-                "reference": "6d6bef5507883a13556c1bdef69109d95e1452ef",
+                "url": "https://api.github.com/repos/origindesign/inntopia-php/zipball/491fbe3151ccad6365808ceac61955cad4e9b90a",
+                "reference": "491fbe3151ccad6365808ceac61955cad4e9b90a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5543,7 +5543,7 @@
                 "source": "https://github.com/origindesign/inntopia-php/tree/master",
                 "issues": "https://github.com/origindesign/inntopia-php/issues"
             },
-            "time": "2018-02-15T17:12:19+00:00"
+            "time": "2018-03-12T16:40:30+00:00"
         },
         {
             "name": "paragonie/random_compat",

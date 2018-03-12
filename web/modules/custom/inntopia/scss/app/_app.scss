@@ -141,15 +141,30 @@ body.noscroll{
 }
 
 
-.price {
-    margin-top: 20px;
-    padding-top: 0;
-}
-
 .inn-address{
     margin-top: 5px;
     .material-icons { display: inline-block; font-size: 28px; float: left;}
     span { display: inline-block; line-height: 30px; }
+}
+
+.inn-price{
+
+    display: inline-block;
+    position: relative;
+
+    .label { position: absolute; display: block; font-size: 14px;  line-height: 1; }
+    .price { display: inline-block; font-size: 50px; line-height: 1; font-weight: 500; text-align: left; margin: 0; padding-top: 0;}
+    .top-label { left: 0; top: -18px;  }
+    .bottom-label { right: 0; bottom: -15px; }
+    .right-label { display: inline-block; position: static; }
+}
+
+
+.inn-addcart {
+    @include transition;
+    .material-icons { display: inline-block; font-size: 28px; float: right;}
+    span { display: inline-block; line-height: 30px; margin-right: 5px; }
+    &:hover { color: #333; }
 }
 
 
@@ -179,16 +194,6 @@ body.noscroll{
     .cta{
         text-align: right;
         padding-top: 100px;
-
-        & > a {
-            display: inline-block;
-            position: relative;
-        }
-
-        .label { position: absolute; display: block; font-size: 14px;  line-height: 1; }
-        .price { display: inline-block; font-size: 50px; line-height: 1; font-weight: 500; text-align: left; margin: 0;}
-        .top-label { left: 0; top: -18px;  }
-        .bottom-label { right: 0; bottom: -15px; }
     }
 
 
@@ -213,7 +218,7 @@ body.noscroll{
 
 .inntopia-detail {
 
-    .top-detail {
+    .top-detail, .room-detail, .info-detail {
         @include clearfix;
         .zone-copy{
             float: left; width: 50%;
@@ -225,6 +230,21 @@ body.noscroll{
     }
 
     .rooms { margin-top: 60px; }
+    .informations { margin-top: 100px; }
+
+    table.room-price {
+
+        margin: 20px 0 60px 0;
+        tbody {
+            tr { border-bottom: 1px solid rgba(80,88,101,0.25); }
+            tr:nth-child(odd) { background: #edeef0; }
+            td, th { vertical-align: middle; padding: 15px; }
+            td { text-align: right; }
+            h5 { margin-bottom: 0; }
+
+        }
+    }
+
 }
 
 

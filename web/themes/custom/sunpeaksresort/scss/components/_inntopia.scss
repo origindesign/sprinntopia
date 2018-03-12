@@ -85,8 +85,34 @@
             &:before { @include transition; right: -40px; }
             &:hover:before { right: -30px; }
         }
-        .label, .price { color: $yellow; }
+
     }
 }
 
 .inn-address .material-icons { color: $blue; }
+.inn-price {
+    .label, .price {
+        color: $yellow;
+    }
+}
+
+.inn-addcart {
+    &:hover { color: $green; }
+}
+
+ul.inn-amenities{
+
+    margin-left: 0;
+    @include clearfix;
+    li{ float: left; width: 50%; margin: 0; }
+}
+
+.inntopia-detail {
+
+    .informations{
+        .info-detail { margin-top: 60px; }
+        #single-data-map{ padding-bottom: 70%;}
+        .value_geodata { display: none; }
+    }
+
+}
