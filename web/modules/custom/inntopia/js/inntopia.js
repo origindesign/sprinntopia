@@ -111,6 +111,16 @@
 
 
 
+    Drupal.behaviors.inntopia.listing = {};
+    Drupal.behaviors.inntopia.listing.grid = $('.result-list');
+    Drupal.behaviors.inntopia.listing.filterBtn = $( ".filterItem" );
+    Drupal.behaviors.inntopia.listing.filter = function(){
+
+
+    };
+
+
+
 
 
 }(jQuery, Drupal));

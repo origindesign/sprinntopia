@@ -8,10 +8,12 @@ inntopia.settings:
 
 
 inntopia.container:
-    path: '/book/{method}'
+    path: '/book/{method}/{type}'
     defaults:
         _controller: '\Drupal\inntopia\Controller\ShoppingController::dispatch'
         _title: 'Book your Vacation'
+        method: null
+        type: null
     requirements:
         _access: 'TRUE'
 

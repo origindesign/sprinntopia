@@ -7,6 +7,7 @@
 namespace Drupal\inntopia\Controller;
 
 
+use Drupal\inntopia\InntopiaActivity;
 use Drupal\inntopia\InntopiaLodging;
 
 
@@ -14,12 +15,12 @@ use Drupal\inntopia\InntopiaLodging;
 class ShoppingController extends InntopiaBaseController {
 
 
-	public function dispatch($method = 'lodging') {
+	public function dispatch($method = 'lodging', $type = null) {
 
 		switch ($method){
 			case "activities": $result = $this->displayContainer('activities_container'); break;
 			case "lodging": $result = $this->displayContainer('lodging_container'); break;
-			case "product": $result = $this->displayProduct(); break;
+			case "product": $result = $this->displayProduct($type); break;
 			default: $result = $this->displayContainer();
 		}
 
@@ -42,15 +43,29 @@ class ShoppingController extends InntopiaBaseController {
 	 * Display Lodging Product
 	 * @return array
 	 */
-	private function displayProduct() {
+	private function displayProduct($type) {
 
 		// Get parameters
 		$params = $this->requestStack->getCurrentRequest()->query->all();
 
 		// Get Listing
-		$inntopiaLodging = new InntopiaLodging($this->sales_id, $this->api_url, $params);
-		$detail = $inntopiaLodging->getLodgingDetail();
-		$filters = $inntopiaLodging->getFilters();
+		switch ($type) {
+			case "lodging":
+				$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);
+				$theme = 'lodging_detail';
+				break;
+			case "activity":
+				$instance = new InntopiaActivity($this->sales_id, $this->api_url, $params);
+				$theme = 'activity_detail';
+				break;
+			default:
+				$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);
+				$theme = 'lodging_detail';
+
+		}
+
+		$detail = $instance->getDetail();
+		$filters = $instance->getFilters();
 
 		$data = array(
 			'settings' => array(
@@ -63,7 +78,7 @@ class ShoppingController extends InntopiaBaseController {
 
 		// Format Listing
 		$build[] =  [
-			'#theme' => 'lodging_detail',
+			'#theme' => $theme,
 			'#data' => $data,
 			'#cache' => array(
 				'max-age' => 0,
@@ -87,6 +102,10 @@ class ShoppingController extends InntopiaBaseController {
 		$params = $this->requestStack->getCurrentRequest()->query->all();
 
 		switch ($method){
+			case "activities":
+				$instance = new InntopiaActivity($this->sales_id, $this->api_url, $params);
+				$theme = 'activities_filters';
+				break;
 			case "lodging":
 				$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);
 				$theme = 'lodging_filters';

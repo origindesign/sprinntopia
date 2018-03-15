@@ -48,9 +48,17 @@ function inntopia_theme($existing, $type, $theme, $path) {
 			'variables' => array('data' => NULL),
 			'template' => 'activities/container',
 		),
+		'activities_filters' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'activities/filters',
+		),
 		'activities_listing' => array(
 			'variables' => array('data' => NULL),
 			'template' => 'activities/listing',
+		),
+		'activity_detail' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'activities/product',
 		),
 		'lodging_container' => array(
 			'variables' => array('data' => NULL),

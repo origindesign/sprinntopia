@@ -33,6 +33,27 @@ body.noscroll{
     overflow-y: scroll;
     @include transition;
 
+    .loading {
+        background: none;
+        .cart{
+            position: relative;
+            &:after {
+                content: "\020";
+                display: block;
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                min-height: 150px;
+                z-index: 100;
+                background-image: url(../misc/images/loading.svg);
+                background-color: rgba(255,255,255,0.8);
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
     &.slided{
         right: 0;
     }
@@ -44,10 +65,13 @@ body.noscroll{
         &:hover, &:hover:before { color: #333; }
     }
 
+    .container{
+        border-top: 1px solid #D3D5D8;
+    }
+
     h3 {
         padding: 15px;
         background: #eee;
-        border-top: 1px solid #D3D5D8;
         text-align: center;
         font-weight: 900;
     }
@@ -73,6 +97,7 @@ body.noscroll{
     .cart-item {
         & > .wrapper { padding: 15px; }
         border-bottom: 1px solid #D3D5D8;
+        &.total{ border: 0; }
     }
 
     .cart-item:last-child { border-bottom: 0; }

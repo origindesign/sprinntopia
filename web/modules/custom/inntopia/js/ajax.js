@@ -62,6 +62,8 @@
                     "Quantity" : productContainer.data('quantity')
                 };
 
+                console.log(productData);
+
                 // Add Package ID if it exists
                 if ( $(this).data('packageid') ) {
                     productData.PackageId = $(this).data('packageid');

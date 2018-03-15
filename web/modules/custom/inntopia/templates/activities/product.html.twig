@@ -1,0 +1,117 @@
+{% set image_path = 'https://rmstest.inntopia.com/photos' %}
+
+
+{% block detail %}
+
+    <article role="article" class="node node-view-full inntopia-detail">
+
+        {# kint(data) #}
+
+        <div class="top-detail">
+
+            <div class="zone-copy">
+
+                <h2>{{ data.detail.name }}</h2>
+                <p>{{ data.detail.description }}</p>
+
+            </div>
+
+
+            <div class="zone-image">
+
+                <div class="carousel-large {{ data.detail.Images.1.FileName ? 'hasSlider' : '' }}" >
+                    {% for i in 0..10 %}
+                        {% set image = attribute(data.detail.Images, i)  %}
+                        {% if image.FileName  %}
+                            <div class="image">
+                                {{ drupalizeImage(image_path ~  image.FileName, data.detail.name, '1200' ) }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="rooms accordions">
+
+            <div class="table-caption"><span><p>Options</p></span></div>
+
+            <div class="option product-data"
+                 data-salesid="{{ data.settings.sales_id }}"
+                 data-supplierid="{{ data.detail.supplierId }}"
+                 data-productid="{{ data.detail.id }}"
+                 data-arrivaldate="{{ data.filters.startDate }}"
+                 data-departuredate="{{ data.filters.startDate }}"
+                 data-adultcount="1"
+                 data-childcount="0"
+                 data-quantity="1"
+            >
+
+                <table class="room-price">
+                    <tbody>
+
+                    {% if not attribute( data.detail.ProductList, 0 ) %}
+
+                    <tr>
+                        <th data-label="name">
+                            <h5 class="font-weight-light">{{ data.detail.name }}</h5>
+                        </th>
+                        <td data-label="price">
+                            ${{ data.detail.originalPrice }}/night
+                        </td>
+                        <td data-label="cta">
+                            <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><i class="material-icons">add_shopping_cart</i></a>
+                        </td>
+                    </tr>
+
+                    {% else %}
+
+                        {% for i in 0..20 %}
+
+                            {% set option = attribute( data.detail.ProductList, i)  %}
+
+                            {% if option %}
+
+                                <tr>
+                                    <th data-label="name">
+                                        <h5 class="font-weight-light">{{ option.ProductName }}</h5>
+                                    </th>
+                                    <td data-label="price">
+                                        ${{ option.OriginalPrice }}
+                                    </td>
+                                    <td data-label="cta">
+                                        <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><i class="material-icons">add_shopping_cart</i></a>
+                                    </td>
+                                </tr>
+
+                            {% endif %}
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+    </article>
+
+{% endblock %}
+
+

@@ -73,11 +73,11 @@ class InntopiaLodging {
      * Get Lodging List
      * @return array
      */
-    public function getLodgingList(){
+    public function getListing(){
 
-		$lodging_list = $this->lodging_helper->getLodgingList( $this->arrivalDate, $this->departureDate, $this->adultCount, $this->childrenCount);
+		$listing = $this->lodging_helper->getLodgingList( $this->arrivalDate, $this->departureDate, $this->adultCount, $this->childrenCount);
 
-		return $lodging_list;
+		return $listing;
 
     }
 
@@ -86,11 +86,11 @@ class InntopiaLodging {
 	 * Get Lodging List
 	 * @return array
 	 */
-	public function getLodgingDetail(){
+	public function getDetail(){
 
-		$lodging = $this->lodging_helper->getLodgingDetail($this->supplierId, $this->arrivalDate, $this->departureDate, $this->adultCount, $this->childrenCount);
+		$detail = $this->lodging_helper->getLodgingDetail($this->supplierId, $this->arrivalDate, $this->departureDate, $this->adultCount, $this->childrenCount);
 
-		return $lodging;
+		return $detail;
 
 	}
 

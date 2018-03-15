@@ -3,13 +3,13 @@
 
 <div class="listing">
 
-    <div class="container">
+    <div class="container result-list">
 
         {% for lodging in data.listing %}
 
-            {% set product_url = '/book/product?supplierId=' ~ lodging.id ~ '&arrivalDate=' ~ data.filters.arrivalDate ~ '&departureDate=' ~ data.filters.departureDate ~ '&adultCount=' ~ data.filters.adultCount ~ '&childrenCount=' ~ data.filters.childrenCount %}
+            {% set product_url = '/book/product/lodging/?supplierId=' ~ lodging.id ~ '&arrivalDate=' ~ data.filters.arrivalDate ~ '&departureDate=' ~ data.filters.departureDate ~ '&adultCount=' ~ data.filters.adultCount ~ '&childrenCount=' ~ data.filters.childrenCount %}
 
-            <article role="article" class="inntopia-teaser">
+            <article role="article" class="inntopia-teaser" data-supplier-id="{{ lodging.id }}" data-category-lodging="{{ lodging.categories['lodgingType'] }}" data-category-bedroom="{{ lodging.categories['bedrooms'] }}">
 
                 <div class="zone-image">
 
