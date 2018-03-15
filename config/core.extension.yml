@@ -108,7 +108,6 @@ module:
   webform_ui: 0
   wysiwyg_template: 0
   xmlsitemap: 0
-  contribute: 1
   menu_link_content: 1
   views: 10
   standard: 1000
