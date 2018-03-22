@@ -1,6 +1,7 @@
 {% set image_path = 'https://rmstest.inntopia.com/photos' %}
 
 
+
 <div class="listing">
 
     <div class="container result-list">
@@ -9,57 +10,60 @@
 
             {% set product_url = '/book/product/lodging/?supplierId=' ~ lodging.id ~ '&arrivalDate=' ~ data.filters.arrivalDate ~ '&departureDate=' ~ data.filters.departureDate ~ '&adultCount=' ~ data.filters.adultCount ~ '&childrenCount=' ~ data.filters.childrenCount %}
 
-            <article role="article" class="inntopia-teaser" data-supplier-id="{{ lodging.id }}" data-category-lodging="{{ lodging.categories['lodgingType'] }}" data-category-bedroom="{{ lodging.categories['bedrooms'] }}">
+            <article role="article" class="inntopia-teaser" data-supplier-id="{{ lodging.id }}" data-category-lodging="{{ lodging.categories['lodgingType'] }}" data-category-bedroom="{{ lodging.categories['bedrooms'] }}" data-sort-price="{{lodging.bestPrice }}">
 
-                <div class="zone-image">
+                <div class="wrapper">
 
-                    <div class="carousel-thumb {{ lodging.Images.1.FileName ? 'hasSlider' : '' }}" >
-                        {% for i in 0..4 %}
-                            {% set image = attribute(lodging.Images, i)  %}
-                            {% if image.FileName  %}
-                                <div class="image">
-                                    {{ drupalizeImage(image_path ~  image.FileName, lodging.name, 'inntopia_thumb' ) }}
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
+                    <div class="zone-image">
 
-                </div>
-
-
-                <div class="zone-copy">
-
-                    <div class="wrapper">
-
-                        <div class="info">
-                            <h2><a href="{{ product_url }}">{{ lodging.name }}</a></h2>
-                            <div class="inn-review"><img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-24046-5.svg" alt="Trip Advisor" title="Trip Advisor"></div>
-                            <div class="inn-address"><i class="material-icons">location_on</i><span>{{ lodging.Supplier.Address }}</span></div>
-                        </div>
-
-
-                        <div class="cta">
-
-                           <a href="{{ product_url }}" class="inn-price">
-
-                                {% if lodging.bestPrice == lodging.originalPrice %}
-                                    <div class="label top-label">from</div>
-                                    <div class="price">${{ lodging.originalPrice }}</div>
-                                    <div class="label bottom-label">/night</div>
-                                {% else %}
-                                    <h6><del>was ${{ lodging.originalPrice }}</del></h6>
-                                    <div class="label top-label">from</div>
-                                    <div class="price">${{ lodging.bestPrice }}</div>
-                                    <div class="label bottom-label">/night</div>
+                        <div class="carousel-thumb {{ lodging.Images.1.FileName ? 'hasSlider' : '' }}" >
+                            {% for i in 0..4 %}
+                                {% set image = attribute(lodging.Images, i)  %}
+                                {% if image.FileName  %}
+                                    <div class="image">
+                                        {{ drupalizeImage(image_path ~  image.FileName, lodging.name, 'inntopia_thumb' ) }}
+                                    </div>
                                 {% endif %}
-
-                           </a>
-
+                            {% endfor %}
                         </div>
+
+                    </div>
+
+
+                    <div class="zone-copy">
+
+                        <div class="wrapper">
+
+                            <div class="info">
+                                <h2><a href="{{ product_url }}">{{ lodging.name }}</a></h2>
+                                <div class="inn-review"><img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-24046-5.svg" alt="Trip Advisor" title="Trip Advisor"></div>
+                                <div class="inn-address"><span class="icomoon icon-pin"></span><span>{{ lodging.Supplier.Address }}</span></div>
+                            </div>
+
+
+                            <div class="cta">
+
+                               <a href="{{ product_url }}" class="inn-price">
+
+                                    {% if lodging.bestPrice == lodging.originalPrice %}
+                                        <div class="label top-label">from</div>
+                                        <div class="price">${{ lodging.originalPrice }}</div>
+                                        <div class="label bottom-label">/night</div>
+                                    {% else %}
+                                        <h6><del>was ${{ lodging.originalPrice }}</del></h6>
+                                        <div class="label top-label">from</div>
+                                        <div class="price">${{ lodging.bestPrice }}</div>
+                                        <div class="label bottom-label">/night</div>
+                                    {% endif %}
+
+                               </a>
+
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
-
 
             </article>
 

@@ -103,6 +103,25 @@
 
                 }
 
+                // Input Numeric Value
+                $('.incrementor').on('click', '.increment' , function(event){
+
+                    var parent = $(this).parents('.incrementor');
+                    var input = parent.siblings('input');
+                    var currentValue = parseInt(input.val());
+
+                    if( $(this).hasClass('minus') ){
+                        input.val( currentValue - 1 );
+                    }
+
+                    if( $(this).hasClass('plus') ){
+                        input.val( currentValue + 1 );
+                    }
+
+                });
+
+
+
                 // Social sharing
                 $('a.share-facebook').on('click',function(event){
                     event.preventDefault();

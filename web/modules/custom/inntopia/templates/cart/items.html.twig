@@ -17,7 +17,10 @@
                 <div class="list-group-item cart-item clearfix" data-itineraryitemid="{{ cart_item.ItineraryItemId }}">
 
                     {% if cart_item.SuperCategoryId != current_category  %}
-                        <h3>{{ arrSuperCategory[cart_item.SuperCategoryId] }}</h3>
+                        <h3>
+                            <span class="icon icon-{{ arrSuperCategory[cart_item.SuperCategoryId]|machineFilter }}"></span>
+                            <span class="title">{{ arrSuperCategory[cart_item.SuperCategoryId] }}</span>
+                        </h3>
                     {% endif %}
 
                     <div class="wrapper">
@@ -28,7 +31,7 @@
                                 <span class="text-success"> - {{ cart_item.PackageName }}</span>
                             {% endif %}
 
-                            <a href="#" class="btn-remove-cart"><i class="material-icons">delete</i></a>
+                            <a href="#" class="btn-remove-cart"><span class="icomoon icon-garbage"></span></a>
                         </h4>
 
                         <div class="supplier-name">

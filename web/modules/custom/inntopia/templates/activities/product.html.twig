@@ -11,7 +11,7 @@
 
             <div class="zone-copy">
 
-                <h2>{{ data.detail.name }}</h2>
+                <h2>{{ data.detail.GroupName ? data.detail.GroupName : data.detail.name }}</h2>
                 <p>{{ data.detail.description }}</p>
 
             </div>
@@ -65,7 +65,7 @@
                             ${{ data.detail.originalPrice }}/night
                         </td>
                         <td data-label="cta">
-                            <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><i class="material-icons">add_shopping_cart</i></a>
+                            <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
                         </td>
                     </tr>
 
@@ -85,7 +85,7 @@
                                         ${{ option.OriginalPrice }}
                                     </td>
                                     <td data-label="cta">
-                                        <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><i class="material-icons">add_shopping_cart</i></a>
+                                        <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
                                     </td>
                                 </tr>
 

@@ -7,6 +7,11 @@ services:
         arguments: ['@renderer']
         tags:
           - { name: twig.extension }
+    inntopia.twig.string_format:
+        class: Drupal\inntopia\Twig\StringFormat
+        arguments: ['@renderer']
+        tags:
+          - { name: twig.extension }
     inntopia.shopping:
         class: Drupal\inntopia\Controller\ShoppingController
         arguments: ['@inntopia.storage', '@request_stack']

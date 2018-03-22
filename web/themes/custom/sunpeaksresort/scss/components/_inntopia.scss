@@ -1,11 +1,15 @@
 #inntopia-nav{
 
-    background: $blue-light;
+    background: #FFF;
 
     ul {
+        margin: 0;
+        padding: 0;
         li {
+            padding: 0;
             a {
                 color: $green;
+                background: $blue-light;
                 font-family: $base-font-family;
                 font-weight: 900;
                 &:hover { color: $blue; }
@@ -32,11 +36,25 @@
 
 #quickCart{
 
-    h3 { color: $green; background-color: $blue-light; }
-    h4 .btn-remove-cart {
-        .material-icons{ color: $green; @include transition; }
-        &:hover .material-icons{ color: $blue; }
+    h3 {
+        position: relative; color: $green; background-color: $blue-light;  text-align: center;
+        .title { display: inline-block; padding-left: 35px; }
+        .icon {
+            @include fonticon( "\e934", 24px, $green );
+            display: inline-block; position: absolute; width: 30px; height: 30px; top: 50%; margin-top: -12px;
+            &:before { position: static; }
+
+            &.icon-lodging:before { content: "\e934" }
+            &.icon-activities:before { content: "\e939" }
+        }
     }
+
+
+    h4 .btn-remove-cart {
+        .icomoon{ color: $green; @include transition; }
+        &:hover .icomoon{ color: $blue; }
+    }
+
 
 }
 
@@ -47,8 +65,9 @@
     display: inline-block;
     margin: 0 0 0 20px;
     padding: 0 0 0 20px;
+    text-decoration: none;
 
-    .material-icons { color: #FFF; font-size: 30px;  @include transition; }
+    .icomoon { color: #FFF; font-size: 24px;  @include transition; }
     .number {
         position: absolute;
         top: 15px;
@@ -62,7 +81,7 @@
 
     &:hover,
     &:focus{
-        .material-icons { color:$green; }
+        .icomoon { color:$green; }
     }
 
     &:before{
@@ -89,7 +108,7 @@
     }
 }
 
-.inn-address .material-icons { color: $blue; }
+.inn-address .icomoon { color: $blue; }
 .inn-price {
     .label, .price {
         color: $yellow;
@@ -113,6 +132,23 @@ ul.inn-amenities{
         .info-detail { margin-top: 60px; }
         #single-data-map{ padding-bottom: 70%;}
         .value_geodata { display: none; }
+    }
+
+}
+
+.inntopia-add-filters {
+
+    .add-filters-header {
+        background: #DEF9FC;
+        color: $blue;
+        font-size: 14px;
+        font-weight: 900;
+    }
+
+    .filterItem {
+        margin: 5px 0;
+        .icomoon { color: $blue; }
+        font-weight: 900;
     }
 
 }

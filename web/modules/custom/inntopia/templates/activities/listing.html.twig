@@ -3,56 +3,59 @@
 
 <div class="listing">
 
-    <div class="container">
+    <div class="container  result-list">
 
         {% for activity in data.listing %}
 
             {% set product_url = '/book/product/activity/?supplierId=' ~ activity.supplierId ~ '&productSuperCategoryId=' ~ data.filters.productSuperCategoryId ~ '&productId=' ~ activity.id ~ '&groupId=' ~ activity.groupId ~ '&startDate=' ~ data.filters.startDate ~ '&quantity=' ~ data.filters.quantity %}
 
-            <article role="article" class="inntopia-teaser">
+            <article role="article" class="inntopia-teaser" data-sort-price="{{activity.bestPrice }}" data-category-type="{{ activity.CategoryId }}">
 
-                <div class="zone-image">
+                <div class="wrapper">
 
-                    <div class="carousel-thumb" >
-                        <div class="image">
-                            {{ drupalizeImage(image_path ~  activity.image_filename, activity.name, 'inntopia_thumb' ) }}
+                    <div class="zone-image">
+
+                        <div class="carousel-thumb" >
+                            <div class="image">
+                                {{ drupalizeImage(image_path ~  activity.image_filename, activity.name, 'inntopia_thumb' ) }}
+                            </div>
                         </div>
+
+                    </div>
+
+
+                    <div class="zone-copy">
+
+                        <div class="wrapper">
+
+                            <div class="info">
+                                <h2><a href="{{ product_url }}">{{ activity.GroupName ? activity.GroupName : activity.name }}</a></h2>
+                                {#<div class="inn-review"><img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-24046-5.svg" alt="Trip Advisor" title="Trip Advisor"></div>#}
+                                <p>{{ activity.description|length > 200 ? activity.description|slice(0, 200) ~ '...' : activity.description  }}</p>
+                            </div>
+
+
+                            <div class="cta">
+
+                                <a href="{{ product_url }}" class="inn-price">
+
+                                    {% if activity.bestPrice == activity.originalPrice %}
+                                        <div class="label top-label">starting at</div>
+                                        <div class="price">${{ activity.originalPrice }}</div>
+                                    {% else %}
+                                        <h6><del>was ${{ activity.originalPrice }}</del></h6>
+                                        <div class="label top-label">starting at</div>
+                                        <div class="price">${{ activity.bestPrice }}</div>
+                                    {% endif %}
+
+                                </a>
+
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
-
-
-                <div class="zone-copy">
-
-                    <div class="wrapper">
-
-                        <div class="info">
-                            <h2><a href="{{ product_url }}">{{ activity.name }}</a></h2>
-                            {#<div class="inn-review"><img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-24046-5.svg" alt="Trip Advisor" title="Trip Advisor"></div>#}
-                            <p>{{ activity.description|length > 200 ? activity.description|slice(0, 200) ~ '...' : activity.description  }}</p>
-                        </div>
-
-
-                        <div class="cta">
-
-                            <a href="{{ product_url }}" class="inn-price">
-
-                                {% if activity.bestPrice == activity.originalPrice %}
-                                    <div class="label top-label">starting at</div>
-                                    <div class="price">${{ activity.originalPrice }}</div>
-                                {% else %}
-                                    <h6><del>was ${{ activity.originalPrice }}</del></h6>
-                                    <div class="label top-label">starting at</div>
-                                    <div class="price">${{ activity.bestPrice }}</div>
-                                {% endif %}
-
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div>
-
 
             </article>
 

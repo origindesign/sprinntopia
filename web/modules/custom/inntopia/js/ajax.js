@@ -199,21 +199,43 @@
         var request = $.ajax({
             type: "GET",
             data: {data: $params},
-            url: $url,
-            success: function( result ){
-                // Handle class for loading icon
-                $container.html('');
-                var resultDiv = $('<div />').append(result).find('#block-sunpeaksresort-content');
-                var resultHTML = resultDiv.html();
-                var cartDiv = resultDiv.find('.cart');
-                if( cartDiv.length > 0 ){
-                    Drupal.behaviors.inntopiaAjaxDisplay.displayNbCartItems( cartDiv.data("nb-items") );
-                }
-                $container.html(resultHTML);
-                Drupal.attachBehaviors();
-                $container.removeClass('loading');
-            }
+            url: $url
         });
+
+        request.done(function( result ) {
+            // Handle class for loading icon
+            $container.html('');
+            var resultDiv = $('<div />').append(result).find('#block-sunpeaksresort-content');
+            var resultHTML = resultDiv.html();
+
+            // Load html result in container
+            $container.html(resultHTML);
+
+            // Relaunch non unique behaviors
+            Drupal.attachBehaviors();
+
+            // Remove Loading class
+            $container.removeClass('loading');
+
+            // Update cart if the call is cart related
+            var cartDiv = $container.find('.cart');
+            if( cartDiv.length > 0 ){
+                Drupal.behaviors.inntopiaAjaxDisplay.displayNbCartItems( cartDiv.data("nb-items") );
+            }
+
+            // Init Isotope for listing if the call is listing related
+            var listingDiv = $container.find('.result-list');
+            if( listingDiv.length > 0 ) {
+                // Set a small delay to load isotope so we're sure it's loaded and displayed
+                setTimeout(function () {
+                    Drupal.behaviors.inntopia.isotope.init(listingDiv);
+                }, 250);
+            }
+
+
+        });
+
+
 
         request.fail(function() {
             console.log( "error" );

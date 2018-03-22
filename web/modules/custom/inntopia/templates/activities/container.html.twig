@@ -1,5 +1,23 @@
 {% set ajax_url = "/inntopia-ajax/display/listing-activity" %}
 
+
+<div class="inn-head-listing">
+
+    <div class="head-listing-title">
+        <h5><span class="counter"></span> activities where found</h5>
+    </div>
+
+    <div class="form-item inntopia-sort">
+        <label for="adultCount">Sort By</label>
+        <select id="sorting" name="sorting" class="input-mini input-select">
+            <option value="original-order">Default</option>
+            <option value="price">Lowest to Highest Price</option>
+            <option value="name">Alphabetically</option>
+        </select>
+    </div>
+
+</div>
+
 <div class="ajaxContainer">
 
     <div class="ajaxContent" data-ajax-url="{{ ajax_url }}">

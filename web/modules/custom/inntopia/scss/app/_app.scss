@@ -20,6 +20,8 @@ body.noscroll{
     }
 }
 
+.ajaxContainer { min-height: 1000px; }
+
 
 #quickCart{
 
@@ -70,7 +72,7 @@ body.noscroll{
     }
 
     h3 {
-        padding: 15px;
+        padding: 20px;
         background: #eee;
         text-align: center;
         font-weight: 900;
@@ -88,8 +90,8 @@ body.noscroll{
             height: 20px;
             right: 0;
             top: 0;
-            .material-icons{ color: #9BA0A7; }
-            &:hover .material-icons{ color: #333333; }
+            .icomoon{ color: #9BA0A7; font-size: 18px; }
+            &:hover .icomoon{ color: #333333; }
 
         }
     }
@@ -118,7 +120,6 @@ body.noscroll{
     }
 
 
-
 }
 
 #inntopia-nav{
@@ -141,15 +142,17 @@ body.noscroll{
                 text-transform: uppercase;
                 font-family: Sans-Serif;
                 text-decoration: none;
-                &:hover { color: #333; }
-                &.active { color: #333; }
-                .material-icons {
+                opacity: 0.8;
+                @include transition;
+                &:hover { color: #333; opacity: 1;}
+                &.active { color: #333; opacity: 1; }
+                .icomoon {
                     position: absolute;
                     top: 20px;
                     display: inline-block;
                     font-size: 36px;
                 }
-                span { display: inline-block; padding-left: 45px; }
+                .name { display: inline-block; padding-left: 55px; }
             }
         }
     }
@@ -158,7 +161,39 @@ body.noscroll{
 
 .inntopia-filters {
     margin: 40px;
+
 }
+
+.inntopia-add-filters {
+
+    margin-bottom: 20px;
+
+    .add-filters-header {
+        background: rgba(0,0,0,0.1);
+        color: #333;
+        text-transform: uppercase;
+        padding: 15px 40px;
+    }
+
+    .add-filters-body{
+        margin: 15px 40px;
+    }
+
+    .filterItem {
+        cursor: pointer;
+        @include clearfix;
+        .icomoon { float: left; font-size: 24px; }
+        .icon-radio_check { display: none; }
+        .icon-radio_uncheck { display: inline-block; }
+        &.active {
+            .icon-radio_check { display: inline-block; }
+            .icon-radio_uncheck { display: none; }
+        }
+        .label-filter { display: inline-block; padding: 3px 5px; }
+    }
+
+}
+
 
 
 #ajaxContainer {
@@ -168,7 +203,7 @@ body.noscroll{
 
 .inn-address{
     margin-top: 5px;
-    .material-icons { display: inline-block; font-size: 28px; float: left;}
+    .icomoon { display: inline-block; font-size: 24px; float: left; margin-right: 5px; }
     span { display: inline-block; line-height: 30px; }
 }
 
@@ -187,19 +222,31 @@ body.noscroll{
 
 .inn-addcart {
     @include transition;
-    .material-icons { display: inline-block; font-size: 28px; float: right;}
+    .icomoon { display: inline-block; font-size: 24px; float: right;}
     span { display: inline-block; line-height: 30px; margin-right: 5px; }
     &:hover { color: #333; }
 }
 
 
-.inntopia-teaser{
+.inn-head-listing{
 
-    margin: 40px 0 0 0;
-    padding: 40px 0 0 0;
-    border-top: 1px solid #D3D5D8;
     @include clearfix;
 
+    .head-listing-title {
+        float: left;
+        display: inline-block;
+        h5 { display: inline-block; margin-top: 40px; }
+    }
+
+    .inntopia-sort{ float: right; width: 260px; margin-top: 0; }
+
+}
+
+.inntopia-teaser{
+
+    width: 100%;
+
+    & > .wrapper {  margin: 40px 0 0 0; padding: 40px 0 0 0; border-top: 1px solid #D3D5D8; @include clearfix; }
 
     .zone-image {
         float: left;
@@ -235,6 +282,8 @@ body.noscroll{
         li button { background: rgba(255,255,255,0.25); }
         li.slick-active button { background: rgba(255,255,255,0.75); }
     }
+
+    .slick-dotted.slick-slider { margin-bottom: 0; }
 
 }
 

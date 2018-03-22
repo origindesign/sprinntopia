@@ -1,115 +1,102 @@
 <div id="inntopia-lodging-filters" class="inntopia-filters">
+
     <form class="form" action="/book/lodging">
-        <div class="form-item from">
+
+        <div class="form-item">
             <label for="arrivalDate">Arrival</label>
             <div class="wrap-picker">
-                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small" value="{{ data.arrivalDate }}">
+                <input type="text" id="arrivalDate" name="arrivalDate" class="input-small" value="{{ data.filters.arrivalDate }}">
             </div>
         </div>
-        <div class="form-item to">
+
+        <div class="form-item">
             <label for="departureDate">Departure</label>
             <div class="wrap-picker">
-                <input type="text" id="departureDate" name="departureDate" class="input-small" value="{{ data.departureDate }}">
+                <input type="text" id="departureDate" name="departureDate" class="input-small" value="{{ data.filters.departureDate }}">
             </div>
-        </div><div class="form-item adults">
-            <label for="adultCount">Adults</label>
-            <select id="adultCount" name="adultCount" class="input-mini input-select" data-defaultvalue="{{ data.adultCount }}">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="10">--</option>
-            </select>
         </div>
-        <div class="form-item children">
-            <label for="childrenCount">Children</label>
-            <select id="childrenCount" name="childrenCount" class="input-mini input-select" data-defaultvalue="{{ data.childrenCount }}">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="10">--</option>
-            </select>
+
+        <div class="form-item-container form-item-double">
+
+            <div class="form-item form-type-numeric">
+                <label for="adultCount">Adults</label>
+                <input type="text" id="adultCount" name="adultCount" class="input-small" value="{{ data.filters.adultCount }}">
+                <div class="incrementor">
+                    <div class="wrapper">
+                        <div class="increment minus">-</div>
+                        <div class="increment plus">+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-item form-type-numeric">
+                <label for="childrenCount">Children</label>
+                <input type="text" id="childrenCount" name="childrenCount" class="input-small" value="{{ data.filters.childrenCount }}">
+                <div class="incrementor">
+                    <div class="wrapper">
+                        <div class="increment minus">-</div>
+                        <div class="increment plus">+</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
         <div class="form-actions">
             <input type="submit" value="Check Availability">
         </div>
+
     </form>
-    <span id="formError"></span>
+
 </div>
 
 
-{#
+{% if data.args[1] == 'lodging' %}
 
-<div class="card">
-    <div class="card-header">Lodging Type</div>
-    <div class="card-body">
-
-        <fieldset>
-            <div class="filterItem lodgingTypeFilterItem" data-filter="hotel">
-                <input type="radio" name="lodgingType" id="radiolodgingType1" value="on">
-                <label for="radiolodgingType1">Hotel</label>
-            </div>
-            <div class="filterItem lodgingTypeFilterItem" data-filter="condo">
-                <input type="radio" name="lodgingType" id="radiolodgingType2" value="on">
-                <label for="radiolodgingType2">Condos</label>
-            </div>
-            <div class="filterItem lodgingTypeFilterItem" data-filter="townhouse">
-                <input type="radio" name="lodgingType" id="radiolodgingType3" value="on">
-                <label for="radiolodgingType3">Townhouses</label>
-            </div>
-            <div class="filterItem lodgingTypeFilterItem" data-filter="vacationhome">
-                <input type="radio" name="lodgingType" id="radiolodgingType4" value="on">
-                <label for="radiolodgingType4">Vacation Home</label>
-            </div>
-            <div class="filterItem lodgingTypeFilterItem" data-filter="bedbreakfast">
-                <input type="radio" name="lodgingType" id="radiolodgingType5" value="on">
-                <label for="radiolodgingType5">Bed &amp; Breakfast</label>
-            </div>
-        </fieldset>
+<div class="inntopia-add-filters">
+    <div class="add-filters-header">Lodging Type</div>
+    <div class="add-filters-body">
 
         <div class="button-group" data-filter-group="lodging">
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="hotel">
-                <input type="radio" value="1" id="radio" name="radio">
-                <label for="radio">Radio</label>
+            <div class="filterItem" data-filter="hotel">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Hotels</span><span class="filter-count"></span>
+                </div>
             </div>
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="condo">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">Condos</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="condo">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Condos</span><span class="filter-count"></span>
+                </div>
             </div>
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="townhouse">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">Townhouses</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="townhouse">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Townhouses</span><span class="filter-count"></span>
+                </div>
             </div>
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="vacationhome">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">Vacation Home</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="vacationhome">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Vacation Home</span><span class="filter-count"></span>
+                </div>
             </div>
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="bedbreakfast">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">Bed &amp; Breakfast</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="bedbreakfast">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Bed &amp; Breakfast</span><span class="filter-count"></span>
+                </div>
             </div>
 
         </div>
@@ -118,40 +105,48 @@
 </div>
 
 
-<div class="card">
-    <div class="card-header">Bedrooms</div>
-    <div class="card-body">
+<div class="inntopia-add-filters">
+    <div class="add-filters-header">Bedrooms</div>
+    <div class="add-filters-body">
 
         <div class="button-group" data-filter-group="bedroom">
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="1">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">1 Bedroom</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="1">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">1 Bedroom</span><span class="filter-count"></span>
+                </div>
             </div>
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="2">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">2 Bedrooms</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="2">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">2 Bedrooms</span><span class="filter-count"></span>
+                </div>
             </div>
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="3">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">3 Bedrooms</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="3">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">3 Bedrooms</span><span class="filter-count"></span>
+                </div>
             </div>
 
-            <div class="filterItem lodgingTypeFilterItem" data-filter="4">
-                <i class="material-icons radio_checked">radio_button_checked</i>
-                <i class="material-icons radio_unchecked">radio_button_unchecked</i>
-                <span class="label-filter">4 Bedrooms</span><span class="filter-count"></span>
+            <div class="filterItem" data-filter="4">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">4 Bedrooms</span><span class="filter-count"></span>
+                </div>
             </div>
-
 
         </div>
 
     </div>
 </div>
 
-#}
+
+{% endif %}

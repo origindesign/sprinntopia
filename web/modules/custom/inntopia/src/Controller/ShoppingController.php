@@ -101,6 +101,11 @@ class ShoppingController extends InntopiaBaseController {
 		// Get parameters
 		$params = $this->requestStack->getCurrentRequest()->query->all();
 
+		// Get Arguments
+		$path_args = $this->requestStack->getCurrentRequest()->getPathInfo();
+		$args = explode('/', substr($path_args, 1));
+
+
 		switch ($method){
 			case "activities":
 				$instance = new InntopiaActivity($this->sales_id, $this->api_url, $params);
@@ -117,10 +122,15 @@ class ShoppingController extends InntopiaBaseController {
 
 		$filters = $instance->getFilters();
 
+		$data = array(
+			'filters' => $filters,
+			'args' => $args
+		);
+
 		// Format Listing
 		$build[] =  [
 			'#theme' => $theme,
-			'#data' => $filters
+			'#data' => $data
 		];
 
 		// Return listing ready for display

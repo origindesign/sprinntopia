@@ -1,14 +1,75 @@
 <div id="inntopia-acivities-filters" class="inntopia-filters">
+
     <form class="form">
+
         <div class="form-item from">
             <label for="startDate">Start Date</label>
             <div class="wrap-picker">
-                <input type="text" id="arrivalDate" name="startDate" class="input-small" value="{{ data.startDate }}">
+                <input type="text" id="arrivalDate" name="startDate" class="input-small" value="{{ data.filters.startDate }}">
             </div>
         </div>
+
         <div class="form-actions">
             <input type="submit" value="Check Availability">
         </div>
+
     </form>
-    <span id="formError"></span>
+
 </div>
+
+
+
+{% if data.args[1] == 'activities' %}
+
+<div class="inntopia-add-filters">
+    <div class="add-filters-header">Activity Type</div>
+    <div class="add-filters-body">
+
+        <div class="button-group" data-filter-group="type">
+
+            <div class="filterItem" data-filter="160">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Dog Sledding</span><span class="filter-count"></span>
+                </div>
+            </div>
+
+            <div class="filterItem" data-filter="144">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Sleigh Rides</span><span class="filter-count"></span>
+                </div>
+            </div>
+
+            <div class="filterItem" data-filter="196">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Snowcat Tours</span><span class="filter-count"></span>
+                </div>
+            </div>
+
+            <div class="filterItem" data-filter="141">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Snowmobiling</span><span class="filter-count"></span>
+                </div>
+            </div>
+
+            <div class="filterItem" data-filter="178">
+                <span class="icomoon icon-radio_check"></span>
+                <span class="icomoon icon-radio_uncheck"></span>
+                <div class="label-filter">
+                    <span class="label-name-filter">Tubing</span><span class="filter-count"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endif %}
