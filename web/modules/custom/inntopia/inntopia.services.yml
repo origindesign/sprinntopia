@@ -3,13 +3,11 @@ services:
         class: Drupal\inntopia\InntopiaStorage
         arguments: ['@config.factory']
     inntopia.twig.image_format:
-        class: Drupal\inntopia\Twig\ImageFormat
-        arguments: ['@renderer']
+        class: Drupal\inntopia\TwigExtension\ImageFormat
         tags:
           - { name: twig.extension }
     inntopia.twig.string_format:
-        class: Drupal\inntopia\Twig\StringFormat
-        arguments: ['@renderer']
+        class: Drupal\inntopia\TwigExtension\StringFormat
         tags:
           - { name: twig.extension }
     inntopia.shopping:

@@ -5,7 +5,7 @@
  * Contains \Drupal\inntopia\Twig\StringFormat.
  */
 
-namespace Drupal\inntopia\Twig;
+namespace Drupal\inntopia\TwigExtension;
 
 
 

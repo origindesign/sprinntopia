@@ -1,0 +1,9 @@
+inntopia_sales_id: '8885348'
+inntopia_server: stage
+_core:
+  default_config_hash: WrB4NPUhR6RdQXr8MunJ5bjnWOLGvf-WMi7lO7D4WF8
+submit: 'Save configuration'
+form_build_id: form-5kT-p99ZnJuSY2XBFQjh0cMIoUEXV8FDQVkPpNOVX_k
+form_token: yi82J-EOi8ZeXjUizVZ444goM5lPEx4BOXZktgcKoAU
+form_id: inntopia_settings_form
+op: 'Save configuration'
