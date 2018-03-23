@@ -95,6 +95,8 @@ class ShoppingController extends InntopiaBaseController {
 	/**
 	 * Display Lodging Sidebar
 	 * @return array
+	 *
+	 * @TODO refactor the dispatch of the sidebar so product is handled in a better way
 	 */
 	public function displaySidebar( $method ) {
 
@@ -114,6 +116,15 @@ class ShoppingController extends InntopiaBaseController {
 			case "lodging":
 				$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);
 				$theme = 'lodging_filters';
+				break;
+			case "product":
+				if($args[2] == 'activity'){
+					$instance = new InntopiaActivity($this->sales_id, $this->api_url, $params);
+					$theme = 'activities_filters';
+				}else{
+					$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);
+					$theme = 'lodging_filters';
+				}
 				break;
 			default:
 				$instance = new InntopiaLodging($this->sales_id, $this->api_url, $params);

@@ -45,6 +45,12 @@
 
                                <a href="{{ product_url }}" class="inn-price">
 
+                                   <div class="label top-label">from</div>
+                                   <div class="price">${{ lodging.bestPrice }}</div>
+                                   <div class="label bottom-label">/night</div>
+
+                                   {#
+
                                     {% if lodging.bestPrice == lodging.originalPrice %}
                                         <div class="label top-label">from</div>
                                         <div class="price">${{ lodging.originalPrice }}</div>
@@ -55,6 +61,8 @@
                                         <div class="price">${{ lodging.bestPrice }}</div>
                                         <div class="label bottom-label">/night</div>
                                     {% endif %}
+
+                                    #}
 
                                </a>
 

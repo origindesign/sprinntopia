@@ -203,8 +203,6 @@
             // Additional Filters
             $('.inntopia-add-filters .filterItem').on( "click", function(event) {
 
-                console.log("clicking filters");
-
                 var $this = $(this);
                 var $buttonGroup = $this.parents('.button-group');
                 var filterGroup = $buttonGroup.data('filter-group');

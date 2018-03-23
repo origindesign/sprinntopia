@@ -51,6 +51,20 @@
                 event.stopPropagation();
 
                 var productContainer = $(this).parents(".product-data");
+                var quantityField = productContainer.find('input[name="quantity"]');
+
+                // If it's an option, first update the parent data with the option/product ID
+                if ( $(this).hasClass('product-option') ){
+                    var productId = $(this).data('option-id');
+                    productContainer.data('productid', productId)
+
+                }
+
+                // If the quantity field exists, update the parent data with the quantity number
+                if( quantityField !== undefined ){
+                    var quantity = quantityField.val();
+                    productContainer.data('quantity', quantity);
+                }
 
                 var productData = {
                     'SupplierId' : productContainer.data('supplierid'),

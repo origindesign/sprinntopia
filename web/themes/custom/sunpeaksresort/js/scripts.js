@@ -150,17 +150,20 @@
 
                         $('.accordions .accordion').each( function(){
                             $(this).removeClass('active');
-                            $(this).find('.accordion-content').slideUp();
+                            $(this).find('.accordion-content').removeClass('open');
+                            //$(this).find('.accordion-content').slideUp();
                         });
 
                         $accordion.addClass('active');
-                        $content.slideDown();
+                        $content.addClass('open');
+                        //$content.slideDown();
 
                     }else{
 
                         $('.accordions .accordion').each( function(){
                             $(this).removeClass('active');
-                            $(this).find('.accordion-content').slideUp();
+                            $(this).find('.accordion-content').removeClass('open');
+                            //$(this).find('.accordion-content').slideUp();
                         });
 
                     }

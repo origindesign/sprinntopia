@@ -38,29 +38,45 @@
                             {{ cart_item.SupplierName }}
                         </div>
 
-                        <div class="cart-item-info">
-                            <div class="row">
-                                <div class="cell label">Arrival</div>
-                                <div class="cell value">{{ cart_item.ArrivalDate }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="cell label">Departure</div>
-                                <div class="cell value">{{ cart_item.DepartureDate }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="cell label">Adults</div>
-                                <div class="cell value">{{ cart_item.AdultCount }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="cell label">Children</div>
-                                <div class="cell value">{{ cart_item.ChildCount }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="cell label">Price</div>
-                                <div class="cell value">${{ cart_item.Price|number_format(2, '.', ',') }}</div>
-                            </div>
-                        </div>
+                        {% if arrSuperCategory[cart_item.SuperCategoryId]|machineFilter == 'lodging' %}
 
+                            <div class="cart-item-info">
+                                <div class="row">
+                                    <div class="cell label">Arrival</div>
+                                    <div class="cell value">{{ cart_item.ArrivalDate }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell label">Departure</div>
+                                    <div class="cell value">{{ cart_item.DepartureDate }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell label">Adults</div>
+                                    <div class="cell value">{{ cart_item.AdultCount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell label">Children</div>
+                                    <div class="cell value">{{ cart_item.ChildCount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell label">Price</div>
+                                    <div class="cell value">${{ cart_item.Price|number_format(2, '.', ',') }}</div>
+                                </div>
+                            </div>
+
+                        {% else %}
+
+                            <div class="cart-item-info">
+                                <div class="row">
+                                    <div class="cell label">Date</div>
+                                    <div class="cell value">{{ cart_item.ArrivalDate }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell label">Price</div>
+                                    <div class="cell value">${{ cart_item.Price|number_format(2, '.', ',') }}</div>
+                                </div>
+                            </div>
+
+                        {% endif %}
 
                     </div>
 

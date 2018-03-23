@@ -9,8 +9,10 @@ inntopia:
     https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js: { type: external, minified: true }
     https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js: { type: external, minified: true }
     https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js: { type: external, minified: true }
+    js/utils.js: {}
     js/ajax.js: {}
     js/inntopia.js: {}
+    js/widget.js: {}
   dependencies:
     - core/drupal
     - core/jquery

@@ -306,20 +306,30 @@ body.noscroll{
     .rooms { margin-top: 60px; }
     .informations { margin-top: 100px; }
 
-    table.room-price {
+    table.detail-price {
 
         margin: 20px 0 60px 0;
         tbody {
             tr { border-bottom: 1px solid rgba(80,88,101,0.25); }
             tr:nth-child(odd) { background: #edeef0; }
             td, th { vertical-align: middle; padding: 15px; }
-            td { text-align: right; }
+            th { width: 50%; }
+            td { text-align: right; width: auto; }
             h5 { margin-bottom: 0; }
 
         }
+
+        .form-type-numeric { width: 100px; float: right; }
     }
 
 }
 
+// Widget
+.form-inntopia-widget {
 
+    @include clearfix;
+    .datepicker-wrap { float: left; display: inline-block; width: 150px; }
+    .form-submit { float: left; display: inline-block; }
+
+}
 

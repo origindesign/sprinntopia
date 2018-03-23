@@ -117,7 +117,13 @@ tbody{
 
     }
 
-    .accordion-content { display: none; }
+    .accordion-content {
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      @include transition;
+      &.open { height: auto; max-height: 500px; }
+    }
 
   }
 
