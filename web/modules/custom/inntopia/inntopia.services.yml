@@ -13,3 +13,6 @@ services:
     inntopia.shopping:
         class: Drupal\inntopia\Controller\ShoppingController
         arguments: ['@inntopia.storage', '@request_stack']
+    inntopia.checkout:
+        class: Drupal\inntopia\Controller\CheckoutController
+        arguments: ['@inntopia.storage', '@request_stack']

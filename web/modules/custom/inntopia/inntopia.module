@@ -79,6 +79,14 @@ function inntopia_theme($existing, $type, $theme, $path) {
 		'cart' => array(
 			'variables' => array('data' => NULL),
 			'template' => 'cart/items',
+		),
+		'checkout_container' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'checkout/steps',
+		),
+		'checkout_summary' => array(
+			'variables' => array('data' => NULL),
+			'template' => 'checkout/summary',
 		)
 	);
 }
@@ -108,9 +116,17 @@ function inntopia_preprocess_page(&$variables) {
 			$section = ( isset($arr_path[1]) ) ? $arr_path[1] : 'unknown';
 			$variables['inntopia_nav'] = ['#theme' => 'inntopia_navigation', '#data' => array( 'section' => $section) ];
 
-			$filters = \Drupal::service('inntopia.shopping')->displaySidebar( $section );
+			$sidebar = \Drupal::service('inntopia.shopping')->displaySidebar( $section );
 
-			$variables['inntopia_sidebar'] = $filters;
+			$variables['inntopia_sidebar'] = $sidebar;
+
+		}
+
+
+		if ($arr_path[0] == "checkout") {
+
+			$sidebar = \Drupal::service('inntopia.checkout')->displaySummary();
+			$variables['inntopia_sidebar'] = $sidebar;
 
 		}
 	}

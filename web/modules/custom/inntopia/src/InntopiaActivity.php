@@ -62,7 +62,7 @@ class InntopiaActivity {
 	 * Get Filters from Parameters set for the request
 	 * @return array
 	 */
-	public function getFilters() {
+	public function getSidebarData() {
 		return array(
 			"startDate" => $this->startDate,
 			"productSuperCategoryId" => $this->productSuperCategoryId,

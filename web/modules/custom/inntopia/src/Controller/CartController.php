@@ -20,7 +20,8 @@ class CartController extends InntopiaBaseController {
 	protected $nb_cart_items;
 
 
-	public function displayCart() {
+
+	public function getCart(){
 
 		$cart = new Cart( $this->sales_id, $this->api_url );
 
@@ -33,7 +34,17 @@ class CartController extends InntopiaBaseController {
 		$data =  array(
 			'nb_cart_items' => $this->nb_cart_items,
 			'cart' => $current_cart
-		);;
+		);
+
+		return $data;
+
+	}
+
+
+
+	public function displayCart() {
+
+		$data = $this->getCart();
 
 		// Format Listing
 		$build[] =  [

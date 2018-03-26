@@ -29,10 +29,12 @@
 
 
 
-.path-book #sidebar {
-    display: block;
-}
+.path-book, .path-checkout {
+    #sidebar {
+        display: block;
+    }
 
+}
 
 #quickCart{
 

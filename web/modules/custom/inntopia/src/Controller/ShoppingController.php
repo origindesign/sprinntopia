@@ -131,7 +131,7 @@ class ShoppingController extends InntopiaBaseController {
 				$theme = 'lodging_filters';
 		}
 
-		$filters = $instance->getFilters();
+		$filters = $instance->getSidebarData();
 
 		$data = array(
 			'filters' => $filters,

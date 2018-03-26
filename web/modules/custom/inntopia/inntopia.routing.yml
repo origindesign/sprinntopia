@@ -34,11 +34,12 @@ inntopia.ajax_actions:
         _access: 'TRUE'
 
 
-inntopia.cart:
-    path: '/cart'
+inntopia.checkout:
+    path: '/checkout/{step}'
     defaults:
-        _controller: '\Drupal\inntopia\Controller\CartController::displayCart'
-        _title: 'Your Cart'
+        _controller: '\Drupal\inntopia\Controller\CheckoutController::displayCheckout'
+        _title: 'Checkout'
+        step: 'register'
     requirements:
         _access: 'TRUE'
 
