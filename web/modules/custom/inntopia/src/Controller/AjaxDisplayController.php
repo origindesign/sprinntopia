@@ -70,7 +70,7 @@ class AjaxDisplayController extends InntopiaBaseController {
 
 		$inntopiaActivity = new InntopiaActivity($this->sales_id, $this->api_url, $params);
 		$activityList = $inntopiaActivity->getListing();
-		$filters = $inntopiaActivity->getFilters();
+		$filters = $inntopiaActivity->getSidebarData();
 
 		$data = array(
 			'settings' => array(
@@ -109,7 +109,7 @@ class AjaxDisplayController extends InntopiaBaseController {
 
 		$inntopiaLodging = new InntopiaLodging($this->sales_id, $this->api_url, $params);
 		$lodgingList = $inntopiaLodging->getListing();
-		$filters = $inntopiaLodging->getFilters();
+		$filters = $inntopiaLodging->getSidebarData();
 
 		$data = array(
 			'settings' => array(

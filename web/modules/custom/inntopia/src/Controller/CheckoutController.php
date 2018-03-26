@@ -43,7 +43,7 @@ class CheckoutController extends InntopiaBaseController {
 
 		// Format Listing
 		$build[] =  [
-			'#theme' => 'checkout_summary',
+			'#theme' => 'cart',
 			'#data' => $data,
 			'#attached' => array(
 				'library' => array(

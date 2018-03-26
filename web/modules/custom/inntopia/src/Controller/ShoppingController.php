@@ -65,7 +65,7 @@ class ShoppingController extends InntopiaBaseController {
 		}
 
 		$detail = $instance->getDetail();
-		$filters = $instance->getFilters();
+		$filters = $instance->getSidebarData();
 
 		$data = array(
 			'settings' => array(
