@@ -137,7 +137,7 @@ class AjaxDisplayController extends InntopiaBaseController {
 	private function displayQuickCart (){
 
 		$cart = new CartController($this->inntopiaStorage, $this->requestStack);
-		$result = $cart->displayCart();
+		$result = $cart->displayCart('quickcart');
 		return $result;
 
 	}

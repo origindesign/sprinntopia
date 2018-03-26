@@ -1,0 +1,35 @@
+<div id="inntopia-progress">
+
+    <div class="wrapper">
+
+        <div class="checkout-step {% if data.step == "register" %} active-step {% endif %}">
+            <span class="icon icon-guest"></span>
+            <span class="checkout-step-name">Guest Info</span>
+        </div>
+
+
+        <div class="checkout-step {% if data.step == "payment" %} active-step {% endif %}">
+            <span class="icon icon-payment"></span>
+            <span class="checkout-step-name">Payment Info</span>
+        </div>
+
+
+        <div class="checkout-step {% if data.step == "review" %} active-step {% endif %}">
+            <span class="icon icon-cart"></span>
+            <span class="checkout-step-name">Review & Purchase</span>
+        </div>
+
+
+        <div class="checkout-step {% if data.step == "confirm" %} active-step {% endif %}">
+            <span class="icon icon-tick2"></span>
+            <span class="checkout-step-name">Confirmation</span>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+

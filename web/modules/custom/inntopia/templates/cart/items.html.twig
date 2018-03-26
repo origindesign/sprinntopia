@@ -1,7 +1,14 @@
 {% set image_path = 'https://rmstest.inntopia.com/photos' %}
 {% set arrSuperCategory = ["", "lodging", "activities", "shuttle", "airfare", "golf", "rental", "spa", "events", "lift tickets"] %}
 
-<div class="cart" data-nb-items="{{ data.nb_cart_items }}">
+
+<div class="cart inntopia-cart" data-nb-items="{{ data.nb_cart_items }}">
+
+    {% if data.source == 'summary' %}
+
+        <h2>Booking Summary</h2>
+
+    {% endif %}
 
     <div class="container">
 
@@ -31,7 +38,9 @@
                                 <span class="text-success"> - {{ cart_item.PackageName }}</span>
                             {% endif %}
 
-                            <a href="#" class="btn-remove-cart"><span class="icomoon icon-garbage"></span></a>
+                            {% if data.source == 'quickcart' %}
+                                <a href="#" class="btn-remove-cart"><span class="icomoon icon-garbage"></span></a>
+                            {% endif %}
                         </h4>
 
                         <div class="supplier-name">
@@ -108,9 +117,11 @@
             </div>
 
 
-            <div class="checkout-zone">
-                <a href="/checkout" class="btn-solid product-action" data-role="button">Check Out</a>
-            </div>
+            {% if data.source == 'quickcart' %}
+                <div class="checkout-zone">
+                    <a href="/checkout" class="btn-solid product-action" data-role="button">Checkout</a>
+                </div>
+            {% endif %}
 
 
         {% else %}

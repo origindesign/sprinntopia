@@ -36,7 +36,7 @@
 
 }
 
-#quickCart{
+.inntopia-cart{
 
     h3 {
         position: relative; color: $green; background-color: $blue-light;  text-align: center;
@@ -151,6 +151,18 @@ ul.inn-amenities{
         margin: 5px 0;
         .icomoon { color: $blue; }
         font-weight: 900;
+    }
+
+}
+
+#inntopia-progress{
+
+    .checkout-step {
+
+        &.active-step {
+            .icon, .checkout-step-name { color: $green; }
+        }
+
     }
 
 }

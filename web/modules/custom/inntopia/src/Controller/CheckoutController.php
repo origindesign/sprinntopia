@@ -15,6 +15,7 @@ class CheckoutController extends InntopiaBaseController {
 
 
 		$data = array();
+		$data['step'] = $step;
 
 		// Format Listing
 		$build[] =  [
@@ -39,21 +40,7 @@ class CheckoutController extends InntopiaBaseController {
 	public function displaySummary(){
 
 		$cart = new CartController($this->inntopiaStorage, $this->requestStack);
-		$data = $cart->displayCart();
-
-		// Format Listing
-		$build[] =  [
-			'#theme' => 'cart',
-			'#data' => $data,
-			'#attached' => array(
-				'library' => array(
-					'inntopia/inntopia',
-				),
-			),
-			'#cache' => array(
-				'max-age' => 0,
-			)
-		];
+		$build = $cart->displayCart('summary');
 
 		// Return listing ready for display
 		return $build;

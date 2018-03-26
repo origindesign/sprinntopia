@@ -3,7 +3,36 @@
 
     <div class="container">
 
-        <p>Register</p>
+        {% include '@inntopia/checkout/progress.html.twig' %}
+
+
+        <form id="form-checkout-register" class="form-checkout" action="#" method="get">
+
+            <h2>Guest Information</h2>
+
+            <div class="form-item">
+                <label for="firstName">First Name</label>
+                <input name="firstName" type="text" class="form-control">
+            </div>
+
+            <div class="form-item">
+                <label for="lastName">Last Name</label>
+                <input name="lastName" type="text" class="form-control">
+            </div>
+
+            <div class="form-item">
+                <label for="emailAddress">Email</label>
+                <input name="emailAddress" type="email" class="form-control">
+            </div>
+
+            <div class="form-item">
+                <input type="submit" class="btn-solid" value="Payment" />
+            </div>
+
+
+
+        </form>
+
 
     </div>
 

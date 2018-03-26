@@ -21,7 +21,7 @@ class CartController extends InntopiaBaseController {
 
 
 
-	public function getCart(){
+	public function getCartData(){
 
 		$cart = new Cart( $this->sales_id, $this->api_url );
 
@@ -42,9 +42,10 @@ class CartController extends InntopiaBaseController {
 
 
 
-	public function displayCart() {
+	public function displayCart($source = 'quickcart') {
 
-		$data = $this->getCart();
+		$data = $this->getCartData();
+		$data['source'] = $source;
 
 		// Format Listing
 		$build[] =  [

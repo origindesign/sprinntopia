@@ -23,7 +23,7 @@ body.noscroll{
 .ajaxContainer { min-height: 1000px; }
 
 
-#quickCart{
+#quickCart {
 
     position: fixed;
     width: $quick-cart-width;
@@ -37,7 +37,7 @@ body.noscroll{
 
     .loading {
         background: none;
-        .cart{
+        .cart {
             position: relative;
             &:after {
                 content: "\020";
@@ -49,23 +49,36 @@ body.noscroll{
                 min-height: 150px;
                 z-index: 100;
                 background-image: url(../misc/images/loading.svg);
-                background-color: rgba(255,255,255,0.8);
+                background-color: rgba(255, 255, 255, 0.8);
                 background-position: center;
                 background-repeat: no-repeat;
             }
         }
     }
 
-    &.slided{
+    &.slided {
         right: 0;
     }
 
-    & > .wrapper { position: relative; margin: 50px 30px; }
+    & > .wrapper {
+        position: relative;
+        margin: 50px 30px;
+    }
 
     a.close {
-        &, &:before { color: #9BA0A7; }
-        &:hover, &:hover:before { color: #333; }
+        &, &:before {
+            color: #9BA0A7;
+        }
+        &:hover, &:hover:before {
+            color: #333;
+        }
     }
+
+}
+
+#sidebar .inntopia-cart { padding: 40px 20px; }
+
+.inntopia-cart{
 
     .container{
         border-top: 1px solid #D3D5D8;
@@ -111,6 +124,7 @@ body.noscroll{
         padding: 3px 0;
         .cell{ float: left; width: 50%;}
         .value { font-weight: 700; }
+        &:not(:last-child){ margin: 0; }
     }
 
 
@@ -330,6 +344,50 @@ body.noscroll{
     @include clearfix;
     .datepicker-wrap { float: left; display: inline-block; width: 150px; }
     .form-submit { float: left; display: inline-block; }
+
+}
+
+
+
+#inntopia-progress {
+
+    padding-bottom: 40px;
+    border-bottom: 1px solid #D3D5D8;
+
+    & > .wrapper {
+        position: relative;
+        @include clearfix;
+        margin: 0 auto;
+        max-width: 900px;
+
+        &:before { content: "\020"; display: block; position: absolute; width: 70%; height: 1px; background: #D3D5D8; bottom: 20px; left: 15%;  z-index: 1; }
+    }
+
+    .checkout-step {
+        float: left; width: 25%; text-align: center;
+        .icon { display: block; font-size: 42px; color: #9DA2A9; }
+        .checkout-step-name { position: relative; display: inline-block; font-size: 12px; text-transform: uppercase; font-weight: 500; color: #9DA2A9; background: #fff; padding: 10px 25px; z-index: 10; }
+        &.active-step {
+            .icon, .checkout-step-name { color: #333; }
+        }
+
+    }
+
+}
+
+.form-checkout {
+
+    margin: 60px auto;
+    max-width: 760px;
+
+    h2{ margin-bottom: 40px;}
+
+    input[type='submit']{
+        margin-top: 20px;
+        &:hover{ opacity: 0.8;
+        }
+
+    }
 
 }
 
