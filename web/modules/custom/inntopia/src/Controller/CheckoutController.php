@@ -7,15 +7,44 @@
 
 namespace Drupal\inntopia\Controller;
 
+use Drupal\inntopia\InntopiaStorage;
+use Symfony\Component\HttpFoundation\RequestStack;
+
 
 class CheckoutController extends InntopiaBaseController {
 
 
+	protected $cart;
+
+
+
+	/**
+	 * CheckoutController constructor.
+	 *
+	 * @param \Drupal\inntopia\InntopiaStorage $inntopiaStorage
+	 * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
+	 */
+	public function __construct(InntopiaStorage $inntopiaStorage, RequestStack $requestStack) {
+
+		parent::__construct($inntopiaStorage, $requestStack);
+
+		$this->cart = new CartController($this->inntopiaStorage, $this->requestStack);
+
+	}
+
+
+
+	/**
+	 * @param string $step
+	 *
+	 * @return array
+	 */
 	public function displayCheckout($step = 'register'){
 
 
-		$data = array();
+		$data = ($step === 'review') ? $this->cart->getCartData() : array();
 		$data['step'] = $step;
+		$data['source'] = 'recap';
 
 		// Format Listing
 		$build[] =  [
@@ -37,10 +66,14 @@ class CheckoutController extends InntopiaBaseController {
 	}
 
 
+
+
+	/**
+	 * @return array
+	 */
 	public function displaySummary(){
 
-		$cart = new CartController($this->inntopiaStorage, $this->requestStack);
-		$build = $cart->displayCart('summary');
+		$build = $this->cart->displayCart('summary');
 
 		// Return listing ready for display
 		return $build;

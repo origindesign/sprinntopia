@@ -1,0 +1,75 @@
+
+<form id="form-checkout-payment" class="form-checkout" action="#" method="post">
+
+    <h2>Billing Address</h2>
+
+    <div class="form-item">
+        <label for="billingAddress">Address</label>
+        <input name="billingAddress" type="text" class="form-control">
+    </div>
+
+    <div class="form-item">
+        <label for="billingCity">City</label>
+        <input name="billingCity" type="text" class="form-control">
+    </div>
+
+    <div class="form-item-container form-item-double">
+        <div class="form-item">
+            <label for="billingPostalCode">Postal Code</label>
+            <input name="billingPostalCode" type="text" class="form-control">
+        </div>
+
+        <div class="form-item">
+            <label for="billingPhone">Phone</label>
+            <input name="billingPhone" type="text" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-item-container form-item-double">
+
+        <div class="form-item">
+            <label for="billingCountry">Country</label>
+            <select name="billingCountry" class="form-control" id="selectCountry"><option value="-1">-- Select --</option><option value="CA">Canada</option><option value="CH">China</option><option value="UK">United Kingdom</option><option value="US">United States</option></select>
+        </div>
+
+        <div class="form-item form-item-province">
+            <label>Province</label>
+            <select id="province" class="form-control"><option value="-1">-- Select --</option><option value="AB">Alberta</option><option value="BC">British Columbia</option><option value="MB">Manitoba</option><option value="NB">New Brunswick</option><option value="NF">Newfoundland</option><option value="NU">Nunavut</option><option value="NT">Nortwest Territories</option><option value="NS">Nova Scotia</option><option value="ON">Ontario</option><option value="PE">Prince Edward Island</option><option value="QC">Quebec</option><option value="SK">Saskatchewan</option><option value="YT">Yukon</option></select>
+        </div>
+
+    </div>
+
+    <h2 class="form-secondary-header">Payment Info</h2>
+
+    <div class="form-item">
+        <label for="ccName">Name on Card</label>
+        <input name="ccName" type="text" class="form-control">
+    </div>
+
+    <div class="form-item">
+        <label for="ccNumber">Card Number</label>
+        <input name="ccNumber" type="text" class="form-control">
+    </div>
+
+    <div class="form-item-container form-item-double">
+        <div class="form-item">
+            <label>Expire Month</label>
+            <select id="expireMonth" class="form-control" style=""><option value="-1">-- Select --</option><option value="01">01-Jan</option><option value="02">02-Feb</option><option value="03">03-Mar</option><option value="04">04-Apr</option><option value="05">05-May</option><option value="06">06-Jun</option><option value="07">07-Jul</option><option value="08">08-Aug</option><option value="09">09-Sep</option><option value="10">10-Oct</option><option value="11">11-Nov</option><option value="12">12-Dec</option></select>
+        </div>
+
+        <div class="form-item">
+            <label>Expire Year</label>
+            <select id="expireYear" class="form-control" style=""><option value="-1">-- Select --</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option></select>
+        </div>
+    </div>
+
+
+    <div class="form-item">
+        <input type="submit" class="btn-solid" data-post-url="/inntopia-ajax/actions/update-customer-billing" data-redirect-url="/checkout/review" value="Review & Purchase" />
+    </div>
+
+
+</form>
+
+
+

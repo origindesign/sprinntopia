@@ -8,6 +8,7 @@ namespace Drupal\inntopia\Controller;
 
 
 use Origindesign\Inntopia\Cart;
+use Origindesign\Inntopia\Customer;
 
 
 class AjaxActionsController extends InntopiaBaseController {
@@ -45,7 +46,7 @@ class AjaxActionsController extends InntopiaBaseController {
 
 		$build[] = array(
 			'#type' => 'markup',
-			'#markup' => t('<p>Method: '.$method.'</p><p>Result: '.$result.'</p>'),
+			'#markup' => t('<p>Method: '.$method.'</p><p>Result: '. $result .'</p>'),
 		);
 
 
@@ -112,15 +113,32 @@ class AjaxActionsController extends InntopiaBaseController {
 	}
 
 
+
 	/**
 	 * Attaching customer to cart.
 	 *
 	 * @return string
 	 */
 	private function attachCustomerToCart (){
-		// @TODO implementing Customer class from library (addAnonymousCustomer)
-		return "Attaching customer to cart.";
+
+		$firstName = $this->data['firstName'];
+		$lastName = $this->data['lastName'];
+		$emailAddress = $this->data['emailAddress'];
+		$addUser = 1;
+
+		$customer = new Customer(  $this->sales_id, $this->api_url );
+		$customerRequest = $customer->addAnonymousCustomer($this->session, $firstName, $lastName, $emailAddress, $addUser);
+
+		if ($customerRequest->getSuccess()){
+			$result = "Success attaching customer to the cart";
+		}else{
+			$result = "Error trying to attach customer to the cart to the cart";
+		}
+
+		return $result;
 	}
+
+
 
 
 	/**

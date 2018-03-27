@@ -1,0 +1,15 @@
+
+<div class="checkout">
+
+    <div class="container">
+
+        {% include '@inntopia/checkout/progress.html.twig' %}
+
+        {% include '@inntopia/checkout/step-' ~ data.step ~'.html.twig' %}
+
+    </div>
+
+</div>
+
+
+

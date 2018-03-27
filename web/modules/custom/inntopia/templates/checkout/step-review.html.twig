@@ -1,0 +1,15 @@
+
+<form id="form-checkout-register" class="form-checkout" action="#" method="post">
+
+    <h2>Review &amp; Purchase</h2>
+
+    {% include '@inntopia/cart/items.html.twig' %}
+
+
+    <div class="form-item">
+        <input type="submit" class="btn-solid" data-post-url="/inntopia-ajax/actions/complete-order" data-redirect-url="/checkout/complete" value="Complete Booking" />
+    </div>
+
+</form>
+
+

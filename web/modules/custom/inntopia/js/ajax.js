@@ -11,15 +11,17 @@
      */
     Drupal.behaviors.inntopiaAjaxAction = {};
 
-    /*
-    Drupal.behaviors.inntopiaAjaxAction.call = function( $url, $params, $redirectUrl ){
+
+    Drupal.behaviors.inntopiaAjaxAction.checkoutCall = function( $url, $params, $redirectUrl ){
 
         var request = $.ajax({
             type: "POST",
             data: {data: $params},
             url: $url,
             success: function( result ){
-                //console.log( "success" );
+                /**
+                 * @TODO add script to check message and redirect if success or display error message if error
+                 */
                 console.log( result );
             }
         });
@@ -34,8 +36,6 @@
 
 
     };
-    */
-
 
 
     Drupal.behaviors.inntopiaAjaxAction.attach = function (context, settings) {
@@ -76,7 +76,7 @@
                     "Quantity" : productContainer.data('quantity')
                 };
 
-                console.log(productData);
+                // console.log(productData);
 
                 // Add Package ID if it exists
                 if ( $(this).data('packageid') ) {
@@ -91,7 +91,7 @@
             /**
              * Remove from cart, load remove-from-cart through ajax
              */
-            $( "#quickCart" ).on( "click", ".btn-remove-cart", function(event) {
+            $("#quickCart").on( "click", ".btn-remove-cart", function(event) {
 
                 event.preventDefault();
                 event.stopPropagation();
@@ -105,6 +105,37 @@
                 Drupal.behaviors.inntopiaAjaxAction.removeFromCart( itemData );
 
             });
+
+
+            /**
+             * Checkout Step submit form actions
+             */
+            $('.form-checkout').submit(function( event ) {
+
+                event.preventDefault();
+
+                var params = {};
+                var submitBtn = $(this).find('input[type=submit]');
+                var postUrl = submitBtn.data('post-url');
+                var redirectUrl = submitBtn.data('redirect-url');
+
+                // Loop through all the input/select with a name attribute and add it into an array of params
+                $('.form-checkout input:not([type=submit]), .form-checkout select').each(
+                    function(index){
+                        var input = $(this);
+                        var attr = input.attr('name');
+                        if (typeof attr !== typeof undefined && attr !== false) {
+                            params[attr] = input.val();
+                        }
+                    }
+                );
+
+                Drupal.behaviors.inntopiaAjaxAction.checkoutCall( postUrl, params, redirectUrl );
+
+            });
+
+
+
 
         });
     };

@@ -192,9 +192,11 @@ select {
 
 }
 
+form h2.form-secondary-header { margin-top: 60px;}
 
 .form-item-container{
   @include clearfix;
+  margin: 20px 0;
 }
 
 .form-item-double {

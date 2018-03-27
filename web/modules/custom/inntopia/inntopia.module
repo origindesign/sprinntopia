@@ -82,7 +82,7 @@ function inntopia_theme($existing, $type, $theme, $path) {
 		),
 		'checkout_container' => array(
 			'variables' => array('data' => NULL),
-			'template' => 'checkout/steps',
+			'template' => 'checkout/container',
 		),
 		'checkout_summary' => array(
 			'variables' => array('data' => NULL),
