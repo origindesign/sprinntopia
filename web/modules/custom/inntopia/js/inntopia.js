@@ -36,6 +36,7 @@
     Drupal.behaviors.inntopia.isotope.grid = undefined;
     Drupal.behaviors.inntopia.isotope.iso = undefined;
     Drupal.behaviors.inntopia.isotope.counter = $('.head-listing-title h5 .counter');
+    Drupal.behaviors.inntopia.isotope.resultMsg = $('.head-listing-title h5 .copy');
     Drupal.behaviors.inntopia.isotope.init = function( $listingGrid ){
 
         Drupal.behaviors.inntopia.isotope.grid = $listingGrid;
@@ -90,6 +91,7 @@
         var data =  Drupal.behaviors.inntopia.isotope.iso.data('isotope');
         var count =  data.filteredItems.length;
         Drupal.behaviors.inntopia.isotope.counter.html(count);
+        Drupal.behaviors.inntopia.isotope.resultMsg.html('results were found');
     };
 
 
