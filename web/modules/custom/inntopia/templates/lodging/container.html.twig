@@ -6,7 +6,16 @@
         <h5><span class="counter"></span> <span class="copy">looking for places to stay</span></h5>
     </div>
 
-    <div class="form-item inntopia-sort">
+    <div class="form-item inntopia-view">
+        <label for="adultCount">View By</label>
+        <div class="toggles">
+            <a href="#" class="toggleBtn active" data-select-item="result-list"><span class="icomoon icon-listing"></span><span class="name">List</span></a>
+            <a href="#" class="toggleBtn" data-select-item="result-map"><span class="icomoon icon-pin"></span><span class="name">Map</span></a>
+        </div>
+
+    </div>
+
+    <div class="form-item inntopia-sort not-related-result-map">
         <label for="adultCount">Sort By</label>
         <select id="sorting" name="sorting" class="input-mini input-select">
             <option value="original-order">Default</option>
@@ -14,6 +23,7 @@
             <option value="name">Alphabetically</option>
         </select>
     </div>
+
 
 </div>
 

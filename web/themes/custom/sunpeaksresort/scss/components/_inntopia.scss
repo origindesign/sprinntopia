@@ -166,3 +166,14 @@ ul.inn-amenities{
     }
 
 }
+
+.infoBox{
+
+    h2{ font-family: $base-font-family; }
+
+    .ib-content{
+        .cta {
+            font-family: $base-font-family;
+        }
+    }
+}

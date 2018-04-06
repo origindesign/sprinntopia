@@ -271,10 +271,13 @@
             // Init Isotope for listing if the call is listing related
             var listingDiv = $container.find('.result-list');
             if( listingDiv.length > 0 ) {
-                // Set a small delay to load isotope so we're sure it's loaded and displayed
-                setTimeout(function () {
-                    Drupal.behaviors.inntopia.isotope.init(listingDiv);
-                }, 250);
+                Drupal.behaviors.inntopia.isotope.init(listingDiv);
+            }
+
+            // Init Map fo listing if the call has a map item
+            var mapDiv = $container.find('.result-map');
+            if( mapDiv.length > 0 ) {
+                Drupal.behaviors.inntopiaMaps.init(mapDiv);
             }
 
 

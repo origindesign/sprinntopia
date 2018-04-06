@@ -4,28 +4,35 @@
 
 <div class="listing">
 
-    <div class="container result-list">
+    <div class="container result-list result-item">
 
         {% for lodging in data.listing %}
 
+            {% set fileNames = {} %}
+            {% for i in 0..4 %}
+                {% set image = attribute(lodging.Images, i)  %}
+                {% if image.FileName  %}
+                    {% set fileNames = fileNames|merge({ (loop.index0): image.FileName }) %}
+                {% endif %}
+            {% endfor %}
+
             {% set product_url = '/book/product/lodging/?supplierId=' ~ lodging.id ~ '&arrivalDate=' ~ data.filters.arrivalDate ~ '&departureDate=' ~ data.filters.departureDate ~ '&adultCount=' ~ data.filters.adultCount ~ '&childrenCount=' ~ data.filters.childrenCount %}
 
-            <article role="article" class="inntopia-teaser" data-supplier-id="{{ lodging.id }}" data-category-lodging="{{ lodging.categories['lodgingType'] }}" data-category-bedroom="{{ lodging.categories['bedrooms'] }}" data-sort-price="{{lodging.bestPrice }}">
+            <article id="teaser-{{ lodging.id }}" role="article" class="inntopia-teaser" data-supplier-id="{{ lodging.id }}" data-category-lodging="{{ lodging.categories['lodgingType'] }}" data-category-bedroom="{{ lodging.categories['bedrooms'] }}" data-sort-price="{{lodging.bestPrice }}" data-supplier-lat="{{lodging.Supplier.Lat }}" data-supplier-lng="{{lodging.Supplier.Lng }}">
 
                 <div class="wrapper">
 
                     <div class="zone-image">
 
-                        <div class="carousel-thumb {{ lodging.Images.1.FileName ? 'hasSlider' : '' }}" >
-                            {% for i in 0..4 %}
-                                {% set image = attribute(lodging.Images, i)  %}
-                                {% if image.FileName  %}
-                                    <div class="image">
-                                        {{ drupalizeImage(image_path ~  image.FileName, lodging.name, 'inntopia_thumb' ) }}
-                                    </div>
-                                {% endif %}
+                        <div class="all-images {{ fileNames|length > 1 ? 'multipleImages' : '' }}">
+                            {% for fileName in fileNames %}
+                                <div class="image">
+                                    {{ drupalizeImage(image_path ~  fileName, lodging.name, 'inntopia_thumb' ) }}
+                                </div>
                             {% endfor %}
                         </div>
+
+                        <div class="carousel-thumb"></div>
 
                     </div>
 
@@ -79,5 +86,9 @@
 
     </div>
 
+
+    <div class="result-map result-item hidden">
+        <div id="map_canvas"></div>
+    </div>
 
 </div>

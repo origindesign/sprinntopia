@@ -39,24 +39,41 @@
     Drupal.behaviors.inntopia.isotope.resultMsg = $('.head-listing-title h5 .copy');
     Drupal.behaviors.inntopia.isotope.init = function( $listingGrid ){
 
-        Drupal.behaviors.inntopia.isotope.grid = $listingGrid;
-        Drupal.behaviors.inntopia.isotope.iso = Drupal.behaviors.inntopia.isotope.grid.isotope({
-            // options
-            itemSelector: '.inntopia-teaser',
-            /*transitionDuration: 0,*/
-            hiddenStyle: {
-                opacity: 0
-            },
-            visibleStyle: {
-                opacity: 1
-            },
-            getSortData: {
-                name: 'h2 a',
-                price: '[data-sort-price] parseInt'
-            }
+        // Set Carousel Thumb Slider
+        $("article.inntopia-teaser").each(function( index ) {
+            var allImages = $(this).find('.all-images');
+            var carousel = $(this).find('.carousel-thumb');
+            carousel.html(allImages.html());
+            if ( allImages.hasClass('multipleImages') ) { carousel.addClass('hasSlider'); }
         });
 
-        Drupal.behaviors.inntopia.isotope.updateCount();
+        // Slick thumb Carousel
+        $('.carousel-thumb.hasSlider').slick({
+            slide: '.image',
+            dots: true
+        });
+
+        Drupal.behaviors.inntopia.isotope.grid = $listingGrid;
+        // Set a small delay to load isotope so we're sure it's loaded and displayed
+        setTimeout(function () {
+            Drupal.behaviors.inntopia.isotope.iso = Drupal.behaviors.inntopia.isotope.grid.isotope({
+                // options
+                itemSelector: '.inntopia-teaser',
+                /*transitionDuration: 0,*/
+                hiddenStyle: {
+                    opacity: 0
+                },
+                visibleStyle: {
+                    opacity: 1
+                },
+                getSortData: {
+                    name: 'h2 a',
+                    price: '[data-sort-price] parseInt'
+                }
+            });
+
+            Drupal.behaviors.inntopia.isotope.updateCount();
+        }, 500);
 
     };
 
@@ -225,6 +242,12 @@
                 Drupal.behaviors.inntopia.isotope.filter();
                 Drupal.behaviors.inntopia.isotope.updateCount();
 
+                // Update map markers if map exists
+                if ( $("#map_canvas").length > 0 ){
+                    Drupal.behaviors.inntopiaMaps.filterMarkers();
+                }
+
+
             });
 
 
@@ -234,16 +257,38 @@
             });
 
 
-        });
+            /**
+             * CLicking on toggle to switch view for maps
+             */
+            $(".inntopia-view a.toggleBtn").on("click", function(event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                var selectedItem = $(this).data('select-item');
+                var itemToShow =  $('.'+ selectedItem);
+
+                if ( itemToShow.hasClass('hidden') ){
+                    itemToShow.siblings('.result-item').addClass('hidden');
+                    itemToShow.removeClass('hidden');
+
+                    $(this).siblings('.toggleBtn').removeClass('active');
+                    $(this).addClass('active');
 
 
-        // Element outside of once (that need to be triggered after page load)
+                    $('.form-item').removeClass('hidden');
+                    $( '.not-related-'+selectedItem ).addClass('hidden');
+
+                    // Relayout Isotope in case some filters have changed
+                    Drupal.behaviors.inntopia.isotope.grid.isotope('layout');
+
+                }
 
 
-        // Slick thumb Carousel
-        $('.carousel-thumb.hasSlider').slick({
-            slide: '.image',
-            dots: true
+
+            });
+
+
         });
 
 

@@ -227,7 +227,7 @@ body.noscroll{
     position: relative;
 
     .label { position: absolute; display: block; font-size: 14px;  line-height: 1; }
-    .price { display: inline-block; font-size: 50px; line-height: 1; font-weight: 500; text-align: left; margin: 0; padding-top: 0;}
+    .price { display: inline-block; font-size: 50px; line-height: 1; font-weight: 500; text-align: left; margin: 0; padding-top: 0; letter-spacing: -2px;}
     .top-label { left: 0; top: -18px;  }
     .bottom-label { right: 0; bottom: -15px; }
     .right-label { display: inline-block; position: static; }
@@ -254,6 +254,10 @@ body.noscroll{
 
     .inntopia-sort{ float: right; width: 260px; margin-top: 0; }
 
+    .inntopia-view{ float: right; display:inline-block; margin-top: 0; ; left: 20px; }
+
+    .hidden { display: none; }
+
 }
 
 .inntopia-teaser{
@@ -265,6 +269,8 @@ body.noscroll{
     .zone-image {
         float: left;
         width: 35%;
+
+        .all-images { display: none; }
     }
 
     .zone-copy {
