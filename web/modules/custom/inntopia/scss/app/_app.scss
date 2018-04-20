@@ -230,7 +230,7 @@ body.noscroll{
     .price { display: inline-block; font-size: 50px; line-height: 1; font-weight: 500; text-align: left; margin: 0; padding-top: 0; letter-spacing: -2px;}
     .top-label { left: 0; top: -18px;  }
     .bottom-label { right: 0; bottom: -15px; }
-    .right-label { display: inline-block; position: static; }
+    .right-label, .left-label { display: inline-block; position: static; }
 }
 
 
@@ -323,20 +323,55 @@ body.noscroll{
         }
     }
 
+
     .rooms { margin-top: 60px; }
     .informations { margin-top: 100px; }
+
+    .component {
+        border-top: 1px solid rgba(80, 88, 101, 0.1);
+        .originalPrice { color: rgba(0,0,0,0.3); }
+        .hidden { display: none; }
+    }
+
+    .package-details {
+        display: none;
+        &.opened { display: block; }
+    }
+    .package-name { color: #63B99E; }
+
+    .sum-price {
+        color: #FFB234;
+        .currency, .number{ font-weight: 700; }
+    }
+
 
     table.detail-price {
 
         margin: 20px 0 60px 0;
-        tbody {
-            tr { border-bottom: 1px solid rgba(80,88,101,0.25); }
-            tr:nth-child(odd) { background: #edeef0; }
-            td, th { vertical-align: middle; padding: 15px; }
-            th { width: 50%; }
-            td { text-align: right; width: auto; }
-            h5 { margin-bottom: 0; }
 
+        th, td { padding: 0; vertical-align: middle; }
+        tr:nth-child(odd) .row { background: #edeef0; }
+
+        .row{
+            border-bottom: 1px solid rgba(80,88,101,0.25);
+            td, th { padding: 15px; }
+            th { text-align: left; }
+            td { text-align: right; }
+            h5 {
+                margin-bottom: 0;
+                line-height: 150%;
+                a {
+                    font-weight: 300;
+                    text-transform: capitalize;
+                    &:hover { color: #63B99E; }
+                }
+            }
+
+            .cell-1 { width: 60%; }
+            .cell-1-bis { width: 40%; }
+            .cell-2-bis { width: 20%; }
+            .cell-2 { width: 20%; }
+            .cell-3 { width: 20%; }
         }
 
         .form-type-numeric { width: 100px; float: right; }

@@ -40,7 +40,7 @@
 
 
 
-        <div class="rooms accordions">
+        <div id="pricing" class="rooms accordions">
 
             <div class="table-caption"><span><p>Available Rooms</p></span></div>
 
@@ -62,6 +62,7 @@
 
                         <h2>{{ room.name }}</h2>
                         <div class="inn-price push-right">
+                            <div class="label left-label">from</div>
                             <div class="price">${{ room.bestPrice }}</div>
                             <div class="label right-label">/night</div>
                         </div>
@@ -111,33 +112,153 @@
 
                         <table class="detail-price">
                             <tbody>
+
                                 <tr>
-                                    <th data-label="name">
-                                        <h5 class="font-weight-light">{{ room.name }}</h5>
-                                    </th>
-                                    <td data-label="price">
-                                        ${{ room.originalPrice }}/night
-                                    </td>
-                                    <td data-label="cta">
-                                        <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
+                                    <td>
+
+                                        <div class="row">
+
+                                            <table>
+                                                <tr>
+                                                    <th class="cell-1" data-label="name">
+                                                        <h5 class="font-weight-light">{{ room.name }}</h5>
+                                                    </th>
+                                                    <td class="cell-2 sum-price" data-label="price">
+                                                        <span class="currency">$</span><span class="number">{{ room.originalPrice }}</span><span>/night</span>
+                                                    </td>
+                                                    <td class="cell-3" data-label="cta">
+                                                        <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+
                                     </td>
                                 </tr>
+
 
                                 {% if( room.packages ) %}
 
                                     {% for package in room.packages %}
 
                                         <tr>
-                                            <th data-label="name">
-                                                <h5 class="font-weight-light">{{ room.name }} - <span class="package-name">{{ package.name }}</h5>
-                                            </th>
-                                            <td data-label="price">
-                                                ${{ package.price }}/night
-                                            </td>
-                                            <td data-label="cta">
-                                                <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button" data-packageid="{{ package.id }}"><span>add</span><span class="icomoon icon-cart"></span></a>
+                                            <td>
+
+                                                <div class="row">
+
+                                                    <table>
+
+                                                        <tr>
+                                                            <th class="cell-1" data-label="name">
+                                                                <h5 class="font-weight-light">{{ room.name }} - <span class="package-name">{{ package.name }}</span> {% if package.components %}- <a href="#" class="btn-package-detail">view details</a> {% endif %}</h5>
+                                                            </th>
+                                                            <td class="cell-2 sum-price" data-label="price">
+                                                                <span class="currency">$</span><span class="number">{{ room.originalPrice }}</span><span>/night</span>
+                                                            </td>
+                                                            <td class="cell-3" data-label="cta">
+                                                                <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button" data-packageid="{{ package.id }}" data-roomid="{{ room.id }}"><span>add</span><span class="icomoon icon-cart"></span></a>
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                    {% if package.components %}
+
+                                                        <div id="package-{{ package.id }}-{{ room.id }}" class="package-details components">
+
+                                                            {% for component in package.components %}
+
+                                                                {% for componentProduct in component.componentItems %}
+
+                                                                    {% if componentProduct.isChildRelated %}
+                                                                        {% set quantity = component.childLoops %}
+                                                                    {% else %}
+                                                                        {% if componentProduct.isAdultRelated %}
+                                                                            {% set quantity = component.adultLoops %}
+                                                                        {% else %}
+                                                                            {% set quantity = 0 %}
+                                                                        {% endif %}
+                                                                    {% endif %}
+
+                                                                    {% set fullComponentPrice = componentProduct.price * quantity %}
+                                                                    {% set originalComponentPrice = componentProduct.originalPrice * quantity %}
+
+                                                                    {% if( component.categoryId != 1) %}
+                                                                        {% set newAdultCount = 1 %}
+                                                                        {% set newChildrenCount = 0 %}
+                                                                        {% set newDepartureDate = data.filters.arrivalDate %}
+                                                                        {% set isPerNight = 0 %}
+                                                                    {% else %}
+                                                                        {% set newAdultCount = data.filters.adultCount %}
+                                                                        {% set newChildrenCount = data.filters.childrenCount %}
+                                                                        {% set newDepartureDate = data.filters.departureDate %}
+                                                                        {% set isPerNight = 1 %}
+                                                                    {% endif %}
+
+                                                                    <div class="component" data-salesid="{{ component.salesId }}"
+                                                                         data-supplierid="{{ component.supplierId }}"
+                                                                         data-packageid="{{ package.id }}"
+                                                                         data-productid="{{ componentProduct.id }}"
+                                                                         data-arrivaldate="{{ data.filters.arrivalDate }}"
+                                                                         data-departuredate="{{ newDepartureDate }}"
+                                                                         data-adultcount="{{ newAdultCount }}"
+                                                                         data-childcount="{{ newChildrenCount }}"
+                                                                         data-quantity="{{ quantity }}"
+                                                                         data-packagecomponentid="{{ component.id }}"
+                                                                         data-componentprice="{{ componentProduct.price }}"
+                                                                         data-componentoriginalprice="{{ componentProduct.originalPrice }}"
+                                                                         data-ispernight="{{ isPerNight }}"
+                                                                    >
+                                                                        <div class="component-content">
+
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <th class="cell-1-bis" data-label="name">
+                                                                                        {{ componentProduct.name }}
+                                                                                    </th>
+                                                                                    <td class="cell-2-bis">
+                                                                                        {% if component.categoryId != 1 and componentProduct.price != 0 %}
+                                                                                            <div class="form-item form-type-numeric">
+                                                                                                <input type="text" name="quantity" class="input-small" value="{{ quantity }}" data-min="0" data-max="{{ component.MaxQuantityTotal }}">
+                                                                                                <div class="incrementor">
+                                                                                                    <div class="wrapper">
+                                                                                                        <div class="increment minus">-</div>
+                                                                                                        <div class="increment plus">+</div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        {% endif %}
+                                                                                    </td>
+                                                                                    <td class="cell-2" data-label="price">
+                                                                                        <span class="componentPrice{% if fullComponentPrice == 0 %} hidden{% endif %}">
+                                                                                            {% if componentProduct.price != componentProduct.originalPrice %}
+                                                                                                <span class="originalPrice"><del><span class="currency">$</span><span class="number">{{ originalComponentPrice }}</span></del></span>
+                                                                                            {% endif %}
+                                                                                            <span class="newPrice"><span class="currency">$</span><span class="number">{{ fullComponentPrice }}{% if( component.categoryId == 1) %}/night {% endif %}</span></span>
+                                                                                        </span>
+                                                                                    </td>
+                                                                                    <td class="cell-3"></td>
+                                                                                </tr>
+                                                                            </table>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                {% endfor %}
+
+                                                            {% endfor %}
+
+                                                        </div>
+
+                                                    {% endif %}
+
+                                                </div>
+
                                             </td>
                                         </tr>
+
 
                                     {% endfor %}
 

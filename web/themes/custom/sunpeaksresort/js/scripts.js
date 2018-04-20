@@ -109,13 +109,17 @@
                     var parent = $(this).parents('.incrementor');
                     var input = parent.siblings('input');
                     var currentValue = parseInt(input.val());
+                    var minValue = ( input.attr('data-min') ) ? parseInt(input.data('min')) : 0;
+                    var maxValue = ( input.attr('data-max') ) ? parseInt(input.data('max')) : 1000;
 
-                    if( $(this).hasClass('minus') ){
+                    if( $(this).hasClass('minus') && ( currentValue > minValue) ){
                         input.val( currentValue - 1 );
+                        input.attr('value', currentValue - 1 );
                     }
 
-                    if( $(this).hasClass('plus') ){
+                    if( $(this).hasClass('plus')  && ( currentValue < maxValue) ){
                         input.val( currentValue + 1 );
+                        input.attr('value', currentValue + 1 );
                     }
 
                 });

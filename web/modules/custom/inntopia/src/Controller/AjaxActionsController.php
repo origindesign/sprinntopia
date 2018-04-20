@@ -68,12 +68,14 @@ class AjaxActionsController extends InntopiaBaseController {
 	 */
 	private function addToCart (){
 
-		$itineraryArr  = array($this->data);
 		$cart = new Cart( $this->sales_id, $this->api_url );
 
-		if( isset($this->data["PackageId"]) ){
+		$packageId = ( $this->data["package"] !== 'false') ? $this->data["package"] : false;
+		$itineraryArr  = $this->data['data'];
+
+		if( $packageId ){
 			// If it's a package, add to cart using the package method
-			$cartRequest = $cart->addPackageItemsToCart($this->session, $itineraryArr, $this->data["PackageId"]);
+			$cartRequest = $cart->addPackageItemsToCart($this->session, $itineraryArr, $packageId);
 		}else{
 			// Otherwise add the item with the standard method
 			$cartRequest = $cart->addItemsToCart($this->session, $itineraryArr);

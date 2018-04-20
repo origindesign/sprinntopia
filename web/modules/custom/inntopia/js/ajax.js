@@ -50,38 +50,81 @@
                 event.preventDefault();
                 event.stopPropagation();
 
-                var productContainer = $(this).parents(".product-data");
-                var quantityField = $(this).parents("tr").find('input[name="quantity"]');
+                var packageComponents = false;
+                var productData = {package: false, data: [] };
+                var isPackage = false;
 
-                // If it's an option, first update the parent data with the option/product ID
-                if ( $(this).hasClass('product-option') ){
-                    var productId = $(this).data('option-id');
-                    productContainer.data('productid', productId);
+                // Determine if it's a package or not
+                if ( $(this).data('packageid') && $(this).data('roomid') ) {
+                    packageComponents = $('#package-'+ $(this).data('packageid')+'-'+$(this).data('roomid'));
+                    if( packageComponents.length ){
+                        isPackage = true;
+                        productData.package = $(this).data('packageid');
+                    }
+                }
+
+
+                // If it's a package, loop through the component and add them, otherwise add classic product data
+                if ( isPackage && packageComponents ) {
+
+                    packageComponents.find('.component').each(function( index ) {
+
+                        var componentItem = $(this);
+
+                        var componentData = {
+                            'SupplierId' : componentItem.data('supplierid'),
+                            'ProductId' : componentItem.data('productid'),
+                            'ArrivalDate' : componentItem.data('arrivaldate'),
+                            'DepartureDate' : componentItem.data('departuredate'),
+                            'AdultCount' : componentItem.data('adultcount'),
+                            'ChildCount' : componentItem.data('childcount'),
+                            "Quantity" : parseInt(componentItem.data('quantity')),
+                            "PackageComponentId" : componentItem.data('packagecomponentid')
+                        };
+
+
+                        if(componentData.Quantity !== 0){
+                            productData.data.push(componentData);
+                        }
+
+                    });
+
+
+
+                }else{
+
+                    var productContainer = $(this).parents(".product-data");
+                    var quantityField = $(this).parents("tr").find('input[name="quantity"]');
+
+
+                    // If it's an option, first update the parent data with the option/product ID
+                    if ( $(this).hasClass('product-option') ){
+                        var productId = $(this).data('option-id');
+                        productContainer.data('productid', productId);
+
+                    }
+
+                    // If the quantity field exists, update the parent data with the quantity number
+                    if( quantityField !== undefined ){
+                        var quantity = quantityField.val();
+                        productContainer.data('quantity', quantity);
+                    }
+
+
+                    productData.data = [{
+                        'SupplierId' : productContainer.data('supplierid'),
+                        'ProductId' : productContainer.data('productid'),
+                        'ArrivalDate' : productContainer.data('arrivaldate'),
+                        'DepartureDate' : productContainer.data('departuredate'),
+                        'AdultCount' : productContainer.data('adultcount'),
+                        'ChildCount' : productContainer.data('childcount'),
+                        "Quantity" : productContainer.data('quantity')
+                    }];
+
 
                 }
 
-                // If the quantity field exists, update the parent data with the quantity number
-                if( quantityField !== undefined ){
-                    var quantity = quantityField.val();
-                    productContainer.data('quantity', quantity);
-                }
-
-                var productData = {
-                    'SupplierId' : productContainer.data('supplierid'),
-                    'ProductId' : productContainer.data('productid'),
-                    'ArrivalDate' : productContainer.data('arrivaldate'),
-                    'DepartureDate' : productContainer.data('departuredate'),
-                    'AdultCount' : productContainer.data('adultcount'),
-                    'ChildCount' : productContainer.data('childcount'),
-                    "Quantity" : productContainer.data('quantity')
-                };
-
-                // console.log(productData);
-
-                // Add Package ID if it exists
-                if ( $(this).data('packageid') ) {
-                    productData.PackageId = $(this).data('packageid');
-                }
+                console.log(productData);
 
                 Drupal.behaviors.inntopiaAjaxAction.addToCart( productData );
 

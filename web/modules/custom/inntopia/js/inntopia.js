@@ -29,6 +29,116 @@
     };
 
 
+    Drupal.behaviors.inntopia.package = {};
+    Drupal.behaviors.inntopia.package.updatePrice = function( $packageId, $productId ) {
+
+        var packageDiv = $('#package-'+$packageId);
+        var rowParentDiv = packageDiv.parents('.row');
+        var component = packageDiv.find('.component[data-productid="'+ $productId +'"]');
+
+        var quantity = parseInt(component.data('quantity'));
+        var originalPrice = parseInt(component.data('componentoriginalprice'));
+        var newPrice = parseInt(component.data('componentprice'));
+
+        var divOriginalPrice = component.find(".originalPrice .number");
+        var divNewPrice = component.find(".newPrice .number");
+        var divComonentPrice = component.find(".componentPrice");
+
+        // Update old del price if exists
+        if(divOriginalPrice.length > 0){
+            divOriginalPrice.html( quantity * originalPrice );
+        }
+
+        // Update new price
+        divNewPrice.html( quantity * newPrice );
+
+        // Hide price if equal to 0
+        if( quantity * newPrice > 0){
+            divComonentPrice.removeClass('hidden');
+        }else{
+            divComonentPrice.addClass('hidden');
+        }
+
+        // Update total package price
+        var priceObj = Drupal.behaviors.inntopia.package.calculateTotalPrice($packageId);
+        rowParentDiv.find('.sum-price .number').text(priceObj.pricePerNight);
+
+
+    };
+
+
+    Drupal.behaviors.inntopia.package.updateDefaultPackagePrice = function(){
+
+        // Loop through all products (ie: rooms)
+        $("#pricing .product-data").each(function( index ) {
+
+            if( $(this).find('.detail-price .package-details').length > 0 ){
+
+                // Loop through all package list of the product
+                $(this).find('.detail-price .package-details').each(function( index ) {
+
+                    var packageDiv = $(this);
+                    var rowParentDiv = packageDiv.parents('.row');
+
+                    // Get the package id
+                    var packageId = packageDiv.attr('id').replace('package-','');
+
+                    // Get Price and update it
+                    var priceObj = Drupal.behaviors.inntopia.package.calculateTotalPrice(packageId);
+                    rowParentDiv.find('.sum-price .number').text(priceObj.pricePerNight);
+
+                });
+            }
+
+        });
+
+    };
+
+
+
+    Drupal.behaviors.inntopia.package.calculateTotalPrice = function( $packageId ){
+
+        var packageDiv = $('#package-'+$packageId);
+        var packageTotalPrice = 0;
+        var diffDates = null;
+        var result = {
+            pricePerNight : null,
+            priceTotal : null
+        };
+
+        packageDiv.find('.component').each(function( index ) {
+
+            var component = $(this);
+            var quantity = parseInt(component.data('quantity'));
+            var newPrice = parseInt(component.data('componentprice'));
+            var isPerNight = parseInt(component.data('ispernight'));
+            var componentTotalPrice =  0;
+
+            if (isPerNight !== 1){
+                componentTotalPrice = quantity * newPrice;
+            }else{
+                var arrivalDate = moment(component.data('arrivaldate'), "YYYY-MM-DD");
+                var departureDate = moment(component.data('departuredate'), "YYYY-MM-DD");
+                diffDates = departureDate.diff(arrivalDate, 'days');
+                componentTotalPrice =  diffDates * newPrice;
+            }
+
+            packageTotalPrice += componentTotalPrice;
+
+        });
+
+        result.priceTotal = packageTotalPrice;
+        if ( diffDates !== null ){
+            result.pricePerNight = parseInt(packageTotalPrice / diffDates);
+        }
+
+        return result;
+
+    };
+
+
+
+
 
     Drupal.behaviors.inntopia.isotope = {};
     Drupal.behaviors.inntopia.isotope.filterBtn = $( ".filterItem" );
@@ -284,12 +394,69 @@
 
                 }
 
+            });
+
+
+            /**
+             * Clicking on view package details
+             */
+            $(".btn-package-detail").on("click", function(event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                var relatedPackage = $(this).parents('.row').find('.package-details');
+                if( $(this).hasClass('active') ){
+                    $(this).removeClass('active');
+                    relatedPackage.removeClass('opened');
+                }else{
+                    $(this).addClass('active');
+                    relatedPackage.addClass('opened');
+                }
+
+            });
+
+
+
+            /**
+             * Updating default package Price
+             */
+            if ( $("#pricing").length > 0 ){
+                Drupal.behaviors.inntopia.package.updateDefaultPackagePrice();
+            }
+
+
+            /**
+             * Updating package Price on increment Click
+             */
+            // Input Numeric Value
+            $(".component .incrementor").on('click', '.increment' , function(event){
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                var parentProduct = $(this).parents('.product-data');
+                var component = $(this).parents('.component');
+                var parent = $(this).parents('.incrementor');
+                var input = parent.siblings('input');
+
+                // Update quantity
+                component.attr('data-quantity', input.val());
+                component.data('quantity', input.val());
+
+                // Update package price
+                Drupal.behaviors.inntopia.package.updatePrice( component.data('packageid')+'-'+parentProduct.data('productid'), component.data('productid') );
 
 
             });
 
 
+
+
         });
+
+
+
 
 
 

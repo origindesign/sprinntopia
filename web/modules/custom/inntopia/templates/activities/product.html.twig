@@ -56,27 +56,38 @@
                     <tbody>
 
                     {% if not attribute( data.detail.ProductList, 0 ) %}
-
                     <tr>
-                        <th data-label="name">
-                            <h5 class="font-weight-light">{{ data.detail.name }}</h5>
-                        </th>
-                        <td data-label="price">
-                            ${{ data.detail.originalPrice }}/night
-                        </td>
-                        <td data-label="quantity">
-                            <div class="form-item form-type-numeric">
-                                <input type="text" name="quantity" class="input-small" value="0">
-                                <div class="incrementor">
-                                    <div class="wrapper">
-                                        <div class="increment minus">-</div>
-                                        <div class="increment plus">+</div>
-                                    </div>
-                                </div>
+                        <td>
+
+                            <div class="row">
+
+                                <table>
+
+                                    <tr>
+                                        <th class="cell-1-bis" data-label="name">
+                                            <h5 class="font-weight-light">{{ data.detail.name }}</h5>
+                                        </th>
+                                        <td class="cell-2-bis" data-label="price">
+                                            ${{ data.detail.originalPrice }}/night
+                                        </td>
+                                        <td class="cell-2" data-label="quantity">
+                                            <div class="form-item form-type-numeric">
+                                                <input type="text" name="quantity" class="input-small" value="0">
+                                                <div class="incrementor">
+                                                    <div class="wrapper">
+                                                        <div class="increment minus">-</div>
+                                                        <div class="increment plus">+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="cell-3" data-label="cta">
+                                            <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
+                                        </td>
+                                    </tr>
+
+                                </table>
                             </div>
-                        </td>
-                        <td data-label="cta">
-                            <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
                         </td>
                     </tr>
 
@@ -89,27 +100,40 @@
                             {% if option %}
 
                                 <tr>
-                                    <th data-label="name">
-                                        <h5 class="font-weight-light">{{ option.ProductName }}</h5>
-                                    </th>
-                                    <td data-label="price">
-                                        ${{ option.OriginalPrice }}/person
-                                    </td>
-                                    <td data-label="quantity">
-                                        <div class="form-item form-type-numeric">
-                                            <input type="text" name="quantity" class="input-small" value="0">
-                                            <div class="incrementor">
-                                                <div class="wrapper">
-                                                    <div class="increment minus">-</div>
-                                                    <div class="increment plus">+</div>
-                                                </div>
-                                            </div>
+                                    <td>
+
+                                        <div class="row">
+
+                                            <table>
+
+                                                <tr>
+                                                    <th class="cell-1-bis" data-label="name">
+                                                        <h5 class="font-weight-light">{{ option.ProductName }}</h5>
+                                                    </th>
+                                                    <td class="cell-2-bis" data-label="price">
+                                                        ${{ option.OriginalPrice }}/person
+                                                    </td>
+                                                    <td class="cell-2" data-label="quantity">
+                                                        <div class="form-item form-type-numeric">
+                                                            <input type="text" name="quantity" class="input-small" value="0">
+                                                            <div class="incrementor">
+                                                                <div class="wrapper">
+                                                                    <div class="increment minus">-</div>
+                                                                    <div class="increment plus">+</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="cell-3" data-label="cta">
+                                                        <a href="/inntopia-ajax/add-to-cart" class="product-action product-option inn-addcart" data-option-id="{{ option.ProductId }}" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
                                         </div>
                                     </td>
-                                    <td data-label="cta">
-                                        <a href="/inntopia-ajax/add-to-cart" class="product-action product-option inn-addcart" data-option-id="{{ option.ProductId }}" data-role="button"><span>add</span><span class="icomoon icon-cart"></span></a>
-                                    </td>
                                 </tr>
+
 
                             {% endif %}
 
