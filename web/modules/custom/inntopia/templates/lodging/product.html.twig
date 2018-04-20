@@ -154,7 +154,7 @@
                                                                 <h5 class="font-weight-light">{{ room.name }} - <span class="package-name">{{ package.name }}</span> {% if package.components %}- <a href="#" class="btn-package-detail">view details</a> {% endif %}</h5>
                                                             </th>
                                                             <td class="cell-2 sum-price" data-label="price">
-                                                                <span class="currency">$</span><span class="number">{{ room.originalPrice }}</span><span>/night</span>
+                                                                <span class="currency">$</span><span class="number">{{ room.bestPrice }}</span><span>/night</span>
                                                             </td>
                                                             <td class="cell-3" data-label="cta">
                                                                 <a href="/inntopia-ajax/add-to-cart" class="product-action inn-addcart" data-role="button" data-packageid="{{ package.id }}" data-roomid="{{ room.id }}"><span>add</span><span class="icomoon icon-cart"></span></a>
