@@ -114,7 +114,10 @@ function inntopia_preprocess_page(&$variables) {
 		if ($arr_path[0] == "book") {
 
 			$section = ( isset($arr_path[1]) ) ? $arr_path[1] : 'unknown';
-			$variables['inntopia_nav'] = ['#theme' => 'inntopia_navigation', '#data' => array( 'section' => $section) ];
+			$variables['inntopia_nav'] = [
+				'#theme' => 'inntopia_navigation',
+				'#data' => array( 'section' => $section)
+			];
 
 			$sidebar = \Drupal::service('inntopia.shopping')->displaySidebar( $section );
 

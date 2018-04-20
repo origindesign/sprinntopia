@@ -141,7 +141,10 @@ class ShoppingController extends InntopiaBaseController {
 		// Format Listing
 		$build[] =  [
 			'#theme' => $theme,
-			'#data' => $data
+			'#data' => $data,
+			'#cache' => array(
+				'max-age' => 0,
+			)
 		];
 
 		// Return listing ready for display
