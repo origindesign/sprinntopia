@@ -87,7 +87,11 @@ function inntopia_theme($existing, $type, $theme, $path) {
 		'checkout_summary' => array(
 			'variables' => array('data' => NULL),
 			'template' => 'checkout/summary',
-		)
+		),
+        'widget_check_availability' => array(
+            'variables' => array('data' => NULL),
+            'template' => 'widget/check-availability',
+        )
 	);
 }
 

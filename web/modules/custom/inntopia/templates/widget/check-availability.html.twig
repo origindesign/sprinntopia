@@ -1,0 +1,109 @@
+<div class="inntopia-home-block">
+
+    {% include '@inntopia/global/navigation.html.twig' %}
+
+    <div class="form-container">
+
+        <div id="inntopia-tab-lodging" class="inntopia-tab active">
+
+            <form class="form" action="/book/lodging" method="GET">
+
+                <div class="form-item">
+                    <label for="arrivalDate">Arrival</label>
+                    <div class="wrap-picker">
+                        <input type="text" id="arrivalDate" name="arrivalDate" class="input-small" value="{{ "now"|date("Y-m-d") }}">
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <label for="departureDate">Departure</label>
+                    <div class="wrap-picker">
+                        <input type="text" id="departureDate" name="departureDate" class="input-small" value="{{ "now"|date_modify("+2 day")|date("Y-m-d") }}">
+                    </div>
+                </div>
+
+
+                <div class="form-item">
+                    <div class="form-type-numeric">
+                        <label for="adultCount">Adults</label>
+                        <input type="text" id="adultCount" name="adultCount" class="input-small" value="2">
+                        <div class="incrementor">
+                            <div class="wrapper">
+                                <div class="increment minus">-</div>
+                                <div class="increment plus">+</div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-item">
+                    <div class="form-type-numeric">
+                        <label for="childrenCount">Children</label>
+                        <input type="text" id="childrenCount" name="childrenCount" class="input-small" value="0">
+                        <div class="incrementor">
+                            <div class="wrapper">
+                                <div class="increment minus">-</div>
+                                <div class="increment plus">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-actions">
+                    <input type="submit" value="Check Availability">
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div id="inntopia-tab-activities" class="inntopia-tab">
+
+            <form class="form" action="/book/activities" method="GET">
+
+                <div class="form-item">
+                    <label for="arrivalDate">Start Date</label>
+                    <div class="wrap-picker">
+                        <input type="text" id="arrivalDate" name="startDate" class="input-small" value="{{ "now"|date("Y-m-d") }}">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <input type="submit" value="Check Availability">
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+        <div id="inntopia-tab-activities" class="inntopia-tab">
+
+            <form class="form" action="/book/activities" method="GET">
+
+                <div class="form-item">
+                    <label for="arrivalDate">Start Date</label>
+                    <div class="wrap-picker">
+                        <input type="text" id="arrivalDate" name="startDate" class="input-small" value="{{ "now"|date("Y-m-d") }}">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <input type="submit" value="Check Availability">
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div>

@@ -451,7 +451,27 @@
             });
 
 
+            /**
+             * Tabs for global widget
+             */
+            $('.inntopia-home-block #inntopia-nav').on('click', 'a' , function(event){
 
+                event.preventDefault();
+                event.stopPropagation();
+
+                var arrPath = $(this).attr('href').substr(1).split('/');
+                var section = arrPath[1];
+                var formDiv = $('#inntopia-tab-'+section);
+
+                // Remove all active tab
+                $('.inntopia-home-block #inntopia-nav a').removeClass('active');
+                $('.inntopia-tab').hide(0);
+
+                // Set new active tab
+                formDiv.show(0);
+                $(this).addClass('active');
+
+            });
 
         });
 

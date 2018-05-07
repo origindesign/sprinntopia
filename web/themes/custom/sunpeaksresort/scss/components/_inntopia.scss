@@ -167,6 +167,50 @@ ul.inn-amenities{
 
 }
 
+
+.block-inntopia-check-block {  background: $blue-bg-light; }
+.inntopia-home-block {
+
+    transform: translateY(-80px);
+
+    .inntopia-tab {
+        display: none;
+        &.active { display: block; }
+    }
+
+    .form-container{
+        padding: 40px 100px 0 100px;
+
+        .form{
+
+            @include clearfix;
+
+            .form-item, .form-actions  {
+                float: left;
+                width: 20%;
+                margin: 0;
+                padding: 0 15px;
+            }
+
+            .form-actions {
+                text-align: right;
+                padding-top: 27px;
+            }
+
+            input[type="text"] { background: #FFF; }
+        }
+
+
+
+    }
+
+
+
+
+}
+
+
+
 .infoBox{
 
     h2{ font-family: $base-font-family; }

@@ -124,8 +124,6 @@
 
                 }
 
-                console.log(productData);
-
                 Drupal.behaviors.inntopiaAjaxAction.addToCart( productData );
 
             });
@@ -232,7 +230,7 @@
             data: {data: $data},
             url: $url,
             success: function( result ){
-                //console.log( result );
+                console.log( result );
             }
         });
 

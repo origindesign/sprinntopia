@@ -423,6 +423,16 @@ function sunpeaksresort_preprocess_node(&$variables) {
 
         }
 
+
+        if ($variables['is_front']){
+            // Inntopia Block
+            $block_inntopia_check = \Drupal\block\Entity\Block::load('inntopiacheckavailabilityblock');
+            $variables['inntopia_check_block'] = \Drupal::entityTypeManager()
+                ->getViewBuilder('block')
+                ->view($block_inntopia_check);
+
+        }
+
     }
 
 

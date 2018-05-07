@@ -83,6 +83,7 @@ class AjaxActionsController extends InntopiaBaseController {
 
 		if ($cartRequest->getSuccess()){
 			$result = "Success adding item to the cart.";
+			var_dump($cartRequest->getValue());
 		}else{
 			$result = "Error trying to add item to the cart.";
 			$result .= $cartRequest->getErrorDetail();
